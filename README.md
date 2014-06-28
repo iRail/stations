@@ -22,10 +22,10 @@ Using scripts, we convert this to JSON-LD. In order to run the script, run this 
 ./bin/build.js
 ```
 
-The resulting JSON is put in the build/ directory. Don't edit this file manually. This is the output when you request JSON at https://irail.be/NMBS/stations. For example:
+The resulting JSON is put in the build/ directory. Don't edit this file manually. This is the output when you request JSON at https://irail.be/stations/NMBS. For example:
 
 ```bash
-curl -H "accept: application/json" https://irail.be/NMBS/stations
+curl -H "accept: application/json" https://irail.be/stations/NMBS
 ```
 
 ## Other scripts for reconciliation
