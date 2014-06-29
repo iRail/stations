@@ -83,7 +83,7 @@ http://irail.be/stations/NMBS/008884319,Boussu,,Boussu,,,50.436388,3.797025
 http://irail.be/stations/NMBS/008821725,Bouwel,,Bouwel,,,51.165764,4.746511
 http://irail.be/stations/NMBS/008881463,Bracquegnies,,Bracquegnies,,,50.474457,4.126345
 http://irail.be/stations/NMBS/008814258,Eigenbrakel,,Eigenbrakel,,,50.684778,4.375526
-http://irail.be/stations/NMBS/008883006,S Gravenbrakel,,S Gravenbrakel,,,50.605079,4.137662
+http://irail.be/stations/NMBS/008883006,Braine-le-Comte,Braine-le-Comte,S Gravenbrakel,,,50.605079,4.137662
 http://irail.be/stations/NMBS/008843901,Bressoux,,Bressoux,,,50.643967,5.611057
 http://irail.be/stations/NMBS/008886066,Brugelette,,Brugelette,,,50.594229,3.852551
 http://irail.be/stations/NMBS/008891009,Brugge,,Brugge,,,51.197226,3.216726
@@ -108,8 +108,8 @@ http://irail.be/stations/NMBS/008882248,Carnieres,,Carnieres,,,50.447957,4.26382
 http://irail.be/stations/NMBS/008811817,Ceroux-Mousty,,Ceroux-Mousty,,,50.659941,4.569046
 http://irail.be/stations/NMBS/008861317,Chapelle-Dieu,,Chapelle-Dieu,,,50.557374,4.697627
 http://irail.be/stations/NMBS/008864824,Chapois,,Chapois,,,50.262366,5.124255
-http://irail.be/stations/NMBS/008872066,Charleroi-West,,Charleroi-West,,,50.410948,4.436653
-http://irail.be/stations/NMBS/008872009,Charleroi-Zuid,,Charleroi-Zuid,,,50.40471,4.438567
+http://irail.be/stations/NMBS/008872066,Charleroi-Ouest,Charleroi-Ouest,Charleroi-West,,,50.410948,4.436653
+http://irail.be/stations/NMBS/008872009,Charleroi-Sud,Charleroi-Sud,Charleroi-Zuid,,,50.40471,4.438567
 http://irail.be/stations/NMBS/008861523,Chastre,,Chastre,,,50.608819,4.648888
 http://irail.be/stations/NMBS/008863438,Chateau-De-Seilles,,Chateau-De-Seilles,,,50.497209,5.081745
 http://irail.be/stations/NMBS/008874005,Chatelet,,Chatelet,,,50.410103,4.521861
@@ -468,7 +468,7 @@ http://irail.be/stations/NMBS/008812245,Sint-Martens-Bodegem,,Sint-Martens-Bodeg
 http://irail.be/stations/NMBS/008894508,Sint-Niklaas,,Sint-Niklaas,,,51.171472,4.142966
 http://irail.be/stations/NMBS/008831807,Sint-Truiden,,Sint-Truiden,,,50.81762,5.176654
 http://irail.be/stations/NMBS/008893260,Sleidinge,,Sleidinge,,,51.126607,3.667526
-http://irail.be/stations/NMBS/008883113,Zinnik,,Zinnik,,,50.572763,4.067519
+http://irail.be/stations/NMBS/008883113,Soignies,Soignies,Zinnik,,,50.572763,4.067519
 http://irail.be/stations/NMBS/008871662,Solre-Sur-Sambre,,Solre-Sur-Sambre,,,50.312642,4.158427
 http://irail.be/stations/NMBS/008844404,Spa,,Spa,,,50.490305,5.855096
 http://irail.be/stations/NMBS/008844420,Spa-Geronstere,,Spa-Geronstere,,,50.489307,5.866207
