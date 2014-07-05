@@ -15,26 +15,36 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * dbpedia-uri: the URI for usage in the Linked Dataset of http://dbpedia.org, if any
  * images: a JSON array of links towards images to be used for the iRail and BeTrains applications
 
-## Build
+## Build the RDF/ JSON-LD
 
 Using scripts, we convert this to JSON-LD. In order to run the script, run this command:
+
+First time run (you will need nodejs):
+```bash
+npm install
+```
+
+From then on, you can always run:
 
 ```bash
 ./bin/build.js
 ```
 
-The resulting JSON is put in the build/ directory. Don't edit this file manually. This is the output when you request JSON at https://irail.be/stations/NMBS. For example:
+The resulting JSON appears on stdout. Don't edit this output manually. This is the output when you request JSON at https://irail.be/stations/NMBS. For example:
 
 ```bash
 curl -H "accept: application/json" https://irail.be/stations/NMBS
 ```
 
-## Other scripts for reconciliation
+If you want to change this output, please change the CSV files over here first (hint: we love pull requests)
+
+## Data tools and links
+
+### Open Refine
+
+Because this is a CSV file, you can also use it easily with Open Refine. More info here: http://openrefine.org.
 
 ### dbpedia
 
 Under construction, but we will build scripts which check long and lats against e.g., the dbpedia URIs and get more information about them.
 
-### Open Refine
-
-Because this is a CSV file, you can also use it easily with Open Refine. More info here: http://openrefine.org.
