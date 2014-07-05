@@ -8,10 +8,10 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * longitude: the longitude of the station
  * latitude: the latitude of the station
  * name: the most neutral name of the station (e.g., in Wallonia use the French name, for Brussels use both, for Flanders use nl name)
- * alternate-fr: name in French, if available
- * alternate-nl: name in Dutch, if available
- * alternate-de: name in German, if available
- * alternate-en: name in English, if available
+ * alternative-fr: alt. name in French, if available
+ * alternative-nl: alt. name in Dutch, if available
+ * alternative-de: alt. name in German, if available
+ * alternative-en: alt. name in English, if available
  * dbpedia-uri: the URI for usage in the Linked Dataset of http://dbpedia.org, if any
  * images: a JSON array of links towards images to be used for the iRail and BeTrains applications
 

@@ -1,0 +1,23 @@
+{
+  "name": "stations",
+  "version": "0.0.0",
+  "description": "scripts to process all railway stations in Belgium",
+  "main": "bin/build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iRail/stations.git"
+  },
+  "author": "Pieter Colpaert",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/iRail/stations/issues"
+  },
+  "dependencies": {
+    "n3": "~0.2.7",
+    "ya-csv": "~0.9.3",
+    "jsonld": "~0.2.13"
+  }
+}
