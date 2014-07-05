@@ -6,7 +6,7 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
 
  * `URI`: this is the URI where we can find more information (such as the real-time departures) about this station (this already contains the ID of the NMBS/SNCB as well)
  * `longitude`: the longitude of the station
- * latitude`: the latitude of the station
+ * `latitude`: the latitude of the station
  * `name`: the most neutral name of the station (e.g., in Wallonia use the French name, for Brussels use both, for Flanders use nl name)
  * `alternative-fr`: alt. name in French, if available
  * `alternative-nl`: alt. name in Dutch, if available
