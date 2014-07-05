@@ -4,16 +4,24 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
 
 ## Fields we collect
 
- * URI: this is the URI where we can find more information (such as the real-time departures) about this station (this already contains the ID of the NMBS/SNCB as well)
- * longitude: the longitude of the station
- * latitude: the latitude of the station
- * name: the most neutral name of the station (e.g., in Wallonia use the French name, for Brussels use both, for Flanders use nl name)
- * alternative-fr: alt. name in French, if available
- * alternative-nl: alt. name in Dutch, if available
- * alternative-de: alt. name in German, if available
- * alternative-en: alt. name in English, if available
- * dbpedia-uri: the URI for usage in the Linked Dataset of http://dbpedia.org, if any
- * images: a JSON array of links towards images to be used for the iRail and BeTrains applications
+ * `URI`: this is the URI where we can find more information (such as the real-time departures) about this station (this already contains the ID of the NMBS/SNCB as well)
+ * `longitude`: the longitude of the station
+ * latitude`: the latitude of the station
+ * `name`: the most neutral name of the station (e.g., in Wallonia use the French name, for Brussels use both, for Flanders use nl name)
+ * `alternative-fr`: alt. name in French, if available
+ * `alternative-nl`: alt. name in Dutch, if available
+ * `alternative-de`: alt. name in German, if available
+ * `alternative-en`: alt. name in English, if available
+ * `dbpedia-uri`: the URI for usage in the Linked Dataset of http://dbpedia.org, if any
+
+## Fields we collect in pictures.csv
+
+ * `name` (primary key): name of the file of the picture in your Pictures directory
+ * `URI`: http URI to station (find the URI in stations.csv)
+ * `license`: add CC0, CC BY, or CC BY SA
+ * `author`: the author of the image
+ * `source`: add a URL to the source of the file
+
 
 ## Build the RDF/ JSON-LD
 
