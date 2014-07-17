@@ -22,12 +22,12 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * `author`: the author of the image
  * `source`: add a URL to the source of the file
 
-
 ## Build the RDF/ JSON-LD
 
 Using scripts, we convert this to JSON-LD. In order to run the script, run this command:
 
 First time run (you will need nodejs):
+
 ```bash
 npm install
 ```
