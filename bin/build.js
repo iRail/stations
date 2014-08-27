@@ -9,8 +9,8 @@ var N3Util = N3.util;
 
 var context = {
   "name": "http://www.w3.org/2000/01/rdf-schema#label",
-  "longitude":"http://www.w3.org/2003/01/geo/long",
-  "latitude":"http://www.w3.org/2003/01/geo/lat",
+  "longitude":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+  "latitude":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
   "alternative":"http://purl.org/dc/terms/alternative"
 };
 
