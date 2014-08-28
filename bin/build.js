@@ -28,7 +28,7 @@ parser.parse(function (error, triple, prefixes) {
 });
 
 
-parser.addChunk('@prefix foaf: <http://xmlns.com/foaf/spec/#>.\n');
+parser.addChunk('@prefix foaf: <http://xmlns.com/foaf/0.1/>.\n');
 parser.addChunk('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n');
 parser.addChunk('@prefix dcterms: <http://purl.org/dc/terms/>.\n');
 parser.addChunk('@prefix geo: <http://www.w3.org/2003/01/geo/>.\n');
