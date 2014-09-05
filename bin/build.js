@@ -36,7 +36,7 @@ parser.addChunk('@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.\n');
 reader.addListener('data', function (data) {
   var turtlestring = "<" + data["URI"] + ">" + " rdfs:label \"" + data["name"] + "\" .\n";
   if (data["alternative-en"] !== "") {
-    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-en"] + "\"@nl .\n";
+    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-en"] + "\"@en .\n";
   }
 
   if (data["alternative-fr"] !== "") {
@@ -46,7 +46,7 @@ reader.addListener('data', function (data) {
     turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-nl"] + "\"@nl .\n";
   }
   if (data["alternative-de"] !== "") {
-    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-de"] + "\"@nl .\n";
+    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-de"] + "\"@de .\n";
   }
 
   turtlestring += "<" + data["URI"] + ">" + " geo:long \"" + data["longitude"] + "\" .\n";
