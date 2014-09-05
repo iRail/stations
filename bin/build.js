@@ -67,7 +67,10 @@ reader.addListener('end', function () {
   }
   jsonld.fromRDF(nquads, {format: 'application/nquads'}, function(err, doc) {
     jsonld.compact(doc, context, function(err, compacted) {
-      console.log(JSON.stringify(compacted));
+      var jsonresult = JSON.stringify(compacted);
+      //ugly fix for https://github.com/iRail/stations/issues/8
+      jsonresult = jsonresult.replace(/"alternative":({.*?})/gi,"\"alternative\":[$1]");
+      console.log(jsonresult);
     });
   });
 });
