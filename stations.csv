@@ -220,7 +220,7 @@ http://irail.be/stations/NMBS/008895869,Haaltert,,,,,50.906838,4.023958
 http://irail.be/stations/NMBS/008866142,Habay,,,,,49.718249,5.632685
 http://irail.be/stations/NMBS/008884327,Hainin,,,,,50.428019,3.766893
 http://irail.be/stations/NMBS/008866530,Halanzy,,,,,49.5562,5.741347
-http://irail.be/stations/NMBS/008814308,Halle,Hal,Halle,,,50.733931,4.240634
+http://irail.be/stations/NMBS/008814308,Halle,Hal,,,,50.733931,4.240634
 http://irail.be/stations/NMBS/008873387,Ham-sur-Heure,,,,,50.319555,4.404696
 http://irail.be/stations/NMBS/008861168,Ham-sur-Sambre,,,,,50.45255,4.669392
 http://irail.be/stations/NMBS/008822533,Hambos,,,,,50.944251,4.66301
@@ -595,3 +595,5 @@ http://irail.be/stations/NMBS/008718213,St.-Louis-Haut-Rhin (f),,,,,47.5907,7.55
 http://irail.be/stations/NMBS/008728105,Croix l'Allumette (f),,,,,50.675708,3.13381
 http://irail.be/stations/NMBS/008728671,Croix Wasquehal (f),,,,,50.6764687,3.149272
 http://irail.be/stations/NMBS/008832664,Hamont,,,,,51.246424,5.543279
+http://irail.be/stations/NMBS/008400058,Amsterdam CS (nl),,,,,52.379128,4.900272
+http://irail.be/stations/NMBS/008400561,Schiphol (nl),,,,,52.308294,4.762268
