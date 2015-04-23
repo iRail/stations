@@ -46,16 +46,6 @@ curl -H "accept: application/json" https://irail.be/stations/NMBS
 
 If you want to change this output, please change the CSV files over here first (hint: we love pull requests)
 
-## Data tools and links
-
-### Open Refine
-
-Because this is a CSV file, you can also use it easily with Open Refine. More info here: http://openrefine.org.
-
-### dbpedia
-
-Under construction, but we will build scripts which check long and lats against e.g., the dbpedia URIs and get more information about them.
-
 ## License
 
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/): This dataset belongs to the public domain. You're free to reuse it without any oblogations whatsoever.
