@@ -56,3 +56,10 @@ Because this is a CSV file, you can also use it easily with Open Refine. More in
 
 Under construction, but we will build scripts which check long and lats against e.g., the dbpedia URIs and get more information about them.
 
+## License
+
+[CC0](https://creativecommons.org/publicdomain/zero/1.0/): This dataset belongs to the public domain. You're free to reuse it without any oblogations whatsoever.
+
+If you contribute to this repository, you agree that your contributions will be licensed under the CC0 open data license.
+
+We do appreciate however a link back to this repository, or a mention of the [iRail project](http://hello.irail.be).
