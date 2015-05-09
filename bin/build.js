@@ -1,76 +1,108 @@
 #!/usr/bin/env node
 /* Pieter Colpaert */
-
 var fs = require('fs');
 var N3 = require('n3');
+var N3Util = require('n3').Util;
 var csv = require('ya-csv');
 var jsonld = require('jsonld');
-var N3Util = N3.util;
+var program = require('commander');
 
+console.error("irail-stations by Pieter Colpaert <pieter@iRail.be> - http://hello.irail.be - use --help to discover more functions");
+program
+  .version('0.1.0')
+  .option('-f --format [json,trig,nquads]', 'Format', /^(json|trig|nquads)$/i)
+  .parse(process.argv);
+
+var format;
+
+if (!process.argv.slice(2).length) {
+  format = "json";
+} else {
+  format = program.format;
+}
+
+//Prefixes used within this code
+var prefixes = {
+  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+  "foaf": "http://xmlns.com/foaf/0.1/",
+  "dcterms": "http://purl.org/dc/terms/",
+  "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
+  "gn": "http://www.geonames.org/ontology#",
+  "gtfs": "http://vocab.gtfs.org/terms#"
+};
+
+//JSON-LD context for the JSON-LD serialisation
 var context = {
-  "name": "http://www.w3.org/2000/01/rdf-schema#label",
+  "name": "http://xmlns.com/foaf/0.1/name",
   "longitude":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
   "latitude":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
-  "alternative":"http://purl.org/dc/terms/alternative"
+  "alternative":"http://purl.org/dc/terms/alternative",
+  "country":{
+    "@type" : "@id",
+    "@id" : "http://www.geonames.org/ontology#parentCountry"
+  }
+};
+
+//Hardcoded array to be able to map country codes to geonames' URIs
+var countryURIs = {
+  "fr" : "http://sws.geonames.org/3017382/",
+  "be" : "http://sws.geonames.org/2802361/",
+  "nl" : "http://sws.geonames.org/2750405/",
+  "de" : "http://sws.geonames.org/2921044/",
+  "lu" : "http://sws.geonames.org/2960313/",
+  "gb" : "http://sws.geonames.org/2635167/",
+  "ch" : "http://sws.geonames.org/2658434/"
 };
 
 var reader = csv.createCsvFileReader('stations.csv', {columnsFromHeader:true, 'separator': ','});
 
-var graph = [];
+var writer;
+if (format !== "trig") {
+  writer = N3.Writer({ format: 'N-Triples', prefixes: prefixes });
+} else {
+  writer = N3.Writer({ prefixes: prefixes });
+}
 
-var parser = N3.Parser();
-parser.parse(function (error, triple, prefixes) { 
-  if (triple) {
-    graph.push(triple);
-  } else if(error) {
-    console.error(error);
-  }
-});
-
-
-parser.addChunk('@prefix foaf: <http://xmlns.com/foaf/0.1/>.\n');
-parser.addChunk('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.\n');
-parser.addChunk('@prefix dcterms: <http://purl.org/dc/terms/>.\n');
-parser.addChunk('@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>.\n');
-
+//CSV reader: processes a row and add the triples to the n-quads or trig writer
 reader.addListener('data', function (data) {
-  var turtlestring = "<" + data["URI"] + ">" + " rdfs:label \"" + data["name"] + "\" .\n";
+  //writer.addTriple(data["URI"], "rdfs:type","gtfs:Station", "http://irail.be/stations/NMBS/");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("foaf:name", prefixes),'"' + data["name"] + '"', "http://irail.be/stations/NMBS/");
   if (data["alternative-en"] !== "") {
-    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-en"] + "\"@en .\n";
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-en"] + '"@en', "http://irail.be/stations/NMBS/");
   }
 
   if (data["alternative-fr"] !== "") {
-    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-fr"] + "\"@fr .\n";
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-fr"] + '"@fr', "http://irail.be/stations/NMBS/");
   }
   if (data["alternative-nl"] !== "") {
-    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-nl"] + "\"@nl .\n";
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-nl"] + '"@nl', "http://irail.be/stations/NMBS/");
   }
   if (data["alternative-de"] !== "") {
-    turtlestring += "<" + data["URI"] + ">" + " dcterms:alternative \"" + data["alternative-de"] + "\"@de .\n";
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-de"] + '"@de', "http://irail.be/stations/NMBS/");
   }
-
-  turtlestring += "<" + data["URI"] + ">" + " geo:long \"" + data["longitude"] + "\" .\n";
-  turtlestring += "<" + data["URI"] + ">" + " geo:lat \"" + data["latitude"] + "\" .\n";
-
-  parser.addChunk(turtlestring);
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS/");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"', "http://irail.be/stations/NMBS/");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"', "http://irail.be/stations/NMBS/");
 });
 
+//When the CSV processing is done: print the requested serialisation
 reader.addListener('end', function () {
-  parser.end();
-  var nquads = "";
-  for (var i = 0; i < graph.length ; i++ ) {
-    if (graph[i].object.substr(0,4) === "http") {
-      nquads += "<" + graph[i].subject + "> <" + graph[i].predicate + "> <" + graph[i].object + "> <http://irail.be/stations/NMBS/> .\n";
+  writer.end(function (error, output) {
+    if (error) {
+      console.error("Problem: " + error);
     } else {
-      nquads += "<" + graph[i].subject + "> <" + graph[i].predicate + "> " + graph[i].object + " <http://irail.be/stations/NMBS/> .\n";
+      if (format !== "json") {
+        console.log(output);
+      } else {
+        jsonld.fromRDF(output, {format: 'application/nquads'}, function(err, doc) {
+          jsonld.compact(doc, context, function(err, compacted) {
+            var jsonresult = JSON.stringify(compacted);
+            //ugly fix for https://github.com/iRail/stations/issues/8
+            jsonresult = jsonresult.replace(/"alternative":({.*?})/gi,"\"alternative\":[$1]");
+            console.log(jsonresult);
+          });   
+        });
+      }
     }
-  }
-  jsonld.fromRDF(nquads, {format: 'application/nquads'}, function(err, doc) {
-    jsonld.compact(doc, context, function(err, compacted) {
-      var jsonresult = JSON.stringify(compacted);
-      //ugly fix for https://github.com/iRail/stations/issues/8
-      jsonresult = jsonresult.replace(/"alternative":({.*?})/gi,"\"alternative\":[$1]");
-      console.log(jsonresult);
-    });
   });
 });

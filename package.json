@@ -1,23 +1,31 @@
 {
-  "name": "stations",
-  "version": "0.0.0",
-  "description": "scripts to process all railway stations in Belgium",
+  "name": "irail-stations",
+  "version": "0.1.0",
+  "description": "Generates a RDF dataset for all stations in Belgium",
   "main": "bin/build.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/iRail/stations.git"
   },
-  "author": "Pieter Colpaert",
-  "license": "BSD-2-Clause",
+  "author": "Pieter Colpaert <pieter@irail.be>",
+  "keywords": [
+    "json-ld",
+    "rdf",
+    "stations",
+    "gtfs",
+    "belgium",
+    "nmbs",
+    "sncb"
+  ],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iRail/stations/issues"
   },
   "dependencies": {
-    "n3": "~0.2.7",
-    "ya-csv": "~0.9.3",
-    "jsonld": "~0.2.13"
+    "commander": "^2.8.1",
+    "jsonld": "^0.3.22",
+    "n3": "^0.4.3",
+    "ya-csv": "~0.9.3"
   }
 }
