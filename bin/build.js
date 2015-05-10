@@ -54,7 +54,8 @@ var countryURIs = {
   "ch" : "http://sws.geonames.org/2658434/"
 };
 
-var reader = csv.createCsvFileReader('stations.csv', {columnsFromHeader:true, 'separator': ','});
+var filename = __dirname + "/../stations.csv";
+var reader = csv.createCsvFileReader(filename, {columnsFromHeader:true, 'separator': ','});
 
 var writer;
 if (format !== "trig") {

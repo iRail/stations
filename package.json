@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Generates a RDF dataset for all stations in Belgium",
   "main": "bin/build.js",
+  "bin": {
+    "irail-stations" : "bin/build.js"
+  },
   "scripts": {},
   "repository": {
     "type": "git",

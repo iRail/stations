@@ -29,22 +29,32 @@ _Currently, this file is only a proposal_
 
 Using scripts, we convert this to JSON-LD. In order to run the script, run this command:
 
-First time run this in your terminal (you will need nodejs and you will need to run it from where you've cloned this repository):
+First time run this in your terminal (nodejs needs to be installed on your system):
 
 ```bash
 npm install
 ```
 
-From then on, you can always run (again, using this as the working directory):
+Or install it globally using the [npm package](https://www.npmjs.com/package/irail-stations) (you will need to run this again when there's an update to the stations file):
+```bash
+npm install -g irail-stations
+```
+
+From then on, you can always run:
 
 ```bash
+# using this repo
 ./bin/build.js
+# or with the global package:
+irail-stations
 ```
 
 For extra commands, check:
 
 ```bash
 ./bin/build.js --help
+# or
+irail-stations --help
 ```
 
 We currently support the output formats __TRiG__, __N-Quads__ and __JSON-LD__ (default)
