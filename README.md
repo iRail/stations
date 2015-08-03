@@ -4,6 +4,8 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
 
 ## Fields we collect
 
+### stations.csv
+
  * `URI`: this is the URI where we can find more information (such as the real-time departures) about this station (this already contains the ID of the NMBS/SNCB as well)
  * `longitude`: the longitude of the station
  * `latitude`: the latitude of the station
@@ -13,6 +15,14 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * `alternative-de`: alt. name in German, if available
  * `alternative-en`: alt. name in English, if available
  * `country-code`: the code of the country the station belongs to
+
+### stops.csv
+
+ * `URI`: this is the URI where we can find more information about this stop/platform (exists out of URI of the parent station + '#' + platform code)
+ * `longitude`: the longitude of the stop
+ * `latitude`: the latitude of the stop
+ * `name`: parent station name
+ * `platform`: the platform code
 
 ## Build the RDF or JSON-LD
 
