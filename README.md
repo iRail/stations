@@ -19,6 +19,7 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
 ### stops.csv
 
  * `URI`: this is the URI where we can find more information about this stop/platform (exists out of URI of the parent station + '#' + platform code)
+ * `parent_stop`: this is the URI of the parent stop defined in stations.csv
  * `longitude`: the longitude of the stop
  * `latitude`: the latitude of the stop
  * `name`: parent station name
