@@ -1,0 +1,13 @@
+{
+    "name": "irail/stations",
+    "description": "Use the Belgian railway's station in your PHP project",
+    "type": "library",
+    "license": "CC0",
+    "authors": [
+        {
+            "name": "Pieter Colpaert",
+            "email": "pieter.colpaert@okfn.org"
+        }
+    ],
+    "require": {}
+}
