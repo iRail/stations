@@ -1,6 +1,7 @@
 # All stations in Belgium
+[![Build Status](https://travis-ci.org/iRail/stations.svg)](https://travis-ci.org/iRail/stations)
 
-We try to maintain a list of all the stations in Belgium using CSV so everyone can help to maintain it on github.
+We try to maintain a list of all the stations in Belgium using CSV so everyone can help to maintain it on github. Furthermore, we have a PHP composer/packagist library for you to go from station name to ID and vice versa and we convert the CSV file to JSON-LD for maximum semantic interoperability.
 
 ## Fields we collect
 
@@ -61,13 +62,33 @@ We currently support the output formats __TRiG__, __N-Quads__ and __JSON-LD__ (d
 
 ## In case you just want to reuse the data
 
-Don't edit this output manually. This is the output when you request JSON at https://irail.be/stations/NMBS. For example:
+### Latest update over HTTP
+
+JSON-LD is available at https://irail.be/stations/NMBS if you add the right accept header. For example, using curl on the command line, you would do this:
 
 ```bash
 curl -H "accept: application/json" https://irail.be/stations/NMBS
 ```
 
 If you want to change this output, please change the CSV files over here first (we love pull requests)
+
+### In PHP project
+
+Using composer (mind that we also require nodejs to be installed on your system):
+```bash
+composer require irail/stations
+```
+
+Then you can use the stations in your code as follows:
+```php
+use irail\stations\Stations;
+// getStations() returns a json-ld document
+$brusselsnorth = Stations::getStations("Brussels North")->{"@graph"}[0];
+// getStationByID($id) returns a simple object with the station or null
+$ghentstpieters = Stations::getStationByID("http://irail.be/stations/NMBS/008892007");
+```
+
+Don't forget to do a `composer update` from time to time to update the data
 
 ## License
 
