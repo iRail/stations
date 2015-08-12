@@ -9,7 +9,7 @@ namespace irail\stations;
 
 class Stations
 {
-    private static $stationsfilename = __DIR__ . '/../../../stations.jsonld';
+    private static $stationsfilename = '/../../../stations.jsonld';
     
     /**
      * Gets you stations in a JSON-LD graph ordered by relevance to the optional query
@@ -23,7 +23,7 @@ class Stations
         
         if ($query && $query !== "") {
             // Filter the stations on name match
-            $stations = json_decode(file_get_contents(self::$stationsfilename));
+            $stations = json_decode(file_get_contents(__DIR__ . self::$stationsfilename));
             $newstations = new \stdClass;
             $newstations->{"@id"} = $stations->{"@id"} . "?q=" . $query;
             $newstations->{"@context"} = $stations->{"@context"};
@@ -70,7 +70,7 @@ class Stations
             }
             return $newstations;
         } else {
-            return json_decode(file_get_contents(self::$stationsfilename));
+            return json_decode(file_get_contents(__DIR__ . self::$stationsfilename));
         }
     }
 
@@ -121,7 +121,7 @@ class Stations
             $id = "http://irail.be/stations/NMBS/" . $id;
         }
         
-        $stationsdocument = json_decode(file_get_contents(self::$stationsfilename));
+        $stationsdocument = json_decode(file_get_contents(__DIR__ . self::$stationsfilename));
         
         foreach ($stationsdocument->{"@graph"} as $station) {
             if ($station->{"@id"} === $id) {
