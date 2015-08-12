@@ -1,13 +1,24 @@
 {
-    "name": "irail/stations",
-    "description": "Use the Belgian railway's station in your PHP project",
-    "type": "library",
-    "license": "CC0",
-    "authors": [
-        {
-            "name": "Pieter Colpaert",
-            "email": "pieter.colpaert@okfn.org"
-        }
-    ],
-    "require": {}
+  "name": "irail/stations",
+  "description": "Use the Belgian railway's station in your PHP project",
+  "type": "library",
+  "scripts": {
+    "pre-install-cmd" : "npm install ; nodejs bin/build.js > stations.jsonld",
+    "pre-update-cmd": "nodejs bin/build.js > stations.jsonld"
+  },
+  "license": "CC0",
+  "authors": [
+    {
+      "name": "Pieter Colpaert",
+      "email": "pieter.colpaert@okfn.org"
+    }
+  ],
+  "require": {
+    "ml/json-ld": "^1.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "irail\\stations\\": "src/"
+    }
+  }
 }
