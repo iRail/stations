@@ -3,8 +3,8 @@
   "description": "Use the Belgian railway's station in your PHP project",
   "type": "library",
   "scripts": {
-    "pre-install-cmd" : "npm install ; nodejs bin/build.js > stations.jsonld",
-    "pre-update-cmd": "nodejs bin/build.js > stations.jsonld"
+    "pre-install-cmd" : "npm install ; node bin/build.js > stations.jsonld",
+    "pre-update-cmd": "node bin/build.js > stations.jsonld"
   },
   "license": "CC0",
   "authors": [
