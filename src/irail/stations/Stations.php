@@ -28,7 +28,9 @@ class Stations
             $newstations->{"@id"} = $stations->{"@id"} . "?q=" . $query;
             $newstations->{"@context"} = $stations->{"@context"};
             $newstations->{"@graph"} = array();
-            
+
+            //https://github.com/iRail/iRail/issues/66
+            $query = str_replace("Bru.","Brussel", $query);
             //make sure something between brackets is ignored
             $query = preg_replace("/\s?\(.*?\)/i", "", $query);
             
