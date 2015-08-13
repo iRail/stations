@@ -30,6 +30,9 @@ class Stations
             $newstations->{"@graph"} = array();
 
             //https://github.com/iRail/iRail/issues/66
+            $query = str_replace(" am "," ", $query);
+            
+            //https://github.com/iRail/iRail/issues/66
             $query = str_replace("Bru.","Brussel", $query);
             //make sure something between brackets is ignored
             $query = preg_replace("/\s?\(.*?\)/i", "", $query);
@@ -47,20 +50,20 @@ class Stations
             
             $count = 0;
             foreach ($stations->{"@graph"} as $station) {
-                if (preg_match('/.*' . $query . '.*/i', self::normalizeAccents($station->{"name"}), $match)) {
+                if (preg_match('/.*' . $query . '.*/i', str_replace(" am "," ",self::normalizeAccents($station->{"name"})), $match)) {
                     $newstations->{"@graph"}[] = $station;
                     $count++;
                 } elseif (isset($station->alternative)) {
                     if (is_array($station->alternative)) {
                         foreach ($station->alternative as $alternative) {
-                            if (preg_match('/.*(' . $query . ').*/i', self::normalizeAccents($alternative->{"@value"}), $match)) {
+                            if (preg_match('/.*(' . $query . ').*/i', str_replace(" am "," ",self::normalizeAccents($alternative->{"@value"})), $match)) {
                                 $newstations->{"@graph"}[] = $station;
                                 $count++;
                                 break;
                             }
                         }
                     } else {
-                        if (preg_match('/.*' . $query . '.*/i', self::normalizeAccents($station->alternative->{"@value"}))) {
+                        if (preg_match('/.*' . $query . '.*/i', str_replace(" am "," ",self::normalizeAccents($alternative->{"@value"})))) {
                             $newstations->{"@graph"}[] = $station;
                             $count++;
                         }
