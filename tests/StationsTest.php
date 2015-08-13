@@ -69,8 +69,13 @@ class StationsTest extends PHPUnit_Framework_TestCase
         //test whether sint st. and saint return the same result
         $result2a = Stations::getStations("st pancras");
         $result2b = Stations::getStations("saint pancras");
-        
         $this->assertEquals($result2a->{"@graph"}[0]->{"@id"},$result2b->{"@graph"}[0]->{"@id"});
+        
+        // Check whether both am mein and mein work
+        $result3a = Stations::getStations("frankfurt am main");
+        $result3b = Stations::getStations("frankfurt main");
+        $this->assertEquals($result3a->{"@graph"}[0]->{"@id"},$result3b->{"@graph"}[0]->{"@id"});
+
     }
 
     public function testId () 
