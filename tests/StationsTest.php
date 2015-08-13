@@ -69,13 +69,23 @@ class StationsTest extends PHPUnit_Framework_TestCase
         //test whether sint st. and saint return the same result
         $result2a = Stations::getStations("st pancras");
         $result2b = Stations::getStations("saint pancras");
+        $result2c = Stations::getStations("st-pancras");
+        $result2d = Stations::getStations("st.-pancras");
         $this->assertEquals($result2a->{"@graph"}[0]->{"@id"},$result2b->{"@graph"}[0]->{"@id"});
+        $this->assertEquals($result2b->{"@graph"}[0]->{"@id"},$result2c->{"@graph"}[0]->{"@id"});
+        $this->assertEquals($result2a->{"@graph"}[0]->{"@id"},$result2d->{"@graph"}[0]->{"@id"});
         
-        // Check whether both am mein and mein work
+        // Check whether both am main and main work
         $result3a = Stations::getStations("frankfurt am main");
         $result3b = Stations::getStations("frankfurt main");
         $this->assertEquals($result3a->{"@graph"}[0]->{"@id"},$result3b->{"@graph"}[0]->{"@id"});
 
+        // Check whether flughhaven am main don't get mixed up and all work
+        $result4a = Stations::getStations("frankfurt am main flughafen");
+        $result4b = Stations::getStations("frankfurt flughafen");
+        $result4c = Stations::getStations("frankfurt main flughafen");
+        $this->assertEquals($result4a->{"@graph"}[0]->{"@id"},$result4b->{"@graph"}[0]->{"@id"});
+        $this->assertEquals($result4b->{"@graph"}[0]->{"@id"},$result4c->{"@graph"}[0]->{"@id"});
     }
 
     public function testId () 

@@ -28,17 +28,20 @@ class Stations
             $newstations->{"@id"} = $stations->{"@id"} . "?q=" . $query;
             $newstations->{"@context"} = $stations->{"@context"};
             $newstations->{"@graph"} = array();
-
-            //https://github.com/iRail/iRail/issues/66
-            $query = str_replace(" am "," ", $query);
             
             //https://github.com/iRail/iRail/issues/66
-            $query = str_replace("Bru.","Brussel", $query);
+            $query = str_ireplace(" am "," ", $query);
+            $query = str_ireplace("frankfurt fl","frankfurt main fl", $query);
+            
+            //https://github.com/iRail/iRail/issues/66
+            $query = str_ireplace("Bru.","Brussel", $query);
             //make sure something between brackets is ignored
             $query = preg_replace("/\s?\(.*?\)/i", "", $query);
             
             // st. is the same as Saint
-            $query = preg_replace("/st(\s|$)/i", "(saint|st|sint) ", $query);
+            $query = str_ireplace("st-","st ", $query);
+            $query = str_ireplace("st.-","st ", $query);
+            $query = preg_replace("/st(\s|$|\.)/i", "(saint|st|sint) ", $query);
             //make sure that we're only taking the first part before a /
             $query = explode("/", $query);
             $query = trim($query[0]);
