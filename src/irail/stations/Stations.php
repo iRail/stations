@@ -94,7 +94,7 @@ class Stations
      */
     private static function normalizeAccents($str)
     {
-        $unwanted_array = array(
+        $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
             'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A',
             'Ä' => 'A', 'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C',
@@ -112,7 +112,7 @@ class Stations
             'ö' => 'o', 'ø' => 'o', 'ù' => 'u', 'ú' => 'u',
             'û' => 'u', 'ý' => 'y', 'ý' => 'y', 'þ' => 'b',
             'ÿ' => 'y'
-        );
+        ];
         
         return strtr($str, $unwanted_array);
     }
@@ -122,7 +122,8 @@ class Stations
      * @param $id can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
      * @return a simple object for a station
      */
-    public static function getStationFromID($id){
+    public static function getStationFromID($id)
+    {
         //transform the $id into a URI if it's not yet a URI
         if (substr($id,0,4) !== "http") {
             //test for old-style iRail ids
