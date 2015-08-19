@@ -1,8 +1,11 @@
 # All stations in Belgium
+[![Build Status](https://travis-ci.org/iRail/stations.svg)](https://travis-ci.org/iRail/stations)
 
-We try to maintain a list of all the stations in Belgium using CSV so everyone can help to maintain it on github.
+We try to maintain a list of all the stations in Belgium using CSV so everyone can help to maintain it on github. Furthermore, we have a PHP composer/packagist library for you to go from station name to ID and vice versa and we convert the CSV file to JSON-LD for maximum semantic interoperability.
 
 ## Fields we collect
+
+### stations.csv
 
  * `URI`: this is the URI where we can find more information (such as the real-time departures) about this station (this already contains the ID of the NMBS/SNCB as well)
  * `longitude`: the longitude of the station
@@ -13,17 +16,15 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * `alternative-de`: alt. name in German, if available
  * `alternative-en`: alt. name in English, if available
  * `country-code`: the code of the country the station belongs to
- * _TODO:_ `dbpedia-uri`: the URI for usage in the Linked Dataset of http://dbpedia.org, if any
 
-## Fields we collect in pictures.csv
+### stops.csv
 
-_Currently, this file is only a proposal_
-
- * `name` (primary key): name of the file of the picture in your Pictures directory
- * `URI`: http URI to station (find the URI in stations.csv)
- * `license`: add CC0, CC BY, or CC BY SA
- * `author`: the author of the image
- * `source`: add a URL to the source of the file
+ * `URI`: this is the URI where we can find more information about this stop/platform (exists out of URI of the parent station + '#' + platform code)
+ * `parent_stop`: this is the URI of the parent stop defined in stations.csv
+ * `longitude`: the longitude of the stop
+ * `latitude`: the latitude of the stop
+ * `name`: parent station name
+ * `platform`: the platform code
 
 ## Build the RDF or JSON-LD
 
@@ -61,13 +62,33 @@ We currently support the output formats __TRiG__, __N-Quads__ and __JSON-LD__ (d
 
 ## In case you just want to reuse the data
 
-Don't edit this output manually. This is the output when you request JSON at https://irail.be/stations/NMBS. For example:
+### Latest update over HTTP
+
+JSON-LD is available at https://irail.be/stations/NMBS if you add the right accept header. For example, using curl on the command line, you would do this:
 
 ```bash
 curl -H "accept: application/json" https://irail.be/stations/NMBS
 ```
 
 If you want to change this output, please change the CSV files over here first (we love pull requests)
+
+### In PHP project
+
+Using composer (mind that we also require nodejs to be installed on your system):
+```bash
+composer require irail/stations
+```
+
+Then you can use the stations in your code as follows:
+```php
+use irail\stations\Stations;
+// getStations() returns a json-ld document
+$brusselsnorth = Stations::getStations("Brussels North")->{"@graph"}[0];
+// getStationByID($id) returns a simple object with the station or null
+$ghentstpieters = Stations::getStationByID("http://irail.be/stations/NMBS/008892007");
+```
+
+Don't forget to do a `composer update` from time to time to update the data
 
 ## License
 
