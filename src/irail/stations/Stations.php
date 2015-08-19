@@ -94,7 +94,7 @@ class Stations
      */
     private static function normalizeAccents($str)
     {
-        $unwanted_array = array(
+        $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
             'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A',
             'Ä' => 'A', 'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C',
@@ -112,7 +112,7 @@ class Stations
             'ö' => 'o', 'ø' => 'o', 'ù' => 'u', 'ú' => 'u',
             'û' => 'u', 'ý' => 'y', 'ý' => 'y', 'þ' => 'b',
             'ÿ' => 'y'
-        );
+        ];
         
         return strtr($str, $unwanted_array);
     }
