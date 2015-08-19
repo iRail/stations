@@ -122,7 +122,8 @@ class Stations
      * @param $id can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
      * @return a simple object for a station
      */
-    public static function getStationFromID($id){
+    public static function getStationFromID($id)
+    {
         //transform the $id into a URI if it's not yet a URI
         if (substr($id,0,4) !== "http") {
             //test for old-style iRail ids
