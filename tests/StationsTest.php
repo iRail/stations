@@ -86,6 +86,11 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $result4c = Stations::getStations("frankfurt main flughafen");
         $this->assertEquals($result4a->{"@graph"}[0]->{"@id"},$result4b->{"@graph"}[0]->{"@id"});
         $this->assertEquals($result4b->{"@graph"}[0]->{"@id"},$result4c->{"@graph"}[0]->{"@id"});
+
+        $result5a = Stations::getStations("braine l'alleud");
+        $result5b = Stations::getStations("braine l alleud"); //for hafas purposes: https://github.com/iRail/hyperRail/issues/129
+        $this->assertEquals($result5a->{"@graph"}[0]->{"@id"},$result5b->{"@graph"}[0]->{"@id"});
+
     }
 
     public function testId () 

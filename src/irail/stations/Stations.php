@@ -28,7 +28,10 @@ class Stations
             $newstations->{"@id"} = $stations->{"@id"} . "?q=" . $query;
             $newstations->{"@context"} = $stations->{"@context"};
             $newstations->{"@graph"} = array();
-            
+
+            //https://github.com/iRail/hyperRail/issues/129
+            $query = str_ireplace("l alleud","l'alleud",$query);
+
             //https://github.com/iRail/iRail/issues/66
             $query = str_ireplace(" am "," ", $query);
             $query = str_ireplace("frankfurt fl","frankfurt main fl", $query);
