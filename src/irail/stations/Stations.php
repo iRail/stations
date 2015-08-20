@@ -30,20 +30,20 @@ class Stations
             $newstations->{"@graph"} = array();
 
             //https://github.com/iRail/hyperRail/issues/129
-            $query = str_ireplace("l alleud","l'alleud",$query);
+            $query = str_ireplace("l alleud", "l'alleud", $query);
 
             //https://github.com/iRail/iRail/issues/66
-            $query = str_ireplace(" am "," ", $query);
-            $query = str_ireplace("frankfurt fl","frankfurt main fl", $query);
+            $query = str_ireplace(" am ", " ", $query);
+            $query = str_ireplace("frankfurt fl", "frankfurt main fl", $query);
             
             //https://github.com/iRail/iRail/issues/66
-            $query = str_ireplace("Bru.","Brussel", $query);
+            $query = str_ireplace("Bru.", "Brussel", $query);
             //make sure something between brackets is ignored
             $query = preg_replace("/\s?\(.*?\)/i", "", $query);
             
             // st. is the same as Saint
-            $query = str_ireplace("st-","st ", $query);
-            $query = str_ireplace("st.-","st ", $query);
+            $query = str_ireplace("st-", "st ", $query);
+            $query = str_ireplace("st.-", "st ", $query);
             $query = preg_replace("/st(\s|$|\.)/i", "(saint|st|sint) ", $query);
             //make sure that we're only taking the first part before a /
             $query = explode("/", $query);
@@ -56,20 +56,20 @@ class Stations
             
             $count = 0;
             foreach ($stations->{"@graph"} as $station) {
-                if (preg_match('/.*' . $query . '.*/i', str_replace(" am "," ",self::normalizeAccents($station->{"name"})), $match)) {
+                if (preg_match('/.*' . $query . '.*/i', str_replace(" am ", " ", self::normalizeAccents($station->{"name"})), $match)) {
                     $newstations->{"@graph"}[] = $station;
                     $count++;
                 } elseif (isset($station->alternative)) {
                     if (is_array($station->alternative)) {
                         foreach ($station->alternative as $alternative) {
-                            if (preg_match('/.*(' . $query . ').*/i', str_replace(" am "," ",self::normalizeAccents($alternative->{"@value"})), $match)) {
+                            if (preg_match('/.*(' . $query . ').*/i', str_replace(" am ", " ", self::normalizeAccents($alternative->{"@value"})), $match)) {
                                 $newstations->{"@graph"}[] = $station;
                                 $count++;
                                 break;
                             }
                         }
                     } else {
-                        if (preg_match('/.*' . $query . '.*/i', str_replace(" am "," ",self::normalizeAccents($alternative->{"@value"})))) {
+                        if (preg_match('/.*' . $query . '.*/i', str_replace(" am ", " ", self::normalizeAccents($alternative->{"@value"})))) {
                             $newstations->{"@graph"}[] = $station;
                             $count++;
                         }
@@ -110,7 +110,7 @@ class Stations
             'î' => 'i', 'ï' => 'i', 'ð' => 'o', 'ñ' => 'n',
             'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o',
             'ö' => 'o', 'ø' => 'o', 'ù' => 'u', 'ú' => 'u',
-            'û' => 'u', 'ý' => 'y', 'ý' => 'y', 'þ' => 'b',
+            'û' => 'u', 'ý' => 'y', 'þ' => 'b',
             'ÿ' => 'y'
         ];
         
@@ -125,10 +125,10 @@ class Stations
     public static function getStationFromID($id)
     {
         //transform the $id into a URI if it's not yet a URI
-        if (substr($id,0,4) !== "http") {
+        if (substr($id, 0, 4) !== "http") {
             //test for old-style iRail ids
-            if (substr($id,0,8) === "BE.NMBS.") {
-                $id = substr($id,8);
+            if (substr($id, 0, 8) === "BE.NMBS.") {
+                $id = substr($id, 8);
             }
             $id = "http://irail.be/stations/NMBS/" . $id;
         }
