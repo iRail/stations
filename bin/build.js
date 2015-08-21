@@ -23,21 +23,21 @@ if (!process.argv.slice(2).length) {
 
 //Prefixes used within this code
 var prefixes = {
-  "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-  "foaf": "http://xmlns.com/foaf/0.1/",
-  "dcterms": "http://purl.org/dc/terms/",
-  "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
-  "gn": "http://www.geonames.org/ontology#",
-  "gtfs": "http://vocab.gtfs.org/terms#"
+  "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+  "foaf" : "http://xmlns.com/foaf/0.1/",
+  "dcterms" : "http://purl.org/dc/terms/",
+  "geo" : "http://www.w3.org/2003/01/geo/wgs84_pos#",
+  "gn" : "http://www.geonames.org/ontology#",
+  "gtfs" : "http://vocab.gtfs.org/terms#"
 };
 
 //JSON-LD context for the JSON-LD serialisation
 var context = {
-  "name": "http://xmlns.com/foaf/0.1/name",
-  "longitude":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
-  "latitude":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+  "name" : "http://xmlns.com/foaf/0.1/name",
+  "longitude" :"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+  "latitude" :"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
   "alternative":"http://purl.org/dc/terms/alternative",
-  "country":{
+  "country" :{
     "@type" : "@id",
     "@id" : "http://www.geonames.org/ontology#parentCountry"
   }
