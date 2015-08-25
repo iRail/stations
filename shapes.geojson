@@ -31,7 +31,7 @@
         "description": "Torhout - Lichtervelde",
         "originStop": "http://irail.be/stations/NMBS/008891314",
         "destinationStop": "http://irail.be/stations/NMBS/008892205"
-      }
+      },
       "geometry": {
         "type": "LineString", 
         "coordinates": [
