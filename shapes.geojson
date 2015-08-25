@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "@context": {
+      "geojson": "http://ld.geojson.org/vocab#",
+      "Feature": "geojson:Feature", 
+      "features": {
+        "@id": "geojson:coordinates", 
+        "@container": "@set"
+      }, 
+      "title": "http://purl.org/dc/terms/title", 
+      "coordinates": {
+        "@id": "geojson:coordinates"
+      }, 
+      "type": "@type", 
+      "description": "http://purl.org/dc/terms/description",
+      "properties": "geojson:properties", 
+      "geometry": "geojson:geometry", 
+      "FeatureCollection": "geojson:FeatureCollection", 
+      "LineString": "geojson:LineString",
+      "gtfs": "http://vocab.gtfs.org/terms#",
+      "stop": "gtfs:Stop",
+      "originStop": "gtfs:originStop",
+      "destinationStop": "gtfs:destinationStop"
+    }
+  }, 
+  "type": "FeatureCollection", 
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "description": "Torhout - Lichtervelde",
+        "originStop": "http://irail.be/stations/NMBS/008891314",
+        "destinationStop": "http://irail.be/stations/NMBS/008892205"
+      }
+      "geometry": {
+        "type": "LineString", 
+        "coordinates": [
+          [
+            3.1057405471801753,
+            51.064216229943476
+          ],
+          [
+            3.1056976318359375,
+            51.063434090307574
+          ],
+          [
+            3.105783462524414,
+            51.06251708218119
+          ],
+          [
+            3.1061267852783203,
+            51.061249423389796
+          ],
+          [
+            3.1153106689453125,
+            51.033622027407965
+          ],
+          [
+            3.1165122985839844,
+            51.031813801128365
+          ],
+          [
+            3.117971420288086,
+            51.03035637337599
+          ],
+          [
+            3.121962547302246,
+            51.02795421650736
+          ]
+        ]
+      }
+    } ]
+}
