@@ -66,24 +66,24 @@ if (format !== "trig") {
 
 //CSV reader: processes a row and add the triples to the n-quads or trig writer
 reader.addListener('data', function (data) {
-  //writer.addTriple(data["URI"], "rdfs:type","gtfs:Station", "http://irail.be/stations/NMBS/");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("foaf:name", prefixes),'"' + data["name"] + '"', "http://irail.be/stations/NMBS/");
+  //writer.addTriple(data["URI"], "rdfs:type","gtfs:Station", "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("foaf:name", prefixes),'"' + data["name"] + '"', "http://irail.be/stations/NMBS");
   if (data["alternative-en"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-en"] + '"@en', "http://irail.be/stations/NMBS/");
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-en"] + '"@en', "http://irail.be/stations/NMBS");
   }
 
   if (data["alternative-fr"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-fr"] + '"@fr', "http://irail.be/stations/NMBS/");
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-fr"] + '"@fr', "http://irail.be/stations/NMBS");
   }
   if (data["alternative-nl"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-nl"] + '"@nl', "http://irail.be/stations/NMBS/");
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-nl"] + '"@nl', "http://irail.be/stations/NMBS");
   }
   if (data["alternative-de"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-de"] + '"@de', "http://irail.be/stations/NMBS/");
+    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-de"] + '"@de', "http://irail.be/stations/NMBS");
   }
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS/");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"', "http://irail.be/stations/NMBS/");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"', "http://irail.be/stations/NMBS/");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"', "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"', "http://irail.be/stations/NMBS");
 });
 
 //When the CSV processing is done: print the requested serialisation
