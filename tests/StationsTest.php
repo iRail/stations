@@ -93,7 +93,6 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $result6a = Stations::getStations('La Louviere- Centre');
         $result6b = Stations::getStations('La Louvière-Centre');
         $this->assertEquals($result6a->{'@graph'}[0]->{'@id'}, $result6b->{'@graph'}[0]->{'@id'});
-
     }
 
     public function testId()
