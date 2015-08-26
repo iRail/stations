@@ -88,6 +88,12 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $result5a = Stations::getStations("braine l'alleud");
         $result5b = Stations::getStations('braine l alleud'); //for hafas purposes: https://github.com/iRail/hyperRail/issues/129
         $this->assertEquals($result5a->{'@graph'}[0]->{'@id'}, $result5b->{'@graph'}[0]->{'@id'});
+
+        // Check whether a space after a - doesn't break the autocomplete: https://github.com/iRail/stations/issues/72
+        $result6a = Stations::getStations('La Louviere- Centre');
+        $result6b = Stations::getStations('La Louvière-Centre');
+        $this->assertEquals($result6a->{'@graph'}[0]->{'@id'}, $result6b->{'@graph'}[0]->{'@id'});
+
     }
 
     public function testId()
