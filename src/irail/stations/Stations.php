@@ -36,7 +36,7 @@ class Stations
 
             //https://github.com/iRail/stations/issues/72
             $query = str_ireplace('- ', '-', $query);
-            
+
             //https://github.com/iRail/hyperRail/issues/129
             $query = str_ireplace('l alleud', "l'alleud", $query);
 
