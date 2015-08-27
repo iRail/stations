@@ -18,9 +18,14 @@
       "FeatureCollection": "geojson:FeatureCollection", 
       "LineString": "geojson:LineString",
       "gtfs": "http://vocab.gtfs.org/terms#",
-      "stop": "gtfs:Stop",
-      "originStop": "gtfs:originStop",
-      "destinationStop": "gtfs:destinationStop"
+      "stopA": {
+          "@id": "gtfs:Stop",
+          "@type": "@id"
+      },
+      "stopB": {
+          "@id": "gtfs:Stop",
+          "@type": "@id"
+      }
     }
   }, 
   "type": "FeatureCollection", 
@@ -29,8 +34,8 @@
       "type": "Feature",
       "properties": {
         "description": "Torhout - Lichtervelde",
-        "originStop": "http://irail.be/stations/NMBS/008891314",
-        "destinationStop": "http://irail.be/stations/NMBS/008892205"
+        "stopA": "http://irail.be/stations/NMBS/008891314",
+        "stopB": "http://irail.be/stations/NMBS/008892205"
       },
       "geometry": {
         "type": "LineString", 
