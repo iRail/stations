@@ -8,9 +8,6 @@
                 "@container": "@set"
             },
             "title": "http://purl.org/dc/terms/title",
-            "coordinates": {
-                "@id": "geojson:coordinates"
-            },
             "type": "@type",
             "description": "http://purl.org/dc/terms/description",
             "properties": "geojson:properties",
