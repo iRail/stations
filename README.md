@@ -18,7 +18,8 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * `alternative-de`: alt. name in German, if available
  * `alternative-en`: alt. name in English, if available
  * `country-code`: the code of the country the station belongs to
-
+ * `vehicle_frequency`: the relative frequency (0 .. 1) of the amount of trains stopping in this station.
+ 
 ### stops.csv
 
  * `URI`: this is the URI where we can find more information about this stop/platform (exists out of URI of the parent station + '#' + platform code)

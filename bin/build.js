@@ -28,7 +28,8 @@ var prefixes = {
   "dcterms": "http://purl.org/dc/terms/",
   "geo": "http://www.w3.org/2003/01/geo/wgs84_pos#",
   "gn": "http://www.geonames.org/ontology#",
-  "gtfs": "http://vocab.gtfs.org/terms#"
+  "gtfs": "http://vocab.gtfs.org/terms#",
+  "st":"http://semweb.mmlab.be/ns/stoptimes#"
 };
 
 //JSON-LD context for the JSON-LD serialisation
@@ -40,7 +41,8 @@ var context = {
   "country":{
     "@type" : "@id",
     "@id" : "http://www.geonames.org/ontology#parentCountry"
-  }
+  },
+  "avgStopTimes":"http://semweb.mmlab.be/ns/stoptimes#avgStopTimes"
 };
 
 //Hardcoded array to be able to map country codes to geonames' URIs
@@ -84,6 +86,7 @@ reader.addListener('data', function (data) {
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS");
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"', "http://irail.be/stations/NMBS");
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"', "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("st:avgStopTimes",prefixes),'"' + data["vehicle_frequency"] + '"', "http://irail.be/stations/NMBS");
 });
 
 //When the CSV processing is done: print the requested serialisation

@@ -63,7 +63,12 @@ class Stations
             $query = str_replace(' ', "[\- ]", $query);
 
             $count = 0;
-            foreach ($stations->{'@graph'} as $station) {
+
+            // Create a sorted list based on the vehicle_frequency
+            $stations_array = $stations->{'@graph'};
+            usort($stations_array, ['\irail\stations\Stations','cmp_stations_vehicle_frequency']);
+
+            foreach ($stations_array as $station) {
                 if (preg_match('/.*'.$query.'.*/i', str_replace(' am ', ' ', self::normalizeAccents($station->{'name'})), $match)) {
                     $newstations->{'@graph'}[] = $station;
                     $count++;
@@ -92,6 +97,23 @@ class Stations
         } else {
             return json_decode(file_get_contents(__DIR__.self::$stationsfilename));
         }
+    }
+
+    /**
+     * Compare 2 stations based on vehicle frequency.
+     *
+     * @param $a \stdClass the first station
+     * @param $b \stdClass the second station
+     *
+     * @return int The result of the compare. 0 if equal, -1 if a is after b, 1 if b is before a
+     */
+    public static function cmp_stations_vehicle_frequency($a, $b)
+    {
+        if ($a == $b) {
+            return 0;
+        }
+        //sort sorts from low to high, so lower avgStopTimes will result in a higher ranking.
+        return ($a->avgStopTimes < $b->avgStopTimes) ? 1 : -1;
     }
 
     /**
