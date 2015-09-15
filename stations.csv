@@ -1,4 +1,4 @@
-URI,name,alternative-fr,alternative-nl,alternative-de,alternative-en,country-code,longitude,latitude,vehicle_frequency
+URI,name,alternative-fr,alternative-nl,alternative-de,alternative-en,country-code,longitude,latitude,avg_stop_times
 http://irail.be/stations/NMBS/008895000,Aalst,Alost,,,,be,4.039653,50.942813,88.263005780347
 http://irail.be/stations/NMBS/008895125,Aalst-Kerrebroek,,,,,be,4.024407,50.948377,7.2976878612717
 http://irail.be/stations/NMBS/008891140,Aalter,,,,,be,3.447848,51.092295,78.488439306358

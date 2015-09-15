@@ -195,7 +195,7 @@ if (!$handle) {
 echo('Compiling new CSV file...'.PHP_EOL);
 
 // Update the first line (csv header)
-$result = trim(fgets($handle)).',vehicle_frequency'.PHP_EOL;
+$result = trim(fgets($handle)).',avg_stop_times'.PHP_EOL;
 
 // Go through all files.
 while (($line = fgets($handle)) !== false) {
