@@ -153,7 +153,7 @@ http://irail.be/stations/NMBS/008892650,Eke-Nazareth,,,,,be,3.627839,50.960774,2
 http://irail.be/stations/NMBS/008821071,Ekeren,,,,,be,4.434154,51.281626,45.696531791908
 http://irail.be/stations/NMBS/008843240,Engis,,,,,be,5.401986,50.582957,21.653179190751
 http://irail.be/stations/NMBS/008822269,Eppegem,,,,,be,4.45749,50.9584,51.239884393064
-http://irail.be/stations/NMBS/008881158,Erbisœul,,,,,be,3.887987,50.507025,25.563583815029
+http://irail.be/stations/NMBS/008881158,Erbisœul,Erbisoeul,Erbisoeul,Erbisoeul,Erbisoeul,be,3.887987,50.507025,25.563583815029
 http://irail.be/stations/NMBS/008895091,Erembodegem,,,,,be,4.055447,50.919621,59.878612716763
 http://irail.be/stations/NMBS/008861515,Ernage,,,,,be,4.668538,50.590823,31.508670520231
 http://irail.be/stations/NMBS/008895471,Erpe-Mere,,,,,be,3.962463,50.928601,7.2976878612717
@@ -366,6 +366,7 @@ http://irail.be/stations/NMBS/008811197,Merode,,,,,be,4.398934,50.839284,20.7716
 http://irail.be/stations/NMBS/008842648,Méry,,,,,be,5.587236,50.54762,25.439306358382
 http://irail.be/stations/NMBS/008866662,Messancy,,,,,be,5.818915,49.592777,14.517341040462
 http://irail.be/stations/NMBS/008886058,Mevergnies-Attre,,,,,be,3.833917,50.600108,21.676300578035
+http://irail.be/stations/NMBS/088022054,Michelau,,,,,be,11.11624,50.154981,
 http://irail.be/stations/NMBS/008841665,Milmort,,,,,be,5.60009,50.692455,74.132947976879
 http://irail.be/stations/NMBS/008814431,Moensberg,,,,,be,4.330733,50.77832,37.742774566474
 http://irail.be/stations/NMBS/008885704,Mouscron,,Moeskroen,,,be,3.228448,50.741005,55.433526011561
@@ -410,7 +411,7 @@ http://irail.be/stations/NMBS/008812146,Opwijk,,,,,be,4.187319,50.974779,38.7919
 http://irail.be/stations/NMBS/008811601,Ottignies,,,,,be,4.56936,50.673667,253.4710982659
 http://irail.be/stations/NMBS/008833134,Oud-Heverlee,,,,,be,4.653311,50.835931,49.895953757225
 http://irail.be/stations/NMBS/008893518,Oudegem,,,,,be,4.064472,51.01523,15.075144508671
-http://irail.be/stations/NMBS/008892601,Oudenaarde,,,,,be,3.600386,50.850116,82.916184971098
+http://irail.be/stations/NMBS/008892601,Oudenaarde,Audenarde,,,,be,3.600386,50.850116,82.916184971098
 http://irail.be/stations/NMBS/008832573,Overpelt,,,,,be,5.422751,51.215618,18.543352601156
 http://irail.be/stations/NMBS/008865540,Paliseul,,,,,be,5.118349,49.895408,16.575144508671
 http://irail.be/stations/NMBS/008886561,Papegem,,,,,be,3.823408,50.686585,27.14161849711
