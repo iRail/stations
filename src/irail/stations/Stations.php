@@ -69,20 +69,26 @@ class Stations
             usort($stations_array, ['\irail\stations\Stations','cmp_stations_vehicle_frequency']);
 
             foreach ($stations_array as $station) {
-                if (preg_match('/.*'.$query.'.*/i', str_replace(' am ', ' ', self::normalizeAccents($station->{'name'})), $match)) {
+                $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
+                if (preg_match('/.*'.$query.'.*/i', $testStationName, $match)
+                    || preg_match('/.*'.$query.'.*/i', str_replace('\'', ' ', $testStationName), $match)) {
                     $newstations->{'@graph'}[] = $station;
                     $count++;
                 } elseif (isset($station->alternative)) {
                     if (is_array($station->alternative)) {
                         foreach ($station->alternative as $alternative) {
-                            if (preg_match('/.*('.$query.').*/i', str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'})), $match)) {
+                            $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                            if (preg_match('/.*('.$query.').*/i', $testStationName, $match)
+                                || preg_match('/.*('.$query.').*/i', str_replace('\'', ' ', $testStationName), $match)) {
                                 $newstations->{'@graph'}[] = $station;
                                 $count++;
                                 break;
                             }
                         }
                     } else {
-                        if (preg_match('/.*'.$query.'.*/i', str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'})))) {
+                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                        if (preg_match('/.*'.$query.'.*/i', $testStationName)
+                            || preg_match('/.*('.$query.').*/i', str_replace('\'', ' ', $testStationName), $match)) {
                             $newstations->{'@graph'}[] = $station;
                             $count++;
                         }
