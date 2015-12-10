@@ -21,7 +21,7 @@ const STATIONS_CSV = '../stations.csv';
  * This information can be found at http://gtfs.irail.be/nmbs/nmbs-latest.zip
  */
 
-echo('Gathering resources...'.PHP_EOL);
+echo 'Gathering resources...'.PHP_EOL;
 
 // Download zip file with GTFS data.
 file_put_contents(TMP_ZIPFILE, file_get_contents(GTFS_ZIP));
@@ -42,7 +42,7 @@ rename(TMP_UNZIP_PATH.'/'.GTFS_STOP_TIMES, GTFS_STOP_TIMES);
 rename(TMP_UNZIP_PATH.'/'.GTFS_TRIPS, GTFS_TRIPS);
 rename(TMP_UNZIP_PATH.'/'.GTFS_CAL_DATES, GTFS_CAL_DATES);
 
-echo('Cleaning up resources...'.PHP_EOL);
+echo 'Cleaning up resources...'.PHP_EOL;
 // Remove temporary data.
 $tmpfiles = scandir(TMP_UNZIP_PATH);
 foreach ($tmpfiles as $file) {
@@ -63,7 +63,7 @@ rmdir(TMP_UNZIP_PATH);
  * - Create a station stop frequency table based on stop_times, converting the trip_id frequency table to a station stop frequency table.
  */
 
-echo('Creating service id frequency table...'.PHP_EOL);
+echo 'Creating service id frequency table...'.PHP_EOL;
 
 $handle = fopen(GTFS_CAL_DATES, 'r');
 if (!$handle) {
@@ -101,7 +101,7 @@ fclose($handle);
 // We don't need this file anymore. Cleanup.
 unlink(GTFS_CAL_DATES);
 
-echo('Creating trip id frequency table...'.PHP_EOL);
+echo 'Creating trip id frequency table...'.PHP_EOL;
 $handle = fopen(GTFS_TRIPS, 'r');
 if (!$handle) {
     die(GTFS_TRIPS.' could not be opened!');
@@ -132,7 +132,7 @@ fclose($handle);
 // We don't need this file anymore. Cleanup.
 unlink(GTFS_TRIPS);
 
-echo('Creating frequency table...'.PHP_EOL);
+echo 'Creating frequency table...'.PHP_EOL;
 
 $handle = fopen(GTFS_STOP_TIMES, 'r');
 if (!$handle) {
@@ -192,7 +192,7 @@ if (!$handle) {
 }
 
 // The new CSV file will be compiled in memory, in the $result variable.
-echo('Compiling new CSV file...'.PHP_EOL);
+echo 'Compiling new CSV file...'.PHP_EOL;
 
 // Update the first line (csv header)
 $result = trim(fgets($handle)).',avg_stop_times'.PHP_EOL;
@@ -215,11 +215,11 @@ while (($line = fgets($handle)) !== false) {
 // Close this handle. Important!
 fclose($handle);
 
-echo('Saving...'.PHP_EOL);
+echo 'Saving...'.PHP_EOL;
 // Create a backup, just in case.
 copy(STATIONS_CSV, STATIONS_CSV.'.bak');
-echo('A backup has been created at '.STATIONS_CSV.'.bak'.PHP_EOL);
+echo 'A backup has been created at '.STATIONS_CSV.'.bak'.PHP_EOL;
 // Write everything to a new file
 file_put_contents(STATIONS_CSV, $result);
 
-echo('Saved to '.STATIONS_CSV.'! Don\'t forget to run build.js now!'.PHP_EOL);
+echo 'Saved to '.STATIONS_CSV.'! Don\'t forget to run build.js now!'.PHP_EOL;
