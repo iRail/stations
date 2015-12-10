@@ -6,7 +6,6 @@
  *
  * Basic functionalities needed for playing with Belgian railway stations in Belgium
  */
-
 namespace irail\stations;
 
 class Stations
@@ -66,7 +65,7 @@ class Stations
 
             // Create a sorted list based on the vehicle_frequency
             $stations_array = $stations->{'@graph'};
-            usort($stations_array, ['\irail\stations\Stations','cmp_stations_vehicle_frequency']);
+            usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
 
             foreach ($stations_array as $station) {
                 $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
