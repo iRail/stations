@@ -26,11 +26,11 @@ class Stations
      */
     public static function getStations($query = '', $country = '')
     {
+        if (!isset(self::$stations)) {
+            self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
+        }    
         if ($query && $query !== '') {
             // Filter the stations on name match
-            if (!isset(self::$stations)) {
-                self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
-            }
             $stations = self::$stations; 
             $newstations = new \stdClass();
             $newstations->{'@id'} = $stations->{'@id'}.'?q='.$query;
