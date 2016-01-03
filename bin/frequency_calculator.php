@@ -114,7 +114,7 @@ fgets($handle);
 $trips_freq = [];
 
 while (($line = fgets($handle)) !== false) {
-    /**
+    /*
      * File format:
      * route_id,service_id,trip_id
      */
@@ -122,7 +122,7 @@ while (($line = fgets($handle)) !== false) {
     $parts = explode(',', $line);
     $service_id = $parts[1];
     $trip_id = trim($parts[2]);
-    
+
     // Set frequency, which is the same as the service frequency.
     $trips_freq[$trip_id] = $service_freq[$service_id];
 }

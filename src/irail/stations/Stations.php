@@ -62,7 +62,7 @@ class Stations
             if ($sorted) {
                 usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
             }
-            
+
             // Dashes are the same as spaces
             $query = self::normalizeAccents($query);
             $query = str_replace("\-", "[\- ]", $query);
