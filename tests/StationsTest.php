@@ -56,6 +56,18 @@ class StationsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test UTF-8 queries
+     */
+    public function testEncoding()
+    {
+        //Launch a query for Brussels in various ways
+        $result1a = Stations::getStations('Ville-Pommerœul');
+        $result1b = Stations::getStations('Ville-Pommeroeul');
+        $this->assertEquals($result1a->{'@graph'}[0]->{'@id'}, $result1b->{'@graph'}[0]->{'@id'});
+    }
+
+    
+    /**
      * Tests whether certain edge cases return the right identifier when looking at.
      */
     public function testEdgeCases()
