@@ -56,7 +56,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test UTF-8 queries
+     * Test UTF-8 queries.
      */
     public function testEncoding()
     {
@@ -66,7 +66,6 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($result1a->{'@graph'}[0]->{'@id'}, $result1b->{'@graph'}[0]->{'@id'});
     }
 
-    
     /**
      * Tests whether certain edge cases return the right identifier when looking at.
      */
