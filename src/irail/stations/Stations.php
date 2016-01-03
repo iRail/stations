@@ -2,7 +2,7 @@
 
 /** 
  * Copyright (C) 2011 by iRail vzw/asbl
- * Copyright (C) 2015 by Open Knowledge Belgium vzw/asbl.
+ * Copyright (C) 2016 by Open Knowledge Belgium vzw/asbl.
  *
  * Basic functionalities needed for playing with Belgian railway stations in Belgium
  */
@@ -24,7 +24,7 @@ class Stations
      *
      * @return object a JSON-LD graph with context
      */
-    public static function getStations($query = '', $country = '')
+    public static function getStations($query = '', $country = '', $sorted = false)
     {
         if (!isset(self::$stations)) {
             self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
@@ -59,7 +59,10 @@ class Stations
             //make sure that we're only taking the first part before a /
             $query = explode('/', $query);
             $query = trim($query[0]);
-
+            if ($sorted) {
+                usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
+            }
+            
             // Dashes are the same as spaces
             $query = self::normalizeAccents($query);
             $query = str_replace("\-", "[\- ]", $query);
@@ -69,7 +72,6 @@ class Stations
 
             // Create a sorted list based on the vehicle_frequency
             $stations_array = $stations->{'@graph'};
-            usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
 
             foreach ($stations_array as $station) {
                 $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));

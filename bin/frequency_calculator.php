@@ -48,7 +48,7 @@ $tmpfiles = scandir(TMP_UNZIP_PATH);
 foreach ($tmpfiles as $file) {
     if ($file != '.' && $file != '..') {
         // Remove all extracted files from the zip file.
-    unlink(TMP_UNZIP_PATH.'/'.$file);
+        unlink(TMP_UNZIP_PATH.'/'.$file);
     }
 }
 reset($tmpfiles);
@@ -79,20 +79,20 @@ $service_freq = [];
 $handled_dates = [];
 while (($line = fgets($handle)) !== false) {
     /*
-   * File format:
-   * service_id,date,exception_type
-   */
-  $parts = explode(',', $line);
-  // Get service ID.
-  $id = $parts[0];
+     * File format:
+     * service_id,date,exception_type
+     */
+    $parts = explode(',', $line);
+    // Get service ID.
+    $id = $parts[0];
     $date = $parts[1];
-  // Increase frequency.
-  if (isset($service_freq[$id])) {
-      $service_freq[$id]++;
-  } else {
-      // Set initial value if key isn't added yet.
-    $service_freq[$id] = 1;
-  }
+    // Increase frequency.
+    if (isset($service_freq[$id])) {
+        $service_freq[$id]++;
+    } else {
+        // Set initial value if key isn't added yet.
+        $service_freq[$id] = 1;
+    }
     $handled_dates[$date] = 1;
 }
 // Close this handle. Important!
@@ -114,17 +114,17 @@ fgets($handle);
 $trips_freq = [];
 
 while (($line = fgets($handle)) !== false) {
-    /*
- * File format:
- * route_id,service_id,trip_id
- */
-  // Get service ID.
-  $parts = explode(',', $line);
+    /**
+     * File format:
+     * route_id,service_id,trip_id
+     */
+    // Get service ID.
+    $parts = explode(',', $line);
     $service_id = $parts[1];
     $trip_id = trim($parts[2]);
-
-  // Set frequency, which is the same as the service frequency.
-  $trips_freq[$trip_id] = $service_freq[$service_id];
+    
+    // Set frequency, which is the same as the service frequency.
+    $trips_freq[$trip_id] = $service_freq[$service_id];
 }
 // Close this handle. Important!
 fclose($handle);
@@ -147,26 +147,26 @@ $freq = [];
 
 while (($line = fgets($handle)) !== false) {
     /*
- * File format:
- * trip_id,arrival_time,departure_time,stop_id,stop_sequence
- * IC10611,05:36:00,05:36:00,stops:008841673:0,1
- */
-  $parts = explode(',', $line);
-  // Get stop ID.
-  $id = $parts[3];
-  // Remove platform.
-  $id = explode(':', $id)[1];
+     * File format:
+     * trip_id,arrival_time,departure_time,stop_id,stop_sequence
+     * IC10611,05:36:00,05:36:00,stops:008841673:0,1
+     */
+    $parts = explode(',', $line);
+    // Get stop ID.
+    $id = $parts[3];
+    // Remove platform.
+    $id = explode(':', $id)[1];
 
     $trip_id = $parts[0];
-  // The amount of time this trip is made.
-  $trip_freq = $trips_freq[$trip_id];
-  // Increase frequency.
-  if (isset($freq[$id])) {
-      $freq[$id] += $trip_freq;
-  } else {
-      // Set initial value if key isn't added yet.
-    $freq[$id] = $trip_freq;
-  }
+    // The amount of time this trip is made.
+    $trip_freq = $trips_freq[$trip_id];
+    // Increase frequency.
+    if (isset($freq[$id])) {
+        $freq[$id] += $trip_freq;
+    } else {
+        // Set initial value if key isn't added yet.
+        $freq[$id] = $trip_freq;
+    }
 }
 // Close this handle. Important!
 fclose($handle);
@@ -200,17 +200,17 @@ $result = trim(fgets($handle)).',avg_stop_times'.PHP_EOL;
 // Go through all files.
 while (($line = fgets($handle)) !== false) {
     // Line format:
-  // http://irail.be/stations/NMBS/008821006,Antwerpen-Centraal,Anvers-Central,,,Antwerp-Central,be,4.421101,51.2172
-  $line = trim($line);
-  // Get the Id.
-  $id = explode(',', $line)[0];
+    // http://irail.be/stations/NMBS/008821006,Antwerpen-Centraal,Anvers-Central,,,Antwerp-Central,be,4.421101,51.2172
+    $line = trim($line);
+    // Get the Id.
+    $id = explode(',', $line)[0];
     $id = explode('/', $id)[5];
     if (!isset($freq[$id])) {
         // If the Id is not in here, there are no stopping trains. The frequency is zero.
-    $freq[$id] = 0;
+        $freq[$id] = 0;
     }
-  // Copy the current line and append it with the average stop times count.
-  $result .= $line.','.$freq[$id] / $handled_days_count.PHP_EOL;
+    // Copy the current line and append it with the average stop times count.
+    $result .= $line.','.$freq[$id] / $handled_days_count.PHP_EOL;
 }
 // Close this handle. Important!
 fclose($handle);

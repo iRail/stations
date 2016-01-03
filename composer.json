@@ -20,5 +20,14 @@
     "psr-0": {
       "irail\\stations\\": "src/"
     }
-  }
+  },
+  "require-dev" : {
+    "aterrien/forp-profiler" : "~1.1"
+  },
+  "repositories" : [
+    {
+      "type" : "git",
+      "url"  : "git@github.com:aterrien/forp-PHP-profiler.git"
+    }
+  ]
 }
