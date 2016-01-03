@@ -86,7 +86,7 @@ reader.addListener('data', function (data) {
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS");
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"', "http://irail.be/stations/NMBS");
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"', "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("st:avgStopTimes",prefixes),'"' + data["vehicle_frequency"] + '"', "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("st:avgStopTimes",prefixes),'"' + data["avg_stop_times"] + '"', "http://irail.be/stations/NMBS");
 });
 
 //When the CSV processing is done: print the requested serialisation
