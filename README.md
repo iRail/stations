@@ -1,5 +1,7 @@
 # All stations in Belgium
 [![Build Status](https://travis-ci.org/iRail/stations.svg)](https://travis-ci.org/iRail/stations)
+[![Dependency Status](https://david-dm.org/iRail/stations.svg)](https://david-dm.org/iRail/stations.svg)
+[![Software License](https://img.shields.io/badge/license-CC0-brightgreen.svg?style=flat)](https://creativecommons.org/publicdomain/zero/1.0/)
 
 We try to maintain a list of all the stations in Belgium using CSV so everyone can help to maintain it on github. Furthermore, we have a PHP composer/packagist library for you to go from station name to ID and vice versa and we convert the CSV file to JSON-LD for maximum semantic interoperability.
 
@@ -16,7 +18,8 @@ We try to maintain a list of all the stations in Belgium using CSV so everyone c
  * `alternative-de`: alt. name in German, if available
  * `alternative-en`: alt. name in English, if available
  * `country-code`: the code of the country the station belongs to
-
+ * `avg_stop_times`: the average stop times per day in this station
+ 
 ### stops.csv
 
  * `URI`: this is the URI where we can find more information about this stop/platform (exists out of URI of the parent station + '#' + platform code)

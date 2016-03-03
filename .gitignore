@@ -2,3 +2,5 @@ node_modules/
 stations.db
 stations.jsonld
 /vendor/
+.idea
+phpcs.phar
