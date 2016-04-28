@@ -4,7 +4,7 @@
   "type": "library",
   "scripts": {
     "pre-install-cmd" : "npm install ; node bin/build.js > stations.jsonld",
-    "pre-update-cmd": "node bin/build.js > stations.jsonld"
+    "pre-update-cmd": "npm install ; node bin/build.js > stations.jsonld"
   },
   "license": "CC0",
   "authors": [
