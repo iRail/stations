@@ -47,12 +47,15 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $jsonld2 = Stations::getStations('Brussels');
         $jsonld3 = Stations::getStations('Bruxelles');
         $jsonld4 = Stations::getStations('Bru.-Noord / Brux.-Nord');
+        $jsonld5 = Stations::getStations('Brussels Airport - Zaventem');
+        
 
         //Assert whether it contains the right number of stations
         $this->assertCount(6, $jsonld1->{'@graph'});
         $this->assertCount(6, $jsonld2->{'@graph'});
         $this->assertCount(6, $jsonld3->{'@graph'});
         $this->assertCount(1, $jsonld4->{'@graph'});
+        $this->assertCount(1, $jsonld5->{'@graph'});
     }
 
     /**
