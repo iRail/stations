@@ -37,6 +37,8 @@ class Stations
             $newstations->{'@context'} = $stations->{'@context'};
             $newstations->{'@graph'} = [];
 
+            $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/','Brussels Airport', $query);
+            
             //https://github.com/iRail/stations/issues/72
             $query = str_ireplace('- ', '-', $query);
 
