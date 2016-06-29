@@ -45,7 +45,9 @@ class Stations
             //https://github.com/iRail/hyperRail/issues/129
             $query = str_ireplace('l alleud', "l'alleud", $query);
 
-            //https://github.com/iRail/iRail/issues/66
+            //https://github.com/iRail/iRail/issues/165
+            $query = str_ireplace(' Cdg ', ' Charles de Gaulle ', $query);
+
             $query = str_ireplace(' am ', ' ', $query);
             $query = str_ireplace('frankfurt fl', 'frankfurt main fl', $query);
 
