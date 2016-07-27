@@ -125,4 +125,23 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals($result1->{'name'}, $result2->{'name'});
         $this->assertEquals($result3->{'name'}, $result2->{'name'});
     }
+
+    public function testSort()
+    {
+        //test whether Ghent Sint Pieters is the first object when searching for Belgian stations in a sorted fashion
+        $results = Stations::getStations("Gent","be",true);
+        $result1 = $results->{'@graph'}[0];
+        $ghentsp = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
+
+        $this->assertEquals($result1->{'name'}, $ghentsp->{'name'});
+        
+        $results = Stations::getStations("Brussel","be",true);
+        $result2 = $results->{'@graph'}[0];
+        //The busiest station in Brussels is the south one
+        $brusselssouth = Stations::getStations('Brussels South')->{"@graph"}[0];
+
+        $this->assertEquals($result2->{'name'}, $brusselssouth->{'name'});
+        
+    }
+
 }

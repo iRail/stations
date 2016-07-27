@@ -63,10 +63,7 @@ class Stations
             //make sure that we're only taking the first part before a /
             $query = explode('/', $query);
             $query = trim($query[0]);
-            if ($sorted) {
-                usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
-            }
-
+            
             // Dashes are the same as spaces
             $query = self::normalizeAccents($query);
             $query = str_replace("\-", "[\- ]", $query);
@@ -77,6 +74,10 @@ class Stations
             // Create a sorted list based on the vehicle_frequency
             $stations_array = $stations->{'@graph'};
 
+            if ($sorted) {
+                usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
+            }
+            
             foreach ($stations_array as $station) {
                 $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
                 if (preg_match('/.*'.$query.'.*/i', $testStationName, $match)
@@ -107,7 +108,7 @@ class Stations
                     return $newstations;
                 }
             }
-
+ 
             return $newstations;
         } else {
             return json_decode(file_get_contents(__DIR__.self::$stationsfilename));
