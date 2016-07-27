@@ -135,7 +135,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($result1->{'name'}, $ghentsp->{'name'});
         
-        $results = Stations::getStations("Brussel","be",true);
+        $results = Stations::getStations("Brussel","",true);
         $result2 = $results->{'@graph'}[0];
         //The busiest station in Brussels is the south one
         $brusselssouth = Stations::getStations('Brussels South')->{"@graph"}[0];
