@@ -38,8 +38,8 @@ class Stations
             $newstations->{'@graph'} = [];
 
             //https://github.com/iRail/stations/issues/101
-            $query = preg_replace('/Brussel Nat.+/','Brussels Airport',$query);
-            $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/','Brussels Airport', $query);
+            $query = preg_replace('/Brussel Nat.+/', 'Brussels Airport', $query);
+            $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/', 'Brussels Airport', $query);
 
             //https://github.com/iRail/stations/issues/72
             $query = str_ireplace('- ', '-', $query);
