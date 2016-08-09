@@ -1,6 +1,6 @@
 <?php
 
-/** 
+/**
  * Copyright (C) 2011 by iRail vzw/asbl
  * Copyright (C) 2016 by Open Knowledge Belgium vzw/asbl.
  *
@@ -37,8 +37,10 @@ class Stations
             $newstations->{'@context'} = $stations->{'@context'};
             $newstations->{'@graph'} = [];
 
+            //https://github.com/iRail/stations/issues/101
+            $query = preg_replace('/Brussel Nat.+/','Brussels Airport',$query);
             $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/','Brussels Airport', $query);
-            
+
             //https://github.com/iRail/stations/issues/72
             $query = str_ireplace('- ', '-', $query);
 
@@ -63,7 +65,7 @@ class Stations
             //make sure that we're only taking the first part before a /
             $query = explode('/', $query);
             $query = trim($query[0]);
-            
+
             // Dashes are the same as spaces
             $query = self::normalizeAccents($query);
             $query = str_replace("\-", "[\- ]", $query);
@@ -77,7 +79,7 @@ class Stations
             if ($sorted) {
                 usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
             }
-            
+
             foreach ($stations_array as $station) {
                 $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
                 if (preg_match('/.*'.$query.'.*/i', $testStationName, $match)
@@ -108,7 +110,7 @@ class Stations
                     return $newstations;
                 }
             }
- 
+
             return $newstations;
         } else {
             return json_decode(file_get_contents(__DIR__.self::$stationsfilename));

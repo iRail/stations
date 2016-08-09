@@ -48,7 +48,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $jsonld3 = Stations::getStations('Bruxelles');
         $jsonld4 = Stations::getStations('Bru.-Noord / Brux.-Nord');
         $jsonld5 = Stations::getStations('Brussels Airport - Zaventem');
-        
+
 
         //Assert whether it contains the right number of stations
         $this->assertCount(6, $jsonld1->{'@graph'});
@@ -134,14 +134,14 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $ghentsp = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
 
         $this->assertEquals($result1->{'name'}, $ghentsp->{'name'});
-        
+
         $results = Stations::getStations("Brussel","",true);
         $result2 = $results->{'@graph'}[0];
         //The busiest station in Brussels is the south one
         $brusselssouth = Stations::getStations('Brussels South')->{"@graph"}[0];
 
         $this->assertEquals($result2->{'name'}, $brusselssouth->{'name'});
-        
+
     }
 
 }
