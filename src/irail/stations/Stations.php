@@ -196,7 +196,5 @@ class Stations
                 return $station;
             }
         }
-
-        return;
     }
-};
+}
