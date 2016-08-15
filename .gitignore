@@ -4,3 +4,4 @@ stations.jsonld
 /vendor/
 .idea
 phpcs.phar
+composer.lock
