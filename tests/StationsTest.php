@@ -134,12 +134,11 @@ class StationsTest extends PHPUnit_Framework_TestCase
 
         $result3 = Stations::getStationFromID('008200518');
         $result4 = Stations::getStations('Capellen')->{'@graph'}[0];
-        
+
         $this->assertEquals($result1->{'@id'}, $result2->{'@id'});
         $this->assertEquals($result3->{'@id'}, $result4->{'@id'});
     }
 
-    
     public function testSort()
     {
         //test whether Ghent Sint Pieters is the first object when searching for Belgian stations in a sorted fashion
