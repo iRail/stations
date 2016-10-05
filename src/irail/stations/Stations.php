@@ -1,6 +1,6 @@
 <?php
 
-/** 
+/**
  * Copyright (C) 2011 by iRail vzw/asbl
  * Copyright (C) 2016 by Open Knowledge Belgium vzw/asbl.
  *
@@ -37,8 +37,10 @@ class Stations
             $newstations->{'@context'} = $stations->{'@context'};
             $newstations->{'@graph'} = [];
 
-            $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/','Brussels Airport', $query);
-            
+            //https://github.com/iRail/stations/issues/101
+            $query = preg_replace('/Brussel Nat.+/', 'Brussels Airport', $query);
+            $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/', 'Brussels Airport', $query);
+
             //https://github.com/iRail/stations/issues/72
             $query = str_ireplace('- ', '-', $query);
 
@@ -63,9 +65,6 @@ class Stations
             //make sure that we're only taking the first part before a /
             $query = explode('/', $query);
             $query = trim($query[0]);
-            if ($sorted) {
-                usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
-            }
 
             // Dashes are the same as spaces
             $query = self::normalizeAccents($query);
@@ -76,6 +75,10 @@ class Stations
 
             // Create a sorted list based on the vehicle_frequency
             $stations_array = $stations->{'@graph'};
+
+            if ($sorted) {
+                usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
+            }
 
             foreach ($stations_array as $station) {
                 $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
@@ -150,14 +153,14 @@ class Stations
             'Ñ' => 'N', 'Ò' => 'O', 'Ó' => 'O', 'Ô' => 'O',
             'Õ' => 'O', 'Ö' => 'O', 'Ø' => 'O', 'Ù' => 'U',
             'Ú' => 'U', 'Û' => 'U', 'Ü' => 'U', 'Ý' => 'Y',
-            'Þ' => 'B', 'ß' => 'Ss', 'à' => 'a', 'á' => 'a',
+            'Þ' => 'Th', 'ß' => 'Ss', 'à' => 'a', 'á' => 'a',
             'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a',
             'æ' => 'a', 'ç' => 'c', 'è' => 'e', 'é' => 'e',
             'ê' => 'e', 'ë' => 'e', 'ì' => 'i', 'í' => 'i',
             'î' => 'i', 'ï' => 'i', 'ð' => 'o', 'ñ' => 'n',
             'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o',
             'ö' => 'o', 'ø' => 'o', 'ù' => 'u', 'ú' => 'u',
-            'û' => 'u', 'ý' => 'y', 'þ' => 'b', 'œ' => 'oe',
+            'û' => 'u', 'ý' => 'y', 'þ' => 'th', 'œ' => 'oe',
             'ÿ' => 'y',
         ];
 
@@ -193,7 +196,5 @@ class Stations
                 return $station;
             }
         }
-
-        return;
     }
-};
+}

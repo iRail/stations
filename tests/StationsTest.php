@@ -48,7 +48,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $jsonld3 = Stations::getStations('Bruxelles');
         $jsonld4 = Stations::getStations('Bru.-Noord / Brux.-Nord');
         $jsonld5 = Stations::getStations('Brussels Airport - Zaventem');
-        
+
 
         //Assert whether it contains the right number of stations
         $this->assertCount(6, $jsonld1->{'@graph'});
@@ -124,5 +124,35 @@ class StationsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($result1->{'name'}, $result2->{'name'});
         $this->assertEquals($result3->{'name'}, $result2->{'name'});
+    }
+
+    public function testKapellen()
+    {
+        //test whether the right object is returned
+        $result1 = Stations::getStationFromID('008821535');
+        $result2 = Stations::getStations('Kapellen')->{'@graph'}[0];
+
+        $result3 = Stations::getStationFromID('008200518');
+        $result4 = Stations::getStations('Capellen')->{'@graph'}[0];
+
+        $this->assertEquals($result1->{'@id'}, $result2->{'@id'});
+        $this->assertEquals($result3->{'@id'}, $result4->{'@id'});
+    }
+
+    public function testSort()
+    {
+        //test whether Ghent Sint Pieters is the first object when searching for Belgian stations in a sorted fashion
+        $results = Stations::getStations('Gent', 'be', true);
+        $result1 = $results->{'@graph'}[0];
+        $ghentsp = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
+
+        $this->assertEquals($result1->{'name'}, $ghentsp->{'name'});
+
+        $results = Stations::getStations('Brussel', '', true);
+        $result2 = $results->{'@graph'}[0];
+        //The busiest station in Brussels is the south one
+        $brusselssouth = Stations::getStations('Brussels South')->{'@graph'}[0];
+
+        $this->assertEquals($result2->{'name'}, $brusselssouth->{'name'});
     }
 }
