@@ -12,11 +12,11 @@ class Stations
 {
     private static $stationsfilename = '/../../../stations.jsonld';
     private static $stations;
+    const APC_PREFIX = "Irail/Stations/";
+    const APC_TTL = 0; // Store forever (or until restart). Cache can be manually cleared too.
 
     /**
      * Gets you stations in a JSON-LD graph ordered by relevance to the optional query.
-     *
-     * @todo would we be able to implement this with an in-mem store instead of reading from the file each time?
      *
      * @param string $query
      *
@@ -30,6 +30,14 @@ class Stations
             self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
         }
         if ($query && $query !== '') {
+
+            // keep all function parameters in key, separate cache for every unique request.
+            $apc_key = self::APC_PREFIX . $query . '/' . $country . '/' . $sorted;
+
+            if (apc_exists($apc_key)) {
+                return apc_fetch($apc_key);
+            }
+
             // Filter the stations on name match
             $stations = self::$stations;
             $newstations = new \stdClass();
@@ -98,7 +106,8 @@ class Stations
                             }
                         }
                     } else {
-                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                        $testStationName = str_replace(' am ', ' ',
+                            self::normalizeAccents($station->alternative->{'@value'}));
                         if (preg_match('/.*'.$query.'.*/i', $testStationName)
                             || preg_match('/.*('.$query.').*/i', str_replace('\'', ' ', $testStationName), $match)) {
                             $newstations->{'@graph'}[] = $station;
@@ -107,10 +116,12 @@ class Stations
                     }
                 }
                 if ($count > 5) {
+                    apc_store($apc_key, $newstations, self::APC_TTL);
                     return $newstations;
                 }
             }
 
+            apc_store($apc_key, $newstations, self::APC_TTL);
             return $newstations;
         } else {
             return json_decode(file_get_contents(__DIR__.self::$stationsfilename));
@@ -193,6 +204,7 @@ class Stations
 
         foreach ($stationsdocument->{'@graph'} as $station) {
             if ($station->{'@id'} === $id) {
+                apc_store(self::APC_PREFIX . $id, $station, self::APC_TTL);
                 return $station;
             }
         }
