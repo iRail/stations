@@ -34,7 +34,7 @@ class Stations
             // keep all function parameters in key, separate cache for every unique request.
             $apc_key = self::APC_PREFIX . $query . '/' . $country . '/' . $sorted;
 
-            if (apc_exists($apc_key)) {
+            if (extension_loaded('apc') && apc_exists($apc_key)) {
                 return apc_fetch($apc_key);
             }
 
@@ -116,12 +116,19 @@ class Stations
                     }
                 }
                 if ($count > 5) {
-                    apc_store($apc_key, $newstations, self::APC_TTL);
+
+                    if (extension_loaded('apc')) {
+                        apc_store($apc_key, $newstations, self::APC_TTL);
+                    }
+
                     return $newstations;
                 }
             }
 
-            apc_store($apc_key, $newstations, self::APC_TTL);
+            if (extension_loaded('apc')) {
+                apc_store($apc_key, $newstations, self::APC_TTL);
+            }
+
             return $newstations;
         } else {
             return json_decode(file_get_contents(__DIR__.self::$stationsfilename));
@@ -181,12 +188,17 @@ class Stations
     /**
      * Gives an object for an id.
      *
-     * @param $id can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
-     *
-     * @return a simple object for a station
+     * @param $id int|string can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
+     * 
+     * @return Object a simple object for a station
      */
     public static function getStationFromID($id)
     {
+        $apc_key = self::APC_PREFIX . $id;
+        if (extension_loaded('apc') && apc_exists($apc_key)) {
+            return apc_fetch($apc_key);
+        }
+
         //transform the $id into a URI if it's not yet a URI
         if (substr($id, 0, 4) !== 'http') {
             //test for old-style iRail ids
@@ -204,7 +216,11 @@ class Stations
 
         foreach ($stationsdocument->{'@graph'} as $station) {
             if ($station->{'@id'} === $id) {
-                apc_store(self::APC_PREFIX . $id, $station, self::APC_TTL);
+
+                if (extension_loaded('apc')) {
+                    apc_store($apc_key, $station, self::APC_TTL);
+                }
+
                 return $station;
             }
         }
