@@ -82,17 +82,7 @@ class Stations
         self::$cache->save($item);
     }
 
-    /**
-     * Gets you stations in a JSON-LD graph ordered by relevance to the optional query.
-     *
-     * @param string $query
-     *
-     * @todo @param string country shortcode for a country (e.g., be, de, fr...)
-     *
-     * @return object a JSON-LD graph with context
-     */
-    public static function getStations($query = '', $country = '', $sorted = false)
-    {
+    private static function loadJsonLd(){
         if (!isset(self::$stations)) {
             // try to load from cache. If not availabe, load from file.
             $csv_key = self::APC_PREFIX . 'csv';
@@ -104,8 +94,22 @@ class Stations
                 self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
                 self::setCache($csv_key,self::$stations);
             }
-
         }
+    }
+
+    /**
+     * Gets you stations in a JSON-LD graph ordered by relevance to the optional query.
+     *
+     * @param string $query
+     *
+     * @todo @param string country shortcode for a country (e.g., be, de, fr...)
+     *
+     * @return object a JSON-LD graph with context
+     */
+    public static function getStations($query = '', $country = '', $sorted = false)
+    {
+        self::loadJsonLd();
+
         if ($query && $query !== '') {
 
             // Escape all special characters for PSR6-compliant key.
@@ -289,9 +293,7 @@ class Stations
             $id = 'http://irail.be/stations/NMBS/'.$id;
         }
 
-        if (!isset(self::$stations)) {
-            self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
-        }
+        self::loadJsonLd();
 
         $stationsdocument = self::$stations;
 
