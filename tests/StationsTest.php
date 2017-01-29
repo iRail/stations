@@ -159,10 +159,13 @@ class StationsTest extends PHPUnit_Framework_TestCase
 
     function testPerformance()
     {
-        apc_clear_cache();
+        // clear cache for a good time measurement
+        $cache = Stations::createCachePool();
+        $cache->clear();
+
         // test sample should be large enough.
         // 100 iterations of 50 stations for a good average.
-        $n = 10;
+        $n = 100;
 
         $time_pre = microtime(true);
         for ($i = 0; $i < $n; $i++) {
@@ -226,15 +229,9 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $exec_time = $time_post - $time_pre;
         $exec_time = ($exec_time * 1000) / $n;
 
-        $status = (extension_loaded('apc') && ini_get('apc.enabled') && ini_get('apc.enable_cli')) ? "enabled" : "disabled";
+        echo "Testing $n liveboards took an average of $exec_time ms for 1 liveboard, using " . get_class($cache) . "\n";
+        echo "Note: When using APC, use '-d apc.enable_cli=1' in the phpunit argument to test with APC enabled.\n";
 
-        echo "Testing $n liveboards took an average of $exec_time ms for 1 liveboard, with APC $status.\n";
-
-        if ($status == "disabled") {
-            echo "Use '-d apc.enable_cli=1' in the phpunit argument to test with APC enabled.\n";
-        }
-
-        assert(extension_loaded('apc') && ini_get('apc.enabled'), "APC should be enabled!");
     }
 
 }

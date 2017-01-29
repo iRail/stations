@@ -8,12 +8,72 @@
  */
 namespace irail\stations;
 
+use Cache\Adapter\Apc\ApcCachePool;
+use Cache\Adapter\Common\AbstractCachePool;
+
 class Stations
 {
     private static $stationsfilename = '/../../../stations.jsonld';
     private static $stations;
-    const APC_PREFIX = "Irail/Stations/";
+
+    /**
+     * @var $cache AbstractCachePool
+     */
+    private static $cache;
+
+    const APC_PREFIX = "|Irail|Stations|";
     const APC_TTL = 0; // Store forever (or until restart). Cache can be manually cleared too.
+
+    /**
+     * Create a cache pool if it does not exists.
+     * @return \Cache\Adapter\Apc\ApcCachePool|\Cache\Adapter\Common\AbstractCachePool The cache pool
+     */
+    public static function createCachePool()
+    {
+        if (self::$cache == null) {
+            self::$cache = new ApcCachePool();
+        }
+
+        return self::$cache;
+    }
+
+    /**
+     * Get an item from the cache.
+     *
+     * @param String $key The key to search for.
+     * @return bool|object The cached object if found. If not found, false.
+     */
+    private static function getFromCache($key)
+    {
+        self::createCachePool();
+
+        if (self::$cache->hasItem($key)) {
+            return self::$cache->getItem($key)->get();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Store an object in cache
+     *
+     * @param string $key The key identifier for this object
+     * @param object $value The object to store
+     * @param int    $ttl How long this item should be kept in cache
+     */
+    private static function setCache($key, $value, $ttl = 0)
+    {
+        self::createCachePool();
+
+        $item = self::$cache->getItem($key);
+
+        $item->set($value);
+        if ($ttl > 0) {
+            $item->expiresAfter($ttl);
+        }
+
+        self::$cache->save($item);
+    }
 
     /**
      * Gets you stations in a JSON-LD graph ordered by relevance to the optional query.
@@ -27,15 +87,29 @@ class Stations
     public static function getStations($query = '', $country = '', $sorted = false)
     {
         if (!isset(self::$stations)) {
-            self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
+            // try to load from cache. If not availabe, load from file.
+            $csv_key = self::APC_PREFIX . 'csv';
+            $cached = self::getFromCache($csv_key);
+
+            if ($cached != false) {
+                self::$stations = $cached;
+            } else {
+                self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
+                self::setCache($csv_key,self::$stations);
+            }
+
         }
         if ($query && $query !== '') {
 
-            // keep all function parameters in key, separate cache for every unique request.
-            $apc_key = self::APC_PREFIX . $query . '/' . $country . '/' . $sorted;
+            // Escape all special characters for PSR6-compliant key.
+            $query_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $query);
 
-            if (extension_loaded('apc') && apc_exists($apc_key)) {
-                return apc_fetch($apc_key);
+            // keep all function parameters in key, separate cache for every unique request.
+            $apc_key = self::APC_PREFIX . $query_cache_key . '|' . $country . '|' . $sorted;
+
+            $cached = self::getFromCache($apc_key);
+            if ($cached != false) {
+                return $cached;
             }
 
             // Filter the stations on name match
@@ -117,17 +191,13 @@ class Stations
                 }
                 if ($count > 5) {
 
-                    if (extension_loaded('apc')) {
-                        apc_store($apc_key, $newstations, self::APC_TTL);
-                    }
+                    self::setCache($apc_key, $newstations, self::APC_TTL);
 
                     return $newstations;
                 }
             }
 
-            if (extension_loaded('apc')) {
-                apc_store($apc_key, $newstations, self::APC_TTL);
-            }
+            self::setCache($apc_key, $newstations, self::APC_TTL);
 
             return $newstations;
         } else {
@@ -194,9 +264,13 @@ class Stations
      */
     public static function getStationFromID($id)
     {
-        $apc_key = self::APC_PREFIX . $id;
-        if (extension_loaded('apc') && apc_exists($apc_key)) {
-            return apc_fetch($apc_key);
+        // Escape all special characters for PSR6-compliant key.
+        $id_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $id);
+        $apc_key = self::APC_PREFIX . $id_cache_key;
+
+        $cached = self::getFromCache($apc_key);
+        if ($cached != false) {
+            return $cached;
         }
 
         //transform the $id into a URI if it's not yet a URI
@@ -217,9 +291,7 @@ class Stations
         foreach ($stationsdocument->{'@graph'} as $station) {
             if ($station->{'@id'} === $id) {
 
-                if (extension_loaded('apc')) {
-                    apc_store($apc_key, $station, self::APC_TTL);
-                }
+                self::setCache($apc_key, $station, self::APC_TTL);
 
                 return $station;
             }
