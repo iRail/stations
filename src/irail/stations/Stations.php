@@ -10,6 +10,7 @@ namespace irail\stations;
 
 use Cache\Adapter\Apc\ApcCachePool;
 use Cache\Adapter\Common\AbstractCachePool;
+use Cache\Adapter\PHPArray\ArrayCachePool;
 
 class Stations
 {
@@ -31,7 +32,13 @@ class Stations
     public static function createCachePool()
     {
         if (self::$cache == null) {
-            self::$cache = new ApcCachePool();
+            // Try to use APC when available
+            if (extension_loaded('apc')) {
+                self::$cache = new ApcCachePool();
+            } else {
+                // Fall back to array cache
+                self::$cache = new ArrayCachePool();
+            }
         }
 
         return self::$cache;
