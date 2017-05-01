@@ -337,7 +337,7 @@ http://irail.be/stations/NMBS/008822111,Londerzeel,,,,,be,4.299073,51.009091,36.
 http://irail.be/stations/NMBS/008861416,Lonzée,,,,,be,4.7201,50.551935,30.820809248555
 http://irail.be/stations/NMBS/008814357,Lot,,,,,be,4.273696,50.766364,49.054913294798
 http://irail.be/stations/NMBS/008811676,Louvain-la-Neuve-Université,,,,,be,4.615745,50.669793,79.942196531792
-http://irail.be/stations/NMBS/008863156,Lustin,,,,,be,4.877241,50.391559,34.167630057803
+http://irail.be/stations/NMBS/008863156,Lustin,,,,,be,4.877071380615234,50.369000316323856,34.167630057803
 http://irail.be/stations/NMBS/008871308,Luttre,,,,,be,4.38412,50.505856,101.96242774566
 http://irail.be/stations/NMBS/008886041,Maffle,,,,,be,3.800117,50.614356,26.037572254335
 http://irail.be/stations/NMBS/008822137,Malderen,,,,,be,4.22911,51.014484,23.023121387283
@@ -618,7 +618,7 @@ http://irail.be/stations/NMBS/008776302,Valence TGV,,,,,fr,4.978529,44.992586,6.
 http://irail.be/stations/NMBS/008015345,Aachen Hbf,Aix-la-Chapelle Hbf,Aken Hbf,,,de,6.105275,50.770832,33.263005780347
 http://irail.be/stations/NMBS/008008094,Düsseldorf Hbf,,,,,de,6.794319,51.219962,4.2225433526012
 http://irail.be/stations/NMBS/008039904,Düsseldorf Flughafen Hbf,,,,,de,6.786837,51.292008,1.3988439306358
-http://irail.be/stations/NMBS/008010184,Essen Hbf,,,,,de,4.4512862,51.451355,4.2225433526012
+http://irail.be/stations/NMBS/008010184,Essen Hbf,,,,,de,7.014427185058594,51.45142619727769,4.2225433526012
 http://irail.be/stations/NMBS/008010316,Duisburg Hbf,,,,,de,6.7759037,51.42978,2.8121387283237
 http://irail.be/stations/NMBS/008011090,Frankfurt am Main Flughafen,Francfort-sur-le-Main Aéroport,Frankfurt am Main Luchthaven,,Frankfurt am Main Airport,de,8.569853,50.051696,5.7167630057803
 http://irail.be/stations/NMBS/008011068,Frankfurt am Main Hbf,Francfort-sur-le-Main Hbf,,,,de,8.6653708,50.1071318,5.7167630057803
@@ -642,6 +642,6 @@ http://irail.be/stations/NMBS/008200132,Wilwerwiltz,,,,,lu,5.999166,49.988887,17
 http://irail.be/stations/NMBS/008500010,Basel,,Bazel,,,ch,7.590716,47.547408,2.0578034682081
 http://irail.be/stations/NMBS/007015440,Ebbsfleet International,,,,,gb,0.32107,51.44304,0
 http://irail.be/stations/NMBS/007015400,London Saint Pancras International,Londres Saint Pancras,Londen Saint Pancras,,,gb,-0.1260606,51.5310399,0
-http://irail.be/stations/NMBS/008815016,Thurn en Taxis/Tour et Taxis,Tour et Taxis,Thurn en Taxis,Tour et Taxis,Thurn en Taxis,be,4.3485929,50.8642714,0
+http://irail.be/stations/NMBS/008815016,Thurn en Taxis/Tour et Taxis,Tour et Taxis,Thurn en Taxis,Tour et Taxis,Thurn en Taxis,be,4.341090917587279,50.87175167644673,0
 http://irail.be/stations/NMBS/008811403,Mouterij/Germoir,Germoir,Mouterij,Germoir,Mouterij,be,4.37866,50.829929,0
 http://irail.be/stations/NMBS/008814472,Arcaden/Arcades,Arcades,Arcaden,,,be,4.398333,50.809722,0
