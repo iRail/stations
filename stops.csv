@@ -106,9 +106,9 @@ http://irail.be/stations/NMBS/008811601#10,http://irail.be/stations/NMBS/0088116
 http://irail.be/stations/NMBS/008811601#11,http://irail.be/stations/NMBS/008811601,4.56936,50.673667,Ottignies,11
 http://irail.be/stations/NMBS/008811635#1,http://irail.be/stations/NMBS/008811635,4.575302,50.69214,Limal,1
 http://irail.be/stations/NMBS/008811635#2,http://irail.be/stations/NMBS/008811635,4.575302,50.69214,Limal,2
-http://irail.be/stations/NMBS/008811676#1,http://irail.be/stations/NMBS/008811676,4.615745,50.669793,Louvain-la-Neuve-Université,1
-http://irail.be/stations/NMBS/008811676#2,http://irail.be/stations/NMBS/008811676,4.615745,50.669793,Louvain-la-Neuve-Université,2
-http://irail.be/stations/NMBS/008811676#3,http://irail.be/stations/NMBS/008811676,4.615745,50.669793,Louvain-la-Neuve-Université,3
+http://irail.be/stations/NMBS/008811676#1,http://irail.be/stations/NMBS/008811676,4.615745,50.669793,Louvain-la-Neuve,1
+http://irail.be/stations/NMBS/008811676#2,http://irail.be/stations/NMBS/008811676,4.615745,50.669793,Louvain-la-Neuve,2
+http://irail.be/stations/NMBS/008811676#3,http://irail.be/stations/NMBS/008811676,4.615745,50.669793,Louvain-la-Neuve,3
 http://irail.be/stations/NMBS/008811718#1,http://irail.be/stations/NMBS/008811718,4.594746,50.707772,Bierges-Walibi,1
 http://irail.be/stations/NMBS/008811718#2,http://irail.be/stations/NMBS/008811718,4.594746,50.707772,Bierges-Walibi,2
 http://irail.be/stations/NMBS/008811726#1,http://irail.be/stations/NMBS/008811726,4.604778,50.716267,Wavre,1
@@ -331,10 +331,10 @@ http://irail.be/stations/NMBS/008821238#1,http://irail.be/stations/NMBS/00882123
 http://irail.be/stations/NMBS/008821238#2,http://irail.be/stations/NMBS/008821238,4.455737,51.171256,Mortsel-Oude God,2
 http://irail.be/stations/NMBS/008821246#1,http://irail.be/stations/NMBS/008821246,4.468843,51.169027,Mortsel-Liersesteenweg,1
 http://irail.be/stations/NMBS/008821246#2,http://irail.be/stations/NMBS/008821246,4.468843,51.169027,Mortsel-Liersesteenweg,2
-http://irail.be/stations/NMBS/008821311#1,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich,1
-http://irail.be/stations/NMBS/008821311#2,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich,2
-http://irail.be/stations/NMBS/008821311#3,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich,3
-http://irail.be/stations/NMBS/008821311#4,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich,4
+http://irail.be/stations/NMBS/008821311#1,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich-Lint,1
+http://irail.be/stations/NMBS/008821311#2,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich-Lint,2
+http://irail.be/stations/NMBS/008821311#3,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich-Lint,3
+http://irail.be/stations/NMBS/008821311#4,http://irail.be/stations/NMBS/008821311,4.476358,51.134023,Kontich-Lint,4
 http://irail.be/stations/NMBS/008821337#1,http://irail.be/stations/NMBS/008821337,4.465157,51.154114,Hove,1
 http://irail.be/stations/NMBS/008821337#2,http://irail.be/stations/NMBS/008821337,4.465157,51.154114,Hove,2
 http://irail.be/stations/NMBS/008821337#3,http://irail.be/stations/NMBS/008821337,4.465157,51.154114,Hove,3
@@ -818,12 +818,12 @@ http://irail.be/stations/NMBS/008863842#3,http://irail.be/stations/NMBS/00886384
 http://irail.be/stations/NMBS/008863842#4,http://irail.be/stations/NMBS/008863842,5.006074,50.189868,Houyet,4
 http://irail.be/stations/NMBS/008863867#1,http://irail.be/stations/NMBS/008863867,4.95684,50.11443,Beauraing,1
 http://irail.be/stations/NMBS/008863867#2,http://irail.be/stations/NMBS/008863867,4.95684,50.11443,Beauraing,2
-http://irail.be/stations/NMBS/008864006#1,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Jemelle,1
-http://irail.be/stations/NMBS/008864006#2,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Jemelle,2
-http://irail.be/stations/NMBS/008864006#3,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Jemelle,3
-http://irail.be/stations/NMBS/008864006#4,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Jemelle,4
-http://irail.be/stations/NMBS/008864006#5,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Jemelle,5
-http://irail.be/stations/NMBS/008864006#6,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Jemelle,6
+http://irail.be/stations/NMBS/008864006#1,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Rochefort-Jemelle,1
+http://irail.be/stations/NMBS/008864006#2,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Rochefort-Jemelle,2
+http://irail.be/stations/NMBS/008864006#3,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Rochefort-Jemelle,3
+http://irail.be/stations/NMBS/008864006#4,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Rochefort-Jemelle,4
+http://irail.be/stations/NMBS/008864006#5,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Rochefort-Jemelle,5
+http://irail.be/stations/NMBS/008864006#6,http://irail.be/stations/NMBS/008864006,5.266698,50.160401,Rochefort-Jemelle,6
 http://irail.be/stations/NMBS/008864311#1,http://irail.be/stations/NMBS/008864311,5.276784,50.132759,Forrières,1
 http://irail.be/stations/NMBS/008864311#2,http://irail.be/stations/NMBS/008864311,5.276784,50.132759,Forrières,2
 http://irail.be/stations/NMBS/008864337#1,http://irail.be/stations/NMBS/008864337,5.280524,50.0906,Grupont,1
