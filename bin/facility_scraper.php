@@ -157,10 +157,11 @@ function get_station_facilities_line($id)
     $opening_hours_div = $html->getElementById("ctl00_ctl00_bodyPlaceholder_bodyPlaceholder_AllStationCriteriaGroupsList_ctl04_AllCriteriaGroup_criteriaGroupList_ctl01_DefaultCriteriaGroup1_titleModBlue")
         ->parent();
 
-    $opening_hours_scraped = false;
+    // The number of scraped days
+    $opening_hours_scraped = 0;
 
     foreach ($opening_hours_div->find(".criteria-opening-hours") as $table) {
-        if ($opening_hours_scraped) {
+        if ($opening_hours_scraped > 0) {
             continue;
         }
         foreach ($table->find("li.hoursTable div div") as $value) {
@@ -172,12 +173,12 @@ function get_station_facilities_line($id)
             $result .= $open . "," . $close . ",";
 
             // We found a table containing hours
-            $opening_hours_scraped = true;
+            $opening_hours_scraped++;
         }
     }
-    if (! $opening_hours_scraped) {
-        // No opening hours
-        $result .= ",,,,,,,,,,,,,,";
+    while ($opening_hours_scraped < 7){
+        $result .= ',,';
+        $opening_hours_scraped++;
     }
 
     return $result;
