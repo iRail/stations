@@ -22,13 +22,6 @@
     }
   },
   "require-dev" : {
-    "aterrien/forp-profiler" : "~1.1",
     "phpunit/phpunit": "^5.5"
-  },
-  "repositories" : [
-    {
-      "type" : "git",
-      "url"  : "git@github.com:aterrien/forp-PHP-profiler.git"
-    }
-  ]
+  }
 }
