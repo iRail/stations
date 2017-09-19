@@ -234,7 +234,7 @@ class Stations
     }
 
     /**
-     * @param $str
+     * @param string $str
      *
      * @return string
      *                Languages supported are: German, French and Dutch
