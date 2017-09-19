@@ -135,7 +135,7 @@ class Stations
     }
 
     /**
-     * @param $str
+     * @param string $str
      *
      * @return string
      *                Languages supported are: German, French and Dutch
@@ -170,9 +170,9 @@ class Stations
     /**
      * Gives an object for an id.
      *
-     * @param $id can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
+     * @param string $id can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
      *
-     * @return a simple object for a station
+     * @return array a simple object for a station
      */
     public static function getStationFromID($id)
     {
