@@ -286,7 +286,7 @@ class Stations
         $apc_key = self::APC_PREFIX . $id_cache_key;
 
         $cached = self::getFromCache($apc_key);
-        if ($cached != false) {
+        if ($cached !== false) {
             return $cached;
         }
 
