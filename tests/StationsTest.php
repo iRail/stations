@@ -155,4 +155,83 @@ class StationsTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals($result2->{'name'}, $brusselssouth->{'name'});
     }
+
+
+    function testPerformance()
+    {
+        // clear cache for a good time measurement
+        $cache = Stations::createCachePool();
+        $cache->clear();
+
+        // test sample should be large enough.
+        // 100 iterations of 50 stations for a good average.
+        $n = 100;
+
+        $time_pre = microtime(true);
+        for ($i = 0; $i < $n; $i++) {
+            // 51 stations, Brussels south at 8:00
+            // stations are in order of appearance.
+            // This should somewhat represent a real series of requests.
+            Stations::getStations("Brussels-South/Brussels-Midi");
+            Stations::getStations("Nivelles");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Antwerpen-Centraal");
+            Stations::getStations("Braine-Le-Comte");
+            Stations::getStations("Liege-Palais");
+            Stations::getStations("Oostende");
+            Stations::getStations("Brussels Airport - Zaventem");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Dendermonde");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Genk");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Tournai");
+            Stations::getStations("Charleroi-Sud");
+            Stations::getStations("Landen");
+            Stations::getStations("Louvain-La-Neuve-Univ.");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Sint-Niklaas");
+            Stations::getStations("Gent-Sint-Pieters");
+            Stations::getStations("Antwerpen-Centraal");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Brugge");
+            Stations::getStations("Nivelles");
+            Stations::getStations("Quievrain");
+            Stations::getStations("Brussels Airport - Zaventem");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Oudenaarde");
+            Stations::getStations("Leuven");
+            Stations::getStations("Essen");
+            Stations::getStations("Binche");
+            Stations::getStations("Leuven");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Luxembourg (l)");
+            Stations::getStations("Turnhout");
+            Stations::getStations("Braine-Le-Comte");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Kortrijk");
+            Stations::getStations("Dendermonde");
+            Stations::getStations("Antwerpen-Centraal");
+            Stations::getStations("Liege-Guillemins");
+            Stations::getStations("Oostende");
+            Stations::getStations("Brussels Airport - Zaventem");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Charleroi-Sud");
+            Stations::getStations("Tongeren");
+            Stations::getStations("Schaarbeek / Schaerbeek");
+            Stations::getStations("Amsterdam Cs (nl)");
+            Stations::getStations("Kortrijk");
+        }
+
+        $time_post = microtime(true);
+        $exec_time = $time_post - $time_pre;
+        $exec_time = ($exec_time * 1000) / $n;
+
+        echo "Testing $n liveboards took an average of $exec_time ms for 1 liveboard, using " . get_class($cache) . "\n";
+        echo "Note: When using APC, use '-d apc.enable_cli=1' in the phpunit argument to test with APC enabled.\n";
+
+    }
+
 }

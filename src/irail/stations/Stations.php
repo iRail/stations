@@ -8,15 +8,97 @@
  */
 namespace irail\stations;
 
+use Cache\Adapter\Apc\ApcCachePool;
+use Cache\Adapter\Common\AbstractCachePool;
+use Cache\Adapter\PHPArray\ArrayCachePool;
+
 class Stations
 {
     private static $stationsfilename = '/../../../stations.jsonld';
     private static $stations;
 
     /**
-     * Gets you stations in a JSON-LD graph ordered by relevance to the optional query.
+     * @var $cache AbstractCachePool
+     */
+    private static $cache;
+
+    const APC_PREFIX = "|Irail|Stations|";
+    const APC_TTL = 0; // Store forever (or until restart). Cache can be manually cleared too.
+
+    /**
+     * Create a cache pool if it does not exists.
+     * @return \Cache\Adapter\Apc\ApcCachePool|\Cache\Adapter\Common\AbstractCachePool The cache pool
+     */
+    public static function createCachePool()
+    {
+        if (self::$cache == null) {
+            // Try to use APC when available
+            if (extension_loaded('apc')) {
+                self::$cache = new ApcCachePool();
+            } else {
+                // Fall back to array cache
+                self::$cache = new ArrayCachePool();
+            }
+        }
+
+        return self::$cache;
+    }
+
+    /**
+     * Get an item from the cache.
      *
-     * @todo would we be able to implement this with an in-mem store instead of reading from the file each time?
+     * @param String $key The key to search for.
+     * @return bool|object The cached object if found. If not found, false.
+     */
+    private static function getFromCache($key)
+    {
+        self::createCachePool();
+
+        if (self::$cache->hasItem($key)) {
+            return self::$cache->getItem($key)->get();
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Store an object in cache
+     *
+     * @param string $key The key identifier for this object
+     * @param object $value The object to store
+     * @param int    $ttl How long this item should be kept in cache
+     */
+    private static function setCache($key, $value, $ttl = 0)
+    {
+        self::createCachePool();
+
+        $item = self::$cache->getItem($key);
+
+        $item->set($value);
+        if ($ttl > 0) {
+            $item->expiresAfter($ttl);
+        }
+
+        self::$cache->save($item);
+    }
+
+    private static function loadJsonLd(){
+        if (!isset(self::$stations)) {
+            // try to load from cache. If not availabe, load from file.
+            $csv_key = self::APC_PREFIX . 'csv';
+            $cached = self::getFromCache($csv_key);
+
+            if ($cached != false) {
+                self::$stations = $cached;
+            } else {
+                self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
+                self::setCache($csv_key,self::$stations);
+            }
+        }
+    }
+
+    /**
+     * Gets you stations in a JSON-LD graph ordered by relevance to the optional query.
      *
      * @param string $query
      *
@@ -26,10 +108,21 @@ class Stations
      */
     public static function getStations($query = '', $country = '', $sorted = false)
     {
-        if (!isset(self::$stations)) {
-            self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
-        }
+        self::loadJsonLd();
+
         if ($query && $query !== '') {
+
+            // Escape all special characters for PSR6-compliant key.
+            $query_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $query);
+
+            // keep all function parameters in key, separate cache for every unique request.
+            $apc_key = self::APC_PREFIX . $query_cache_key . '|' . $country . '|' . $sorted;
+
+            $cached = self::getFromCache($apc_key);
+            if ($cached != false) {
+                return $cached;
+            }
+
             // Filter the stations on name match
             $stations = self::$stations;
             $newstations = new \stdClass();
@@ -98,7 +191,8 @@ class Stations
                             }
                         }
                     } else {
-                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                        $testStationName = str_replace(' am ', ' ',
+                            self::normalizeAccents($station->alternative->{'@value'}));
                         if (preg_match('/.*'.$query.'.*/i', $testStationName)
                             || preg_match('/.*('.$query.').*/i', str_replace('\'', ' ', $testStationName), $match)) {
                             $newstations->{'@graph'}[] = $station;
@@ -107,9 +201,14 @@ class Stations
                     }
                 }
                 if ($count > 5) {
+
+                    self::setCache($apc_key, $newstations, self::APC_TTL);
+
                     return $newstations;
                 }
             }
+
+            self::setCache($apc_key, $newstations, self::APC_TTL);
 
             return $newstations;
         } else {
@@ -170,12 +269,21 @@ class Stations
     /**
      * Gives an object for an id.
      *
-     * @param string $id can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
-     *
-     * @return array a simple object for a station
+     * @param $id int|string can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
+     * 
+     * @return Object a simple object for a station
      */
     public static function getStationFromID($id)
     {
+        // Escape all special characters for PSR6-compliant key.
+        $id_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $id);
+        $apc_key = self::APC_PREFIX . $id_cache_key;
+
+        $cached = self::getFromCache($apc_key);
+        if ($cached != false) {
+            return $cached;
+        }
+
         //transform the $id into a URI if it's not yet a URI
         if (substr($id, 0, 4) !== 'http') {
             //test for old-style iRail ids
@@ -185,14 +293,15 @@ class Stations
             $id = 'http://irail.be/stations/NMBS/'.$id;
         }
 
-        if (!isset(self::$stations)) {
-            self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
-        }
+        self::loadJsonLd();
 
         $stationsdocument = self::$stations;
 
         foreach ($stationsdocument->{'@graph'} as $station) {
             if ($station->{'@id'} === $id) {
+
+                self::setCache($apc_key, $station, self::APC_TTL);
+
                 return $station;
             }
         }
