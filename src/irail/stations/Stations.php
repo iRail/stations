@@ -88,7 +88,7 @@ class Stations
             $csv_key = self::APC_PREFIX . 'csv';
             $cached = self::getFromCache($csv_key);
 
-            if ($cached != false) {
+            if ($cached !== false) {
                 self::$stations = $cached;
             } else {
                 self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
@@ -108,112 +108,118 @@ class Stations
      */
     public static function getStations($query = '', $country = '', $sorted = false)
     {
+        if ($query == null || $query === '') {
+            // Loading from the loadJsonLd method has a high chance of a cache hit, meaning decoding and disk IO isn't needed
+            self::loadJsonLd();
+            return self::$stations;
+        }
+
+        // Escape all special characters for PSR6-compliant key.
+        $query_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $query);
+
+        // keep all function parameters in key, separate cache entry for every unique request.
+        $apc_key = self::APC_PREFIX . $query_cache_key . '|' . $country . '|' . $sorted;
+
+        $cached = self::getFromCache($apc_key);
+        if ($cached !== false) {
+            return $cached;
+        }
+
+        // Only require the jsonLD file to be loaded when it's a cache miss
         self::loadJsonLd();
 
-        if ($query && $query !== '') {
+        // Filter the stations on name match
+        $stations = self::$stations;
+        $newstations = new \stdClass();
+        $newstations->{'@id'} = $stations->{'@id'} . '?q=' . $query;
+        $newstations->{'@context'} = $stations->{'@context'};
+        $newstations->{'@graph'} = [];
 
-            // Escape all special characters for PSR6-compliant key.
-            $query_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $query);
+        //https://github.com/iRail/stations/issues/101
+        $query = preg_replace('/Brussel Nat.+/', 'Brussels Airport', $query);
+        $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/', 'Brussels Airport', $query);
 
-            // keep all function parameters in key, separate cache for every unique request.
-            $apc_key = self::APC_PREFIX . $query_cache_key . '|' . $country . '|' . $sorted;
+        //https://github.com/iRail/stations/issues/72
+        $query = str_ireplace('- ', '-', $query);
 
-            $cached = self::getFromCache($apc_key);
-            if ($cached != false) {
-                return $cached;
-            }
+        //https://github.com/iRail/hyperRail/issues/129
+        $query = str_ireplace('l alleud', "l'alleud", $query);
 
-            // Filter the stations on name match
-            $stations = self::$stations;
-            $newstations = new \stdClass();
-            $newstations->{'@id'} = $stations->{'@id'}.'?q='.$query;
-            $newstations->{'@context'} = $stations->{'@context'};
-            $newstations->{'@graph'} = [];
+        //https://github.com/iRail/iRail/issues/165
+        $query = str_ireplace(' Cdg ', ' Charles de Gaulle ', $query);
 
-            //https://github.com/iRail/stations/issues/101
-            $query = preg_replace('/Brussel Nat.+/', 'Brussels Airport', $query);
-            $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/', 'Brussels Airport', $query);
+        $query = str_ireplace(' am ', ' ', $query);
+        $query = str_ireplace('frankfurt fl', 'frankfurt main fl', $query);
 
-            //https://github.com/iRail/stations/issues/72
-            $query = str_ireplace('- ', '-', $query);
+        //https://github.com/iRail/iRail/issues/66
+        $query = str_ireplace('Bru.', 'Brussel', $query);
+        //make sure something between brackets is ignored
+        $query = preg_replace("/\s?\(.*?\)/i", '', $query);
 
-            //https://github.com/iRail/hyperRail/issues/129
-            $query = str_ireplace('l alleud', "l'alleud", $query);
+        // st. is the same as Saint
+        $query = str_ireplace('st-', 'st ', $query);
+        $query = str_ireplace('st.-', 'st ', $query);
+        $query = preg_replace("/st(\s|$|\.)/i", '(saint|st|sint) ', $query);
+        //make sure that we're only taking the first part before a /
+        $query = explode('/', $query);
+        $query = trim($query[0]);
 
-            //https://github.com/iRail/iRail/issues/165
-            $query = str_ireplace(' Cdg ', ' Charles de Gaulle ', $query);
+        // Dashes are the same as spaces
+        $query = self::normalizeAccents($query);
+        $query = str_replace("\-", "[\- ]", $query);
+        $query = str_replace(' ', "[\- ]", $query);
 
-            $query = str_ireplace(' am ', ' ', $query);
-            $query = str_ireplace('frankfurt fl', 'frankfurt main fl', $query);
+        $count = 0;
 
-            //https://github.com/iRail/iRail/issues/66
-            $query = str_ireplace('Bru.', 'Brussel', $query);
-            //make sure something between brackets is ignored
-            $query = preg_replace("/\s?\(.*?\)/i", '', $query);
+        // Create a sorted list based on the vehicle_frequency
+        $stations_array = $stations->{'@graph'};
 
-            // st. is the same as Saint
-            $query = str_ireplace('st-', 'st ', $query);
-            $query = str_ireplace('st.-', 'st ', $query);
-            $query = preg_replace("/st(\s|$|\.)/i", '(saint|st|sint) ', $query);
-            //make sure that we're only taking the first part before a /
-            $query = explode('/', $query);
-            $query = trim($query[0]);
+        if ($sorted) {
+            usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
+        }
 
-            // Dashes are the same as spaces
-            $query = self::normalizeAccents($query);
-            $query = str_replace("\-", "[\- ]", $query);
-            $query = str_replace(' ', "[\- ]", $query);
-
-            $count = 0;
-
-            // Create a sorted list based on the vehicle_frequency
-            $stations_array = $stations->{'@graph'};
-
-            if ($sorted) {
-                usort($stations_array, ['\irail\stations\Stations', 'cmp_stations_vehicle_frequency']);
-            }
-
-            foreach ($stations_array as $station) {
-                $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
-                if (preg_match('/.*'.$query.'.*/i', $testStationName, $match)
-                    || preg_match('/.*'.$query.'.*/i', str_replace('\'', ' ', $testStationName), $match)) {
-                    $newstations->{'@graph'}[] = $station;
-                    $count++;
-                } elseif (isset($station->alternative)) {
-                    if (is_array($station->alternative)) {
-                        foreach ($station->alternative as $alternative) {
-                            $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
-                            if (preg_match('/.*('.$query.').*/i', $testStationName, $match)
-                                || preg_match('/.*('.$query.').*/i', str_replace('\'', ' ', $testStationName), $match)) {
-                                $newstations->{'@graph'}[] = $station;
-                                $count++;
-                                break;
-                            }
-                        }
-                    } else {
-                        $testStationName = str_replace(' am ', ' ',
-                            self::normalizeAccents($station->alternative->{'@value'}));
-                        if (preg_match('/.*'.$query.'.*/i', $testStationName)
-                            || preg_match('/.*('.$query.').*/i', str_replace('\'', ' ', $testStationName), $match)) {
+        foreach ($stations_array as $station) {
+            $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
+            if (preg_match('/.*' . $query . '.*/i', $testStationName, $match)
+                || preg_match('/.*' . $query . '.*/i', str_replace('\'', ' ', $testStationName), $match)
+            ) {
+                $newstations->{'@graph'}[] = $station;
+                $count++;
+            } elseif (isset($station->alternative)) {
+                if (is_array($station->alternative)) {
+                    foreach ($station->alternative as $alternative) {
+                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                        if (preg_match('/.*(' . $query . ').*/i', $testStationName, $match)
+                            || preg_match('/.*(' . $query . ').*/i', str_replace('\'', ' ', $testStationName), $match)
+                        ) {
                             $newstations->{'@graph'}[] = $station;
                             $count++;
+                            break;
                         }
                     }
-                }
-                if ($count > 5) {
-
-                    self::setCache($apc_key, $newstations, self::APC_TTL);
-
-                    return $newstations;
+                } else {
+                    $testStationName = str_replace(' am ', ' ',
+                        self::normalizeAccents($station->alternative->{'@value'}));
+                    if (preg_match('/.*' . $query . '.*/i', $testStationName)
+                        || preg_match('/.*(' . $query . ').*/i', str_replace('\'', ' ', $testStationName), $match)
+                    ) {
+                        $newstations->{'@graph'}[] = $station;
+                        $count++;
+                    }
                 }
             }
+            if ($count > 5) {
 
-            self::setCache($apc_key, $newstations, self::APC_TTL);
+                self::setCache($apc_key, $newstations, self::APC_TTL);
 
-            return $newstations;
-        } else {
-            return json_decode(file_get_contents(__DIR__.self::$stationsfilename));
+                return $newstations;
+            }
         }
+
+        self::setCache($apc_key, $newstations, self::APC_TTL);
+
+        return $newstations;
+
     }
 
     /**
