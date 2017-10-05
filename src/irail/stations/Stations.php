@@ -111,7 +111,7 @@ class Stations
         if ($query == null || $query === '') {
             // Loading from the loadJsonLd method has a high chance of a cache hit, meaning decoding and disk IO isn't needed
             self::loadJsonLd();
-            return self::$stations;
+            return clone self::$stations;
         }
 
         // Escape all special characters for PSR6-compliant key.
