@@ -72,7 +72,7 @@ function get_station_facilities_line($id)
         "ctl00_ctl00_bodyPlaceholder_bodyPlaceholder_AllStationCriteriaGroupsList_ctl04_AllCriteriaGroup_criteriaGroupList_ctl01_DefaultCriteriaGroup1_tabLink")
     ) {
         print "WARNING: The NMBS website seems to have changed! Station $id is being skipped!";
-        return ',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,';
+        return ',,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,';
     }
     $result = "";
 
