@@ -1,5 +1,4 @@
 <?php
-require("./includes/simple_html_dom.php");
 
 /**
  * Scrape the NMBS website for facilities available in a station
@@ -7,10 +6,16 @@ require("./includes/simple_html_dom.php");
  * @author Bertware
  **/
 
+include("./includes/simple_html_dom.php");
+// Don't crash by avoiding require, but give a clear explanation if include failed
+if (! function_exists("str_get_html")) {
+    echo PHP_EOL. 'Change your current working directory to the same location as this file before running!' . PHP_EOL;
+    return;
+}
+
 const STATIONS_CSV = '../stations.csv';
 const STATION_FACILITIES_CSV = "../facilities.csv";
 const NMBS_BASE_URL = "http://www.belgianrail.be/Station.ashx?lang=nl&stationId=";
-
 
 // Open the CSV file that needs a patch.
 $handle = fopen(STATIONS_CSV, 'r');
@@ -60,7 +65,9 @@ function get_station_facilities_line($id)
     $url = NMBS_BASE_URL . $id;
     $webpage = file_get_contents($url);
 
-    // Start by checking if the id of the "opening hours sales points" is included. If the id is not included, the site might have changed, and a warning should be shown!
+    // Start by checking if the id of the "opening hours sales points" is included.
+    // If the id is not included, the site might have changed, and a warning should be shown!
+    // Note: this will fail on stations which are located outside of belgium, in this case the warning can be ignored.
     if (! string_contains($webpage,
         "ctl00_ctl00_bodyPlaceholder_bodyPlaceholder_AllStationCriteriaGroupsList_ctl04_AllCriteriaGroup_criteriaGroupList_ctl01_DefaultCriteriaGroup1_tabLink")
     ) {
@@ -184,15 +191,21 @@ function get_station_facilities_line($id)
     return $result;
 }
 
+/**
+ * @param string $haystack The string to search in
+ * @param string $needle   The string to search for
+ * @return bool            True if the needle was found
+ */
 function string_contains($haystack, $needle)
 {
-    if (strpos($haystack, $needle) !== false) {
-        return true;
-    }
-
-    return false;
+    return (strpos($haystack, $needle) !== false);
 }
 
+/**
+ * @param string $haystack The string to search in
+ * @param string $needle   The string to search for
+ * @return string          String representation, 1 if the needle was found, 0 if not.
+ */
 function string_contains_csvout($haystack, $needle)
 {
     return string_contains($haystack, $needle) ? "1" : "0";
