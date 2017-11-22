@@ -79,9 +79,12 @@ function get_station_facilities_line($id)
     // Address
 
     $html = str_get_html($webpage);
-    $result .= str_replace(',', '', trim($html->find(".title-address")[0]->find("span")[0]->plaintext)) . ',';
+    // Street
+    $result .= ucwords(strtolower(str_replace(',', '', trim($html->find(".title-address")[0]->find("span")[0]->plaintext)))) . ',';
+    // Zip
     $result .= str_replace(',', '', substr(trim($html->find(".title-address")[0]->find("span")[1]->plaintext),0,4)) . ',';
-    $result .= str_replace(',', '', substr(trim($html->find(".title-address")[0]->find("span")[1]->plaintext),5)) . ',';
+    // City
+    $result .= ucwords(strtolower(str_replace(',', '', substr(trim($html->find(".title-address")[0]->find("span")[1]->plaintext),5)))) . ',';
 
     // Facilities
 
@@ -132,8 +135,9 @@ function get_station_facilities_line($id)
 
     // disabled parking spots
 
-    preg_match('/Aantal plaatsen voor gehandicapten:(.*?)(\d+)/is', $webpage, $matches);
-    if ($matches && count($matches ) == 2){
+    preg_match('/Aantal plaatsen voor gehandicapten:(.*?)(\d+)/si', $webpage, $matches);
+
+    if ($matches != null && count($matches) == 3){
         $result .= $matches[2] . ',';
     } else {
         $result .= '0,';
