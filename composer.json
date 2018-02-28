@@ -6,7 +6,7 @@
     "pre-install-cmd" : "npm install ; node bin/build.js > stations.jsonld",
     "pre-update-cmd": "npm install ; node bin/build.js > stations.jsonld"
   },
-  "license": "CC0",
+  "license": "CC0-1.0",
   "authors": [
     {
       "name": "Pieter Colpaert",
