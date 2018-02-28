@@ -119,11 +119,11 @@ function get_station_facilities_line($id)
 
     // tram
     $result .= string_contains_csvout($webpage,
-            "http://www.belgianrail.be//~/media/Images/Station/CriteriaGroup/tram.ashx?h=42&amp;w=42") . ",";
+            "http://www.belgianrail.be//~/media/Images/Station/Criteria/tram.ashx?h=42&amp;w=42") . ",";
 
     // metro
     $result .= string_contains_csvout($webpage,
-            "http://www.belgianrail.be//~/media/Images/Station/CriteriaGroup/metro.ashx?h=42&amp;w=42") . ",";
+            "http://www.belgianrail.be//~/media/Images/Station/Criteria/metro.ashx?h=42&amp;w=42") . ",";
 
     // wheelchair available
     $result .= string_contains_csvout($webpage,
