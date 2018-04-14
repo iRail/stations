@@ -59,6 +59,58 @@ class StationsTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Regression test for #128
+     * When making a query, the station which matches best should be on top.
+     */
+    public function testExactNameQueries()
+    {
+
+        // If this passes, we're off for a good start. Verify all stations.
+        $stations = Stations::getStations();
+        foreach ($stations->{'@graph'} as $station) {
+            echo("Testing exact match for $station->name...");
+            $jsonld = Stations::getStations($station->name);
+            $this->assertGreaterThanOrEqual(1, $jsonld->{'@graph'});
+            $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
+            $this->assertEquals($station->{'@id'}, $jsonld->{'@graph'}[0]->{'@id'});
+
+            if (isset($station->alternative)) {
+                // If this station in the list has an alternative form, try to match alternatives
+
+                // If it's not an array, put it in an array. If it's an array, just copy.
+                if (is_array($station->alternative)) {
+                    $alternatives = $station->alternative;
+                } else {
+                    $alternatives = [$station->alternative];
+                }
+
+                foreach ($alternatives as $alternative) {
+                    echo("Testing exact match for {$alternative->{"@value"}}...");
+                    $jsonld = Stations::getStations($alternative->{"@value"});
+                    $this->assertGreaterThanOrEqual(1, $jsonld->{'@graph'});
+                    $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
+                    $this->assertEquals($station->{'@id'}, $jsonld->{'@graph'}[0]->{'@id'});
+                }
+            }
+        }
+    }
+
+    /**
+     * Regression test for #129
+     * Dashes and spaces should be handled correctly.
+     */
+    public function testSpacesAndDashes()
+    {
+        $names = ["Marne-la-Vallée - Chessy", "Marne-la-Vallée-Chessy", "Marne la Vallée Chessy", " Marne  - - la    Vallée  Chessy"];
+        foreach ($names as $name) {
+            $jsonld = Stations::getStations($name);
+            $this->assertGreaterThanOrEqual(1, $jsonld->{'@graph'});
+            $this->assertEquals("Marne-la-Vallée - Chessy", $jsonld->{'@graph'}[0]->name);
+            $this->assertEquals("http://irail.be/stations/NMBS/008711184", $jsonld->{'@graph'}[0]->{'@id'});
+        }
+    }
+
+    /**
      * Test UTF-8 queries.
      */
     public function testEncoding()

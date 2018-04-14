@@ -6,6 +6,7 @@
  *
  * Basic functionalities needed for playing with Belgian railway stations in Belgium
  */
+
 namespace irail\stations;
 
 use Cache\Adapter\Apc\ApcCachePool;
@@ -82,7 +83,8 @@ class Stations
         self::$cache->save($item);
     }
 
-    private static function loadJsonLd(){
+    private static function loadJsonLd()
+    {
         if (!isset(self::$stations)) {
             // try to load from cache. If not availabe, load from file.
             $csv_key = self::APC_PREFIX . 'csv';
@@ -91,8 +93,8 @@ class Stations
             if ($cached !== false) {
                 self::$stations = $cached;
             } else {
-                self::$stations = json_decode(file_get_contents(__DIR__.self::$stationsfilename));
-                self::setCache($csv_key,self::$stations);
+                self::$stations = json_decode(file_get_contents(__DIR__ . self::$stationsfilename));
+                self::setCache($csv_key, self::$stations);
             }
         }
     }
@@ -166,8 +168,7 @@ class Stations
 
         // Dashes are the same as spaces
         $query = self::normalizeAccents($query);
-        $query = str_replace("\-", "[\- ]", $query);
-        $query = str_replace(' ', "[\- ]", $query);
+        $query = preg_replace("/(-| )+/", " ", $query);
 
         $count = 0;
 
@@ -180,38 +181,50 @@ class Stations
 
         foreach ($stations_array as $station) {
             $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
-            if (preg_match('/.*' . $query . '.*/i', $testStationName, $match)
-                || preg_match('/.*' . $query . '.*/i', str_replace('\'', ' ', $testStationName), $match)
-            ) {
+            $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
+
+            if (self::isEqualCaseInsensitive($query, $testStationName)) {
+                // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
+                $newstations->{'@graph'} = [$station];
+                self::setCache($apc_key, $newstations, self::APC_TTL);
+                return $newstations;
+            }
+
+            if (self::isQueryPartOfName($query, $testStationName)) {
+                // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
                 $newstations->{'@graph'}[] = $station;
                 $count++;
-            } elseif (isset($station->alternative)) {
-                if (is_array($station->alternative)) {
-                    foreach ($station->alternative as $alternative) {
-                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
-                        if (preg_match('/.*(' . $query . ').*/i', $testStationName, $match)
-                            || preg_match('/.*(' . $query . ').*/i', str_replace('\'', ' ', $testStationName), $match)
-                        ) {
+            }
+
+            // Even when we have a partial match, we should keep searching for an exact math
+            if (isset($station->alternative)) {
+                // If this station in the list has an alternative form, try to match alternatives
+
+                foreach ($station->alternative as $alternative) {
+                    $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                    $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
+
+                    if (self::isEqualCaseInsensitive($query, $testStationName)) {
+                        // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
+                        $newstations->{'@graph'} = [$station];
+                        self::setCache($apc_key, $newstations, self::APC_TTL);
+                        return $newstations;
+                    }
+                    if (!in_array($station, $newstations->{'@graph'})) {
+                        // Don't try a partial match if we found it in an earlier version already!
+                        if (self::isQueryPartOfName($query, $testStationName)) {
                             $newstations->{'@graph'}[] = $station;
                             $count++;
                             break;
                         }
                     }
-                } else {
-                    $testStationName = str_replace(' am ', ' ',
-                        self::normalizeAccents($station->alternative->{'@value'}));
-                    if (preg_match('/.*' . $query . '.*/i', $testStationName)
-                        || preg_match('/.*(' . $query . ').*/i', str_replace('\'', ' ', $testStationName), $match)
-                    ) {
-                        $newstations->{'@graph'}[] = $station;
-                        $count++;
-                    }
+
                 }
             }
+
+            // Don't keep searching after 5 results. Return.
             if ($count > 5) {
-
                 self::setCache($apc_key, $newstations, self::APC_TTL);
-
                 return $newstations;
             }
         }
@@ -223,6 +236,32 @@ class Stations
     }
 
     /**
+     * Check if a query is part of a station name. Case insensitive
+     * @param $query String the query we're looking for
+     * @param $testStationName String The station name which might contain query
+     * @return bool True if $query is in $testStationName
+     */
+    private
+    static function isQueryPartOfName($query, $testStationName)
+    {
+        return preg_match('/.*(' . $query . ').*/i', $testStationName, $match)
+            || preg_match('/.*(' . $query . ').*/i', str_replace('\'', ' ', $testStationName), $match);
+    }
+
+    /**
+     * Check if a query equals a string, case and apostrophe insensitive
+     * @param $query String the query we're looking for
+     * @param $testStationName String The station name which might be equal to query
+     * @return bool True if $query is equal to $testStationName, except possible casing or apostrophes
+     */
+    private
+    static function isEqualCaseInsensitive($query, $testStationName)
+    {
+        return preg_match('/^' . $query . '$/i', $testStationName, $match)
+            || preg_match('/^' . $query . '$/i', str_replace('\'', ' ', $testStationName), $match);
+    }
+
+    /**
      * Compare 2 stations based on vehicle frequency.
      *
      * @param $a \stdClass the first station
@@ -230,7 +269,8 @@ class Stations
      *
      * @return int The result of the compare. 0 if equal, -1 if a is after b, 1 if b is before a
      */
-    public static function cmp_stations_vehicle_frequency($a, $b)
+    public
+    static function cmp_stations_vehicle_frequency($a, $b)
     {
         if ($a == $b) {
             return 0;
@@ -247,7 +287,8 @@ class Stations
      *                We have to take into account that some words may have accents
      *                Taken from https://stackoverflow.com/questions/3371697/replacing-accented-characters-php
      */
-    private static function normalizeAccents($str)
+    private
+    static function normalizeAccents($str)
     {
         $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
@@ -276,10 +317,11 @@ class Stations
      * Gives an object for an id.
      *
      * @param $id int|string can be a URI, a hafas id or an old-style iRail id (BE.NMBS.{hafasid})
-     * 
+     *
      * @return Object a simple object for a station
      */
-    public static function getStationFromID($id)
+    public
+    static function getStationFromID($id)
     {
         // Escape all special characters for PSR6-compliant key.
         $id_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $id);
@@ -296,7 +338,7 @@ class Stations
             if (substr($id, 0, 8) === 'BE.NMBS.') {
                 $id = substr($id, 8);
             }
-            $id = 'http://irail.be/stations/NMBS/'.$id;
+            $id = 'http://irail.be/stations/NMBS/' . $id;
         }
 
         self::loadJsonLd();
@@ -312,4 +354,6 @@ class Stations
             }
         }
     }
+
+
 }
