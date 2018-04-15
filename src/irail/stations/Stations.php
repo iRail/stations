@@ -183,42 +183,47 @@ class Stations
             $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
             $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
 
+            $hasMatched = false;
+
             if (self::isEqualCaseInsensitive($query, $testStationName)) {
                 // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                $newstations->{'@graph'} = [$station];
-                self::setCache($apc_key, $newstations, self::APC_TTL);
-                return $newstations;
-            }
-
-            if (self::isQueryPartOfName($query, $testStationName)) {
-                // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                $newstations->{'@graph'}[] = $station;
+                self::arrayPutValueFirst($newstations->{'@graph'}, $station);
                 $count++;
-            }
+            } else {
 
-            // Even when we have a partial match, we should keep searching for an exact math
-            if (isset($station->alternative)) {
-                // If this station in the list has an alternative form, try to match alternatives
+                if (self::isQueryPartOfName($query, $testStationName)) {
+                    // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
+                    $newstations->{'@graph'}[] = $station;
+                    $hasMatched = true;
+                    $count++;
+                }
 
-                foreach ($station->alternative as $alternative) {
-                    $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
-                    $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
+                // Even when we have a partial match, we should keep searching for an exact math
+                if (isset($station->alternative)) {
 
-                    if (self::isEqualCaseInsensitive($query, $testStationName)) {
-                        // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                        $newstations->{'@graph'} = [$station];
-                        self::setCache($apc_key, $newstations, self::APC_TTL);
-                        return $newstations;
-                    }
-                    if (!in_array($station, $newstations->{'@graph'})) {
-                        // Don't try a partial match if we found it in an earlier version already!
-                        if (self::isQueryPartOfName($query, $testStationName)) {
-                            $newstations->{'@graph'}[] = $station;
+                    // If this station in the list has an alternative form, try to match alternatives
+                    foreach ($station->alternative as $alternative) {
+                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
+                        $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
+
+                        if (self::isEqualCaseInsensitive($query, $testStationName)) {
+                            // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
+                            self::arrayPutValueFirst($newstations->{'@graph'}, $station);
                             $count++;
                             break;
                         }
-                    }
 
+                        // prevent duplicates by checking if we found it already
+                        if (!$hasMatched && !in_array($station, $newstations->{'@graph'})) {
+                            // Don't try a partial match if we found it in an earlier version already!
+                            if (self::isQueryPartOfName($query, $testStationName)) {
+                                $newstations->{'@graph'}[] = $station;
+                                $count++;
+                                break;
+                            }
+                        }
+
+                    }
                 }
             }
 
@@ -232,7 +237,19 @@ class Stations
         self::setCache($apc_key, $newstations, self::APC_TTL);
 
         return $newstations;
+    }
 
+    /**
+     * Put an array value first. If the array contains the value already, move the value to the first place.
+     * @param $array array The array in which the value should be stored
+     * @param $value mixed The value to store
+     */
+    private static function arrayPutValueFirst(&$array, $value)
+    {
+        if (($key = array_search($value, $array)) !== false) {
+            unset($array[$key]);
+        }
+        array_unshift($array,$value);
     }
 
     /**
@@ -241,8 +258,7 @@ class Stations
      * @param $testStationName String The station name which might contain query
      * @return bool True if $query is in $testStationName
      */
-    private
-    static function isQueryPartOfName($query, $testStationName)
+    private static function isQueryPartOfName($query, $testStationName)
     {
         return preg_match('/.*(' . $query . ').*/i', $testStationName, $match)
             || preg_match('/.*(' . $query . ').*/i', str_replace('\'', ' ', $testStationName), $match);
@@ -254,8 +270,7 @@ class Stations
      * @param $testStationName String The station name which might be equal to query
      * @return bool True if $query is equal to $testStationName, except possible casing or apostrophes
      */
-    private
-    static function isEqualCaseInsensitive($query, $testStationName)
+    private static function isEqualCaseInsensitive($query, $testStationName)
     {
         return preg_match('/^' . $query . '$/i', $testStationName, $match)
             || preg_match('/^' . $query . '$/i', str_replace('\'', ' ', $testStationName), $match);
@@ -269,8 +284,7 @@ class Stations
      *
      * @return int The result of the compare. 0 if equal, -1 if a is after b, 1 if b is before a
      */
-    public
-    static function cmp_stations_vehicle_frequency($a, $b)
+    public static function cmp_stations_vehicle_frequency($a, $b)
     {
         if ($a == $b) {
             return 0;
@@ -287,8 +301,7 @@ class Stations
      *                We have to take into account that some words may have accents
      *                Taken from https://stackoverflow.com/questions/3371697/replacing-accented-characters-php
      */
-    private
-    static function normalizeAccents($str)
+    private static function normalizeAccents($str)
     {
         $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
@@ -320,8 +333,7 @@ class Stations
      *
      * @return Object a simple object for a station
      */
-    public
-    static function getStationFromID($id)
+    public static function getStationFromID($id)
     {
         // Escape all special characters for PSR6-compliant key.
         $id_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $id);

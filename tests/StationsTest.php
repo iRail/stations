@@ -14,7 +14,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         //Launch a query for everything
         $jsonld = Stations::getStations();
         //Assert whether it contains lots of stations
-        $this->assertGreaterThan(600, $jsonld->{'@graph'});
+        $this->assertGreaterThan(600, count($jsonld->{'@graph'}));
     }
 
     /**
@@ -70,7 +70,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         foreach ($stations->{'@graph'} as $station) {
             echo("Testing exact match for $station->name...");
             $jsonld = Stations::getStations($station->name);
-            $this->assertGreaterThanOrEqual(1, $jsonld->{'@graph'});
+            $this->assertGreaterThanOrEqual(1, count($jsonld->{'@graph'}));
             $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
             $this->assertEquals($station->{'@id'}, $jsonld->{'@graph'}[0]->{'@id'});
 
@@ -87,12 +87,32 @@ class StationsTest extends PHPUnit_Framework_TestCase
                 foreach ($alternatives as $alternative) {
                     echo("Testing exact match for {$alternative->{"@value"}}...");
                     $jsonld = Stations::getStations($alternative->{"@value"});
-                    $this->assertGreaterThanOrEqual(1, $jsonld->{'@graph'});
+                    $this->assertGreaterThanOrEqual(1, count($jsonld->{'@graph'}));
                     $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
                     $this->assertEquals($station->{'@id'}, $jsonld->{'@graph'}[0]->{'@id'});
                 }
             }
         }
+
+        // When searching for a station with an exact match, the exact match should be the first,
+        // but other results should still be included! (Size must be greater than 1)
+        $jsonld = Stations::getStations("hal");
+        $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
+
+        $jsonld = Stations::getStations("halle");
+        $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
+
+        $jsonld = Stations::getStations("asse");
+        $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
+
+        $jsonld = Stations::getStations("heist");
+        $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
+
+        $jsonld = Stations::getStations("mechelen");
+        $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
+
+        $jsonld = Stations::getStations("mortsel");
+        $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
     }
 
     /**
