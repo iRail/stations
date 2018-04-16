@@ -183,19 +183,17 @@ class Stations
             $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
             $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
 
-            $hasMatched = false;
+            $exactMatch = false;
+            $partialMatch = false;
 
             if (self::isEqualCaseInsensitive($query, $testStationName)) {
                 // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                self::arrayPutValueFirst($newstations->{'@graph'}, $station);
-                $count++;
+                $exactMatch = true;
             } else {
 
                 if (self::isQueryPartOfName($query, $testStationName)) {
                     // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                    $newstations->{'@graph'}[] = $station;
-                    $hasMatched = true;
-                    $count++;
+                    $partialMatch = true;
                 }
 
                 // Even when we have a partial match, we should keep searching for an exact math
@@ -208,34 +206,37 @@ class Stations
 
                         if (self::isEqualCaseInsensitive($query, $testStationName)) {
                             // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                            self::arrayPutValueFirst($newstations->{'@graph'}, $station);
-                            $count++;
+                            $exactMatch = true;
                             break;
                         }
 
-                        // prevent duplicates by checking if we found it already
-                        if (!$hasMatched && !in_array($station, $newstations->{'@graph'})) {
-                            // Don't try a partial match if we found it in an earlier version already!
-                            if (self::isQueryPartOfName($query, $testStationName)) {
-                                $newstations->{'@graph'}[] = $station;
-                                $count++;
-                                break;
-                            }
+                        // Don't try a partial match if we found it in an earlier version already!
+                        if (self::isQueryPartOfName($query, $testStationName)) {
+                            $partialMatch = true;
                         }
-
                     }
+
                 }
+
             }
 
-            // Don't keep searching after 5 results. Return.
-            if ($count > 5) {
+            if ($exactMatch) {
+                self::arrayPutValueFirst($newstations->{'@graph'}, $station);
+                $count++;
+            } else if ($count <= 5 && $partialMatch) {
+                // Max 6 results, but keep searching when not sorted to ensure we don't miss an exact match
+                $newstations->{'@graph'}[] = $station;
+                $count++;
+            }
+
+            // Don't keep searching after 5 results when sorted. Return.
+            if ($sorted && $count > 5) {
                 self::setCache($apc_key, $newstations, self::APC_TTL);
                 return $newstations;
             }
         }
 
         self::setCache($apc_key, $newstations, self::APC_TTL);
-
         return $newstations;
     }
 
@@ -249,7 +250,7 @@ class Stations
         if (($key = array_search($value, $array)) !== false) {
             unset($array[$key]);
         }
-        array_unshift($array,$value);
+        array_unshift($array, $value);
     }
 
     /**
