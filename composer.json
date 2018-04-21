@@ -8,10 +8,8 @@
   },
   "repositories": [
     {
-        {
-         "type": "vcs",
-         "url": "https://github.com/iRail/stations"
-        }
+     "type": "vcs",
+     "url": "https://github.com/iRail/stations"
     }
   ],
   "license": "CC0",
