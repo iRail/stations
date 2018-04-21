@@ -6,6 +6,14 @@
     "pre-install-cmd" : "npm install ; node bin/build.js > stations.jsonld",
     "pre-update-cmd": "npm install ; node bin/build.js > stations.jsonld"
   },
+  "repositories": [
+    {
+        {
+         "type": "vcs",
+         "url": "https://github.com/iRail/stations"
+        }
+    }
+  ],
   "license": "CC0",
   "authors": [
     {
