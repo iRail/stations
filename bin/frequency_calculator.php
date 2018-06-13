@@ -8,7 +8,7 @@
  */
 
 // Constants
-const GTFS_ZIP = 'http://gtfs.irail.be/nmbs/nmbs-latest.zip';
+const GTFS_ZIP = 'https://sncb-opendata.hafas.de/gtfs/static/c21ac6758dd25af84cca5b707f3cb3de';
 const TMP_UNZIP_PATH = 'nmbs-latest-gtfs';
 const TMP_ZIPFILE = 'nmbs-latest-gtfs.zip';
 const GTFS_STOP_TIMES = 'stop_times.txt';
@@ -62,7 +62,6 @@ rmdir(TMP_UNZIP_PATH);
  * - Get the trip id for every service id from trips, creating a frequency table for how many times a trip is ran (instead of service).
  * - Create a station stop frequency table based on stop_times, converting the trip_id frequency table to a station stop frequency table.
  */
-
 echo 'Creating service id frequency table...'.PHP_EOL;
 
 $handle = fopen(GTFS_CAL_DATES, 'r');
@@ -149,13 +148,11 @@ while (($line = fgets($handle)) !== false) {
     /*
      * File format:
      * trip_id,arrival_time,departure_time,stop_id,stop_sequence
-     * IC10611,05:36:00,05:36:00,stops:008841673:0,1
+     * 88____:046::8821402:8400526:3:650:20181208,6:43:00,6:43:00,8821402,1,,0,1,
      */
     $parts = explode(',', $line);
     // Get stop ID.
-    $id = $parts[3];
-    // Remove platform.
-    $id = explode(':', $id)[1];
+    $id = "00" . $parts[3];
 
     $trip_id = $parts[0];
     // The amount of time this trip is made.
@@ -178,7 +175,7 @@ unlink(GTFS_STOP_TIMES);
  * Step 2: patch the csv file
  * For this step, we need 3 actions:
  * - Get the maximum frequency so we can calculate a relative frequency later on
- * - Read the existing stops.csv file, and append every line with the stop frequency (0...1)
+ * - Read the existing stations.csv file, and append every line with the stop frequency (0...1)
  * - Write the new file to disk
  */
 
@@ -188,7 +185,7 @@ $handled_days_count = count($handled_dates);
 // Open the CSV file that needs a patch.
 $handle = fopen(STATIONS_CSV, 'r');
 if (!$handle) {
-    die('stops.csv file could not be opened!');
+    die('stations.csv file could not be opened!');
 }
 
 // The new CSV file will be compiled in memory, in the $result variable.

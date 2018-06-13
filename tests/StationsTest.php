@@ -220,7 +220,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $result1 = $results->{'@graph'}[0];
         $ghentsp = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
 
-        $this->assertEquals($result1->{'name'}, $ghentsp->{'name'});
+        $this->assertEquals($ghentsp->{'name'},$result1->{'name'});
 
         $results = Stations::getStations('Brussel', '', true);
         $result2 = $results->{'@graph'}[0];
