@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * Update stations.csv and create a new stops.csv
+ *
+ * ! Important: stops.csv will be completely overwritten - only for stations.csv manual edits are allowed at this point.
+ *
  * Calculate the importance (number of stopping trains) for a station. This is done using the GTFS data provided by the NMBS.
  * Stations with a higher weight are more important.
  * Extract the minimum transfer time, in seconds, and according to the NMBS, from the NMBS GTFS data.
@@ -36,6 +40,7 @@ const GTFS_TRANSLATIONS = 'translations.txt';
 const GTFS_CAL_DATES = 'calendar_dates.txt';
 const GTFS_TRANSFER_TIMES = 'transfers.txt';
 const STATIONS_CSV = '../stations.csv';
+const STOPS_CSV = '../stops.csv';
 
 const CSV_HEADER_URI = 'URI';
 const CSV_HEADER_NAME = 'name';
@@ -74,21 +79,13 @@ $transferTimes = parseTransferTimes();
  *
  * For this step, we need 3 actions:
  * - Discover which stations are present already and storing their data in an associative array
+ * - Update calculated or extracted data (official_transfer_time, avg_stop_times)
  * - Appending stations which aren't present yet
- * - Appending calculated or extracted data (official_transfer_time, avg_stop_times)
  * - Write the new file to disk
  */
-$gtfsStations = getGTFSStations();
-
+$gtfsStations = getGTFSStops();
 
 $gtfsTranslations = getGTFSTranslations();
-
-
-// Open the CSV file that needs a patch.
-$fileReadHandle = fopen(STATIONS_CSV, 'r');
-if (!$fileReadHandle) {
-    die('stations.csv file could not be opened!');
-}
 
 // The new CSV file will be compiled in memory, in the $result variable.
 echo 'Compiling new CSV file...' . PHP_EOL;
@@ -96,25 +93,14 @@ echo 'Compiling new CSV file...' . PHP_EOL;
 // Update the first line (csv header)
 $result = implode(',', CSV_WRITE_HEADERS) . PHP_EOL;
 
-// Read the original headers
-$originalHeaders = fgets($fileReadHandle);
-// Transform the original headers into an array
-$originalHeaders = explode(',', $originalHeaders);
+$csvOutputStations = [];
 
-$existingStations = [];
+$csvInput = deserializeCSV(STATIONS_CSV);
 
 // Go through all files.
-while (($line = fgets($fileReadHandle)) !== false) {
-    // Line format:
-    // http://irail.be/stations/NMBS/008821006,Antwerpen-Centraal,Anvers-Central,,,Antwerp-Central,be,4.421101,51.2172
-    $line = trim($line);
-
-    $station = explode(',', $line);
-    $station = array_combine($originalHeaders, $station);
-
+foreach ($csvInput as $key => $station) {
     // Get the station URI.
     $uri = $station[CSV_HEADER_URI];
-    $existingStations[] = $uri;
 
     if (array_key_exists($uri, $gtfsStations)) {
         $gtfsStation = $gtfsStations[$uri];
@@ -132,15 +118,15 @@ while (($line = fgets($fileReadHandle)) !== false) {
         $updatedStation = updateMissingTranslations($updatedStation, $translations);
     }
 
-    if ($gtfsStation !=null){
-        $updatedStation = validateCoordinates($updatedStation,$gtfsStation);
+    if ($gtfsStation != null) {
+        $updatedStation = validateCoordinates($updatedStation, $gtfsStation);
     }
 
     // overwrite avg_stop_times and transfer times
     if (!array_key_exists($uri, $stopFrequencies)) {
         $updatedStation[CSV_HEADER_AVG_STOP_TIMES] = 0;
     } else {
-        $updatedStation[CSV_HEADER_AVG_STOP_TIMES] = $stopFrequencies[$uri] / $handledDaysCount;
+        $updatedStation[CSV_HEADER_AVG_STOP_TIMES] = round($stopFrequencies[$uri] / $handledDaysCount, 6);
     }
 
     if (array_key_exists($uri, $transferTimes)) {
@@ -149,30 +135,15 @@ while (($line = fgets($fileReadHandle)) !== false) {
         $updatedStation[CSV_HEADER_TRANSFER_TIME] = '';
     }
 
-    // serialize again
-    for ($i = 0; $i < count(CSV_WRITE_HEADERS); $i++) {
-        $header = CSV_WRITE_HEADERS[$i];
-        if (key_exists($header, $updatedStation)) {
-            $result .= $updatedStation[$header];
-        }
-        if ($i < count(CSV_WRITE_HEADERS) - 1) {
-            $result .= ',';
-        }
-    }
-    $result .= PHP_EOL;
-
+    $csvOutputStations[$uri] = $updatedStation;
 }
-
-// Close this handle. Important!
-fclose($fileReadHandle);
-
 
 foreach ($gtfsStations as $uri => $gtfsStation) {
     if (strpos($uri, "_") !== false || strpos($uri, "S8") !== false) {
         continue; // Not a normal station, but a stop (platform) or some weird duplicate stuff NMBS has in their GTFS
     }
 
-    if (in_array($uri, $existingStations)) {
+    if (array_key_exists($uri, $csvOutputStations)) {
         continue; // Station already in the CSV file
     }
 
@@ -247,14 +218,27 @@ foreach ($gtfsStations as $uri => $gtfsStation) {
     $station[CSV_HEADER_LONGITUDE] = $gtfsStation['stop_lon'];
     $station[CSV_HEADER_LATITUDE] = $gtfsStation['stop_lat'];
     $station[CSV_HEADER_AVG_STOP_TIMES] = $gtfsStation['stop_lon'];
-    $station[CSV_HEADER_AVG_STOP_TIMES] = $stopFrequencies[$uri] / $handledDaysCount;
+    $station[CSV_HEADER_AVG_STOP_TIMES] = round($stopFrequencies[$uri] / $handledDaysCount, 6);
     $station[CSV_HEADER_TRANSFER_TIME] = $transferTimes[$uri];
 
-    // serialize again
-    $result .= serializeCSV($station);
-    $result .= PHP_EOL;
+    $csvOutputStations[$uri] = $station;
+}
 
-    $existingStations[] = $uri;
+$csvOutput = implode(',', CSV_WRITE_HEADERS) . PHP_EOL;
+
+// Sorting will remove the keys and use numeric keys instead. Therefore we use a copy in order to keep the original array intact.
+$csvOutputStationsSorted = $csvOutputStations;
+usort($csvOutputStationsSorted, function ($a, $b) {
+    if ($a[CSV_HEADER_NAME] != $b[CSV_HEADER_NAME])
+        return $a[CSV_HEADER_NAME] > $b[CSV_HEADER_NAME];
+    else
+        // Should never occur, but fallback just in case
+        return $a[CSV_HEADER_URI] > $b[CSV_HEADER_URI];
+
+});
+
+foreach ($csvOutputStationsSorted as $uri => $station) {
+    $csvOutput .= serializeCSVLine(CSV_WRITE_HEADERS, $station);
 }
 
 echo 'Saving...' . PHP_EOL;
@@ -262,30 +246,36 @@ echo 'Saving...' . PHP_EOL;
 copy(STATIONS_CSV, STATIONS_CSV . '.bak');
 echo 'A backup has been created at ' . STATIONS_CSV . '.bak' . PHP_EOL;
 // Write everything to a new file
-file_put_contents(STATIONS_CSV, $result);
+file_put_contents(STATIONS_CSV, $csvOutput);
 
-echo 'Saved to ' . STATIONS_CSV . '! Don\'t forget to run build.js now!' . PHP_EOL;
+echo 'Saved stations.csv to ' . STATIONS_CSV . '! You can make manual changes to this file. Don\'t forget to run build.js now!' . PHP_EOL;
+
+writeStopsCsv($csvOutputStations, $gtfsStations);
+
+echo 'Saved stops.csv to ' . STOPS_CSV . '! Manual changes to this file won\'t be preserved!' . PHP_EOL;
+
+echo 'Don\'t forget to run web_facilities_extractor.php in order to update facility data!' . PHP_EOL;
 
 /**
  * Download and extract the latest GTFS data set
  */
 function downloadGTFS(): void
 {
-// Download zip file with GTFS data.
+    // Download zip file with GTFS data.
     file_put_contents(TMP_ZIPFILE, file_get_contents(GTFS_ZIP));
 
-// Load the zip file.
+    // Load the zip file.
     $zip = new ZipArchive();
     if ($zip->open(TMP_ZIPFILE) != 'true') {
         die('Could not extract downloaded GTFS data');
     }
 
-// Extract the zip file and remove it.
+    // Extract the zip file and remove it.
     $zip->extractTo(TMP_UNZIP_PATH);
     $zip->close();
     unlink(TMP_ZIPFILE);
 
-// Get the files we need.
+    // Get the files we need.
     rename(TMP_UNZIP_PATH . '/' . GTFS_STOP_TIMES, GTFS_STOP_TIMES);
     rename(TMP_UNZIP_PATH . '/' . GTFS_TRIPS, GTFS_TRIPS);
     rename(TMP_UNZIP_PATH . '/' . GTFS_CAL_DATES, GTFS_CAL_DATES);
@@ -294,7 +284,7 @@ function downloadGTFS(): void
     rename(TMP_UNZIP_PATH . '/' . GTFS_TRANSFER_TIMES, GTFS_TRANSFER_TIMES);
 
     echo 'Cleaning up resources...' . PHP_EOL;
-// Remove temporary data.
+    // Remove temporary data.
     $tmpfiles = scandir(TMP_UNZIP_PATH);
     foreach ($tmpfiles as $file) {
         if ($file != '.' && $file != '..') {
@@ -303,7 +293,7 @@ function downloadGTFS(): void
         }
     }
     reset($tmpfiles);
-// Remove the empty folder.
+    // Remove the empty folder.
     rmdir(TMP_UNZIP_PATH);
 }
 
@@ -313,32 +303,25 @@ function downloadGTFS(): void
  */
 function parseTransferTimes(): array
 {
-    $rawTransferTimes = file_get_contents(GTFS_TRANSFER_TIMES);
+    // CSV Header:
+    // from_stop_id,to_stop_id,transfer_type,min_transfer_time,from_trip_id,to_trip_id
 
-    $rawTransferTimes = explode("\n", $rawTransferTimes);
-
-    /**
-     * @var $transferTimes array Associative array containing key-value pairs of station URIs and the minimum recommended transfer time by the NMBS
-     */
+    $parsedCsv = deserializeCSV(GTFS_TRANSFER_TIMES);
     $transferTimes = [];
-    foreach ($rawTransferTimes as $line => $value) {
-        if ($line == 0) {
+    foreach ($parsedCsv as $key => $csvRow) {
+        if ($csvRow['from_stop_id'] !== $csvRow['to_stop_id']) {
+            // We only want intra-stop transfers. NMBS GTFS only includes those, but to be sure, add a check
             continue;
         }
-        $fields = explode(",", $value);
-        if (count($fields) < 4) {
-            continue;
-        }
-        // This file only contains intra-stop transfer times, so we don't need to worry about validating anything
-        // Every line only describes the transfer time between any 2 platforms in the same station
+
         // Station UIC ID to HAFAS
-        $uri = IRAIL_STATION_BASE_URI . $fields[0];
+        $uri = IRAIL_STATION_BASE_URI . $csvRow['from_stop_id'];
+
         // Transfer value
-        $transfer = $fields[3];
-        if (strpos($uri, "_") === false && strpos($uri, "S8") === false) {
-            // Store value for station id
-            $transferTimes[$uri] = $transfer;
-        }
+        $transfer = $csvRow['min_transfer_time'];
+
+        // Store value for station id
+        $transferTimes[$uri] = $transfer;
     }
 
     // We don't need this file anymore. Cleanup.
@@ -361,12 +344,12 @@ function getStopTimes(): array
         die(GTFS_CAL_DATES . ' could not be opened!');
     }
 
-// skip the first line (csv header)
+    // skip the first line (csv header)
     fgets($fileReadHandle);
 
-// Create the frequency table.
+    // Create the frequency table.
     $serviceFrequency = [];
-// The dates we've handled.
+    // The dates we've handled.
     $isDateHandled = [];
     while (($line = fgets($fileReadHandle)) !== false) {
         /*
@@ -386,23 +369,23 @@ function getStopTimes(): array
         }
         $isDateHandled[$date] = 1;
     }
-// Close this handle. Important!
+    // Close this handle. Important!
     fclose($fileReadHandle);
 
-// We don't need this file anymore. Cleanup.
+    // We don't need this file anymore. Cleanup.
     unlink(GTFS_CAL_DATES);
 
-// Use the calender frequencies to calculate the frequency of each trip
+    // Use the calender frequencies to calculate the frequency of each trip
     echo 'Creating trip id frequency table...' . PHP_EOL;
     $fileReadHandle = fopen(GTFS_TRIPS, 'r');
     if (!$fileReadHandle) {
         die(GTFS_TRIPS . ' could not be opened!');
     }
 
-// skip the first line (csv header)
+    // skip the first line (csv header)
     fgets($fileReadHandle);
 
-// Create the frequency table containing each trips frequency..
+    // Create the frequency table containing each trips frequency..
     $tripFrequencies = [];
 
     while (($line = fgets($fileReadHandle)) !== false) {
@@ -418,23 +401,23 @@ function getStopTimes(): array
         // Set frequency, which is the same as the service frequency.
         $tripFrequencies[$tripId] = $serviceFrequency[$serviceId];
     }
-// Close this handle. Important!
+    // Close this handle. Important!
     fclose($fileReadHandle);
 
-// We don't need this file anymore. Cleanup.
+    // We don't need this file anymore. Cleanup.
     unlink(GTFS_TRIPS);
 
-// Use the
+    // Use the
     echo 'Creating frequency table...' . PHP_EOL;
     $fileReadHandle = fopen(GTFS_STOP_TIMES, 'r');
     if (!$fileReadHandle) {
         die('GTFS stop times file could not be opened!');
     }
 
-// skip the first line (csv header)
+    // skip the first line (csv header)
     fgets($fileReadHandle);
 
-// Create the frequency table.
+    // Create the frequency table.
     $stopFrequencies = [];
 
     while (($line = fgets($fileReadHandle)) !== false) {
@@ -458,12 +441,12 @@ function getStopTimes(): array
             $stopFrequencies[$uri] = $tripFrequency;
         }
     }
-// Close this handle. Important!
+    // Close this handle. Important!
     fclose($fileReadHandle);
     unlink(GTFS_STOP_TIMES);
 
 
-// Get the number of days that were handled. We need this to calculate the average later on.
+    // Get the number of days that were handled. We need this to calculate the average later on.
     $handledDaysCount = count($isDateHandled);
 
 
@@ -471,34 +454,35 @@ function getStopTimes(): array
 }
 
 /**
- * Load a list of 'official' station data from the GTFS dataset
+ * Load a list of 'official' stops data from the GTFS dataset
  * @return array
  */
-function getGTFSStations(): array
+function getGTFSStops(): array
 {
-// Open the GTFS stops file and read it into an associative array
-    $fileReadHandle = fopen(GTFS_STOPS, 'r');
-    if (!$fileReadHandle) {
-        die('GTFS stations file could not be opened!');
-    }
-// Read the original headers
-    $originalGtfsHeaders = fgets($fileReadHandle);
-// Transform the original headers into an array
-    $originalGtfsHeaders = explode(',', $originalGtfsHeaders);
+    // CSV Header:
+    // stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,platform_code
+
+    $parsedCsv = deserializeCSV(GTFS_STOPS);
+    usort($parsedCsv, function ($a, $b) {
+        if ($a['stop_name'] != $b['stop_name'])
+            return $a['stop_name'] > $b['stop_name'];
+        else
+            if ($a['stop_id'] != $b['stop_id'])
+                return $a['stop_id'] > $b['stop_id'];
+            else
+                return $a['platform_code'] > $b['platform_code'];
+
+    });
+
     $gtfsStations = [];
-// Go through all files.
-    while (($line = fgets($fileReadHandle)) !== false) {
-        // Line format:
-        // http://irail.be/stations/NMBS/008821006,Antwerpen-Centraal,Anvers-Central,,,Antwerp-Central,be,4.421101,51.2172
-        $line = trim($line);
-
-        $station = explode(',', $line);
-        $station = array_combine($originalGtfsHeaders, $station);
-        $uri = IRAIL_STATION_BASE_URI . $station['stop_id'];
-        $gtfsStations[$uri] = $station;
+    // Go through all files.
+    foreach ($parsedCsv as $key => $csvRow) {
+        $uri = IRAIL_STATION_BASE_URI . $csvRow['stop_id'];
+        $gtfsStations[$uri] = $csvRow;
     }
 
-    fclose($fileReadHandle);
+
+
     unlink(GTFS_STOPS);
     return $gtfsStations;
 }
@@ -508,27 +492,19 @@ function getGTFSStations(): array
  */
 function getGTFSTranslations(): array
 {
-// Open the GTFS translations file and read it into an associative array
-    $fileReadHandle = fopen(GTFS_TRANSLATIONS, 'r');
-    if (!$fileReadHandle) {
-        die('GTFS translations file could not be opened!');
-    }
+    // Open the GTFS translations file and read it into an associative array
+    $parsedCsv = deserializeCSV(GTFS_TRANSLATIONS);
 
     $gtfsTranslations = [];
-// Go through all files.
-    while (($line = fgets($fileReadHandle)) !== false) {
-        // Line format:
-        // http://irail.be/stations/NMBS/008821006,Antwerpen-Centraal,Anvers-Central,,,Antwerp-Central,be,4.421101,51.2172
-        $line = trim($line);
 
+    foreach ($parsedCsv as $key => $translation) {
+        // CSV Header:
         // trans_id,lang,translation
-        $translation = explode(',', $line);
 
         // Multi dimensional array, first key being the original name, second key being the translation language
-        $gtfsTranslations[$translation[0]][$translation[1]] = $translation[2];
+        $gtfsTranslations[$translation['trans_id']][$translation['lang']] = $translation['translation'];
     }
 
-    fclose($fileReadHandle);
     unlink(GTFS_TRANSLATIONS);
     return $gtfsTranslations;
 }
@@ -568,12 +544,12 @@ function updateMissingTranslations($station, $translations)
 }
 
 /**
- * Add missing coordinates and validate existing coördinates
+ * Add missing coordinates and validate existing coordinates
  * @param $station
  * @param $gtfsStation
  * @return array
  */
-function validateCoordinates($station, $gtfsStation) : array
+function validateCoordinates($station, $gtfsStation): array
 {
     $gtfsLatitude = $gtfsStation['stop_lat'];
     $gtfsLongitude = $gtfsStation['stop_lon'];
@@ -605,6 +581,51 @@ function validateCoordinates($station, $gtfsStation) : array
     }
     // if filled, enough digits, and no bug difference, move on. We never overwrite handmade changes without reason
     return $station;
+}
+
+
+/**
+ * Create a stops.csv file based on stops.txt. Stops.csv should identify all platorms.
+ * @param $csvStations array Stations present in the stations.csv file, used to determine the default name for a station
+ * @param $gtfsStations array Stops present in the GTFS stops.txt file, used to discover all platorms.
+ */
+function writeStopsCsv($csvStations, $gtfsStations): void
+{
+    $headerFields = ['URI', 'parent_stop', 'longitude', 'latitude', 'name', 'alternative-nl', 'alternative-fr', 'alternative-de', 'alternative-en', 'platform'];
+
+    // Output CSV contents for stops.csv will be appended in this variable
+    $stopsCsv = implode(',', $headerFields) . PHP_EOL;
+
+    foreach ($gtfsStations as $uri => $station) {
+        if (strpos($uri, '_') === false || strpos($uri, 'S8') !== false) {
+            continue; // We only want stop locations (= platforms). Skip stations and weird station duplicates prefixed with S.
+        }
+
+        $parentUri = IRAIL_STATION_BASE_URI . ltrim($station['parent_station'], 'S');
+        $parentName = $csvStations[$parentUri][CSV_HEADER_NAME];
+        $parentNameEn = $csvStations[$parentUri][CSV_HEADER_ALT_EN] ?: $parentName;
+        $parentNameNl = $csvStations[$parentUri][CSV_HEADER_ALT_NL] ?: $parentName;
+        $parentNameDe = $csvStations[$parentUri][CSV_HEADER_ALT_DE] ?: $parentName;
+        $parentNameFr = $csvStations[$parentUri][CSV_HEADER_ALT_FR] ?: $parentName;
+        $platformCode = $station['platform_code'];
+        $stopUri = $parentUri . '#' . $platformCode;
+
+        // NMBS doesn't follow GTFS specifications and uses the location_type field incorrectly. Therefore we can't really use it.
+        $stop = ['URI'            => $stopUri,
+                 'parent_stop'    => $parentUri,
+                 'longitude'      => $station['stop_lon'],
+                 'latitude'       => $station['stop_lat'],
+                 'name'           => $parentName . ' platform ' . $platformCode,
+                 'alternative-nl' => $parentNameNl . ' perron ' . $platformCode,
+                 'alternative-fr' => $parentNameFr . ' voie ' . $platformCode,
+                 'alternative-de' => $parentNameDe . ' gleiss ' . $platformCode,
+                 'alternative-en' => $parentNameEn . ' platform ' . $platformCode,
+                 'platform'       => $platformCode
+        ];
+        $stopsCsv .= serializeCSVLine($headerFields, $stop);
+    }
+
+    file_put_contents(STOPS_CSV, $stopsCsv);
 }
 
 /**
@@ -662,21 +683,72 @@ function cleanStationName($name): string
 
 
 /**
- * Serialize data to CSV, using the headers defined in CSV_WRITE_HEADERS
- * @param $station array The data as associative array to serialize to CSV
+ * Serialize data to a CSV row
+ *
+ * @param $headers array The headers which should be written
+ * @param $station array The data as an associative array (header => value) to serialize to CSV
  * @return string CSV representation of the data
  */
-function serializeCSV($station): string
+function serializeCSVLine($headers, $station): string
 {
+    // Resulting serialized line
     $row = '';
-    for ($i = 0; $i < count(CSV_WRITE_HEADERS); $i++) {
-        $header = CSV_WRITE_HEADERS[$i];
+    // Loop over all headers
+    for ($i = 0; $i < count($headers); $i++) {
+        // Which value we are appending
+        $header = $headers[$i];
+
+        // Add key if it exists, otherwise leave empty
         if (key_exists($header, $station)) {
             $row .= $station[$header];
         }
-        if ($i < count(CSV_WRITE_HEADERS) - 1) {
+
+        // No trailing comma
+        if ($i < count($headers) - 1) {
             $row .= ',';
         }
     }
-    return $row;
+    // Return line with newline character
+    return $row . PHP_EOL;
+}
+
+/**
+ * Load a CSV file and store it in an associative array with the first CSV column value as key.
+ * Each line is stored as an associative array using column headers as key and the fields as value.
+ *
+ * @param $csvPath string File path leading to the CSV file
+ * @return array the deserialized data
+ */
+function deserializeCSV($csvPath): array
+{
+    // Open the GTFS stops file and read it into an associative array
+    $fileReadHandle = fopen($csvPath, 'r');
+    if (!$fileReadHandle) {
+        die($csvPath . ' could not be opened!');
+    }
+    // Read the original headers
+    $headers = trim(fgets($fileReadHandle));
+
+    // Transform the original headers into an array
+    $headers = explode(',', $headers);
+
+    // Trim tabs, newlines, ...
+    $headers = array_map('trim', $headers);
+
+    $entries = [];
+
+    // Go through all rows
+    while (($line = fgets($fileReadHandle)) !== false) {
+        $line = trim($line);
+
+        $entry = explode(',', $line);
+        $entry = array_map('trim', $entry);
+
+        // The first column is used as key in the associative array
+        $first = $entry[0];
+
+        $entry = array_combine($headers, $entry);
+        $entries[$first] = $entry;
+    }
+    return $entries;
 }
