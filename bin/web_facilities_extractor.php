@@ -82,9 +82,8 @@ $facilities = [];
 $i = 0;
 $total = count($stations);
 foreach ($stations as $uri => $station) {
-
-    echo 'Updating facilities for ' . $name . ' ( ' . round(100 * ++$i / $total) . '% )' . PHP_EOL;
     $name = $station[CSV_HEADER_NAME];
+    echo 'Updating facilities for ' . $name . ' ( ' . round(100 * ++$i / $total) . '% )' . PHP_EOL;
     $facilities[] = get_station_facilities_line($uri, $name);
 }
 
@@ -158,7 +157,7 @@ function get_station_facilities_line($uri, $name): array
         "ctl00_ctl00_bodyPlaceholder_bodyPlaceholder_AllStationCriteriaGroupsList_ctl10_AllCriteriaGroup_criteriaGroupList_ctl01_DefaultCriteriaGroup1_allCriteriaUC_criteriaList_ctl02_BooleanTypeCriteria1_visibleCriteria");
 
     // blue bikes
-    $data['blue-bikes'] = string_contains_csvout($webpage,
+    $data[CSV_HEADER_BLUE_BIKE] = string_contains_csvout($webpage,
         "ctl00_ctl00_bodyPlaceholder_bodyPlaceholder_AllStationCriteriaGroupsList_ctl10_AllCriteriaGroup_criteriaGroupList_ctl01_DefaultCriteriaGroup1_allCriteriaUC_criteriaList_ctl03_BooleanTypeCriteria1_visibleCriteria");
 
     // bus
