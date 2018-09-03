@@ -482,7 +482,6 @@ function getGTFSStops(): array
     }
 
 
-
     unlink(GTFS_STOPS);
     return $gtfsStations;
 }
@@ -591,6 +590,10 @@ function validateCoordinates($station, $gtfsStation): array
  */
 function writeStopsCsv($csvStations, $gtfsStations): void
 {
+
+    $originalStopsCsv = deserializeCSV(STOPS_CSV);
+    $discoveredUris = [];
+
     $headerFields = ['URI', 'parent_stop', 'longitude', 'latitude', 'name', 'alternative-nl', 'alternative-fr', 'alternative-de', 'alternative-en', 'platform'];
 
     // Output CSV contents for stops.csv will be appended in this variable
@@ -622,7 +625,15 @@ function writeStopsCsv($csvStations, $gtfsStations): void
                  'alternative-en' => $parentNameEn . ' platform ' . $platformCode,
                  'platform'       => $platformCode
         ];
+        $discoveredUris[] = $stopUri;
         $stopsCsv .= serializeCSVLine($headerFields, $stop);
+    }
+
+    foreach ($originalStopsCsv as $stop) {
+        // Ensure all stops stay in the database, even if they're not used for a while. What hasn't been added again is added here
+        if (!key_exists($stop['URI'], $discoveredUris)) {
+            $stopsCsv .= serializeCSVLine($headerFields, $stop);
+        }
     }
 
     file_put_contents(STOPS_CSV, $stopsCsv);
@@ -724,7 +735,7 @@ function deserializeCSV($csvPath): array
     // Open the GTFS stops file and read it into an associative array
     $fileReadHandle = fopen($csvPath, 'r');
     if (!$fileReadHandle) {
-        die($csvPath . ' could not be opened!');
+        die($csvPath . ' could not be opened! Run this script using stations/bin as working directory');
     }
     // Read the original headers
     $headers = trim(fgets($fileReadHandle));

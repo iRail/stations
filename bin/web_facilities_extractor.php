@@ -57,7 +57,7 @@ const NMBS_BASE_URL = "http://www.belgianrail.be/Station.ashx?lang=nl&stationId=
 // Open the CSV file that needs a patch.
 $handle = fopen(STATIONS_CSV, 'r');
 if (!$handle) {
-    die('stations.csv file could not be opened!');
+    die('stations.csv file could not be opened! Run this script using stations/bin as working directory');
 }
 
 // The new CSV file will be compiled in memory, in the $result variable.
