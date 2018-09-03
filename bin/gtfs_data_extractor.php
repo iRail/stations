@@ -28,7 +28,7 @@
  */
 
 // Constants
-const GTFS_ZIP = 'https://sncb-opendata.hafas.de/gtfs/static/c21ac6758dd25af84cca5b707f3cb3de';
+const GTFS_ZIP = 'https://gtfs.irail.be/nmbs/gtfs/latest.zip';
 
 const TMP_UNZIP_PATH = 'nmbs-latest-gtfs';
 const TMP_ZIPFILE = 'nmbs-latest-gtfs.zip';
