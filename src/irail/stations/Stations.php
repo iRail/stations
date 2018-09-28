@@ -155,6 +155,8 @@ class Stations
 
         //https://github.com/iRail/iRail/issues/66
         $query = str_ireplace('Bru.', 'Brussel', $query);
+        //https://github.com/iRail/iRail/issues/137
+        $query = str_ireplace('Brux.', 'Bruxelles', $query);
         //make sure something between brackets is ignored
         $query = preg_replace("/\s?\(.*?\)/i", '', $query);
 
