@@ -48,6 +48,8 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $jsonld3 = Stations::getStations('Bruxelles');
         $jsonld4 = Stations::getStations('Bru.-Noord / Brux.-Nord');
         $jsonld5 = Stations::getStations('Brussels Airport - Zaventem');
+        //https://github.com/iRail/stations/issues/137
+        $jsonld6 = Stations::getStations('Brux.-Midi');
 
 
         //Assert whether it contains the right number of stations
@@ -56,6 +58,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $this->assertCount(6, $jsonld3->{'@graph'});
         $this->assertCount(1, $jsonld4->{'@graph'});
         $this->assertCount(1, $jsonld5->{'@graph'});
+        $this->assertCount(1, $jsonld6->{'@graph'});
     }
 
     /**
