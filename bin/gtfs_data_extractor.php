@@ -112,11 +112,11 @@ foreach ($csvInput as $key => $station) {
     $updatedStation = $station;
 
     // Add missing translations
-    if ($gtfsStation != null && array_key_exists($gtfsStation['stop_name'], $gtfsTranslations)) {
+    /*if ($gtfsStation != null && array_key_exists($gtfsStation['stop_name'], $gtfsTranslations)) {
         $translations = $gtfsTranslations[$gtfsStation['stop_name']];
 
         $updatedStation = updateMissingTranslations($updatedStation, $translations);
-    }
+    }*/
 
     if ($gtfsStation != null) {
         $updatedStation = validateCoordinates($updatedStation, $gtfsStation);
