@@ -2,7 +2,6 @@
 
 //This class tests the PHP Stations class in src/irail/stations
 use irail\stations\Stations;
-use ML\JsonLD\JsonLD;
 
 class StationsTest extends PHPUnit_Framework_TestCase
 {
@@ -20,26 +19,26 @@ class StationsTest extends PHPUnit_Framework_TestCase
     /**
      * Test whether it's valid json-ld.
      */
-   /* public function testJsonLD()
-    {
-        //Launch a query in various ways
-        $jsonld1 = Stations::getStations('Brussel');
-        $jsonld2 = Stations::getStations();
+    /* public function testJsonLD()
+     {
+         //Launch a query in various ways
+         $jsonld1 = Stations::getStations('Brussel');
+         $jsonld2 = Stations::getStations();
 
-        //Assert whether the json ld is valid
-        $doc1 = JsonLD::getDocument($jsonld1);
-        $doc2 = JsonLD::getDocument($jsonld2);
+         //Assert whether the json ld is valid
+         $doc1 = JsonLD::getDocument($jsonld1);
+         $doc2 = JsonLD::getDocument($jsonld2);
 
-        //Assert whether nodes exist
-        //E.g., the default graph of doc1 should be http://irail.be/stations/NMBS?q=Brussel
-        $this->assertTrue($doc1->containsGraph('http://irail.be/stations/NMBS?q=Brussel'));
-        //E.g., the default graph of doc2 should be http://irail.be/stations/NMBS
-        $this->assertTrue($doc2->containsGraph('http://irail.be/stations/NMBS'));
-    }
+         //Assert whether nodes exist
+         //E.g., the default graph of doc1 should be http://irail.be/stations/NMBS?q=Brussel
+         $this->assertTrue($doc1->containsGraph('http://irail.be/stations/NMBS?q=Brussel'));
+         //E.g., the default graph of doc2 should be http://irail.be/stations/NMBS
+         $this->assertTrue($doc2->containsGraph('http://irail.be/stations/NMBS'));
+     }
 
-    /**
-     * Test Brussels in various ways: all queries should return the 6 stations with Brussels in their name.
-     */
+     /**
+      * Test Brussels in various ways: all queries should return the 6 stations with Brussels in their name.
+      */
     public function testBrussels()
     {
         //Launch a query for Brussels in various ways
@@ -223,7 +222,7 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $result1 = $results->{'@graph'}[0];
         $ghentsp = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
 
-        $this->assertEquals($ghentsp->{'name'},$result1->{'name'});
+        $this->assertEquals($ghentsp->{'name'}, $result1->{'name'});
 
         $results = Stations::getStations('Brussel', '', true);
         $result2 = $results->{'@graph'}[0];
@@ -231,6 +230,29 @@ class StationsTest extends PHPUnit_Framework_TestCase
         $brusselssouth = Stations::getStations('Brussels South')->{'@graph'}[0];
 
         $this->assertEquals($result2->{'name'}, $brusselssouth->{'name'});
+    }
+
+    /**
+     * Regression test for https://github.com/iRail/stations/issues/139
+     */
+    public function testAccentsInSearch()
+    {
+        $dusseldorfFlughafen = Stations::getStationFromID('http://irail.be/stations/NMBS/008039904');
+
+        $results = Stations::getStations('Düsseldorf Flughafen Hbf', 'be', true);
+        $this->assertGreaterThanOrEqual(1, count($results->{'@graph'}));
+        $result1 = $results->{'@graph'}[0];
+
+        $this->assertEquals($dusseldorfFlughafen->{'name'}, $result1->{'name'});
+        $this->assertEquals($dusseldorfFlughafen->{'@id'}, $result1->{'@id'});
+
+        $results = Stations::getStations('Dusseldorf Flughafen Hbf', 'be', true);
+        $this->assertGreaterThanOrEqual(1, count($results->{'@graph'}));
+        $result1 = $results->{'@graph'}[0];
+
+        $this->assertEquals($dusseldorfFlughafen->{'name'}, $result1->{'name'});
+        $this->assertEquals($dusseldorfFlughafen->{'@id'}, $result1->{'@id'});
+
     }
 
 }
