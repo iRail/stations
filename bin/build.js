@@ -9,7 +9,7 @@ var program = require('commander');
 
 console.error("irail-stations by Pieter Colpaert <pieter@iRail.be> - http://hello.irail.be - use --help to discover more functions");
 program
-  .version('0.1.0')
+  .version('0.1.1')
   .option('-f --format [json,trig,nquads]', 'Format', /^(json|trig|nquads)$/i)
   .parse(process.argv);
 
@@ -35,8 +35,14 @@ var prefixes = {
 //JSON-LD context for the JSON-LD serialisation
 var context = {
   "name": "http://xmlns.com/foaf/0.1/name",
-  "longitude":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
-  "latitude":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+  "longitude": {
+    "@id":"http://www.w3.org/2003/01/geo/wgs84_pos#long",
+    "@type":"http://www.w3.org/2001/XMLSchema#float"
+  },
+  "latitude": {
+    "@id":"http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+    "@type":"http://www.w3.org/2001/XMLSchema#float"
+  },
   "alternative":"http://purl.org/dc/terms/alternative",
   "country":{
     "@type" : "@id",
