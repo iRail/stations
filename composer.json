@@ -7,12 +7,6 @@
     "pre-update-cmd": "npm install ; node bin/build.js > stations.jsonld"
   },
   "license": "CC0-1.0",
-  "repositories": [
-    {
-     "type": "vcs",
-     "url": "https://github.com/iRail/stations"
-    }
-  ],
   "authors": [
     {
       "name": "Pieter Colpaert",

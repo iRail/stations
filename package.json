@@ -9,7 +9,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/iRail/stations.git"
+    "url": "git://github.com/iRail/stations.git"
   },
   "author": "Pieter Colpaert <pieter@irail.be>",
   "keywords": [
