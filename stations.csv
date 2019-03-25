@@ -1,5 +1,5 @@
 URI,name,alternative-fr,alternative-nl,alternative-de,alternative-en,country-code,longitude,latitude,avg_stop_times,official_transfer_time
-http://irail.be/stations/NMBS/008729560,Aulnoye aymeries,,,,,fr,3.84341300,50.1974400,4,300
+http://irail.be/stations/NMBS/008729560,Aulnoye-Aymeries,,,,,fr,3.84341300,50.1974400,4,300
 http://irail.be/stations/NMBS/008015345,Aachen Hbf,Aix-la-Chapelle Hbf,Aken Hbf,,,de,6.105275,50.770832,30,300
 http://irail.be/stations/NMBS/008895000,Aalst,Alost,,,,be,4.039653,50.942813,165.434164,300
 http://irail.be/stations/NMBS/008895125,Aalst-Kerrebroek,Alost Kerrebroek,,,,be,4.024407,50.948377,7.423488,300
