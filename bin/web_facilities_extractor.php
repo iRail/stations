@@ -127,11 +127,11 @@ function get_station_facilities_line($uri, $name): array
     // Address
     $html = str_get_html($webpage);
     // Street
-    $data[CSV_HEADER_STREET] = ucwords(strtolower(str_replace(',', '', trim($html->find(".title-address")[0]->find("span")[0]->plaintext))));
+    $data[CSV_HEADER_STREET] = camelcase_address(strtolower(str_replace(',', '', trim($html->find(".title-address")[0]->find("span")[0]->plaintext))));
     // Zip
     $data[CSV_HEADER_ZIP] = str_replace(',', '', substr(trim($html->find(".title-address")[0]->find("span")[1]->plaintext), 0, 4));
     // City
-    $data[CSV_HEADER_CITY] = ucwords(strtolower(str_replace(',', '', substr(trim($html->find(".title-address")[0]->find("span")[1]->plaintext), 5))));
+    $data[CSV_HEADER_CITY] = camelcase_address(strtolower(str_replace(',', '', substr(trim($html->find(".title-address")[0]->find("span")[1]->plaintext), 5))));
 
     // Facilities
 
@@ -245,6 +245,26 @@ function get_station_facilities_line($uri, $name): array
     }
 
     return $data;
+}
+
+function camelcase_address($string): string
+{
+    $string = ucwords($string, " '-\t\r\n\f\v");
+    $exclusions = [
+        ' Ii '  => ' II ',
+        ' Iii' => ' III',
+        ' Iv '  => ' IV ',
+        // é doesn't play nice with ucwords. Fix: lowercase them all first, then uppercase the ones at the start
+        'É'     => 'é',
+        ' é'    => ' É',
+        // Rue d'Allemange
+        'D\'' => 'd\''];
+
+    foreach ($exclusions as $key => $value) {
+        $string = str_replace($key, $value, $string);
+    }
+
+    return $string;
 }
 
 /**
