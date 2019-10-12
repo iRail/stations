@@ -90,8 +90,8 @@ reader.addListener('data', function (data) {
     writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-de"] + '"@de', "http://irail.be/stations/NMBS");
   }
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"', "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"', "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"^^http://www.w3.org/2001/XMLSchema#float', "http://irail.be/stations/NMBS");
+  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"^^http://www.w3.org/2001/XMLSchema#float', "http://irail.be/stations/NMBS");
   writer.addTriple(data["URI"], N3Util.expandPrefixedName("st:avgStopTimes",prefixes),'"' + data["avg_stop_times"] + '"', "http://irail.be/stations/NMBS");
 });
 
