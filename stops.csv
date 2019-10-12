@@ -1,5 +1,4 @@
 URI,parent_stop,longitude,latitude,name,alternative-nl,alternative-fr,alternative-de,alternative-en,platform
-http://irail.be/stations/NMBS/008891140#1,http://irail.be/stations/NMBS/008891140,3.44784800,51.0923000,Aalter platform 1,Aalter perron 1,Aalter voie 1,Aalter gleiss 1,Aalter platform 1,1
 http://irail.be/stations/NMBS/008891140#2,http://irail.be/stations/NMBS/008891140,3.44784800,51.0923000,Aalter platform 2,Aalter perron 2,Aalter voie 2,Aalter gleiss 2,Aalter platform 2,2
 http://irail.be/stations/NMBS/008891140#3,http://irail.be/stations/NMBS/008891140,3.44784800,51.0923000,Aalter platform 3,Aalter perron 3,Aalter voie 3,Aalter gleiss 3,Aalter platform 3,3
 http://irail.be/stations/NMBS/008891140#4,http://irail.be/stations/NMBS/008891140,3.44784800,51.0923000,Aalter platform 4,Aalter perron 4,Aalter voie 4,Aalter gleiss 4,Aalter platform 4,4
@@ -44,9 +43,6 @@ http://irail.be/stations/NMBS/008863818#2,http://irail.be/stations/NMBS/00886381
 http://irail.be/stations/NMBS/008885522#1,http://irail.be/stations/NMBS/008885522,3.45131000,50.5696300,Antoing platform 1,Antoing perron 1,Antoing voie 1,Antoing gleiss 1,Antoing platform 1,1
 http://irail.be/stations/NMBS/008885522#2,http://irail.be/stations/NMBS/008885522,3.45131000,50.5696300,Antoing platform 2,Antoing perron 2,Antoing voie 2,Antoing gleiss 2,Antoing platform 2,2
 http://irail.be/stations/NMBS/008821121#10,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 10,Antwerpen-Berchem perron 10,Anvers-Berchem voie 10,Antwerpen-Berchem gleiss 10,Antwerp-Berchem platform 10,10
-http://irail.be/stations/NMBS/008821121#2,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 2,Antwerpen-Berchem perron 2,Anvers-Berchem voie 2,Antwerpen-Berchem gleiss 2,Antwerp-Berchem platform 2,2
-http://irail.be/stations/NMBS/008821121#3,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 3,Antwerpen-Berchem perron 3,Anvers-Berchem voie 3,Antwerpen-Berchem gleiss 3,Antwerp-Berchem platform 3,3
-http://irail.be/stations/NMBS/008821121#4,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 4,Antwerpen-Berchem perron 4,Anvers-Berchem voie 4,Antwerpen-Berchem gleiss 4,Antwerp-Berchem platform 4,4
 http://irail.be/stations/NMBS/008821121#5,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 5,Antwerpen-Berchem perron 5,Anvers-Berchem voie 5,Antwerpen-Berchem gleiss 5,Antwerp-Berchem platform 5,5
 http://irail.be/stations/NMBS/008821121#6,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 6,Antwerpen-Berchem perron 6,Anvers-Berchem voie 6,Antwerpen-Berchem gleiss 6,Antwerp-Berchem platform 6,6
 http://irail.be/stations/NMBS/008821121#7,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 7,Antwerpen-Berchem perron 7,Anvers-Berchem voie 7,Antwerpen-Berchem gleiss 7,Antwerp-Berchem platform 7,7
@@ -68,8 +64,6 @@ http://irail.be/stations/NMBS/008821006#5,http://irail.be/stations/NMBS/00882100
 http://irail.be/stations/NMBS/008821006#6,http://irail.be/stations/NMBS/008821006,4.42109800,51.2172000,Antwerpen-Centraal platform 6,Antwerpen-Centraal perron 6,Anvers-Central voie 6,Antwerpen-Centraal gleiss 6,Antwerp-Central platform 6,6
 http://irail.be/stations/NMBS/008821063#1,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 1,Antwerpen-Luchtbal perron 1,Anvers-Luchtbal voie 1,Antwerpen-Luchtbal gleiss 1,Antwerp-Luchtbal platform 1,1
 http://irail.be/stations/NMBS/008821063#2,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 2,Antwerpen-Luchtbal perron 2,Anvers-Luchtbal voie 2,Antwerpen-Luchtbal gleiss 2,Antwerp-Luchtbal platform 2,2
-http://irail.be/stations/NMBS/008821063#3,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 3,Antwerpen-Luchtbal perron 3,Anvers-Luchtbal voie 3,Antwerpen-Luchtbal gleiss 3,Antwerp-Luchtbal platform 3,3
-http://irail.be/stations/NMBS/008821063#4,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 4,Antwerpen-Luchtbal perron 4,Anvers-Luchtbal voie 4,Antwerpen-Luchtbal gleiss 4,Antwerp-Luchtbal platform 4,4
 http://irail.be/stations/NMBS/008821089#1,http://irail.be/stations/NMBS/008821089,4.42791000,51.2616400,Antwerpen-Noorderdokken platform 1,Antwerpen-Noorderdokken perron 1,Anvers-Noorderdokken voie 1,Antwerpen-Noorderdokken gleiss 1,Antwerp-Noorderdokken platform 1,1
 http://irail.be/stations/NMBS/008821089#2,http://irail.be/stations/NMBS/008821089,4.42791000,51.2616400,Antwerpen-Noorderdokken platform 2,Antwerpen-Noorderdokken perron 2,Anvers-Noorderdokken voie 2,Antwerpen-Noorderdokken gleiss 2,Antwerp-Noorderdokken platform 2,2
 http://irail.be/stations/NMBS/008821196#1,http://irail.be/stations/NMBS/008821196,4.39026400,51.1978300,Antwerpen-Zuid platform 1,Antwerpen-Zuid perron 1,Anvers-Sud voie 1,Antwerpen-Zuid gleiss 1,Antwerp-South platform 1,1
@@ -130,6 +124,7 @@ http://irail.be/stations/NMBS/008811734#1,http://irail.be/stations/NMBS/00881173
 http://irail.be/stations/NMBS/008811734#2,http://irail.be/stations/NMBS/008811734,4.62165300,50.7244200,Basse-Wavre platform 2,Basse-Wavre perron 2,Basse-Wavre voie 2,Basse-Wavre gleiss 2,Basse-Wavre platform 2,2
 http://irail.be/stations/NMBS/008863867#1,http://irail.be/stations/NMBS/008863867,4.95684000,50.1144300,Beauraing platform 1,Beauraing perron 1,Beauraing voie 1,Beauraing gleiss 1,Beauraing platform 1,1
 http://irail.be/stations/NMBS/008863867#2,http://irail.be/stations/NMBS/008863867,4.95684000,50.1144300,Beauraing platform 2,Beauraing perron 2,Beauraing voie 2,Beauraing gleiss 2,Beauraing platform 2,2
+http://irail.be/stations/NMBS/008863867#3,http://irail.be/stations/NMBS/008863867,4.95684000,50.1144300,Beauraing platform 3,Beauraing perron 3,Beauraing voie 3,Beauraing gleiss 3,Beauraing platform 3,3
 http://irail.be/stations/NMBS/008891124#1,http://irail.be/stations/NMBS/008891124,3.32989000,51.1280100,Beernem platform 1,Beernem perron 1,Beernem voie 1,Beernem gleiss 1,Beernem platform 1,1
 http://irail.be/stations/NMBS/008891124#2,http://irail.be/stations/NMBS/008891124,3.32989000,51.1280100,Beernem platform 2,Beernem perron 2,Beernem voie 2,Beernem gleiss 2,Beernem platform 2,2
 http://irail.be/stations/NMBS/008814423#1,http://irail.be/stations/NMBS/008814423,4.30260300,50.7666100,Beersel platform 1,Beersel perron 1,Beersel voie 1,Beersel gleiss 1,Beersel platform 1,1
@@ -337,6 +332,7 @@ http://irail.be/stations/NMBS/008842051#1,http://irail.be/stations/NMBS/00884205
 http://irail.be/stations/NMBS/008842051#2,http://irail.be/stations/NMBS/008842051,5.64373400,50.5869800,Chaudfontaine platform 2,Chaudfontaine perron 2,Chaudfontaine voie 2,Chaudfontaine gleiss 2,Chaudfontaine platform 2,2
 http://irail.be/stations/NMBS/008863438#1,http://irail.be/stations/NMBS/008863438,5.08175000,50.4972100,Château-de-Seilles platform 1,Château-de-Seilles perron 1,Château-de-Seilles voie 1,Château-de-Seilles gleiss 1,Château-de-Seilles platform 1,1
 http://irail.be/stations/NMBS/008863438#2,http://irail.be/stations/NMBS/008863438,5.08175000,50.4972100,Château-de-Seilles platform 2,Château-de-Seilles perron 2,Château-de-Seilles voie 2,Château-de-Seilles gleiss 2,Château-de-Seilles platform 2,2
+http://irail.be/stations/NMBS/008874005#1,http://irail.be/stations/NMBS/008874005,4.52186000,50.4101000,Châtelet platform 1,Châtelet perron 1,Châtelet voie 1,Châtelet gleiss 1,Châtelet platform 1,1
 http://irail.be/stations/NMBS/008874005#2,http://irail.be/stations/NMBS/008874005,4.52186000,50.4101000,Châtelet platform 2,Châtelet perron 2,Châtelet voie 2,Châtelet gleiss 2,Châtelet platform 2,2
 http://irail.be/stations/NMBS/008874005#3,http://irail.be/stations/NMBS/008874005,4.52186000,50.4101000,Châtelet platform 3,Châtelet perron 3,Châtelet voie 3,Châtelet gleiss 3,Châtelet platform 3,3
 http://irail.be/stations/NMBS/008874005#4,http://irail.be/stations/NMBS/008874005,4.52186000,50.4101000,Châtelet platform 4,Châtelet perron 4,Châtelet voie 4,Châtelet gleiss 4,Châtelet platform 4,4
@@ -389,7 +385,6 @@ http://irail.be/stations/NMBS/008892080#3,http://irail.be/stations/NMBS/00889208
 http://irail.be/stations/NMBS/008892080#4,http://irail.be/stations/NMBS/008892080,3.65046700,50.9970600,De Pinte platform 4,De Pinte perron 4,De Pinte voie 4,De Pinte gleiss 4,De Pinte platform 4,4
 http://irail.be/stations/NMBS/008892106#1,http://irail.be/stations/NMBS/008892106,3.53443500,50.9782600,Deinze platform 1,Deinze perron 1,Deinze voie 1,Deinze gleiss 1,Deinze platform 1,1
 http://irail.be/stations/NMBS/008892106#2,http://irail.be/stations/NMBS/008892106,3.53443500,50.9782600,Deinze platform 2,Deinze perron 2,Deinze voie 2,Deinze gleiss 2,Deinze platform 2,2
-http://irail.be/stations/NMBS/008892106#3,http://irail.be/stations/NMBS/008892106,3.53443500,50.9782600,Deinze platform 3,Deinze perron 3,Deinze voie 3,Deinze gleiss 3,Deinze platform 3,3
 http://irail.be/stations/NMBS/008892106#4,http://irail.be/stations/NMBS/008892106,3.53443500,50.9782600,Deinze platform 4,Deinze perron 4,Deinze voie 4,Deinze gleiss 4,Deinze platform 4,4
 http://irail.be/stations/NMBS/008892106#5,http://irail.be/stations/NMBS/008892106,3.53443500,50.9782600,Deinze platform 5,Deinze perron 5,Deinze voie 5,Deinze gleiss 5,Deinze platform 5,5
 http://irail.be/stations/NMBS/008811205#1,http://irail.be/stations/NMBS/008811205,4.40387100,50.8183600,Delta platform 1,Delta perron 1,Delta voie 1,Delta gleiss 1,Delta platform 1,1
@@ -492,7 +487,6 @@ http://irail.be/stations/NMBS/008841467#1,http://irail.be/stations/NMBS/00884146
 http://irail.be/stations/NMBS/008841467#2,http://irail.be/stations/NMBS/008841467,5.39845000,50.6640500,Fexhe-le-Haut-Clocher platform 2,Fexhe-le-Haut-Clocher perron 2,Fexhe-le-Haut-Clocher voie 2,Fexhe-le-Haut-Clocher gleiss 2,Fexhe-le-Haut-Clocher platform 2,2
 http://irail.be/stations/NMBS/008861127#1,http://irail.be/stations/NMBS/008861127,4.80630000,50.4562400,Flawinne platform 1,Flawinne perron 1,Flawinne voie 1,Flawinne gleiss 1,Flawinne platform 1,1
 http://irail.be/stations/NMBS/008861127#2,http://irail.be/stations/NMBS/008861127,4.80630000,50.4562400,Flawinne platform 2,Flawinne perron 2,Flawinne voie 2,Flawinne gleiss 2,Flawinne platform 2,2
-http://irail.be/stations/NMBS/008861127#3,http://irail.be/stations/NMBS/008861127,4.80630000,50.4562400,Flawinne platform 3,Flawinne perron 3,Flawinne voie 3,Flawinne gleiss 3,Flawinne platform 3,3
 http://irail.be/stations/NMBS/008872413#1,http://irail.be/stations/NMBS/008872413,4.54374600,50.4819200,Fleurus platform 1,Fleurus perron 1,Fleurus voie 1,Fleurus gleiss 1,Fleurus platform 1,1
 http://irail.be/stations/NMBS/008872413#2,http://irail.be/stations/NMBS/008872413,4.54374600,50.4819200,Fleurus platform 2,Fleurus perron 2,Fleurus voie 2,Fleurus gleiss 2,Fleurus platform 2,2
 http://irail.be/stations/NMBS/008872413#3,http://irail.be/stations/NMBS/008872413,4.54374600,50.4819200,Fleurus platform 3,Fleurus perron 3,Fleurus voie 3,Fleurus gleiss 3,Fleurus platform 3,3
@@ -517,6 +511,7 @@ http://irail.be/stations/NMBS/008814118#1,http://irail.be/stations/NMBS/00881411
 http://irail.be/stations/NMBS/008814118#2,http://irail.be/stations/NMBS/008814118,4.32094000,50.8102000,Vorst-Oost/Forest-Est platform 2,Vorst-Oost perron 2,Forest-Est voie 2,Vorst-Oost/Forest-Est gleiss 2,Vorst-Oost/Forest-Est platform 2,2
 http://irail.be/stations/NMBS/008814373#1,http://irail.be/stations/NMBS/008814373,4.30916700,50.8092200,Vorst-Zuid/Forest-Midi platform 1,Vorst-Zuid perron 1,Forest-Midi voie 1,Vorst-Zuid/Forest-Midi gleiss 1,Vorst-Zuid/Forest-Midi platform 1,1
 http://irail.be/stations/NMBS/008814373#2,http://irail.be/stations/NMBS/008814373,4.30916700,50.8092200,Vorst-Zuid/Forest-Midi platform 2,Vorst-Zuid perron 2,Forest-Midi voie 2,Vorst-Zuid/Forest-Midi gleiss 2,Vorst-Zuid/Forest-Midi platform 2,2
+http://irail.be/stations/NMBS/008814373#4,http://irail.be/stations/NMBS/008814373,4.30916700,50.8092200,Vorst-Zuid/Forest-Midi platform 4,Vorst-Zuid perron 4,Forest-Midi voie 4,Vorst-Zuid/Forest-Midi gleiss 4,Vorst-Zuid/Forest-Midi platform 4,4
 http://irail.be/stations/NMBS/008864311#1,http://irail.be/stations/NMBS/008864311,5.27678300,50.1327600,Forrières platform 1,Forrières perron 1,Forrières voie 1,Forrières gleiss 1,Forrières platform 1,1
 http://irail.be/stations/NMBS/008864311#2,http://irail.be/stations/NMBS/008864311,5.27678300,50.1327600,Forrières platform 2,Forrières perron 2,Forrières voie 2,Forrières gleiss 2,Forrières platform 2,2
 http://irail.be/stations/NMBS/008844255#1,http://irail.be/stations/NMBS/008844255,5.72366600,50.5650600,Fraipont platform 1,Fraipont perron 1,Fraipont voie 1,Fraipont gleiss 1,Fraipont platform 1,1
@@ -541,7 +536,6 @@ http://irail.be/stations/NMBS/008892007#12,http://irail.be/stations/NMBS/0088920
 http://irail.be/stations/NMBS/008892007#2,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 2,Gent-Sint-Pieters perron 2,Gand-Saint-Pierre voie 2,Gent-Sint-Pieters gleiss 2,Ghent-Sint-Pieters platform 2,2
 http://irail.be/stations/NMBS/008892007#3,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 3,Gent-Sint-Pieters perron 3,Gand-Saint-Pierre voie 3,Gent-Sint-Pieters gleiss 3,Ghent-Sint-Pieters platform 3,3
 http://irail.be/stations/NMBS/008892007#4,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 4,Gent-Sint-Pieters perron 4,Gand-Saint-Pierre voie 4,Gent-Sint-Pieters gleiss 4,Ghent-Sint-Pieters platform 4,4
-http://irail.be/stations/NMBS/008892007#5,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 5,Gent-Sint-Pieters perron 5,Gand-Saint-Pierre voie 5,Gent-Sint-Pieters gleiss 5,Ghent-Sint-Pieters platform 5,5
 http://irail.be/stations/NMBS/008892007#6,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 6,Gent-Sint-Pieters perron 6,Gand-Saint-Pierre voie 6,Gent-Sint-Pieters gleiss 6,Ghent-Sint-Pieters platform 6,6
 http://irail.be/stations/NMBS/008892007#8,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 8,Gent-Sint-Pieters perron 8,Gand-Saint-Pierre voie 8,Gent-Sint-Pieters gleiss 8,Ghent-Sint-Pieters platform 8,8
 http://irail.be/stations/NMBS/008892007#9,http://irail.be/stations/NMBS/008892007,3.71067300,51.0359000,Gent-Sint-Pieters platform 9,Gent-Sint-Pieters perron 9,Gand-Saint-Pierre voie 9,Gent-Sint-Pieters gleiss 9,Ghent-Sint-Pieters platform 9,9
@@ -603,6 +597,7 @@ http://irail.be/stations/NMBS/008822517#1,http://irail.be/stations/NMBS/00882251
 http://irail.be/stations/NMBS/008822517#2,http://irail.be/stations/NMBS/008822517,4.61330600,50.9664300,Haacht platform 2,Haacht perron 2,Haacht voie 2,Haacht gleiss 2,Haacht platform 2,2
 http://irail.be/stations/NMBS/008895869#1,http://irail.be/stations/NMBS/008895869,4.02395700,50.9068400,Haaltert platform 1,Haaltert perron 1,Haaltert voie 1,Haaltert gleiss 1,Haaltert platform 1,1
 http://irail.be/stations/NMBS/008895869#2,http://irail.be/stations/NMBS/008895869,4.02395700,50.9068400,Haaltert platform 2,Haaltert perron 2,Haaltert voie 2,Haaltert gleiss 2,Haaltert platform 2,2
+http://irail.be/stations/NMBS/008866142#1,http://irail.be/stations/NMBS/008866142,5.63268900,49.7182500,Habay platform 1,Habay perron 1,Habay voie 1,Habay gleiss 1,Habay platform 1,1
 http://irail.be/stations/NMBS/008866142#2,http://irail.be/stations/NMBS/008866142,5.63268900,49.7182500,Habay platform 2,Habay perron 2,Habay voie 2,Habay gleiss 2,Habay platform 2,2
 http://irail.be/stations/NMBS/008884327#1,http://irail.be/stations/NMBS/008884327,3.76689300,50.4280200,Hainin platform 1,Hainin perron 1,Hainin voie 1,Hainin gleiss 1,Hainin platform 1,1
 http://irail.be/stations/NMBS/008814308#1,http://irail.be/stations/NMBS/008814308,4.24063300,50.7339300,Halle platform 1,Halle perron 1,Hal voie 1,Halle gleiss 1,Halle platform 1,1
@@ -614,7 +609,6 @@ http://irail.be/stations/NMBS/008866530#1,http://irail.be/stations/NMBS/00886653
 http://irail.be/stations/NMBS/008866530#2,http://irail.be/stations/NMBS/008866530,5.74134700,49.5562100,Halanzy platform 2,Halanzy perron 2,Halanzy voie 2,Halanzy gleiss 2,Halanzy platform 2,2
 http://irail.be/stations/NMBS/008873387#1,http://irail.be/stations/NMBS/008873387,4.40469800,50.3195600,Ham-sur-Heure platform 1,Ham-sur-Heure perron 1,Ham-sur-Heure voie 1,Ham-sur-Heure gleiss 1,Ham-sur-Heure platform 1,1
 http://irail.be/stations/NMBS/008873387#2,http://irail.be/stations/NMBS/008873387,4.40469800,50.3195600,Ham-sur-Heure platform 2,Ham-sur-Heure perron 2,Ham-sur-Heure voie 2,Ham-sur-Heure gleiss 2,Ham-sur-Heure platform 2,2
-http://irail.be/stations/NMBS/008861168#1,http://irail.be/stations/NMBS/008861168,4.66939000,50.4525500,Ham-sur-Sambre platform 1,Ham-sur-Sambre perron 1,Ham-sur-Sambre voie 1,Ham-sur-Sambre gleiss 1,Ham-sur-Sambre platform 1,1
 http://irail.be/stations/NMBS/008861168#2,http://irail.be/stations/NMBS/008861168,4.66939000,50.4525500,Ham-sur-Sambre platform 2,Ham-sur-Sambre perron 2,Ham-sur-Sambre voie 2,Ham-sur-Sambre gleiss 2,Ham-sur-Sambre platform 2,2
 http://irail.be/stations/NMBS/008822533#1,http://irail.be/stations/NMBS/008822533,4.66301000,50.9442500,Hambos platform 1,Hambos perron 1,Hambos voie 1,Hambos gleiss 1,Hambos platform 1,1
 http://irail.be/stations/NMBS/008822533#2,http://irail.be/stations/NMBS/008822533,4.66301000,50.9442500,Hambos platform 2,Hambos perron 2,Hambos voie 2,Hambos gleiss 2,Hambos platform 2,2
@@ -630,7 +624,6 @@ http://irail.be/stations/NMBS/008896115#2,http://irail.be/stations/NMBS/00889611
 http://irail.be/stations/NMBS/008811155#1,http://irail.be/stations/NMBS/008811155,4.41998000,50.8888800,Haren platform 1,Haren perron 1,Haren voie 1,Haren gleiss 1,Haren platform 1,1
 http://irail.be/stations/NMBS/008811155#2,http://irail.be/stations/NMBS/008811155,4.41998000,50.8888800,Haren platform 2,Haren perron 2,Haren voie 2,Haren gleiss 2,Haren platform 2,2
 http://irail.be/stations/NMBS/008811130#1,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896900,Haren-Sud/Haren-Zuid platform 1,Haren-Zuid perron 1,Haren-Sud voie 1,Haren-Sud/Haren-Zuid gleiss 1,Haren-Sud/Haren-Zuid platform 1,1
-http://irail.be/stations/NMBS/008811130#3,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896900,Haren-Sud/Haren-Zuid platform 3,Haren-Zuid perron 3,Haren-Sud voie 3,Haren-Sud/Haren-Zuid gleiss 3,Haren-Sud/Haren-Zuid platform 3,3
 http://irail.be/stations/NMBS/008811130#4,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896900,Haren-Sud/Haren-Zuid platform 4,Haren-Zuid perron 4,Haren-Sud voie 4,Haren-Sud/Haren-Zuid gleiss 4,Haren-Sud/Haren-Zuid platform 4,4
 http://irail.be/stations/NMBS/008831005#1,http://irail.be/stations/NMBS/008831005,5.32763100,50.9308200,Hasselt platform 1,Hasselt perron 1,Hasselt voie 1,Hasselt gleiss 1,Hasselt platform 1,1
 http://irail.be/stations/NMBS/008831005#2,http://irail.be/stations/NMBS/008831005,5.32763100,50.9308200,Hasselt platform 2,Hasselt perron 2,Hasselt voie 2,Hasselt gleiss 2,Hasselt platform 2,2
@@ -653,7 +646,6 @@ http://irail.be/stations/NMBS/008891645#1,http://irail.be/stations/NMBS/00889164
 http://irail.be/stations/NMBS/008891645#2,http://irail.be/stations/NMBS/008891645,3.23918200,51.3339800,Heist platform 2,Heist perron 2,Heist voie 2,Heist gleiss 2,Heist platform 2,2
 http://irail.be/stations/NMBS/008821832#1,http://irail.be/stations/NMBS/008821832,4.70823100,51.0741500,Heist-op-den-Berg platform 1,Heist-op-den-Berg perron 1,Heist-op-den-Berg voie 1,Heist-op-den-Berg gleiss 1,Heist-op-den-Berg platform 1,1
 http://irail.be/stations/NMBS/008821832#2,http://irail.be/stations/NMBS/008821832,4.70823100,51.0741500,Heist-op-den-Berg platform 2,Heist-op-den-Berg perron 2,Heist-op-den-Berg voie 2,Heist-op-den-Berg gleiss 2,Heist-op-den-Berg platform 2,2
-http://irail.be/stations/NMBS/008821832#3,http://irail.be/stations/NMBS/008821832,4.70823100,51.0741500,Heist-op-den-Berg platform 3,Heist-op-den-Berg perron 3,Heist-op-den-Berg voie 3,Heist-op-den-Berg gleiss 3,Heist-op-den-Berg platform 3,3
 http://irail.be/stations/NMBS/008812153#1,http://irail.be/stations/NMBS/008812153,4.15617400,50.9896000,Heizijde platform 1,Heizijde perron 1,Heizijde voie 1,Heizijde gleiss 1,Heizijde platform 1,1
 http://irail.be/stations/NMBS/008812153#2,http://irail.be/stations/NMBS/008812153,4.15617400,50.9896000,Heizijde platform 2,Heizijde perron 2,Heizijde voie 2,Heizijde gleiss 2,Heizijde platform 2,2
 http://irail.be/stations/NMBS/008824224#1,http://irail.be/stations/NMBS/008824224,4.33829400,51.1362500,Hemiksem platform 1,Hemiksem perron 1,Hemiksem voie 1,Hemiksem gleiss 1,Hemiksem platform 1,1
@@ -701,7 +693,6 @@ http://irail.be/stations/NMBS/008842655#2,http://irail.be/stations/NMBS/00884265
 http://irail.be/stations/NMBS/008886553#1,http://irail.be/stations/NMBS/008886553,3.83517400,50.7030600,Houraing platform 1,Houraing perron 1,Houraing voie 1,Houraing gleiss 1,Houraing platform 1,1
 http://irail.be/stations/NMBS/008886553#2,http://irail.be/stations/NMBS/008886553,3.83517400,50.7030600,Houraing platform 2,Houraing perron 2,Houraing voie 2,Houraing gleiss 2,Houraing platform 2,2
 http://irail.be/stations/NMBS/008871829#1,http://irail.be/stations/NMBS/008871829,4.30874000,50.3636900,Hourpes platform 1,Hourpes perron 1,Hourpes voie 1,Hourpes gleiss 1,Hourpes platform 1,1
-http://irail.be/stations/NMBS/008871829#2,http://irail.be/stations/NMBS/008871829,4.30874000,50.3636900,Hourpes platform 2,Hourpes perron 2,Hourpes voie 2,Hourpes gleiss 2,Hourpes platform 2,2
 http://irail.be/stations/NMBS/008863842#1,http://irail.be/stations/NMBS/008863842,5.00607600,50.1898700,Houyet platform 1,Houyet perron 1,Houyet voie 1,Houyet gleiss 1,Houyet platform 1,1
 http://irail.be/stations/NMBS/008863842#3,http://irail.be/stations/NMBS/008863842,5.00607600,50.1898700,Houyet platform 3,Houyet perron 3,Houyet voie 3,Houyet gleiss 3,Houyet platform 3,3
 http://irail.be/stations/NMBS/008821337#1,http://irail.be/stations/NMBS/008821337,4.46515800,51.1541200,Hove platform 1,Hove perron 1,Hove voie 1,Hove gleiss 1,Hove platform 1,1
@@ -765,6 +756,7 @@ http://irail.be/stations/NMBS/008821311#1,http://irail.be/stations/NMBS/00882131
 http://irail.be/stations/NMBS/008821311#2,http://irail.be/stations/NMBS/008821311,4.47635800,51.1340300,Kontich-Lint platform 2,Kontich-Lint perron 2,Kontich-Lint voie 2,Kontich-Lint gleiss 2,Kontich-Lint platform 2,2
 http://irail.be/stations/NMBS/008821311#3,http://irail.be/stations/NMBS/008821311,4.47635800,51.1340300,Kontich-Lint platform 3,Kontich-Lint perron 3,Kontich-Lint voie 3,Kontich-Lint gleiss 3,Kontich-Lint platform 3,3
 http://irail.be/stations/NMBS/008821311#4,http://irail.be/stations/NMBS/008821311,4.47635800,51.1340300,Kontich-Lint platform 4,Kontich-Lint perron 4,Kontich-Lint voie 4,Kontich-Lint gleiss 4,Kontich-Lint platform 4,4
+http://irail.be/stations/NMBS/008821311#5,http://irail.be/stations/NMBS/008821311,4.47635800,51.1340300,Kontich-Lint platform 5,Kontich-Lint perron 5,Kontich-Lint voie 5,Kontich-Lint gleiss 5,Kontich-Lint platform 5,5
 http://irail.be/stations/NMBS/008892403#1,http://irail.be/stations/NMBS/008892403,3.04345600,51.0252500,Kortemark platform 1,Kortemark perron 1,Kortemark voie 1,Kortemark gleiss 1,Kortemark platform 1,1
 http://irail.be/stations/NMBS/008892403#2,http://irail.be/stations/NMBS/008892403,3.04345600,51.0252500,Kortemark platform 2,Kortemark perron 2,Kortemark voie 2,Kortemark gleiss 2,Kortemark platform 2,2
 http://irail.be/stations/NMBS/008811254#1,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 1,Kortenberg perron 1,Kortenberg voie 1,Kortenberg gleiss 1,Kortenberg platform 1,1
@@ -793,6 +785,7 @@ http://irail.be/stations/NMBS/008871670#2,http://irail.be/stations/NMBS/00887167
 http://irail.be/stations/NMBS/008892056#1,http://irail.be/stations/NMBS/008892056,3.57685600,51.0643100,Landegem platform 1,Landegem perron 1,Landegem voie 1,Landegem gleiss 1,Landegem platform 1,1
 http://irail.be/stations/NMBS/008892056#2,http://irail.be/stations/NMBS/008892056,3.57685600,51.0643100,Landegem platform 2,Landegem perron 2,Landegem voie 2,Landegem gleiss 2,Landegem platform 2,2
 http://irail.be/stations/NMBS/008892056#3,http://irail.be/stations/NMBS/008892056,3.57685600,51.0643100,Landegem platform 3,Landegem perron 3,Landegem voie 3,Landegem gleiss 3,Landegem platform 3,3
+http://irail.be/stations/NMBS/008892056#4,http://irail.be/stations/NMBS/008892056,3.57685600,51.0643100,Landegem platform 4,Landegem perron 4,Landegem voie 4,Landegem gleiss 4,Landegem platform 4,4
 http://irail.be/stations/NMBS/008871837#1,http://irail.be/stations/NMBS/008871837,4.35098000,50.3773100,Landelies platform 1,Landelies perron 1,Landelies voie 1,Landelies gleiss 1,Landelies platform 1,1
 http://irail.be/stations/NMBS/008871837#2,http://irail.be/stations/NMBS/008871837,4.35098000,50.3773100,Landelies platform 2,Landelies perron 2,Landelies voie 2,Landelies gleiss 2,Landelies platform 2,2
 http://irail.be/stations/NMBS/008833605#1,http://irail.be/stations/NMBS/008833605,5.07966000,50.7479300,Landen platform 1,Landen perron 1,Landen voie 1,Landen gleiss 1,Landen platform 1,1
@@ -875,7 +868,6 @@ http://irail.be/stations/NMBS/008841525#1,http://irail.be/stations/NMBS/00884152
 http://irail.be/stations/NMBS/008841525#2,http://irail.be/stations/NMBS/008841525,5.57045100,50.6463500,Liège-Saint-Lambert platform 2,Luik-Sint-Lambertus perron 2,Liège-Saint-Lambert voie 2,Liège-Saint-Lambert gleiss 2,Liège-Saint-Lambert platform 2,2
 http://irail.be/stations/NMBS/008841525#3,http://irail.be/stations/NMBS/008841525,5.57045100,50.6463500,Liège-Saint-Lambert platform 3,Luik-Sint-Lambertus perron 3,Liège-Saint-Lambert voie 3,Liège-Saint-Lambert gleiss 3,Liège-Saint-Lambert platform 3,3
 http://irail.be/stations/NMBS/008841525#4,http://irail.be/stations/NMBS/008841525,5.57045100,50.6463500,Liège-Saint-Lambert platform 4,Luik-Sint-Lambertus perron 4,Liège-Saint-Lambert voie 4,Liège-Saint-Lambert gleiss 4,Liège-Saint-Lambert platform 4,4
-http://irail.be/stations/NMBS/008871712#1,http://irail.be/stations/NMBS/008871712,4.26095700,50.3464700,Lobbes platform 1,Lobbes perron 1,Lobbes voie 1,Lobbes gleiss 1,Lobbes platform 1,1
 http://irail.be/stations/NMBS/008871712#2,http://irail.be/stations/NMBS/008871712,4.26095700,50.3464700,Lobbes platform 2,Lobbes perron 2,Lobbes voie 2,Lobbes gleiss 2,Lobbes platform 2,2
 http://irail.be/stations/NMBS/008872306#1,http://irail.be/stations/NMBS/008872306,4.46295000,50.4324500,Lodelinsart platform 1,Lodelinsart perron 1,Lodelinsart voie 1,Lodelinsart gleiss 1,Lodelinsart platform 1,1
 http://irail.be/stations/NMBS/008872306#2,http://irail.be/stations/NMBS/008872306,4.46295000,50.4324500,Lodelinsart platform 2,Lodelinsart perron 2,Lodelinsart voie 2,Lodelinsart gleiss 2,Lodelinsart platform 2,2
@@ -938,7 +930,6 @@ http://irail.be/stations/NMBS/008882701#2,http://irail.be/stations/NMBS/00888270
 http://irail.be/stations/NMBS/008882701#3,http://irail.be/stations/NMBS/008882701,4.23468000,50.5061100,Manage platform 3,Manage perron 3,Manage voie 3,Manage gleiss 3,Manage platform 3,3
 http://irail.be/stations/NMBS/008882701#4,http://irail.be/stations/NMBS/008882701,4.23468000,50.5061100,Manage platform 4,Manage perron 4,Manage voie 4,Manage gleiss 4,Manage platform 4,4
 http://irail.be/stations/NMBS/008882701#5,http://irail.be/stations/NMBS/008882701,4.23468000,50.5061100,Manage platform 5,Manage perron 5,Manage voie 5,Manage gleiss 5,Manage platform 5,5
-http://irail.be/stations/NMBS/008866175#2,http://irail.be/stations/NMBS/008866175,5.53975700,49.7273300,Marbehan platform 2,Marbehan perron 2,Marbehan voie 2,Marbehan gleiss 2,Marbehan platform 2,2
 http://irail.be/stations/NMBS/008866175#3,http://irail.be/stations/NMBS/008866175,5.53975700,49.7273300,Marbehan platform 3,Marbehan perron 3,Marbehan voie 3,Marbehan gleiss 3,Marbehan platform 3,3
 http://irail.be/stations/NMBS/008864410#1,http://irail.be/stations/NMBS/008864410,5.34629000,50.2224700,Marche-en-Famenne platform 1,Marche-en-Famenne perron 1,Marche-en-Famenne voie 1,Marche-en-Famenne gleiss 1,Marche-en-Famenne platform 1,1
 http://irail.be/stations/NMBS/008863461#1,http://irail.be/stations/NMBS/008863461,4.96458000,50.4807400,Marche-les-Dames platform 1,Marche-les-Dames perron 1,Marche-les-Dames voie 1,Marche-les-Dames gleiss 1,Marche-les-Dames platform 1,1
@@ -958,6 +949,7 @@ http://irail.be/stations/NMBS/008875002#2,http://irail.be/stations/NMBS/00887500
 http://irail.be/stations/NMBS/008864345#1,http://irail.be/stations/NMBS/008864345,5.31389000,50.2028200,Marloie platform 1,Marloie perron 1,Marloie voie 1,Marloie gleiss 1,Marloie platform 1,1
 http://irail.be/stations/NMBS/008864345#2,http://irail.be/stations/NMBS/008864345,5.31389000,50.2028200,Marloie platform 2,Marloie perron 2,Marloie voie 2,Marloie gleiss 2,Marloie platform 2,2
 http://irail.be/stations/NMBS/008864345#3,http://irail.be/stations/NMBS/008864345,5.31389000,50.2028200,Marloie platform 3,Marloie perron 3,Marloie voie 3,Marloie gleiss 3,Marloie platform 3,3
+http://irail.be/stations/NMBS/008864345#4,http://irail.be/stations/NMBS/008864345,5.31389000,50.2028200,Marloie platform 4,Marloie perron 4,Marloie voie 4,Marloie gleiss 4,Marloie platform 4,4
 http://irail.be/stations/NMBS/008881174#1,http://irail.be/stations/NMBS/008881174,3.96214000,50.5365500,Masnuy-Saint-Pierre platform 1,Masnuy-Saint-Pierre perron 1,Masnuy-Saint-Pierre voie 1,Masnuy-Saint-Pierre gleiss 1,Masnuy-Saint-Pierre platform 1,1
 http://irail.be/stations/NMBS/008881174#2,http://irail.be/stations/NMBS/008881174,3.96214000,50.5365500,Masnuy-Saint-Pierre platform 2,Masnuy-Saint-Pierre perron 2,Masnuy-Saint-Pierre voie 2,Masnuy-Saint-Pierre gleiss 2,Masnuy-Saint-Pierre platform 2,2
 http://irail.be/stations/NMBS/008885530#1,http://irail.be/stations/NMBS/008885530,3.49552300,50.5475600,Maubray platform 1,Maubray perron 1,Maubray voie 1,Maubray gleiss 1,Maubray platform 1,1
@@ -1033,8 +1025,10 @@ http://irail.be/stations/NMBS/008842648#1,http://irail.be/stations/NMBS/00884264
 http://irail.be/stations/NMBS/008842648#2,http://irail.be/stations/NMBS/008842648,5.58723700,50.5476200,Méry platform 2,Méry perron 2,Méry voie 2,Méry gleiss 2,Méry platform 2,2
 http://irail.be/stations/NMBS/008886058#1,http://irail.be/stations/NMBS/008886058,3.83391900,50.6001100,Mevergnies-Attre platform 1,Mevergnies-Attre perron 1,Mevergnies-Attre voie 1,Mevergnies-Attre gleiss 1,Mevergnies-Attre platform 1,1
 http://irail.be/stations/NMBS/008886058#2,http://irail.be/stations/NMBS/008886058,3.83391900,50.6001100,Mevergnies-Attre platform 2,Mevergnies-Attre perron 2,Mevergnies-Attre voie 2,Mevergnies-Attre gleiss 2,Mevergnies-Attre platform 2,2
+http://irail.be/stations/NMBS/008863008#1,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 1,Namen perron 1,Namur voie 1,Namur gleiss 1,Namur platform 1,1
 http://irail.be/stations/NMBS/008863008#10,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 10,Namen perron 10,Namur voie 10,Namur gleiss 10,Namur platform 10,10
 http://irail.be/stations/NMBS/008863008#11,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 11,Namen perron 11,Namur voie 11,Namur gleiss 11,Namur platform 11,11
+http://irail.be/stations/NMBS/008863008#2,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 2,Namen perron 2,Namur voie 2,Namur gleiss 2,Namur platform 2,2
 http://irail.be/stations/NMBS/008863008#3,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 3,Namen perron 3,Namur voie 3,Namur gleiss 3,Namur platform 3,3
 http://irail.be/stations/NMBS/008863008#4,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 4,Namen perron 4,Namur voie 4,Namur gleiss 4,Namur platform 4,4
 http://irail.be/stations/NMBS/008863008#5,http://irail.be/stations/NMBS/008863008,4.86222000,50.4687900,Namur platform 5,Namen perron 5,Namur voie 5,Namur gleiss 5,Namur platform 5,5
@@ -1076,7 +1070,6 @@ http://irail.be/stations/NMBS/008814209#C,http://irail.be/stations/NMBS/00881420
 http://irail.be/stations/NMBS/008821105#1,http://irail.be/stations/NMBS/008821105,4.63220000,51.3568300,Noorderkempen platform 1,Noorderkempen perron 1,Noorderkempen voie 1,Noorderkempen gleiss 1,Noorderkempen (brecht) platform 1,1
 http://irail.be/stations/NMBS/008821105#2,http://irail.be/stations/NMBS/008821105,4.63220000,51.3568300,Noorderkempen platform 2,Noorderkempen perron 2,Noorderkempen voie 2,Noorderkempen gleiss 2,Noorderkempen (brecht) platform 2,2
 http://irail.be/stations/NMBS/008811247#1,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 1,Nossegem perron 1,Nossegem voie 1,Nossegem gleiss 1,Nossegem platform 1,1
-http://irail.be/stations/NMBS/008811247#3,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 3,Nossegem perron 3,Nossegem voie 3,Nossegem gleiss 3,Nossegem platform 3,3
 http://irail.be/stations/NMBS/008811247#4,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 4,Nossegem perron 4,Nossegem voie 4,Nossegem gleiss 4,Nossegem platform 4,4
 http://irail.be/stations/NMBS/008871332#1,http://irail.be/stations/NMBS/008871332,4.36357000,50.5352100,Obaix-Buzet platform 1,Obaix-Buzet perron 1,Obaix-Buzet voie 1,Obaix-Buzet gleiss 1,Obaix-Buzet platform 1,1
 http://irail.be/stations/NMBS/008871332#2,http://irail.be/stations/NMBS/008871332,4.36357000,50.5352100,Obaix-Buzet platform 2,Obaix-Buzet perron 2,Obaix-Buzet voie 2,Obaix-Buzet gleiss 2,Obaix-Buzet platform 2,2
@@ -1182,7 +1175,6 @@ http://irail.be/stations/NMBS/008864006#6,http://irail.be/stations/NMBS/00886400
 http://irail.be/stations/NMBS/008864006#7,http://irail.be/stations/NMBS/008864006,5.26669700,50.1604000,Rochefort-Jemelle platform 7,Rochefort-Jemelle perron 7,Rochefort-Jemelle voie 7,Rochefort-Jemelle gleiss 7,Rochefort-Jemelle platform 7,7
 http://irail.be/stations/NMBS/008861119#1,http://irail.be/stations/NMBS/008861119,4.82842000,50.4577400,Ronet platform 1,Ronet perron 1,Ronet voie 1,Ronet gleiss 1,Ronet platform 1,1
 http://irail.be/stations/NMBS/008861119#2,http://irail.be/stations/NMBS/008861119,4.82842000,50.4577400,Ronet platform 2,Ronet perron 2,Ronet voie 2,Ronet gleiss 2,Ronet platform 2,2
-http://irail.be/stations/NMBS/008861119#3,http://irail.be/stations/NMBS/008861119,4.82842000,50.4577400,Ronet platform 3,Ronet perron 3,Ronet voie 3,Ronet gleiss 3,Ronet platform 3,3
 http://irail.be/stations/NMBS/008896800#1,http://irail.be/stations/NMBS/008896800,3.13041500,50.9490300,Roeselare platform 1,Roeselare perron 1,Roulers voie 1,Roeselare gleiss 1,Roeselare platform 1,1
 http://irail.be/stations/NMBS/008896800#2,http://irail.be/stations/NMBS/008896800,3.13041500,50.9490300,Roeselare platform 2,Roeselare perron 2,Roulers voie 2,Roeselare gleiss 2,Roeselare platform 2,2
 http://irail.be/stations/NMBS/008896800#3,http://irail.be/stations/NMBS/008896800,3.13041500,50.9490300,Roeselare platform 3,Roeselare perron 3,Roulers voie 3,Roeselare gleiss 3,Roeselare platform 3,3
@@ -1308,7 +1300,6 @@ http://irail.be/stations/NMBS/008844339#1,http://irail.be/stations/NMBS/00884433
 http://irail.be/stations/NMBS/008844339#2,http://irail.be/stations/NMBS/008844339,5.81503000,50.5361600,Theux platform 2,Theux perron 2,Theux voie 2,Theux gleiss 2,Theux platform 2,2
 http://irail.be/stations/NMBS/008881455#1,http://irail.be/stations/NMBS/008881455,4.09852000,50.4695400,Thieu platform 1,Thieu perron 1,Thieu voie 1,Thieu gleiss 1,Thieu platform 1,1
 http://irail.be/stations/NMBS/008881455#2,http://irail.be/stations/NMBS/008881455,4.09852000,50.4695400,Thieu platform 2,Thieu perron 2,Thieu voie 2,Thieu gleiss 2,Thieu platform 2,2
-http://irail.be/stations/NMBS/008871811#1,http://irail.be/stations/NMBS/008871811,4.28891000,50.3427400,Thuin platform 1,Thuin perron 1,Thuin voie 1,Thuin gleiss 1,Thuin platform 1,1
 http://irail.be/stations/NMBS/008871811#2,http://irail.be/stations/NMBS/008871811,4.28891000,50.3427400,Thuin platform 2,Thuin perron 2,Thuin voie 2,Thuin gleiss 2,Thuin platform 2,2
 http://irail.be/stations/NMBS/008884350#1,http://irail.be/stations/NMBS/008884350,3.74470800,50.4233300,Thulin platform 1,Thulin perron 1,Thulin voie 1,Thulin gleiss 1,Thulin platform 1,1
 http://irail.be/stations/NMBS/008821964#1,http://irail.be/stations/NMBS/008821964,4.89309000,51.2410200,Tielen platform 1,Tielen perron 1,Tielen voie 1,Tielen gleiss 1,Tielen platform 1,1
@@ -1319,7 +1310,7 @@ http://irail.be/stations/NMBS/008842630#1,http://irail.be/stations/NMBS/00884263
 http://irail.be/stations/NMBS/008842630#2,http://irail.be/stations/NMBS/008842630,5.58393300,50.5706300,Tilff platform 2,Tilff perron 2,Tilff voie 2,Tilff gleiss 2,Tilff platform 2,2
 http://irail.be/stations/NMBS/008872553#1,http://irail.be/stations/NMBS/008872553,4.55267400,50.5580800,Tilly platform 1,Tilly perron 1,Tilly voie 1,Tilly gleiss 1,Tilly platform 1,1
 http://irail.be/stations/NMBS/008872553#2,http://irail.be/stations/NMBS/008872553,4.55267400,50.5580800,Tilly platform 2,Tilly perron 2,Tilly voie 2,Tilly gleiss 2,Tilly platform 2,2
-http://irail.be/stations/NMBS/008833308#3,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 3,Tienen perron 3,Tirlemont voie 3,Thienen gleiss 3,Tienen platform 3,3
+http://irail.be/stations/NMBS/008833308#1,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 1,Tienen perron 1,Tirlemont voie 1,Thienen gleiss 1,Tienen platform 1,1
 http://irail.be/stations/NMBS/008833308#4,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 4,Tienen perron 4,Tirlemont voie 4,Thienen gleiss 4,Tienen platform 4,4
 http://irail.be/stations/NMBS/008895638#1,http://irail.be/stations/NMBS/008895638,3.99282600,50.7355200,Tollembeek platform 1,Tollembeek perron 1,Tollembeek voie 1,Tollembeek gleiss 1,Tollembeek platform 1,1
 http://irail.be/stations/NMBS/008895638#2,http://irail.be/stations/NMBS/008895638,3.99282600,50.7355200,Tollembeek platform 2,Tollembeek perron 2,Tollembeek voie 2,Tollembeek gleiss 2,Tollembeek platform 2,2
@@ -1343,6 +1334,7 @@ http://irail.be/stations/NMBS/008845203#2,http://irail.be/stations/NMBS/00884520
 http://irail.be/stations/NMBS/008892031#1,http://irail.be/stations/NMBS/008892031,3.65520100,51.0472900,Drongen platform 1,Drongen perron 1,Tronchiennes voie 1,Drongen gleiss 1,Drongen platform 1,1
 http://irail.be/stations/NMBS/008892031#2,http://irail.be/stations/NMBS/008892031,3.65520100,51.0472900,Drongen platform 2,Drongen perron 2,Tronchiennes voie 2,Drongen gleiss 2,Drongen platform 2,2
 http://irail.be/stations/NMBS/008892031#3,http://irail.be/stations/NMBS/008892031,3.65520100,51.0472900,Drongen platform 3,Drongen perron 3,Tronchiennes voie 3,Drongen gleiss 3,Drongen platform 3,3
+http://irail.be/stations/NMBS/008892031#4,http://irail.be/stations/NMBS/008892031,3.65520100,51.0472900,Drongen platform 4,Drongen perron 4,Tronchiennes voie 4,Drongen gleiss 4,Drongen platform 4,4
 http://irail.be/stations/NMBS/008844271#1,http://irail.be/stations/NMBS/008844271,5.68835100,50.5732100,Trooz platform 1,Trooz perron 1,Trooz voie 1,Trooz gleiss 1,Trooz platform 1,1
 http://irail.be/stations/NMBS/008844271#2,http://irail.be/stations/NMBS/008844271,5.68835100,50.5732100,Trooz platform 2,Trooz perron 2,Trooz voie 2,Trooz gleiss 2,Trooz platform 2,2
 http://irail.be/stations/NMBS/008883808#1,http://irail.be/stations/NMBS/008883808,4.20573000,50.6917100,Tubize platform 1,Tubeke perron 1,Tubize voie 1,Tubize gleiss 1,Tubize platform 1,1
@@ -1383,6 +1375,7 @@ http://irail.be/stations/NMBS/008811189#3,http://irail.be/stations/NMBS/00881118
 http://irail.be/stations/NMBS/008811189#4,http://irail.be/stations/NMBS/008811189,4.43282600,50.9245800,Vilvoorde platform 4,Vilvoorde perron 4,Vilvorde voie 4,Vilvoorde gleiss 4,Vilvoorde platform 4,4
 http://irail.be/stations/NMBS/008811189#5,http://irail.be/stations/NMBS/008811189,4.43282600,50.9245800,Vilvoorde platform 5,Vilvoorde perron 5,Vilvorde voie 5,Vilvoorde gleiss 5,Vilvoorde platform 5,5
 http://irail.be/stations/NMBS/008811189#6,http://irail.be/stations/NMBS/008811189,4.43282600,50.9245800,Vilvoorde platform 6,Vilvoorde perron 6,Vilvorde voie 6,Vilvoorde gleiss 6,Vilvoorde platform 6,6
+http://irail.be/stations/NMBS/008866407#2,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608200,Virton platform 2,Virton perron 2,Virton voie 2,Virton gleiss 2,Virton platform 2,2
 http://irail.be/stations/NMBS/008866407#3,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608200,Virton platform 3,Virton perron 3,Virton voie 3,Virton gleiss 3,Virton platform 3,3
 http://irail.be/stations/NMBS/008866407#4,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608200,Virton platform 4,Virton perron 4,Virton voie 4,Virton gleiss 4,Virton platform 4,4
 http://irail.be/stations/NMBS/008846201#1,http://irail.be/stations/NMBS/008846201,5.69254800,50.7377600,Visé platform 1,Wezet perron 1,Visé voie 1,Visé gleiss 1,Visé platform 1,1
@@ -1524,6 +1517,9 @@ http://irail.be/stations/NMBS/008863818#2,http://irail.be/stations/NMBS/00886381
 http://irail.be/stations/NMBS/008885522#1,http://irail.be/stations/NMBS/008885522,3.45131000,50.5696300,Antoing platform 1,Antoing perron 1,Antoing voie 1,Antoing gleiss 1,Antoing platform 1,1
 http://irail.be/stations/NMBS/008885522#2,http://irail.be/stations/NMBS/008885522,3.45131000,50.5696300,Antoing platform 2,Antoing perron 2,Antoing voie 2,Antoing gleiss 2,Antoing platform 2,2
 http://irail.be/stations/NMBS/008821121#10,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992280,Antwerpen-Berchem platform 10,Antwerpen-Berchem perron 10,Anvers-Berchem voie 10,Antwerpen-Berchem gleiss 10,Antwerp-Berchem platform 10,10
+http://irail.be/stations/NMBS/008821121#2,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 2,Antwerpen-Berchem perron 2,Anvers-Berchem voie 2,Antwerpen-Berchem gleiss 2,Antwerp-Berchem platform 2,2
+http://irail.be/stations/NMBS/008821121#3,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 3,Antwerpen-Berchem perron 3,Anvers-Berchem voie 3,Antwerpen-Berchem gleiss 3,Antwerp-Berchem platform 3,3
+http://irail.be/stations/NMBS/008821121#4,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992300,Antwerpen-Berchem platform 4,Antwerpen-Berchem perron 4,Anvers-Berchem voie 4,Antwerpen-Berchem gleiss 4,Antwerp-Berchem platform 4,4
 http://irail.be/stations/NMBS/008821121#5,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992280,Antwerpen-Berchem platform 5,Antwerpen-Berchem perron 5,Anvers-Berchem voie 5,Antwerpen-Berchem gleiss 5,Antwerp-Berchem platform 5,5
 http://irail.be/stations/NMBS/008821121#6,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992280,Antwerpen-Berchem platform 6,Antwerpen-Berchem perron 6,Anvers-Berchem voie 6,Antwerpen-Berchem gleiss 6,Antwerp-Berchem platform 6,6
 http://irail.be/stations/NMBS/008821121#7,http://irail.be/stations/NMBS/008821121,4.43221900,51.1992280,Antwerpen-Berchem platform 7,Antwerpen-Berchem perron 7,Anvers-Berchem voie 7,Antwerpen-Berchem gleiss 7,Antwerp-Berchem platform 7,7
@@ -1545,6 +1541,8 @@ http://irail.be/stations/NMBS/008821006#5,http://irail.be/stations/NMBS/00882100
 http://irail.be/stations/NMBS/008821006#6,http://irail.be/stations/NMBS/008821006,4.42109800,51.2171990,Antwerpen-Centraal platform 6,Antwerpen-Centraal perron 6,Anvers-Central voie 6,Antwerpen-Centraal gleiss 6,Antwerp-Central platform 6,6
 http://irail.be/stations/NMBS/008821063#1,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 1,Antwerpen-Luchtbal perron 1,Anvers-Luchtbal voie 1,Antwerpen-Luchtbal gleiss 1,Antwerp-Luchtbal platform 1,1
 http://irail.be/stations/NMBS/008821063#2,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 2,Antwerpen-Luchtbal perron 2,Anvers-Luchtbal voie 2,Antwerpen-Luchtbal gleiss 2,Antwerp-Luchtbal platform 2,2
+http://irail.be/stations/NMBS/008821063#3,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 3,Antwerpen-Luchtbal perron 3,Anvers-Luchtbal voie 3,Antwerpen-Luchtbal gleiss 3,Antwerp-Luchtbal platform 3,3
+http://irail.be/stations/NMBS/008821063#4,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 4,Antwerpen-Luchtbal perron 4,Anvers-Luchtbal voie 4,Antwerpen-Luchtbal gleiss 4,Antwerp-Luchtbal platform 4,4
 http://irail.be/stations/NMBS/008821089#1,http://irail.be/stations/NMBS/008821089,4.42791000,51.2616400,Antwerpen-Noorderdokken platform 1,Antwerpen-Noorderdokken perron 1,Anvers-Noorderdokken voie 1,Antwerpen-Noorderdokken gleiss 1,Antwerp-Noorderdokken platform 1,1
 http://irail.be/stations/NMBS/008821089#2,http://irail.be/stations/NMBS/008821089,4.42791000,51.2616400,Antwerpen-Noorderdokken platform 2,Antwerpen-Noorderdokken perron 2,Anvers-Noorderdokken voie 2,Antwerpen-Noorderdokken gleiss 2,Antwerp-Noorderdokken platform 2,2
 http://irail.be/stations/NMBS/008821196#1,http://irail.be/stations/NMBS/008821196,4.39026400,51.1978330,Antwerpen-Zuid platform 1,Antwerpen-Zuid perron 1,Anvers-Sud voie 1,Antwerpen-Zuid gleiss 1,Antwerp-South platform 1,1
@@ -1564,6 +1562,7 @@ http://irail.be/stations/NMBS/008866001#2,http://irail.be/stations/NMBS/00886600
 http://irail.be/stations/NMBS/008866001#3,http://irail.be/stations/NMBS/008866001,5.80997200,49.6805320,Arlon platform 3,Aarlen perron 3,Arlon voie 3,Arel gleiss 3,Arlon platform 3,3
 http://irail.be/stations/NMBS/008866001#4,http://irail.be/stations/NMBS/008866001,5.80997200,49.6805320,Arlon platform 4,Aarlen perron 4,Arlon voie 4,Arel gleiss 4,Arlon platform 4,4
 http://irail.be/stations/NMBS/008866001#5,http://irail.be/stations/NMBS/008866001,5.80997200,49.6805320,Arlon platform 5,Aarlen perron 5,Arlon voie 5,Arel gleiss 5,Arlon platform 5,5
+http://irail.be/stations/NMBS/008866001#8,http://irail.be/stations/NMBS/008866001,5.80997200,49.6805300,Arlon platform 8,Aarlen perron 8,Arlon voie 8,Arel gleiss 8,Arlon platform 8,8
 http://irail.be/stations/NMBS/008812070#1,http://irail.be/stations/NMBS/008812070,4.20798800,50.9064850,Asse platform 1,Asse perron 1,Asse voie 1,Asse gleiss 1,Asse platform 1,1
 http://irail.be/stations/NMBS/008812070#2,http://irail.be/stations/NMBS/008812070,4.20798800,50.9064850,Asse platform 2,Asse perron 2,Asse voie 2,Asse gleiss 2,Asse platform 2,2
 http://irail.be/stations/NMBS/008864931#1,http://irail.be/stations/NMBS/008864931,5.02283600,50.3681360,Assesse platform 1,Assesse perron 1,Assesse voie 1,Assesse gleiss 1,Assesse platform 1,1
@@ -1669,6 +1668,7 @@ http://irail.be/stations/NMBS/008831781#1,http://irail.be/stations/NMBS/00883178
 http://irail.be/stations/NMBS/008831781#2,http://irail.be/stations/NMBS/008831781,5.40838300,50.9558150,Bokrijk platform 2,Bokrijk perron 2,Bokrijk voie 2,Bokrijk gleiss 2,Bokrijk platform 2,2
 http://irail.be/stations/NMBS/008864469#1,http://irail.be/stations/NMBS/008864469,5.51930400,50.3768000,Bomal platform 1,Bomal perron 1,Bomal voie 1,Bomal gleiss 1,Bomal platform 1,1
 http://irail.be/stations/NMBS/008864469#2,http://irail.be/stations/NMBS/008864469,5.51930400,50.3768000,Bomal platform 2,Bomal perron 2,Bomal voie 2,Bomal gleiss 2,Bomal platform 2,2
+http://irail.be/stations/NMBS/008864469#3,http://irail.be/stations/NMBS/008864469,5.51930400,50.3768000,Bomal platform 3,Bomal perron 3,Bomal voie 3,Bomal gleiss 3,Bomal platform 3,3
 http://irail.be/stations/NMBS/008821857#1,http://irail.be/stations/NMBS/008821857,4.77348100,51.0373400,Booischot platform 1,Booischot perron 1,Booischot voie 1,Booischot gleiss 1,Booischot platform 1,1
 http://irail.be/stations/NMBS/008821857#2,http://irail.be/stations/NMBS/008821857,4.77348100,51.0373400,Booischot platform 2,Booischot perron 2,Booischot voie 2,Booischot gleiss 2,Booischot platform 2,2
 http://irail.be/stations/NMBS/008822814#2,http://irail.be/stations/NMBS/008822814,4.36069800,51.0907130,Boom platform 2,Boom perron 2,Boom voie 2,Boom gleiss 2,Boom platform 2,2
@@ -1777,7 +1777,6 @@ http://irail.be/stations/NMBS/008822145#1,http://irail.be/stations/NMBS/00882214
 http://irail.be/stations/NMBS/008822145#2,http://irail.be/stations/NMBS/008822145,4.20166300,51.0162940,Buggenhout platform 2,Buggenhout perron 2,Buggenhout voie 2,Buggenhout gleiss 2,Buggenhout platform 2,2
 http://irail.be/stations/NMBS/008814340#1,http://irail.be/stations/NMBS/008814340,4.25856000,50.7515800,Buizingen platform 1,Buizingen perron 1,Buizingen voie 1,Buizingen gleiss 1,Buizingen platform 1,1
 http://irail.be/stations/NMBS/008814340#2,http://irail.be/stations/NMBS/008814340,4.25856000,50.7515800,Buizingen platform 2,Buizingen perron 2,Buizingen voie 2,Buizingen gleiss 2,Buizingen platform 2,2
-http://irail.be/stations/NMBS/008814340#3,http://irail.be/stations/NMBS/008814340,4.25856000,50.7515800,Buizingen platform 3,Buizingen perron 3,Buizingen voie 3,Buizingen gleiss 3,Buizingen platform 3,3
 http://irail.be/stations/NMBS/008895455#1,http://irail.be/stations/NMBS/008895455,3.92241800,50.9071940,Burst platform 1,Burst perron 1,Burst voie 1,Burst gleiss 1,Burst platform 1,1
 http://irail.be/stations/NMBS/008895455#2,http://irail.be/stations/NMBS/008895455,3.92241800,50.9071940,Burst platform 2,Burst perron 2,Burst voie 2,Burst gleiss 2,Burst platform 2,2
 http://irail.be/stations/NMBS/008895455#3,http://irail.be/stations/NMBS/008895455,3.92241800,50.9071940,Burst platform 3,Burst perron 3,Burst voie 3,Burst gleiss 3,Burst platform 3,3
@@ -1794,7 +1793,6 @@ http://irail.be/stations/NMBS/008864824#1,http://irail.be/stations/NMBS/00886482
 http://irail.be/stations/NMBS/008864824#2,http://irail.be/stations/NMBS/008864824,5.12426000,50.2623700,Chapois platform 2,Chapois perron 2,Chapois voie 2,Chapois gleiss 2,Chapois platform 2,2
 http://irail.be/stations/NMBS/008872066#1,http://irail.be/stations/NMBS/008872066,4.43665200,50.4109510,Charleroi-Ouest platform 1,Charleroi-West perron 1,Charleroi-Ouest voie 1,Charleroi-Ouest gleiss 1,Charleroi-Ouest platform 1,1
 http://irail.be/stations/NMBS/008872066#2,http://irail.be/stations/NMBS/008872066,4.43665200,50.4109510,Charleroi-Ouest platform 2,Charleroi-West perron 2,Charleroi-Ouest voie 2,Charleroi-Ouest gleiss 2,Charleroi-Ouest platform 2,2
-http://irail.be/stations/NMBS/008872066#3,http://irail.be/stations/NMBS/008872066,4.43665200,50.4109500,Charleroi-Ouest platform 3,Charleroi-West perron 3,Charleroi-Ouest voie 3,Charleroi-Ouest gleiss 3,Charleroi-Ouest / Charleroi-West platform 3,3
 http://irail.be/stations/NMBS/008872009#1,http://irail.be/stations/NMBS/008872009,4.43857000,50.4047100,Charleroi-Sud platform 1,Charleroi-Zuid perron 1,Charleroi-Sud voie 1,Charleroi-Sud gleiss 1,Charleroi-Sud platform 1,1
 http://irail.be/stations/NMBS/008872009#10,http://irail.be/stations/NMBS/008872009,4.43857000,50.4047100,Charleroi-Sud platform 10,Charleroi-Zuid perron 10,Charleroi-Sud voie 10,Charleroi-Sud gleiss 10,Charleroi-Sud platform 10,10
 http://irail.be/stations/NMBS/008872009#11,http://irail.be/stations/NMBS/008872009,4.43857000,50.4047100,Charleroi-Sud platform 11,Charleroi-Zuid perron 11,Charleroi-Sud voie 11,Charleroi-Sud gleiss 11,Charleroi-Sud platform 11,11
@@ -1903,7 +1901,6 @@ http://irail.be/stations/NMBS/008891652#1,http://irail.be/stations/NMBS/00889165
 http://irail.be/stations/NMBS/008891652#2,http://irail.be/stations/NMBS/008891652,3.26359100,51.3381990,Duinbergen platform 2,Duinbergen perron 2,Duinbergen voie 2,Duinbergen gleiss 2,Duinbergen platform 2,2
 http://irail.be/stations/NMBS/008883212#1,http://irail.be/stations/NMBS/008883212,4.15663700,50.5623870,Écaussinnes platform 1,Écaussinnes perron 1,Écaussinnes voie 1,Écaussinnes gleiss 1,Écaussinnes platform 1,1
 http://irail.be/stations/NMBS/008883212#2,http://irail.be/stations/NMBS/008883212,4.15663700,50.5623870,Écaussinnes platform 2,Écaussinnes perron 2,Écaussinnes voie 2,Écaussinnes gleiss 2,Écaussinnes platform 2,2
-http://irail.be/stations/NMBS/008883212#3,http://irail.be/stations/NMBS/008883212,4.15663700,50.5623870,Écaussinnes platform 3,Écaussinnes perron 3,Écaussinnes voie 3,Écaussinnes gleiss 3,Écaussinnes platform 3,3
 http://irail.be/stations/NMBS/008895877#1,http://irail.be/stations/NMBS/008895877,3.98752500,50.9110530,Ede platform 1,Ede perron 1,Ede voie 1,Ede gleiss 1,Ede platform 1,1
 http://irail.be/stations/NMBS/008895877#2,http://irail.be/stations/NMBS/008895877,3.98752500,50.9110530,Ede platform 2,Ede perron 2,Ede voie 2,Ede gleiss 2,Ede platform 2,2
 http://irail.be/stations/NMBS/008893708#1,http://irail.be/stations/NMBS/008893708,3.57451800,51.1813290,Eeklo platform 1,Eeklo perron 1,Eeklo voie 1,Eeklo gleiss 1,Eeklo platform 1,1
@@ -1933,6 +1930,8 @@ http://irail.be/stations/NMBS/008861515#1,http://irail.be/stations/NMBS/00886151
 http://irail.be/stations/NMBS/008861515#2,http://irail.be/stations/NMBS/008861515,4.66854000,50.5908200,Ernage platform 2,Ernage perron 2,Ernage voie 2,Ernage gleiss 2,Ernage platform 2,2
 http://irail.be/stations/NMBS/008895471#1,http://irail.be/stations/NMBS/008895471,3.96246000,50.9286000,Erpe-Mere platform 1,Erpe-Mere perron 1,Erpe-Mere voie 1,Erpe-Mere gleiss 1,Erpe-Mere platform 1,1
 http://irail.be/stations/NMBS/008811262#1,http://irail.be/stations/NMBS/008811262,4.58500000,50.8965100,Erps-Kwerps platform 1,Erps-Kwerps perron 1,Erps-Kwerps voie 1,Erps-Kwerps gleiss 1,Erps-Kwerps platform 1,1
+http://irail.be/stations/NMBS/008811262#2,http://irail.be/stations/NMBS/008811262,4.58500000,50.8965100,Erps-Kwerps platform 2,Erps-Kwerps perron 2,Erps-Kwerps voie 2,Erps-Kwerps gleiss 2,Erps-Kwerps platform 2,2
+http://irail.be/stations/NMBS/008811262#3,http://irail.be/stations/NMBS/008811262,4.58500000,50.8965100,Erps-Kwerps platform 3,Erps-Kwerps perron 3,Erps-Kwerps voie 3,Erps-Kwerps gleiss 3,Erps-Kwerps platform 3,3
 http://irail.be/stations/NMBS/008811262#4,http://irail.be/stations/NMBS/008811262,4.58500000,50.8965100,Erps-Kwerps platform 4,Erps-Kwerps perron 4,Erps-Kwerps voie 4,Erps-Kwerps gleiss 4,Erps-Kwerps platform 4,4
 http://irail.be/stations/NMBS/008871605#1,http://irail.be/stations/NMBS/008871605,4.11356000,50.3041900,Erquelinnes platform 1,Erquelinnes perron 1,Erquelinnes voie 1,Erquelinnes gleiss 1,Erquelinnes platform 1,1
 http://irail.be/stations/NMBS/008871605#2,http://irail.be/stations/NMBS/008871605,4.11356000,50.3041900,Erquelinnes platform 2,Erquelinnes perron 2,Erquelinnes voie 2,Erquelinnes gleiss 2,Erquelinnes platform 2,2
@@ -2067,10 +2066,10 @@ http://irail.be/stations/NMBS/008895505#3,http://irail.be/stations/NMBS/00889550
 http://irail.be/stations/NMBS/008895505#4,http://irail.be/stations/NMBS/008895505,3.87232600,50.7711350,Geraardsbergen platform 4,Geraardsbergen perron 4,Grammont voie 4,Geraardsbergen gleiss 4,Geraardsbergen platform 4,4
 http://irail.be/stations/NMBS/008895505#5,http://irail.be/stations/NMBS/008895505,3.87232600,50.7711350,Geraardsbergen platform 5,Geraardsbergen perron 5,Grammont voie 5,Geraardsbergen gleiss 5,Geraardsbergen platform 5,5
 http://irail.be/stations/NMBS/008895505#A,http://irail.be/stations/NMBS/008895505,3.87232600,50.7711350,Geraardsbergen platform A,Geraardsbergen perron A,Grammont voie A,Geraardsbergen gleiss A,Geraardsbergen platform A,A
-http://irail.be/stations/NMBS/008811445#1,http://irail.be/stations/NMBS/008811445,4.44949000,50.7661030,Groenendaal platform 1,Groenendaal perron 1,Groenendael voie 1,Groenendaal gleiss 1,Groenendaal platform 1,1
-http://irail.be/stations/NMBS/008811445#2,http://irail.be/stations/NMBS/008811445,4.44949000,50.7661030,Groenendaal platform 2,Groenendaal perron 2,Groenendael voie 2,Groenendaal gleiss 2,Groenendaal platform 2,2
 http://irail.be/stations/NMBS/008812229#1,http://irail.be/stations/NMBS/008812229,4.27354200,50.8683380,Groot-Bijgaarden platform 1,Groot-Bijgaarden perron 1,Grand-Bigard voie 1,Groot-Bijgaarden gleiss 1,Groot-Bijgaarden platform 1,1
 http://irail.be/stations/NMBS/008812229#2,http://irail.be/stations/NMBS/008812229,4.27354200,50.8683380,Groot-Bijgaarden platform 2,Groot-Bijgaarden perron 2,Grand-Bigard voie 2,Groot-Bijgaarden gleiss 2,Groot-Bijgaarden platform 2,2
+http://irail.be/stations/NMBS/008811445#1,http://irail.be/stations/NMBS/008811445,4.44949000,50.7661030,Groenendaal platform 1,Groenendaal perron 1,Groenendael voie 1,Groenendaal gleiss 1,Groenendaal platform 1,1
+http://irail.be/stations/NMBS/008811445#2,http://irail.be/stations/NMBS/008811445,4.44949000,50.7661030,Groenendaal platform 2,Groenendaal perron 2,Groenendael voie 2,Groenendaal gleiss 2,Groenendaal platform 2,2
 http://irail.be/stations/NMBS/008864337#1,http://irail.be/stations/NMBS/008864337,5.28052700,50.0905960,Grupont platform 1,Grupont perron 1,Grupont voie 1,Grupont gleiss 1,Grupont platform 1,1
 http://irail.be/stations/NMBS/008864337#2,http://irail.be/stations/NMBS/008864337,5.28052700,50.0905960,Grupont platform 2,Grupont perron 2,Grupont voie 2,Grupont gleiss 2,Grupont platform 2,2
 http://irail.be/stations/NMBS/008822517#1,http://irail.be/stations/NMBS/008822517,4.61330600,50.9664320,Haacht platform 1,Haacht perron 1,Haacht voie 1,Haacht gleiss 1,Haacht platform 1,1
@@ -2104,7 +2103,7 @@ http://irail.be/stations/NMBS/008896115#2,http://irail.be/stations/NMBS/00889611
 http://irail.be/stations/NMBS/008811155#1,http://irail.be/stations/NMBS/008811155,4.41998000,50.8888790,Haren platform 1,Haren perron 1,Haren voie 1,Haren gleiss 1,Haren platform 1,1
 http://irail.be/stations/NMBS/008811155#2,http://irail.be/stations/NMBS/008811155,4.41998000,50.8888790,Haren platform 2,Haren perron 2,Haren voie 2,Haren gleiss 2,Haren platform 2,2
 http://irail.be/stations/NMBS/008811130#1,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896940,Haren-Sud/Haren-Zuid platform 1,Haren-Zuid perron 1,Haren-Sud voie 1,Haren-Sud/Haren-Zuid gleiss 1,Haren-Sud/Haren-Zuid platform 1,1
-http://irail.be/stations/NMBS/008811130#2,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896900,Haren-Sud/Haren-Zuid platform 2,Haren-Zuid perron 2,Haren-Sud voie 2,Haren-Sud/Haren-Zuid gleiss 2,Haren-Sud/Haren-Zuid platform 2,2
+http://irail.be/stations/NMBS/008811130#3,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896900,Haren-Sud/Haren-Zuid platform 3,Haren-Zuid perron 3,Haren-Sud voie 3,Haren-Sud/Haren-Zuid gleiss 3,Haren-Sud/Haren-Zuid platform 3,3
 http://irail.be/stations/NMBS/008811130#4,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896940,Haren-Sud/Haren-Zuid platform 4,Haren-Zuid perron 4,Haren-Sud voie 4,Haren-Sud/Haren-Zuid gleiss 4,Haren-Sud/Haren-Zuid platform 4,4
 http://irail.be/stations/NMBS/008831005#1,http://irail.be/stations/NMBS/008831005,5.32763100,50.9308260,Hasselt platform 1,Hasselt perron 1,Hasselt voie 1,Hasselt gleiss 1,Hasselt platform 1,1
 http://irail.be/stations/NMBS/008831005#2,http://irail.be/stations/NMBS/008831005,5.32763100,50.9308260,Hasselt platform 2,Hasselt perron 2,Hasselt voie 2,Hasselt gleiss 2,Hasselt platform 2,2
@@ -2127,6 +2126,7 @@ http://irail.be/stations/NMBS/008891645#1,http://irail.be/stations/NMBS/00889164
 http://irail.be/stations/NMBS/008891645#2,http://irail.be/stations/NMBS/008891645,3.23918200,51.3339750,Heist platform 2,Heist perron 2,Heist voie 2,Heist gleiss 2,Heist platform 2,2
 http://irail.be/stations/NMBS/008821832#1,http://irail.be/stations/NMBS/008821832,4.70823100,51.0741450,Heist-op-den-Berg platform 1,Heist-op-den-Berg perron 1,Heist-op-den-Berg voie 1,Heist-op-den-Berg gleiss 1,Heist-op-den-Berg platform 1,1
 http://irail.be/stations/NMBS/008821832#2,http://irail.be/stations/NMBS/008821832,4.70823100,51.0741450,Heist-op-den-Berg platform 2,Heist-op-den-Berg perron 2,Heist-op-den-Berg voie 2,Heist-op-den-Berg gleiss 2,Heist-op-den-Berg platform 2,2
+http://irail.be/stations/NMBS/008821832#3,http://irail.be/stations/NMBS/008821832,4.70823100,51.0741500,Heist-op-den-Berg platform 3,Heist-op-den-Berg perron 3,Heist-op-den-Berg voie 3,Heist-op-den-Berg gleiss 3,Heist-op-den-Berg platform 3,3
 http://irail.be/stations/NMBS/008812153#1,http://irail.be/stations/NMBS/008812153,4.15617400,50.9895970,Heizijde platform 1,Heizijde perron 1,Heizijde voie 1,Heizijde gleiss 1,Heizijde platform 1,1
 http://irail.be/stations/NMBS/008812153#2,http://irail.be/stations/NMBS/008812153,4.15617400,50.9895970,Heizijde platform 2,Heizijde perron 2,Heizijde voie 2,Heizijde gleiss 2,Heizijde platform 2,2
 http://irail.be/stations/NMBS/008824224#1,http://irail.be/stations/NMBS/008824224,4.33829400,51.1362450,Hemiksem platform 1,Hemiksem perron 1,Hemiksem voie 1,Hemiksem gleiss 1,Hemiksem platform 1,1
@@ -2134,6 +2134,8 @@ http://irail.be/stations/NMBS/008824224#2,http://irail.be/stations/NMBS/00882422
 http://irail.be/stations/NMBS/008883022#1,http://irail.be/stations/NMBS/008883022,4.17589000,50.6510100,Hennuyères platform 1,Hennuyères perron 1,Hennuyères voie 1,Hennuyères gleiss 1,Hennuyères platform 1,1
 http://irail.be/stations/NMBS/008883022#2,http://irail.be/stations/NMBS/008883022,4.17589000,50.6510100,Hennuyères platform 2,Hennuyères perron 2,Hennuyères voie 2,Hennuyères gleiss 2,Hennuyères platform 2,2
 http://irail.be/stations/NMBS/008811288#1,http://irail.be/stations/NMBS/008811288,4.67219000,50.9035300,Herent platform 1,Herent perron 1,Herent voie 1,Herent gleiss 1,Herent platform 1,1
+http://irail.be/stations/NMBS/008811288#2,http://irail.be/stations/NMBS/008811288,4.67219000,50.9035300,Herent platform 2,Herent perron 2,Herent voie 2,Herent gleiss 2,Herent platform 2,2
+http://irail.be/stations/NMBS/008811288#3,http://irail.be/stations/NMBS/008811288,4.67219000,50.9035300,Herent platform 3,Herent perron 3,Herent voie 3,Herent gleiss 3,Herent platform 3,3
 http://irail.be/stations/NMBS/008811288#4,http://irail.be/stations/NMBS/008811288,4.67219000,50.9035300,Herent platform 4,Herent perron 4,Herent voie 4,Herent gleiss 4,Herent platform 4,4
 http://irail.be/stations/NMBS/008821717#1,http://irail.be/stations/NMBS/008821717,4.82954000,51.1815120,Herentals platform 1,Herentals perron 1,Herentals voie 1,Herentals gleiss 1,Herentals platform 1,1
 http://irail.be/stations/NMBS/008821717#2,http://irail.be/stations/NMBS/008821717,4.82954000,51.1815120,Herentals platform 2,Herentals perron 2,Herentals voie 2,Herentals gleiss 2,Herentals platform 2,2
@@ -2239,6 +2241,8 @@ http://irail.be/stations/NMBS/008821311#4,http://irail.be/stations/NMBS/00882131
 http://irail.be/stations/NMBS/008892403#1,http://irail.be/stations/NMBS/008892403,3.04345600,51.0252440,Kortemark platform 1,Kortemark perron 1,Kortemark voie 1,Kortemark gleiss 1,Kortemark platform 1,1
 http://irail.be/stations/NMBS/008892403#2,http://irail.be/stations/NMBS/008892403,3.04345600,51.0252440,Kortemark platform 2,Kortemark perron 2,Kortemark voie 2,Kortemark gleiss 2,Kortemark platform 2,2
 http://irail.be/stations/NMBS/008811254#1,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 1,Kortenberg perron 1,Kortenberg voie 1,Kortenberg gleiss 1,Kortenberg platform 1,1
+http://irail.be/stations/NMBS/008811254#2,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 2,Kortenberg perron 2,Kortenberg voie 2,Kortenberg gleiss 2,Kortenberg platform 2,2
+http://irail.be/stations/NMBS/008811254#3,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 3,Kortenberg perron 3,Kortenberg voie 3,Kortenberg gleiss 3,Kortenberg platform 3,3
 http://irail.be/stations/NMBS/008811254#4,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 4,Kortenberg perron 4,Kortenberg voie 4,Kortenberg gleiss 4,Kortenberg platform 4,4
 http://irail.be/stations/NMBS/008893567#1,http://irail.be/stations/NMBS/008893567,3.82959100,50.9917480,Kwatrecht platform 1,Kwatrecht perron 1,Quatrecht voie 1,Kwatrecht gleiss 1,Kwatrecht platform 1,1
 http://irail.be/stations/NMBS/008893567#2,http://irail.be/stations/NMBS/008893567,3.82959100,50.9917480,Kwatrecht platform 2,Kwatrecht perron 2,Quatrecht voie 2,Kwatrecht gleiss 2,Kwatrecht platform 2,2
@@ -2360,7 +2364,6 @@ http://irail.be/stations/NMBS/008861416#1,http://irail.be/stations/NMBS/00886141
 http://irail.be/stations/NMBS/008861416#2,http://irail.be/stations/NMBS/008861416,4.72010000,50.5519400,Lonzée platform 2,Lonzée perron 2,Lonzée voie 2,Lonzée gleiss 2,Lonzée platform 2,2
 http://irail.be/stations/NMBS/008814357#1,http://irail.be/stations/NMBS/008814357,4.27370000,50.7663600,Lot platform 1,Lot perron 1,Lot voie 1,Lot gleiss 1,Lot platform 1,1
 http://irail.be/stations/NMBS/008814357#2,http://irail.be/stations/NMBS/008814357,4.27370000,50.7663600,Lot platform 2,Lot perron 2,Lot voie 2,Lot gleiss 2,Lot platform 2,2
-http://irail.be/stations/NMBS/008814357#3,http://irail.be/stations/NMBS/008814357,4.27370000,50.7663600,Lot platform 3,Lot perron 3,Lot voie 3,Lot gleiss 3,Lot platform 3,3
 http://irail.be/stations/NMBS/008833001#1,http://irail.be/stations/NMBS/008833001,4.71586800,50.8822820,Leuven platform 1,Leuven perron 1,Louvain voie 1,Löwen gleiss 1,Leuven platform 1,1
 http://irail.be/stations/NMBS/008833001#2,http://irail.be/stations/NMBS/008833001,4.71586800,50.8822820,Leuven platform 2,Leuven perron 2,Louvain voie 2,Löwen gleiss 2,Leuven platform 2,2
 http://irail.be/stations/NMBS/008833001#3,http://irail.be/stations/NMBS/008833001,4.71586800,50.8822800,Leuven platform 3,Leuven perron 3,Louvain voie 3,Löwen gleiss 3,Louvain / Leuven platform 3,3
@@ -2409,6 +2412,7 @@ http://irail.be/stations/NMBS/008882701#3,http://irail.be/stations/NMBS/00888270
 http://irail.be/stations/NMBS/008882701#4,http://irail.be/stations/NMBS/008882701,4.23468000,50.5061100,Manage platform 4,Manage perron 4,Manage voie 4,Manage gleiss 4,Manage platform 4,4
 http://irail.be/stations/NMBS/008882701#5,http://irail.be/stations/NMBS/008882701,4.23468000,50.5061100,Manage platform 5,Manage perron 5,Manage voie 5,Manage gleiss 5,Manage platform 5,5
 http://irail.be/stations/NMBS/008866175#2,http://irail.be/stations/NMBS/008866175,5.53975700,49.7273330,Marbehan platform 2,Marbehan perron 2,Marbehan voie 2,Marbehan gleiss 2,Marbehan platform 2,2
+http://irail.be/stations/NMBS/008866175#3,http://irail.be/stations/NMBS/008866175,5.53975700,49.7273300,Marbehan platform 3,Marbehan perron 3,Marbehan voie 3,Marbehan gleiss 3,Marbehan platform 3,3
 http://irail.be/stations/NMBS/008864410#1,http://irail.be/stations/NMBS/008864410,5.34629000,50.2224700,Marche-en-Famenne platform 1,Marche-en-Famenne perron 1,Marche-en-Famenne voie 1,Marche-en-Famenne gleiss 1,Marche-en-Famenne platform 1,1
 http://irail.be/stations/NMBS/008863461#1,http://irail.be/stations/NMBS/008863461,4.96458000,50.4807400,Marche-les-Dames platform 1,Marche-les-Dames perron 1,Marche-les-Dames voie 1,Marche-les-Dames gleiss 1,Marche-les-Dames platform 1,1
 http://irail.be/stations/NMBS/008863461#2,http://irail.be/stations/NMBS/008863461,4.96458000,50.4807400,Marche-les-Dames platform 2,Marche-les-Dames perron 2,Marche-les-Dames voie 2,Marche-les-Dames gleiss 2,Marche-les-Dames platform 2,2
@@ -2545,6 +2549,7 @@ http://irail.be/stations/NMBS/008814209#C,http://irail.be/stations/NMBS/00881420
 http://irail.be/stations/NMBS/008821105#1,http://irail.be/stations/NMBS/008821105,4.63220000,51.3568360,Noorderkempen platform 1,Noorderkempen perron 1,Noorderkempen voie 1,Noorderkempen gleiss 1,Noorderkempen platform 1,1
 http://irail.be/stations/NMBS/008821105#2,http://irail.be/stations/NMBS/008821105,4.63220000,51.3568360,Noorderkempen platform 2,Noorderkempen perron 2,Noorderkempen voie 2,Noorderkempen gleiss 2,Noorderkempen platform 2,2
 http://irail.be/stations/NMBS/008811247#1,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 1,Nossegem perron 1,Nossegem voie 1,Nossegem gleiss 1,Nossegem platform 1,1
+http://irail.be/stations/NMBS/008811247#3,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 3,Nossegem perron 3,Nossegem voie 3,Nossegem gleiss 3,Nossegem platform 3,3
 http://irail.be/stations/NMBS/008811247#4,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 4,Nossegem perron 4,Nossegem voie 4,Nossegem gleiss 4,Nossegem platform 4,4
 http://irail.be/stations/NMBS/008871332#1,http://irail.be/stations/NMBS/008871332,4.36357000,50.5352100,Obaix-Buzet platform 1,Obaix-Buzet perron 1,Obaix-Buzet voie 1,Obaix-Buzet gleiss 1,Obaix-Buzet platform 1,1
 http://irail.be/stations/NMBS/008871332#2,http://irail.be/stations/NMBS/008871332,4.36357000,50.5352100,Obaix-Buzet platform 2,Obaix-Buzet perron 2,Obaix-Buzet voie 2,Obaix-Buzet gleiss 2,Obaix-Buzet platform 2,2
@@ -2593,11 +2598,10 @@ http://irail.be/stations/NMBS/008844206#2,http://irail.be/stations/NMBS/00884420
 http://irail.be/stations/NMBS/008844206#3,http://irail.be/stations/NMBS/008844206,5.80615500,50.5681770,Pepinster platform 3,Pepinster perron 3,Pepinster voie 3,Pepinster gleiss 3,Pepinster platform 3,3
 http://irail.be/stations/NMBS/008844206#4,http://irail.be/stations/NMBS/008844206,5.80615500,50.5681770,Pepinster platform 4,Pepinster perron 4,Pepinster voie 4,Pepinster gleiss 4,Pepinster platform 4,4
 http://irail.be/stations/NMBS/008844313#1,http://irail.be/stations/NMBS/008844313,5.80439900,50.5634050,Pepinster-Cité platform 1,Pepinster-Cité perron 1,Pepinster-Cité voie 1,Pepinster-Cité gleiss 1,Pepinster-Cité platform 1,1
-http://irail.be/stations/NMBS/008873122#1a,http://irail.be/stations/NMBS/008873122,4.53596000,50.1916400,Philippeville platform 1a,Philippeville perron 1a,Philippeville voie 1a,Philippeville gleiss 1a,Philippeville platform 1a,1a
-http://irail.be/stations/NMBS/008873122#1b,http://irail.be/stations/NMBS/008873122,4.53596000,50.1916400,Philippeville platform 1b,Philippeville perron 1b,Philippeville voie 1b,Philippeville gleiss 1b,Philippeville platform 1b,1b
+http://irail.be/stations/NMBS/008873122#1,http://irail.be/stations/NMBS/008873122,4.53596000,50.1916400,Philippeville platform 1,Philippeville perron 1,Philippeville voie 1,Philippeville gleiss 1,Philippeville platform 1,1
+http://irail.be/stations/NMBS/008873122#2,http://irail.be/stations/NMBS/008873122,4.53596000,50.1916400,Philippeville platform 2,Philippeville perron 2,Philippeville voie 2,Philippeville gleiss 2,Philippeville platform 2,2
 http://irail.be/stations/NMBS/008871415#2,http://irail.be/stations/NMBS/008871415,4.28844000,50.4349600,Piéton platform 2,Piéton perron 2,Piéton voie 2,Piéton gleiss 2,Piéton platform 2,2
 http://irail.be/stations/NMBS/008871415#3,http://irail.be/stations/NMBS/008871415,4.28844000,50.4349600,Piéton platform 3,Piéton perron 3,Piéton voie 3,Piéton gleiss 3,Piéton platform 3,3
-http://irail.be/stations/NMBS/008871415#4,http://irail.be/stations/NMBS/008871415,4.28844000,50.4349600,Piéton platform 4,Piéton perron 4,Piéton voie 4,Piéton gleiss 4,Piéton platform 4,4
 http://irail.be/stations/NMBS/008865227#1,http://irail.be/stations/NMBS/008865227,5.29264600,50.0195080,Poix-Saint-Hubert platform 1,Poix-Saint-Hubert perron 1,Poix-Saint-Hubert voie 1,Poix-Saint-Hubert gleiss 1,Poix-Saint-Hubert platform 1,1
 http://irail.be/stations/NMBS/008865227#2,http://irail.be/stations/NMBS/008865227,5.29264600,50.0195080,Poix-Saint-Hubert platform 2,Poix-Saint-Hubert perron 2,Poix-Saint-Hubert voie 2,Poix-Saint-Hubert gleiss 2,Poix-Saint-Hubert platform 2,2
 http://irail.be/stations/NMBS/008843141#1,http://irail.be/stations/NMBS/008843141,5.51016100,50.6196520,Pont-de-Seraing platform 1,Pont-de-Seraing perron 1,Pont-de-Seraing voie 1,Pont-de-Seraing gleiss 1,Pont-de-Seraing platform 1,1
@@ -2726,6 +2730,7 @@ http://irail.be/stations/NMBS/008893443#1,http://irail.be/stations/NMBS/00889344
 http://irail.be/stations/NMBS/008893443#2,http://irail.be/stations/NMBS/008893443,4.11783100,51.0216980,Sint-Gillis-Dendermonde platform 2,Sint-Gillis perron 2,Saint-Gilles-lez-Termonde voie 2,Sint-Gillis gleiss 2,Sint-Gillis platform 2,2
 http://irail.be/stations/NMBS/008833159#1,http://irail.be/stations/NMBS/008833159,4.65172800,50.8006300,Sint-Joris-Weert platform 1,Sint-Joris-Weert perron 1,Sint-Joris-Weert voie 1,Sint-Joris-Weert gleiss 1,Sint-Joris-Weert platform 1,1
 http://irail.be/stations/NMBS/008833159#2,http://irail.be/stations/NMBS/008833159,4.65172800,50.8006300,Sint-Joris-Weert platform 2,Sint-Joris-Weert perron 2,Sint-Joris-Weert voie 2,Sint-Joris-Weert gleiss 2,Sint-Joris-Weert platform 2,2
+http://irail.be/stations/NMBS/008833159#3,http://irail.be/stations/NMBS/008833159,4.65172800,50.8006300,Sint-Joris-Weert platform 3,Sint-Joris-Weert perron 3,Sint-Joris-Weert voie 3,Sint-Joris-Weert gleiss 3,Sint-Joris-Weert platform 3,3
 http://irail.be/stations/NMBS/008822228#1,http://irail.be/stations/NMBS/008822228,4.49611900,51.0699790,Sint-Katelijne-Waver platform 1,Sint-Katelijne-Waver perron 1,Wavre-Sainte-Catherine voie 1,Sint-Katelijne-Waver gleiss 1,Sint-Katelijne-Waver platform 1,1
 http://irail.be/stations/NMBS/008822228#2,http://irail.be/stations/NMBS/008822228,4.49611900,51.0699790,Sint-Katelijne-Waver platform 2,Sint-Katelijne-Waver perron 2,Wavre-Sainte-Catherine voie 2,Sint-Katelijne-Waver gleiss 2,Sint-Katelijne-Waver platform 2,2
 http://irail.be/stations/NMBS/008822228#3,http://irail.be/stations/NMBS/008822228,4.49611900,51.0699790,Sint-Katelijne-Waver platform 3,Sint-Katelijne-Waver perron 3,Wavre-Sainte-Catherine voie 3,Sint-Katelijne-Waver gleiss 3,Sint-Katelijne-Waver platform 3,3
@@ -2752,6 +2757,7 @@ http://irail.be/stations/NMBS/008842853#2,http://irail.be/stations/NMBS/00884285
 http://irail.be/stations/NMBS/008874609#1,http://irail.be/stations/NMBS/008874609,4.60882400,50.4322320,Tamines platform 1,Tamines perron 1,Tamines voie 1,Tamines gleiss 1,Tamines platform 1,1
 http://irail.be/stations/NMBS/008874609#2,http://irail.be/stations/NMBS/008874609,4.60882400,50.4322320,Tamines platform 2,Tamines perron 2,Tamines voie 2,Tamines gleiss 2,Tamines platform 2,2
 http://irail.be/stations/NMBS/008874609#3,http://irail.be/stations/NMBS/008874609,4.60882400,50.4322320,Tamines platform 3,Tamines perron 3,Tamines voie 3,Tamines gleiss 3,Tamines platform 3,3
+http://irail.be/stations/NMBS/008874609#4,http://irail.be/stations/NMBS/008874609,4.60882400,50.4322300,Tamines platform 4,Tamines perron 4,Tamines voie 4,Tamines gleiss 4,Tamines platform 4,4
 http://irail.be/stations/NMBS/008894672#1,http://irail.be/stations/NMBS/008894672,4.22134900,51.1260850,Temse platform 1,Temse perron 1,Tamise voie 1,Temse gleiss 1,Temse platform 1,1
 http://irail.be/stations/NMBS/008894672#2,http://irail.be/stations/NMBS/008894672,4.22134900,51.1260850,Temse platform 2,Temse perron 2,Tamise voie 2,Temse gleiss 2,Temse platform 2,2
 http://irail.be/stations/NMBS/008895448#1,http://irail.be/stations/NMBS/008895448,3.89665700,50.9016450,Terhagen platform 1,Terhagen perron 1,Terhagen voie 1,Terhagen gleiss 1,Terhagen platform 1,1
@@ -2786,11 +2792,11 @@ http://irail.be/stations/NMBS/008842630#1,http://irail.be/stations/NMBS/00884263
 http://irail.be/stations/NMBS/008842630#2,http://irail.be/stations/NMBS/008842630,5.58393300,50.5706250,Tilff platform 2,Tilff perron 2,Tilff voie 2,Tilff gleiss 2,Tilff platform 2,2
 http://irail.be/stations/NMBS/008872553#1,http://irail.be/stations/NMBS/008872553,4.55267400,50.5580800,Tilly platform 1,Tilly perron 1,Tilly voie 1,Tilly gleiss 1,Tilly platform 1,1
 http://irail.be/stations/NMBS/008872553#2,http://irail.be/stations/NMBS/008872553,4.55267400,50.5580800,Tilly platform 2,Tilly perron 2,Tilly voie 2,Tilly gleiss 2,Tilly platform 2,2
-http://irail.be/stations/NMBS/008833308#1,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 1,Tienen perron 1,Tirlemont voie 1,Thienen gleiss 1,Tienen platform 1,1
 http://irail.be/stations/NMBS/008833308#3,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 3,Tienen perron 3,Tirlemont voie 3,Thienen gleiss 3,Tienen platform 3,3
 http://irail.be/stations/NMBS/008833308#4,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 4,Tienen perron 4,Tirlemont voie 4,Thienen gleiss 4,Tienen platform 4,4
 http://irail.be/stations/NMBS/008895638#1,http://irail.be/stations/NMBS/008895638,3.99282600,50.7355190,Tollembeek platform 1,Tollembeek perron 1,Tollembeek voie 1,Tollembeek gleiss 1,Tollembeek platform 1,1
 http://irail.be/stations/NMBS/008895638#2,http://irail.be/stations/NMBS/008895638,3.99282600,50.7355190,Tollembeek platform 2,Tollembeek perron 2,Tollembeek voie 2,Tollembeek gleiss 2,Tollembeek platform 2,2
+http://irail.be/stations/NMBS/008831310#1,http://irail.be/stations/NMBS/008831310,5.47328000,50.7844000,Tongeren platform 1,Tongeren perron 1,Tongres voie 1,Tongern gleiss 1,Tongeren platform 1,1
 http://irail.be/stations/NMBS/008831310#2,http://irail.be/stations/NMBS/008831310,5.47328000,50.7844030,Tongeren platform 2,Tongeren perron 2,Tongres voie 2,Tongern gleiss 2,Tongeren platform 2,2
 http://irail.be/stations/NMBS/008831310#3,http://irail.be/stations/NMBS/008831310,5.47328000,50.7844030,Tongeren platform 3,Tongeren perron 3,Tongres voie 3,Tongern gleiss 3,Tongeren platform 3,3
 http://irail.be/stations/NMBS/008831310#4,http://irail.be/stations/NMBS/008831310,5.47328000,50.7844030,Tongeren platform 4,Tongeren perron 4,Tongres voie 4,Tongern gleiss 4,Tongeren platform 4,4
@@ -2821,6 +2827,8 @@ http://irail.be/stations/NMBS/008814134#2,http://irail.be/stations/NMBS/00881413
 http://irail.be/stations/NMBS/008814126#1,http://irail.be/stations/NMBS/008814126,4.32390000,50.8024120,Ukkel-Stalle/Uccle-Stalle platform 1,Ukkel-Stalle perron 1,Uccle-Stalle voie 1,Ukkel-Stalle/Uccle-Stalle gleiss 1,Ukkel-Stalle/Uccle-Stalle platform 1,1
 http://irail.be/stations/NMBS/008814126#2,http://irail.be/stations/NMBS/008814126,4.32390000,50.8024120,Ukkel-Stalle/Uccle-Stalle platform 2,Ukkel-Stalle perron 2,Uccle-Stalle voie 2,Ukkel-Stalle/Uccle-Stalle gleiss 2,Ukkel-Stalle/Uccle-Stalle platform 2,2
 http://irail.be/stations/NMBS/008811270#1,http://irail.be/stations/NMBS/008811270,4.63352000,50.9005200,Veltem platform 1,Veltem perron 1,Veltem voie 1,Veltem gleiss 1,Veltem platform 1,1
+http://irail.be/stations/NMBS/008811270#2,http://irail.be/stations/NMBS/008811270,4.63352000,50.9005200,Veltem platform 2,Veltem perron 2,Veltem voie 2,Veltem gleiss 2,Veltem platform 2,2
+http://irail.be/stations/NMBS/008811270#3,http://irail.be/stations/NMBS/008811270,4.63352000,50.9005200,Veltem platform 3,Veltem perron 3,Veltem voie 3,Veltem gleiss 3,Veltem platform 3,3
 http://irail.be/stations/NMBS/008811270#4,http://irail.be/stations/NMBS/008811270,4.63352000,50.9005200,Veltem platform 4,Veltem perron 4,Veltem voie 4,Veltem gleiss 4,Veltem platform 4,4
 http://irail.be/stations/NMBS/008833050#1,http://irail.be/stations/NMBS/008833050,4.83552000,50.8362800,Vertrijk platform 1,Vertrijk perron 1,Vertrijk voie 1,Vertrijk gleiss 1,Vertrijk platform 1,1
 http://irail.be/stations/NMBS/008833050#2,http://irail.be/stations/NMBS/008833050,4.83552000,50.8362800,Vertrijk platform 2,Vertrijk perron 2,Vertrijk voie 2,Vertrijk gleiss 2,Vertrijk platform 2,2
@@ -2848,9 +2856,8 @@ http://irail.be/stations/NMBS/008811189#3,http://irail.be/stations/NMBS/00881118
 http://irail.be/stations/NMBS/008811189#4,http://irail.be/stations/NMBS/008811189,4.43282600,50.9245810,Vilvoorde platform 4,Vilvoorde perron 4,Vilvorde voie 4,Vilvoorde gleiss 4,Vilvoorde platform 4,4
 http://irail.be/stations/NMBS/008811189#5,http://irail.be/stations/NMBS/008811189,4.43282600,50.9245810,Vilvoorde platform 5,Vilvoorde perron 5,Vilvorde voie 5,Vilvoorde gleiss 5,Vilvoorde platform 5,5
 http://irail.be/stations/NMBS/008811189#6,http://irail.be/stations/NMBS/008811189,4.43282600,50.9245800,Vilvoorde platform 6,Vilvoorde perron 6,Vilvorde voie 6,Vilvoorde gleiss 6,Vilvorde / Vilvoorde platform 6,6
-http://irail.be/stations/NMBS/008866407#1,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608220,Virton platform 1,Virton perron 1,Virton voie 1,Virton gleiss 1,Virton platform 1,1
-http://irail.be/stations/NMBS/008866407#2,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608220,Virton platform 2,Virton perron 2,Virton voie 2,Virton gleiss 2,Virton platform 2,2
 http://irail.be/stations/NMBS/008866407#3,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608220,Virton platform 3,Virton perron 3,Virton voie 3,Virton gleiss 3,Virton platform 3,3
+http://irail.be/stations/NMBS/008866407#4,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608200,Virton platform 4,Virton perron 4,Virton voie 4,Virton gleiss 4,Virton platform 4,4
 http://irail.be/stations/NMBS/008846201#1,http://irail.be/stations/NMBS/008846201,5.69254800,50.7377620,Visé platform 1,Wezet perron 1,Visé voie 1,Visé gleiss 1,Visé platform 1,1
 http://irail.be/stations/NMBS/008846201#2,http://irail.be/stations/NMBS/008846201,5.69254800,50.7377620,Visé platform 2,Wezet perron 2,Visé voie 2,Visé gleiss 2,Visé platform 2,2
 http://irail.be/stations/NMBS/008814464#1,http://irail.be/stations/NMBS/008814464,4.37405000,50.7961470,Diesdelle/Vivier d'Oie platform 1,Diesdelle perron 1,Vivier d'Oie voie 1,Diesdelle/Vivier d'Oie gleiss 1,Diesdelle/Vivier d'Oie platform 1,1
@@ -2915,6 +2922,7 @@ http://irail.be/stations/NMBS/008896503#2,http://irail.be/stations/NMBS/00889650
 http://irail.be/stations/NMBS/008873239#1,http://irail.be/stations/NMBS/008873239,4.50040400,50.2369840,Yves-Gomezée platform 1,Yves-Gomezée perron 1,Yves-Gomezée voie 1,Yves-Gomezée gleiss 1,Yves-Gomezée platform 1,1
 http://irail.be/stations/NMBS/008863545#1,http://irail.be/stations/NMBS/008863545,4.87864000,50.3208400,Yvoir platform 1,Yvoir perron 1,Yvoir voie 1,Yvoir gleiss 1,Yvoir platform 1,1
 http://irail.be/stations/NMBS/008863545#2,http://irail.be/stations/NMBS/008863545,4.87864000,50.3208400,Yvoir platform 2,Yvoir perron 2,Yvoir voie 2,Yvoir gleiss 2,Yvoir platform 2,2
+http://irail.be/stations/NMBS/008863545#3,http://irail.be/stations/NMBS/008863545,4.87864000,50.3208400,Yvoir platform 3,Yvoir perron 3,Yvoir voie 3,Yvoir gleiss 3,Yvoir platform 3,3
 http://irail.be/stations/NMBS/008895737#1,http://irail.be/stations/NMBS/008895737,3.95765200,50.8069860,Zandbergen platform 1,Zandbergen perron 1,Zandbergen voie 1,Zandbergen gleiss 1,Zandbergen platform 1,1
 http://irail.be/stations/NMBS/008895737#2,http://irail.be/stations/NMBS/008895737,3.95765200,50.8069860,Zandbergen platform 2,Zandbergen perron 2,Zandbergen voie 2,Zandbergen gleiss 2,Zandbergen platform 2,2
 http://irail.be/stations/NMBS/008811221#1,http://irail.be/stations/NMBS/008811221,4.46989000,50.8857200,Zaventem platform 1,Zaventem perron 1,Zaventem voie 1,Zaventem gleiss 1,Zaventem platform 1,1
@@ -2944,22 +2952,21 @@ http://irail.be/stations/NMBS/008895208#6,http://irail.be/stations/NMBS/00889520
 http://irail.be/stations/NMBS/008895208#7,http://irail.be/stations/NMBS/008895208,3.81441000,50.8691000,Zottegem platform 7,Zottegem perron 7,Zottegem voie 7,Zottegem gleiss 7,Zottegem platform 7,7
 http://irail.be/stations/NMBS/008894821#1,http://irail.be/stations/NMBS/008894821,4.32977600,51.2141060,Zwijndrecht platform 1,Zwijndrecht perron 1,Zwijndrecht voie 1,Zwijndrecht gleiss 1,Zwijndrecht platform 1,1
 http://irail.be/stations/NMBS/008894821#2,http://irail.be/stations/NMBS/008894821,4.32977600,51.2141060,Zwijndrecht platform 2,Zwijndrecht perron 2,Zwijndrecht voie 2,Zwijndrecht gleiss 2,Zwijndrecht platform 2,2
+http://irail.be/stations/NMBS/008814340#3,http://irail.be/stations/NMBS/008814340,4.25856000,50.7515800,Buizingen platform 3,Buizingen perron 3,Buizingen voie 3,Buizingen gleiss 3,Buizingen platform 3,3
+http://irail.be/stations/NMBS/008872066#3,http://irail.be/stations/NMBS/008872066,4.43665200,50.4109500,Charleroi-Ouest platform 3,Charleroi-West perron 3,Charleroi-Ouest voie 3,Charleroi-Ouest gleiss 3,Charleroi-Ouest / Charleroi-West platform 3,3
+http://irail.be/stations/NMBS/008883212#3,http://irail.be/stations/NMBS/008883212,4.15663700,50.5623870,Écaussinnes platform 3,Écaussinnes perron 3,Écaussinnes voie 3,Écaussinnes gleiss 3,Écaussinnes platform 3,3
+http://irail.be/stations/NMBS/008811130#2,http://irail.be/stations/NMBS/008811130,4.41535800,50.8896900,Haren-Sud/Haren-Zuid platform 2,Haren-Zuid perron 2,Haren-Sud voie 2,Haren-Sud/Haren-Zuid gleiss 2,Haren-Sud/Haren-Zuid platform 2,2
+http://irail.be/stations/NMBS/008814357#3,http://irail.be/stations/NMBS/008814357,4.27370000,50.7663600,Lot platform 3,Lot perron 3,Lot voie 3,Lot gleiss 3,Lot platform 3,3
+http://irail.be/stations/NMBS/008873122#1a,http://irail.be/stations/NMBS/008873122,4.53596000,50.1916400,Philippeville platform 1a,Philippeville perron 1a,Philippeville voie 1a,Philippeville gleiss 1a,Philippeville platform 1a,1a
+http://irail.be/stations/NMBS/008873122#1b,http://irail.be/stations/NMBS/008873122,4.53596000,50.1916400,Philippeville platform 1b,Philippeville perron 1b,Philippeville voie 1b,Philippeville gleiss 1b,Philippeville platform 1b,1b
+http://irail.be/stations/NMBS/008871415#4,http://irail.be/stations/NMBS/008871415,4.28844000,50.4349600,Piéton platform 4,Piéton perron 4,Piéton voie 4,Piéton gleiss 4,Piéton platform 4,4
+http://irail.be/stations/NMBS/008833308#1,http://irail.be/stations/NMBS/008833308,4.92581000,50.8080200,Tienen platform 1,Tienen perron 1,Tirlemont voie 1,Thienen gleiss 1,Tienen platform 1,1
+http://irail.be/stations/NMBS/008866407#1,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608220,Virton platform 1,Virton perron 1,Virton voie 1,Virton gleiss 1,Virton platform 1,1
+http://irail.be/stations/NMBS/008866407#2,http://irail.be/stations/NMBS/008866407,5.51912200,49.5608220,Virton platform 2,Virton perron 2,Virton voie 2,Virton gleiss 2,Virton platform 2,2
 http://irail.be/stations/NMBS/008831401#3,http://irail.be/stations/NMBS/008831401,5.05003000,50.9933400,Diest platform 3,Diest perron 3,Diest voie 3,Diest gleiss 3,Diest platform 3,3
-http://irail.be/stations/NMBS/008811262#2,http://irail.be/stations/NMBS/008811262,4.58500000,50.8965100,Erps-Kwerps platform 2,Erps-Kwerps perron 2,Erps-Kwerps voie 2,Erps-Kwerps gleiss 2,Erps-Kwerps platform 2,2
-http://irail.be/stations/NMBS/008811262#3,http://irail.be/stations/NMBS/008811262,4.58500000,50.8965100,Erps-Kwerps platform 3,Erps-Kwerps perron 3,Erps-Kwerps voie 3,Erps-Kwerps gleiss 3,Erps-Kwerps platform 3,3
 http://irail.be/stations/NMBS/008821402#1,http://irail.be/stations/NMBS/008821402,4.45131800,51.4627640,Essen platform 1,Essen perron 1,Essen voie 1,Essen gleiss 1,Essen platform 1,1
-http://irail.be/stations/NMBS/008811288#2,http://irail.be/stations/NMBS/008811288,4.67219000,50.9035300,Herent platform 2,Herent perron 2,Herent voie 2,Herent gleiss 2,Herent platform 2,2
-http://irail.be/stations/NMBS/008811288#3,http://irail.be/stations/NMBS/008811288,4.67219000,50.9035300,Herent platform 3,Herent perron 3,Herent voie 3,Herent gleiss 3,Herent platform 3,3
-http://irail.be/stations/NMBS/008811254#2,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 2,Kortenberg perron 2,Kortenberg voie 2,Kortenberg gleiss 2,Kortenberg platform 2,2
-http://irail.be/stations/NMBS/008811254#3,http://irail.be/stations/NMBS/008811254,4.54330000,50.8930700,Kortenberg platform 3,Kortenberg perron 3,Kortenberg voie 3,Kortenberg gleiss 3,Kortenberg platform 3,3
 http://irail.be/stations/NMBS/008892056#4,http://irail.be/stations/NMBS/008892056,3.57685600,51.0643130,Landegem platform 4,Landegem perron 4,Landegem voie 4,Landegem gleiss 4,Landegem platform 4,4
 http://irail.be/stations/NMBS/008864345#4,http://irail.be/stations/NMBS/008864345,5.31389000,50.2028190,Marloie platform 4,Marloie perron 4,Marloie voie 4,Marloie gleiss 4,Marloie platform 4,4
-http://irail.be/stations/NMBS/008811247#3,http://irail.be/stations/NMBS/008811247,4.50611000,50.8833100,Nossegem platform 3,Nossegem perron 3,Nossegem voie 3,Nossegem gleiss 3,Nossegem platform 3,3
-http://irail.be/stations/NMBS/008833159#3,http://irail.be/stations/NMBS/008833159,4.65172800,50.8006300,Sint-Joris-Weert platform 3,Sint-Joris-Weert perron 3,Sint-Joris-Weert voie 3,Sint-Joris-Weert gleiss 3,Sint-Joris-Weert platform 3,3
-http://irail.be/stations/NMBS/008811270#2,http://irail.be/stations/NMBS/008811270,4.63352000,50.9005200,Veltem platform 2,Veltem perron 2,Veltem voie 2,Veltem gleiss 2,Veltem platform 2,2
-http://irail.be/stations/NMBS/008811270#3,http://irail.be/stations/NMBS/008811270,4.63352000,50.9005200,Veltem platform 3,Veltem perron 3,Veltem voie 3,Veltem gleiss 3,Veltem platform 3,3
-http://irail.be/stations/NMBS/008821063#3,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 3,Antwerpen-Luchtbal perron 3,Anvers-Luchtbal voie 3,Antwerpen-Luchtbal gleiss 3,Antwerp-Luchtbal platform 3,3
-http://irail.be/stations/NMBS/008821063#4,http://irail.be/stations/NMBS/008821063,4.42503300,51.2441300,Antwerpen-Luchtbal platform 4,Antwerpen-Luchtbal perron 4,Anvers-Luchtbal voie 4,Antwerpen-Luchtbal gleiss 4,Antwerp-Luchtbal platform 4,4
 http://irail.be/stations/NMBS/008814373#4,http://irail.be/stations/NMBS/008814373,4.30916700,50.8092160,Vorst-Zuid/Forest-Midi platform 4,Vorst-Zuid perron 4,Forest-Midi voie 4,Vorst-Zuid/Forest-Midi gleiss 4,Vorst-Zuid/Forest-Midi platform 4,4
 http://irail.be/stations/NMBS/008822111#3,http://irail.be/stations/NMBS/008822111,4.29906900,51.0090920,Londerzeel platform 3,Londerzeel perron 3,Londerzeel voie 3,Londerzeel gleiss 3,Londerzeel platform 3,3
 http://irail.be/stations/NMBS/008893542#3,http://irail.be/stations/NMBS/008893542,3.92137000,51.0031500,Schellebelle platform 3,Schellebelle perron 3,Schellebelle voie 3,Schellebelle gleiss 3,Schellebelle platform 3,3
