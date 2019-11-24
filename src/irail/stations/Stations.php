@@ -137,26 +137,30 @@ class Stations
         $newstations->{'@context'} = $stations->{'@context'};
         $newstations->{'@graph'} = [];
 
-        //https://github.com/iRail/stations/issues/101
+        // https://github.com/iRail/stations/issues/101
         $query = preg_replace('/Brussel Nat.+/', 'Brussels Airport', $query);
         $query = preg_replace('/Brussels Airport ?-? ?Z?a?v?e?n?t?e?m?/', 'Brussels Airport', $query);
 
-        //https://github.com/iRail/stations/issues/72
+        // https://github.com/iRail/stations/issues/72
         $query = str_ireplace('- ', '-', $query);
 
-        //https://github.com/iRail/hyperRail/issues/129
+        // https://github.com/iRail/hyperRail/issues/129
         $query = str_ireplace('l alleud', "l'alleud", $query);
 
-        //https://github.com/iRail/iRail/issues/165
+        // https://github.com/iRail/iRail/issues/165
         $query = str_ireplace(' Cdg ', ' Charles de Gaulle ', $query);
 
         $query = str_ireplace(' am ', ' ', $query);
         $query = str_ireplace('frankfurt fl', 'frankfurt main fl', $query);
 
-        //https://github.com/iRail/iRail/issues/66
+        // https://github.com/iRail/iRail/issues/66
         $query = str_ireplace('Bru.', 'Brussel', $query);
-        //https://github.com/iRail/iRail/issues/137
+        // https://github.com/iRail/iRail/issues/137
         $query = str_ireplace('Brux.', 'Bruxelles', $query);
+
+        // https://github.com/iRail/stations/154
+        $query = str_ireplace('Maastricht Randwijck', 'Maastricht Randwyck', $query);
+
         //make sure something between brackets is ignored
         $query = preg_replace("/\s?\(.*?\)/i", '', $query);
 
