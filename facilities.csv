@@ -32,7 +32,7 @@ http://irail.be/stations/NMBS/008821022,Antwerpen-Oost,Plantin En Moretuslei,201
 http://irail.be/stations/NMBS/008821196,Antwerpen-Zuid,Kolonel Silvertopstraat,2020,Antwerpen,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008892734,Anzegem,Statieplein 3,8570,Anzegem,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008895745,Appelterre,'T Angereelstraat 101,9400,Appelterre - Ninove,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
-http://irail.be/stations/NMBS/008814472,Arcaden/Arcades,,,,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008814472,Arcaden/Arcades,Arcadenplein,1170,Watermaal-Bosvoorde,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008811759,Archennes,Rue De Florival 100,1390,Grez Doiceau,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008866001,Arlon,Avenue De La Gare 32,6700,Arlon,1,0,1,1,1,0,1,0,0,1,1,13,1,0,0,0,1,05:45,20:00,05:45,20:00,05:45,20:00,05:45,20:00,05:45,20:00,06:15,20:30,06:15,20:30
 http://irail.be/stations/NMBS/008728686,Ascq,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -115,7 +115,7 @@ http://irail.be/stations/NMBS/008813037,Brussel-Kapellekerk/Bruxelles-Chapelle,U
 http://irail.be/stations/NMBS/008811304,Brussel-Luxemburg/Bruxelles-Luxembourg,Trierstraat,1050,Brussel,1,1,0,1,1,1,1,0,0,1,1,0,1,1,0,1,1,06:15,20:00,06:15,20:00,06:15,20:00,06:15,20:00,06:15,20:00,06:15,20:30,06:15,20:30
 http://irail.be/stations/NMBS/008812005,Brussel-Noord/Bruxelles-Nord,Vooruitgangstraat 76,1030,Brussel,1,1,1,1,1,1,1,1,0,1,1,0,1,1,0,1,1,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00
 http://irail.be/stations/NMBS/008811916,Brussel-Schuman/Bruxelles-Schuman,Wetstraat,1040,Brussel,1,0,0,1,0,0,1,0,1,0,0,0,1,1,0,0,1,06:15,20:00,06:15,20:00,06:15,20:00,06:15,20:00,06:15,20:00,,,,
-http://irail.be/stations/NMBS/008815040,Brussel-West/Bruxelles-Ouest,Rue Alphonse Vandenpeereboom Straat ,1060,Anderlecht,1,0,0,0,0,0,1,1,1,0,0,0,1,1,0,1,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008815040,Brussel-West/Bruxelles-Ouest,Ninoofsesteenweg,1080,Sint-Jans-Molenbeek,1,0,0,0,0,0,1,1,1,0,0,0,1,1,0,1,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008814001,Brussel-Zuid/Bruxelles-Midi,Fonsnylaan 47b,1060,Brussel,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00,06:15,22:00
 http://irail.be/stations/NMBS/008819406,Brussels Airport - Zaventem,Luchthaven-Brussel-Nationaal,1930,Zaventem,1,0,0,1,0,0,1,0,0,1,1,2,1,1,1,1,1,00:00,23:59,00:00,23:59,00:00,23:59,00:00,23:59,00:00,23:59,00:00,23:59,00:00,23:59
 http://irail.be/stations/NMBS/008811148,Buda,Diegemstraat,1800,Vilvoorde,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
@@ -274,7 +274,7 @@ http://irail.be/stations/NMBS/008832664,Hamont,Stationsplein,3930,Hamont,1,0,0,0
 http://irail.be/stations/NMBS/008891165,Hansbeke,Hansbekedorp,9850,Nevele,1,0,1,0,0,0,1,0,0,0,0,2,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008884640,Harchies,Rue De Stambruges,7321,Harchies,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008896115,Harelbeke,Stationsplein,8530,Harelbeke,1,0,1,0,1,0,1,0,0,0,0,4,0,1,0,0,1,06:00,13:15,06:00,13:15,06:00,13:15,06:00,13:15,06:00,13:15,,,,
-http://irail.be/stations/NMBS/008811155,Haren,Middelweg,1130,Brussel,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008811155,Haren,Middelweg,1130,Haren,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008811130,Haren-Sud/Haren-Zuid,Verdunstraat,1130,Brussel,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008831005,Hasselt,Stationsplein 2 - 6,3500,Hasselt,1,0,1,1,1,1,1,0,0,1,1,3,0,1,0,0,1,05:45,20:00,05:45,20:00,05:45,20:00,05:45,20:00,05:45,20:00,06:00,20:00,06:00,20:00
 http://irail.be/stations/NMBS/008843349,Haute-Flône,Rue Malliene,4470,Saint-Georges-Sur-Meuse,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
@@ -357,7 +357,7 @@ http://irail.be/stations/NMBS/008812161,Lebbeke,Stationsstraat 155,9280,Lebbeke,
 http://irail.be/stations/NMBS/008895067,Lede,Stationsstraat,9340,Lede,1,0,0,0,1,0,1,0,0,0,1,2,0,0,0,0,1,06:00,13:15,06:00,13:15,06:00,13:15,06:00,13:15,06:00,13:15,,,,
 http://irail.be/stations/NMBS/008864816,Leignon,Rue De La Gare,5590,Leignon,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008843224,Leman,Rue Général Leman,4400,Flemalle,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
-http://irail.be/stations/NMBS/008814332,Lembeek,Weerstandstraat,1502,Lembeek-Halle,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008814332,Lembeek,Stationsstraat,1502,Lembeek-Halle,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008881190,Lens,Rue Vallaville / Rue De La Station,7870,Lens,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008832003,Leopoldsburg,Nicolaylaan,3970,Leopoldsburg,1,0,1,0,1,0,1,0,0,0,0,4,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008775544,Les Arcs - Draguignan,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -417,6 +417,7 @@ http://irail.be/stations/NMBS/008864345,Marloie,Place De La Gare 1,6900,Marloie,
 http://irail.be/stations/NMBS/008711184,Marne-la-Vallée - Chessy,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008775100,Marseille-Saint-Charles,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008881174,Masnuy-Saint-Pierre,Rue Des Masnuy,7050,Masnuy-Saint-Pierre,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008739370,Massy TGV,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008729500,Maubeuge,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008885530,Maubray,Rue De La Gare,7640,Maubray,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008861333,Mazy,Chaussée De Nivelle,5032,Mazy,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
@@ -561,7 +562,7 @@ http://irail.be/stations/NMBS/008812211,Sint-Agatha-Berchem/Berchem-Sainte-Agath
 http://irail.be/stations/NMBS/008892692,Sint-Denijs-Boekel,Dries,9630,St-Denijs-Boekel,1,0,1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008814167,Sint-Genesius-Rode,Stationsplein 18,1640,Sint-Genesius-Rode,1,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0,1,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,,,,
 http://irail.be/stations/NMBS/008893443,Sint-Gillis-Dendermonde,Buisstraat,9200,Sint-Gillis,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
-http://irail.be/stations/NMBS/008814449,Sint-Job,Saint-Jobsteenweg,1180,Ukkel,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008814449,Sint-Job,Jean En Pierre Carsoellaan,1180,Ukkel,1,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008833159,Sint-Joris-Weert,Stationsstraat Zn.,3051,Sint-Joris-Weert,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008822228,Sint-Katelijne-Waver,Stationsplein 1,2860,Sint-Katelijne-Waver,1,0,1,0,0,0,1,0,0,0,0,2,1,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008821543,Sint-Mariaburg,Lodewijk Andessonstraat,2180,Antwerpen (ekeren),1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,,,
@@ -633,7 +634,7 @@ http://irail.be/stations/NMBS/008873007,Walcourt,Rue De La Station 124,5650,Walc
 http://irail.be/stations/NMBS/008896149,Waregem,Noorderlaan 71,8790,Waregem,1,0,1,0,1,1,1,0,0,0,0,5,0,1,0,0,1,05:45,20:00,05:45,20:00,05:45,20:00,05:45,20:00,05:45,20:00,07:45,15:00,07:45,15:00
 http://irail.be/stations/NMBS/008841400,Waremme,Place Rongvaux 14,4300,Waremme,1,0,1,0,1,0,1,0,0,0,1,3,1,0,0,0,1,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,07:00,14:15,,
 http://irail.be/stations/NMBS/008814266,Waterloo,Place De La Gare,1410,Waterloo,1,0,1,0,1,0,0,0,0,0,0,6,1,0,0,0,1,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,,,,
-http://irail.be/stations/NMBS/008811429,Watermaal/Watermael,Arcadenstraat,1170,Brussel,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
+http://irail.be/stations/NMBS/008811429,Watermaal/Watermael,Hakhoutlaan,1170,Watermaal-Bosvoorde,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008811726,Wavre,Place Henri Berger 1,1300,Wavre,1,0,1,0,1,0,1,0,0,0,0,3,1,0,0,0,1,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,,,,
 http://irail.be/stations/NMBS/008822251,Weerde,Stationsplein 1,1982,Weerde,1,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,0,,,,,,,,,,,,,,
 http://irail.be/stations/NMBS/008844503,Welkenraedt,Place De La Gare 11,4840,Welkenraedt,1,0,1,0,1,0,1,0,0,0,1,2,1,0,0,0,1,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,06:15,13:30,07:00,14:15,,
