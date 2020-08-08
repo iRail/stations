@@ -17,7 +17,8 @@
     "ml/json-ld": "^1.0",
     "cache/apcu-adapter": "^1.0",
     "cache/array-adapter": "^1.0",
-    "cache/apc-adapter": "^1.0"
+    "cache/apc-adapter": "^1.0",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-0": {

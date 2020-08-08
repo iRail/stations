@@ -12,6 +12,7 @@ namespace irail\stations;
 use Cache\Adapter\Apc\ApcCachePool;
 use Cache\Adapter\Common\AbstractCachePool;
 use Cache\Adapter\PHPArray\ArrayCachePool;
+use stdClass;
 
 class Stations
 {
@@ -132,7 +133,7 @@ class Stations
 
         // Filter the stations on name match
         $stations = self::$stations;
-        $newstations = new \stdClass();
+        $newstations = new stdClass();
         $newstations->{'@id'} = $stations->{'@id'} . '?q=' . $query;
         $newstations->{'@context'} = $stations->{'@context'};
         $newstations->{'@graph'} = [];
@@ -174,7 +175,7 @@ class Stations
 
         // Dashes are the same as spaces
         $query = self::normalizeAccents($query);
-        $query = preg_replace("/(-| )+/", " ", $query);
+        $query = preg_replace("/([- ])+/", " ", $query);
 
         $count = 0;
 
@@ -196,7 +197,6 @@ class Stations
                 // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
                 $exactMatch = true;
             } else {
-
                 if (self::isQueryPartOfName($query, $testStationName)) {
                     // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
                     $partialMatch = true;
@@ -204,7 +204,6 @@ class Stations
 
                 // Even when we have a partial match, we should keep searching for an exact math
                 if (isset($station->alternative)) {
-
                     // If this station in the list has an alternative form, try to match alternatives
                     foreach ($station->alternative as $alternative) {
                         $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
@@ -221,9 +220,7 @@ class Stations
                             $partialMatch = true;
                         }
                     }
-
                 }
-
             }
 
             if ($exactMatch) {
@@ -286,14 +283,14 @@ class Stations
     /**
      * Compare 2 stations based on vehicle frequency.
      *
-     * @param $a \stdClass the first station
-     * @param $b \stdClass the second station
+     * @param $a stdClass the first station
+     * @param $b stdClass the second station
      *
      * @return int The result of the compare. 0 if equal, -1 if a is after b, 1 if b is before a
      */
     public static function cmp_stations_vehicle_frequency($a, $b)
     {
-        if ($a == $b) {
+        if ($a->avgStopTimes == $b->avgStopTimes) {
             return 0;
         }
         //sort sorts from low to high, so lower avgStopTimes will result in a higher ranking.

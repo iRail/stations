@@ -69,8 +69,8 @@ class StationsTest extends PHPUnit_Framework_TestCase
 
         // If this passes, we're off for a good start. Verify all stations.
         $stations = Stations::getStations();
+        echo("Testing exact name queries...");
         foreach ($stations->{'@graph'} as $station) {
-            echo("Testing exact match for $station->name...");
             $jsonld = Stations::getStations($station->name);
             $this->assertGreaterThanOrEqual(1, count($jsonld->{'@graph'}));
             $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
@@ -87,7 +87,6 @@ class StationsTest extends PHPUnit_Framework_TestCase
                 }
 
                 foreach ($alternatives as $alternative) {
-                    echo("Testing exact match for {$alternative->{"@value"}}...");
                     $jsonld = Stations::getStations($alternative->{"@value"});
                     $this->assertGreaterThanOrEqual(1, count($jsonld->{'@graph'}));
                     $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
