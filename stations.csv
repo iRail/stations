@@ -230,7 +230,8 @@ http://irail.be/stations/NMBS/008844255,Fraipont,,,,,be,5.723665,50.565059,67.82
 http://irail.be/stations/NMBS/008881570,Frameries,,,,,be,3.906586,50.405932,27.128492,300
 http://irail.be/stations/NMBS/008844347,Franchimont,,,,,be,5.822223,50.525723,31.536313,300
 http://irail.be/stations/NMBS/008861143,Franière,,,,,be,4.733548,50.439543,110.801676,300
-http://irail.be/stations/NMBS/008011090,Frankfurt am Main Flughafen,Francfort-sur-le-Main Aéroport,Frankfurt am Main Luchthaven,,Frankfurt am Main Airport,de,8.569853,50.051696,0,
+http://irail.be/stations/NMBS/008011090,Frankfurt am Main Flughafen Reginalbf,Francfort-sur-le-Main Aéroport regional (régional),Frankfurt am Main Luchthaven (Regionale treinen),,Frankfurt am Main Airport (Regional trains),de,8.569853,50.051696,0,
+http://irail.be/stations/NMBS/008061676,Frankfurt am Main Flughafen Fernbf,Francfort-sur-le-Main Aéroport (longue tenue),Frankfurt am Main Luchthaven (Lange-afstand),,Frankfurt am Main Airport (Long distance trains),de,8.56987237,50.05290581,0,
 http://irail.be/stations/NMBS/008011068,Frankfurt am Main Hbf,Francfort-sur-le-Main Hbf,,,,de,8.6653708,50.1071318,0,
 http://irail.be/stations/NMBS/008885068,Froyennes,,,,,be,3.354837,50.62989,78.391061,300
 http://irail.be/stations/NMBS/008895620,Galmaarden,Gammerages,,,,be,3.965726,50.743918,41.374302,300
