@@ -71,7 +71,7 @@ downloadGTFS();
 /*
  * Gather prerequisite data
  */
-list($handledDaysCount, $stopFrequencies) = getStopTimes();
+[$handledDaysCount, $stopFrequencies] = getStopTimes();
 $transferTimes = parseTransferTimes();
 
 /*
@@ -151,26 +151,22 @@ foreach ($gtfsStations as $uri => $gtfsStation) {
     echo "Adding missing station: $uri" . PHP_EOL;
     $name = $gtfsStation['stop_name'];
 
-    // Determine the country from (the absence of) a foreign country abbreviation: (l), (fr), (d)
-    $nameLeftBracket = strpos($name, '(');
-    $nameRightBracket = strpos($name, ')');
-    // determine country code
-    if ($nameLeftBracket !== false) {
-        $countryhint = substr($name, $nameLeftBracket, $nameRightBracket - $nameLeftBracket);
-        switch ($countryhint) {
-            case 'l':
-                $country = 'lu';
-                break;
-            case 'fr':
-                $country = 'fr';
-                break;
-            case 'd':
-                $country = 'de';
-                break;
-        }
-        $name = substr($name, 0, $nameLeftBracket - 1);
-    } else {
-        $country = 'be';
+
+    // determine country code from the first id digits
+
+    switch (substr($gtfsStation['stop_id'], 0, 2)) {
+        case '88':
+            $country = 'be';
+            break;
+        case '82':
+            $country = 'lu';
+            break;
+        case '87':
+            $country = 'fr';
+            break;
+        case '80':
+            $country = 'de';
+            break;
     }
 
     // Language barrier runs at a latitude higher than 50.756082 or 50.754896
@@ -217,7 +213,6 @@ foreach ($gtfsStations as $uri => $gtfsStation) {
     $station[CSV_HEADER_COUNTRY] = $country;
     $station[CSV_HEADER_LONGITUDE] = $gtfsStation['stop_lon'];
     $station[CSV_HEADER_LATITUDE] = $gtfsStation['stop_lat'];
-    $station[CSV_HEADER_AVG_STOP_TIMES] = $gtfsStation['stop_lon'];
     $station[CSV_HEADER_AVG_STOP_TIMES] = round($stopFrequencies[$uri] / $handledDaysCount, 6);
     $station[CSV_HEADER_TRANSFER_TIME] = $transferTimes[$uri];
 
@@ -561,10 +556,9 @@ function validateCoordinates($station, $gtfsStation): array
         echo $station[CSV_HEADER_URI] . " updated missing location data with official coordinates: $gtfsLongitude, $gtfsLatitude! " . PHP_EOL;
         $station[CSV_HEADER_LATITUDE] = $gtfsLatitude;
         $station[CSV_HEADER_LONGITUDE] = $gtfsLongitude;
-    } else if (abs($gtfsLatitude - $latitude) > 0.005 || abs($gtfsLongitude - $longitude) > 0.015) {
+    } else if (abs($gtfsLatitude - $latitude) > 0.010 || abs($gtfsLongitude - $longitude) > 0.020) {
         // Longitude: at 60°-45°: 0,001 = 70m
         // Latitude: at 60°-45°: 0,001 = 111m
-        // The user should determine what to do with this
         $station[CSV_HEADER_LATITUDE] = $gtfsLatitude;
         $station[CSV_HEADER_LONGITUDE] = $gtfsLongitude;
         echo $station[CSV_HEADER_URI] . " had an incorrect location with large deviation from GTFS. Was $longitude, $latitude but official is $gtfsLongitude, $gtfsLatitude. Updated! " . PHP_EOL;
