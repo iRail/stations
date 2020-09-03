@@ -1,5 +1,5 @@
 URI,name,alternative-fr,alternative-nl,alternative-de,alternative-en,country-code,longitude,latitude,avg_stop_times,official_transfer_time
-http://irail.be/stations/NMBS/008101003,Wien Hbf,,,,,at,16.375864,48.184923,0
+http://irail.be/stations/NMBS/008101003,Wien Hbf,,,,,at,16.375864,48.184923,0,0
 http://irail.be/stations/NMBS/008734201,Arras,,,,,fr,2.78169000,50.2868300,0.014925,120
 http://irail.be/stations/NMBS/008015345,Aachen Hbf,Aix-la-Chapelle Hbf,Aken Hbf,,,de,6.105275,50.770832,30.268657,300
 http://irail.be/stations/NMBS/008895000,Aalst,Alost,,,,be,4.039653,50.942813,157.425373,300
