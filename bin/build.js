@@ -59,7 +59,8 @@ var countryURIs = {
   "de" : "http://sws.geonames.org/2921044/",
   "lu" : "http://sws.geonames.org/2960313/",
   "gb" : "http://sws.geonames.org/2635167/",
-  "ch" : "http://sws.geonames.org/2658434/"
+  "ch" : "http://sws.geonames.org/2658434/",
+  "at" : "http://sws.geonames.org/2782113/"
 };
 
 var filename = __dirname + "/../stations.csv";
