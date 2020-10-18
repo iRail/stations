@@ -153,21 +153,29 @@ foreach ($gtfsStations as $uri => $gtfsStation) {
 
 
     // determine country code from the first id digits
+    $uicToIso2 = [
+        '55' => 'hu',
+        '56' => 'sk',
+        '70' => 'gb',
+        '71' => 'es',
+        '74' => 'se',
+        '76' => 'no',
+        '78' => 'hr',
+        '79' => 'sl',
+        '80' => 'de',
+        '81' => 'at',
+        '82' => 'lu',
+        '83' => 'it',
+        '84' => 'nl',
+        '85' => 'ch',
+        '86' => 'dk',
+        '87' => 'fr',
+        '88' => 'be',
+        '94' => 'pt',
+    ];
 
-    switch (substr($gtfsStation['stop_id'], 0, 2)) {
-        case '88':
-            $country = 'be';
-            break;
-        case '82':
-            $country = 'lu';
-            break;
-        case '87':
-            $country = 'fr';
-            break;
-        case '80':
-            $country = 'de';
-            break;
-    }
+    $uicCode = substr($gtfsStation['stop_id'], 0, 2);
+    $country = $uicToIso2[$uicCode];
 
     // Language barrier runs at a latitude higher than 50.756082 or 50.754896
     // If in Flanders (approx) the Dutch name is used. If the name isn't determined correctly, this needs manual changes.
