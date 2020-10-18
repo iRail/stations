@@ -53,18 +53,24 @@ var context = {
 
 //Hardcoded array to be able to map country codes to geonames' URIs
 var countryURIs = {
-  "fr" : "http://sws.geonames.org/3017382/",
-  "be" : "http://sws.geonames.org/2802361/",
-  "nl" : "http://sws.geonames.org/2750405/",
-  "de" : "http://sws.geonames.org/2921044/",
-  "lu" : "http://sws.geonames.org/2960313/",
-  "gb" : "http://sws.geonames.org/2635167/",
-  "at" : "http://sws.geonames.org/2782113/",
-  "ch" : "http://sws.geonames.org/2658434/",
-  "dk" : "http://sws.geonames.org/2623032/",
-  "se" : "http://sws.geonames.org/2661886/",
-  "it" : "http://sws.geonames.org/3175395/",
-  "es" : "http://sws.geonames.org/2510769/",
+  "hu": "http://sws.geonames.org/719819/",
+  "sk": "http://sws.geonames.org/3057568/",
+  "gb": "http://sws.geonames.org/2635167/",
+  "es": "http://sws.geonames.org/2510769/",
+  "se": "http://sws.geonames.org/2661886/",
+  "no": "http://sws.geonames.org/3144096/",
+  "hr": "http://sws.geonames.org/3202326/",
+  "sl": "http://sws.geonames.org/3190538/",
+  "de": "http://sws.geonames.org/2921044/",
+  "at": "http://sws.geonames.org/2782113/",
+  "lu": "http://sws.geonames.org/2960313/",
+  "it": "http://sws.geonames.org/3175395/",
+  "nl": "http://sws.geonames.org/2750405/",
+  "ch": "http://sws.geonames.org/2658434/",
+  "dk": "http://sws.geonames.org/2623032/",
+  "fr": "http://sws.geonames.org/3017382/",
+  "be": "http://sws.geonames.org/2802361/",
+  "pt": "http://sws.geonames.org/2264397/"
 };
 
 var filename = __dirname + "/../stations.csv";
