@@ -1,5 +1,7 @@
 <?php
 
+// IMPORTANT: INCOMPATIBLE WITH PHP8.0 or newer
+
 /**
  * Scrape the NMBS website for facilities available in a station, and write the scraped facilities to facilities.csv
  * A stations.csv file should be present to provide station URIs for which data should be loaded
