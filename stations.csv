@@ -1,4 +1,5 @@
 URI,name,alternative-fr,alternative-nl,alternative-de,alternative-en,country-code,longitude,latitude,avg_stop_times,official_transfer_time
+http://irail.be/stations/NMBS/008400319,'s Hertogenbosch,,,,,nl,5.29427800,51.6904200,0.022857,300
 http://irail.be/stations/NMBS/008015345,Aachen Hbf,Aix-la-Chapelle Hbf,Aken Hbf,,,de,6.105275,50.770832,30,300
 http://irail.be/stations/NMBS/008895000,Aalst,Alost,,,,be,4.039653,50.942813,142.859649,300
 http://irail.be/stations/NMBS/008895125,Aalst-Kerrebroek,Alost Kerrebroek,,,,be,4.024407,50.948377,7.307018,300
@@ -45,7 +46,7 @@ http://irail.be/stations/NMBS/008866605,Athus,,,Athem,,be,5.828947,49.563346,104
 http://irail.be/stations/NMBS/008869047,Athus-Frontiere,,,,,be,5.82493200,49.5517490,111.144737,120
 http://irail.be/stations/NMBS/008866654,Aubange,,,,,be,5.79806,49.564093,29.736842,300
 http://irail.be/stations/NMBS/008869088,Aubange-Frontiere-Luxembourg,,,,,be,5.82630700,49.5494550,0,
-http://irail.be/stations/NMBS/008729560,Aulnoye-Aymeries,,,,,fr,3.84341300,50.1974400,3.903509,300
+http://irail.be/stations/NMBS/008729560,Aulnoye-Aymeries,,,,,fr,3.84341300,50.1974400,3.903509,
 http://irail.be/stations/NMBS/008874716,Auvelais,,,,,be,4.630532,50.449197,115.885965,300
 http://irail.be/stations/NMBS/008731896,Avignon TGV,,,,,fr,4.81666700,43.9500000,0,
 http://irail.be/stations/NMBS/008864352,Aye,,,,,be,5.301091,50.224135,59.425439,300
@@ -139,8 +140,8 @@ http://irail.be/stations/NMBS/008811817,Ceroux-Mousty,,,,,be,4.569046,50.659941,
 http://irail.be/stations/NMBS/008774100,Chambéry-Challes-les-Eaux,,,,,fr,5.919756,45.571498,0,
 http://irail.be/stations/NMBS/008861317,Chapelle-Dieu,,,,,be,4.697627,50.557374,8.719298,300
 http://irail.be/stations/NMBS/008864824,Chapois,,,,,be,5.124255,50.262366,59.425439,300
-http://irail.be/stations/NMBS/008872066,Charleroi-Ouest,,Charleroi-West,,,be,4.436653,50.410948,32.925439,300
 http://irail.be/stations/NMBS/008872009,Charleroi-Central,,Charleroi-Centraal,,,be,4.438567,50.40471,316.429825,300
+http://irail.be/stations/NMBS/008872066,Charleroi-Ouest,,Charleroi-West,,,be,4.436653,50.410948,32.925439,300
 http://irail.be/stations/NMBS/008861523,Chastre,,,,,be,4.648888,50.608819,131.092105,300
 http://irail.be/stations/NMBS/008842051,Chaudfontaine,,,,,be,5.64373400,50.5869820,87.451754,300
 http://irail.be/stations/NMBS/008863438,Château-de-Seilles,,,,,be,5.081745,50.497209,88.364035,300
@@ -511,7 +512,7 @@ http://irail.be/stations/NMBS/008843174,Ougrée,,,,,be,5.53697200,50.6053960,44.
 http://irail.be/stations/NMBS/008832573,Overpelt,,,,,be,5.422751,51.215618,36.355263,300
 http://irail.be/stations/NMBS/008865540,Paliseul,,,,,be,5.118349,49.895408,27.535088,300
 http://irail.be/stations/NMBS/008886561,Papegem,Papignies,Papegem,Papignies,Papignies,be,3.823408,50.686585,37.561404,300
-http://irail.be/stations/NMBS/008727100,Paris Nord,,Parijs Noord,,,fr,2.33333300,48.8666670,0.552632,300
+http://irail.be/stations/NMBS/008727100,Paris Nord,,Parijs Noord,,,fr,2.33333300,48.8666670,0.552632,
 http://irail.be/stations/NMBS/008844206,Pepinster,,,,,be,5.80615,50.568179,118.973684,240
 http://irail.be/stations/NMBS/008844313,Pepinster-Cité,,,,,be,5.804397,50.563405,31.52193,300
 http://irail.be/stations/NMBS/008778400,Perpignan,,,,,fr,2.879397,42.695938,0,
@@ -532,7 +533,7 @@ http://irail.be/stations/NMBS/008811775,Pécrot,,,,,be,4.651486,50.778517,54.578
 http://irail.be/stations/NMBS/008884855,Péruwelz,,,,,be,3.592772,50.513704,64.701754,300
 http://irail.be/stations/NMBS/008884541,Quaregnon,,,,,be,3.856543,50.449827,100.416667,300
 http://irail.be/stations/NMBS/008881505,Quevy,,,,,be,3.909489,50.341534,38.122807,300
-http://irail.be/stations/NMBS/008889003,Quevy-frontiere,,,,,be,3.90875300,50.3277100,5.855263,120
+http://irail.be/stations/NMBS/008889003,Quevy-frontiere,,,,,be,3.90875300,50.3277100,5.855263,
 http://irail.be/stations/NMBS/008884335,Quievrain,,,,,be,3.68608,50.410103,32.929825,300
 http://irail.be/stations/NMBS/008886587,Rebaix,,,,,be,3.793627,50.661235,37.561404,300
 http://irail.be/stations/NMBS/008841442,Remicourt,,,,,be,5.321407,50.678611,64.578947,300
@@ -687,4 +688,5 @@ http://irail.be/stations/NMBS/008895208,Zottegem,,,,,be,3.81441,50.869102,218.42
 http://irail.be/stations/NMBS/008891611,Zwankendamme,,,,,be,3.191557,51.306409,0,
 http://irail.be/stations/NMBS/008894821,Zwijndrecht,,,,,be,4.32978,51.214108,144.429825,300
 http://irail.be/stations/NMBS/000000101,Zwijndrecht Dorp,,,,,be,4.32571361,51.2191923,0,
+http://irail.be/stations/NMBS/000000252,Zwijndrecht-Dorp,,,,,be,4.32567070,51.2191653,1.588571,120
 http://irail.be/stations/NMBS/008883212,Écaussinnes,,,,,be,4.156639,50.56239,59.539474,300

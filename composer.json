@@ -26,6 +26,7 @@
     }
   },
   "require-dev" : {
+    "ext-zip": "*",
     "phpunit/phpunit": "^5.5"
   }
 }
