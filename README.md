@@ -65,6 +65,17 @@ This file describes facilities available in NMBS/SNCB stations. All fields are c
  * `sales_open_monday` - `sales_open_sunday`: The time at which ticket boots open on this day of the week.
  * `sales_close_monday` -`sales_close_sunday`:The time at which ticket boots close on this day of the week.
 
+### embarkment_statistics.csv
+This file describes how many people embark a train at the given station per day. Statistics from october 2023, source: 
+[belgiantrain.be, Cijfers opgestapte reizigers](https://www.belgiantrain.be/nl/about-sncb/enterprise/publications/travellers-counts)
+
+* `URI`: The URI identifying this station.
+* `name`: The name of this station.
+* `nmbs_short_name`: The short name of this station, as used in the original source data. For verification and future update purposes.
+* `average_weekday_embarkments`: The average number of travelers embarking on a weekday.
+* `average_saturday_embarkments`: The average number of travelers embarking on a saturday.
+* `average_sunday_embarkments`: The average number of travelers embarking on a sunday.
+
 ## How we collect data
 
 This repository contains two PHP scripts which can load all data from the NMBS GTFS public data and the NMBS website. These scripts can be used to generate all CSV files from scratch, and to update existing files.
