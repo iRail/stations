@@ -1,6 +1,5 @@
 <?php
 
-//This class tests the PHP Stations class in src/irail/stations
 use irail\stations\Stations;
 use PHPUnit\Framework\TestCase;
 
