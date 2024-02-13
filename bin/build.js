@@ -108,21 +108,19 @@ reader.addListener('data', function (data) {
 
 //When the CSV processing is done: print the requested serialisation
 reader.addListener('end', function () {
-  writer.end(function (error, output) {
+  writer.end(async function (error, output) {
     if (error) {
       console.error("Problem: " + error);
     } else {
       if (format !== "json") {
         console.log(output);
       } else {
-        jsonld.fromRDF(output, {format: 'application/nquads'}, function(err, doc) {
-          jsonld.compact(doc, context, function(err, compacted) {
-            var jsonresult = JSON.stringify(compacted);
-            //ugly fix for https://github.com/iRail/stations/issues/8
-            jsonresult = jsonresult.replace(/"alternative":({.*?})/gi,"\"alternative\":[$1]");
-            console.log(jsonresult);
-          });   
-        });
+        const doc = await jsonld.fromRDF(output, {format: 'application/nquads'});
+        const compacted = await jsonld.compact(doc, context);
+        var jsonresult = JSON.stringify(compacted);
+        //ugly fix for https://github.com/iRail/stations/issues/8
+        jsonresult = jsonresult.replace(/"alternative":({.*?})/gi, "\"alternative\":[$1]");
+        console.log(jsonresult);
       }
     }
   });
