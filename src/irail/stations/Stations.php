@@ -23,7 +23,7 @@ class Stations extends StationsDataset
      * @param string $country shortcode for a country (e.g., be, de, fr...)
      * @return object a JSON-LD graph with context
      */
-    public static function getStations(string $query = '', string $country = '', bool $sorted = false): object
+    public static function getStations(string $query = '', string $country = ''): object
     {
         if ($query == null || $query === '') {
             // Loading from the loadJsonLd method has a high chance of a cache hit, meaning decoding and disk IO isn't needed
@@ -35,7 +35,7 @@ class Stations extends StationsDataset
         $query_cache_key = 'Stations|' . preg_replace('/[^a-zA-Z0-9]/', '-', $query);
 
         // keep all function parameters in key, separate cache entry for every unique request.
-        $apc_key = $query_cache_key . '|' . $country . '|' . $sorted;
+        $apc_key = $query_cache_key . '|' . $country;
 
         $cached = stationsCache::getFromCache($apc_key);
         if ($cached !== false) {
@@ -62,10 +62,6 @@ class Stations extends StationsDataset
 
         // Create a sorted list based on the vehicle_frequency
         $stations_array = $stations->{'@graph'};
-
-        if ($sorted) {
-            usort($stations_array, ['\irail\stations\StationsDataset', 'cmp_stationsld_vehicle_frequency']);
-        }
 
         foreach ($stations_array as $station) {
             $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
@@ -114,7 +110,7 @@ class Stations extends StationsDataset
             }
 
             // Don't keep searching after 5 results when sorted. Return.
-            if ($sorted && $count > 5) {
+            if ($count > 5) {
                 stationsCache::setCache($apc_key, $newstations);
                 return $newstations;
             }
@@ -173,6 +169,7 @@ class Stations extends StationsDataset
                 self::$stations = $cached;
             } else {
                 self::$stations = json_decode(file_get_contents(__DIR__ . self::$stationsfilename));
+                usort(self::$stations->{'@graph'}, ['\irail\stations\StationsDataset', 'cmp_stationsld_vehicle_frequency']);
                 stationsCache::setCache($ld_key, self::$stations);
             }
         }
