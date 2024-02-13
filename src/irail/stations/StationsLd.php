@@ -11,7 +11,7 @@ namespace irail\stations;
 
 use stdClass;
 
-class Stations extends StationsDataset
+class StationsLd extends StationsDataset
 {
     private static string $stationsfilename = '/../../../stations.jsonld';
     private static object $stations;
@@ -32,7 +32,7 @@ class Stations extends StationsDataset
         }
 
         // Escape all special characters for PSR6-compliant key.
-        $query_cache_key = 'Stations|' . preg_replace('/[^a-zA-Z0-9]/', '-', $query);
+        $query_cache_key = 'StationsLd|' . preg_replace('/[^a-zA-Z0-9]/', '-', $query);
 
         // keep all function parameters in key, separate cache entry for every unique request.
         $apc_key = $query_cache_key . '|' . $country;
@@ -122,7 +122,7 @@ class Stations extends StationsDataset
     public static function getStationFromID($id)
     {
         // Escape all special characters for PSR6-compliant key.
-        $id_cache_key = 'Stations|' . preg_replace('/[^a-zA-Z0-9]/', '-', $id);
+        $id_cache_key = 'StationsLd|' . preg_replace('/[^a-zA-Z0-9]/', '-', $id);
 
         $cached = stationsCache::getFromCache($id_cache_key);
         if ($cached !== false) {

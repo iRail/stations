@@ -109,7 +109,8 @@ composer require irail/stations
 Then you can use the stations in your code as follows:
 
 ```php
-use irail\stations\Stations;
+use irail\stations\StationsCsv;
+use irail\stations\StationsLd;
 // Using the strongly typed CSV parser:
 // getStations() returns a irail\stations\Station array
 $brusselsnorth = StationsCsv::getStations("Brussels North")[0];
@@ -118,9 +119,9 @@ $ghentstpieters = StationsCsv::getStationByID("http://irail.be/stations/NMBS/008
 
 // Using the linked-data interface
 // getStations() returns a json-ld document
-$brusselsnorth = Stations::getStations("Brussels North")->{"@graph"}[0];
+$brusselsnorth = StationsLd::getStations("Brussels North")->{"@graph"}[0];
 // getStationByID($id) returns a simple object with the station or null
-$ghentstpieters = Stations::getStationByID("http://irail.be/stations/NMBS/008892007");
+$ghentstpieters = StationsLd::getStationByID("http://irail.be/stations/NMBS/008892007");
 ```
 
 Don't forget to do a `composer update` from time to time to update the data

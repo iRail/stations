@@ -1,9 +1,9 @@
 <?php
 
-use irail\stations\Stations;
+use irail\stations\StationsLd;
 use PHPUnit\Framework\TestCase;
 
-class StationsTest extends TestCase
+class StationsLdTest extends TestCase
 {
     /**
      * Test whether returning all the stations works without problems.
@@ -11,7 +11,7 @@ class StationsTest extends TestCase
     public function testAll()
     {
         //Launch a query for everything
-        $jsonld = Stations::getStations();
+        $jsonld = StationsLd::getStations();
         //Assert whether it contains lots of stations
         $this->assertGreaterThan(600, count($jsonld->{'@graph'}));
     }
@@ -42,13 +42,13 @@ class StationsTest extends TestCase
     public function testBrussels()
     {
         //Launch a query for Brussels in various ways
-        $jsonld1 = Stations::getStations('Brussel');
-        $jsonld2 = Stations::getStations('Brussels');
-        $jsonld3 = Stations::getStations('Bruxelles');
-        $jsonld4 = Stations::getStations('Bru.-Noord / Brux.-Nord');
-        $jsonld5 = Stations::getStations('Brussels Airport - Zaventem');
+        $jsonld1 = StationsLd::getStations('Brussel');
+        $jsonld2 = StationsLd::getStations('Brussels');
+        $jsonld3 = StationsLd::getStations('Bruxelles');
+        $jsonld4 = StationsLd::getStations('Bru.-Noord / Brux.-Nord');
+        $jsonld5 = StationsLd::getStations('Brussels Airport - Zaventem');
         //https://github.com/iRail/stations/issues/137
-        $jsonld6 = Stations::getStations('Brux.-Midi');
+        $jsonld6 = StationsLd::getStations('Brux.-Midi');
 
 
         //Assert whether it contains the right number of stations
@@ -68,10 +68,10 @@ class StationsTest extends TestCase
     {
 
         // If this passes, we're off for a good start. Verify all stations.
-        $stations = Stations::getStations();
+        $stations = StationsLd::getStations();
         echo("Testing exact name queries...");
         foreach ($stations->{'@graph'} as $station) {
-            $jsonld = Stations::getStations($station->name);
+            $jsonld = StationsLd::getStations($station->name);
             $this->assertGreaterThanOrEqual(1, count($jsonld->{'@graph'}));
             $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
             $this->assertEquals($station->{'@id'}, $jsonld->{'@graph'}[0]->{'@id'});
@@ -87,7 +87,7 @@ class StationsTest extends TestCase
                 }
 
                 foreach ($alternatives as $alternative) {
-                    $jsonld = Stations::getStations($alternative->{"@value"});
+                    $jsonld = StationsLd::getStations($alternative->{"@value"});
                     $this->assertGreaterThanOrEqual(1, count($jsonld->{'@graph'}));
                     $this->assertEquals($station->name, $jsonld->{'@graph'}[0]->name);
                     $this->assertEquals($station->{'@id'}, $jsonld->{'@graph'}[0]->{'@id'});
@@ -97,22 +97,22 @@ class StationsTest extends TestCase
 
         // When searching for a station with an exact match, the exact match should be the first,
         // but other results should still be included! (Size must be greater than 1)
-        $jsonld = Stations::getStations("hal");
+        $jsonld = StationsLd::getStations("hal");
         $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
 
-        $jsonld = Stations::getStations("halle");
+        $jsonld = StationsLd::getStations("halle");
         $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
 
-        $jsonld = Stations::getStations("asse");
+        $jsonld = StationsLd::getStations("asse");
         $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
 
-        $jsonld = Stations::getStations("heist");
+        $jsonld = StationsLd::getStations("heist");
         $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
 
-        $jsonld = Stations::getStations("mechelen");
+        $jsonld = StationsLd::getStations("mechelen");
         $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
 
-        $jsonld = Stations::getStations("mortsel");
+        $jsonld = StationsLd::getStations("mortsel");
         $this->assertGreaterThan(1, count($jsonld->{'@graph'}));
     }
 
@@ -124,7 +124,7 @@ class StationsTest extends TestCase
     {
         $names = ["Marne-la-Vallée - Chessy", "Marne-la-Vallée-Chessy", "Marne la Vallée Chessy", " Marne  - - la    Vallée  Chessy"];
         foreach ($names as $name) {
-            $jsonld = Stations::getStations($name);
+            $jsonld = StationsLd::getStations($name);
             $this->assertGreaterThanOrEqual(1, $jsonld->{'@graph'});
             $this->assertEquals("Marne-la-Vallée - Chessy", $jsonld->{'@graph'}[0]->name);
             $this->assertEquals("http://irail.be/stations/NMBS/008711184", $jsonld->{'@graph'}[0]->{'@id'});
@@ -137,8 +137,8 @@ class StationsTest extends TestCase
     public function testEncoding()
     {
         //Launch a query for Brussels in various ways
-        $result1a = Stations::getStations('Ville-Pommerœul');
-        $result1b = Stations::getStations('Ville-Pommeroeul');
+        $result1a = StationsLd::getStations('Ville-Pommerœul');
+        $result1b = StationsLd::getStations('Ville-Pommeroeul');
         $this->assertEquals($result1a->{'@graph'}[0]->{'@id'}, $result1b->{'@graph'}[0]->{'@id'});
     }
 
@@ -148,42 +148,42 @@ class StationsTest extends TestCase
     public function testEdgeCases()
     {
         //test whether something between brackets is ignored
-        $result1 = Stations::getStations('Brussel Nat (be)');
+        $result1 = StationsLd::getStations('Brussel Nat (be)');
         $this->assertCount(1, $result1->{'@graph'});
 
         //test whether sint st. and saint return the same result
-        $result2a = Stations::getStations('st pancras');
-        $result2b = Stations::getStations('saint pancras');
-        $result2c = Stations::getStations('st-pancras');
-        $result2d = Stations::getStations('st.-pancras');
+        $result2a = StationsLd::getStations('st pancras');
+        $result2b = StationsLd::getStations('saint pancras');
+        $result2c = StationsLd::getStations('st-pancras');
+        $result2d = StationsLd::getStations('st.-pancras');
         $this->assertEquals($result2a->{'@graph'}[0]->{'@id'}, $result2b->{'@graph'}[0]->{'@id'});
         $this->assertEquals($result2b->{'@graph'}[0]->{'@id'}, $result2c->{'@graph'}[0]->{'@id'});
         $this->assertEquals($result2a->{'@graph'}[0]->{'@id'}, $result2d->{'@graph'}[0]->{'@id'});
 
         // Check whether both am main and main work
-        $result3a = Stations::getStations('frankfurt am main');
-        $result3b = Stations::getStations('frankfurt main');
+        $result3a = StationsLd::getStations('frankfurt am main');
+        $result3b = StationsLd::getStations('frankfurt main');
         $this->assertEquals($result3a->{'@graph'}[0]->{'@id'}, $result3b->{'@graph'}[0]->{'@id'});
 
         // Check whether flughhaven am main don't get mixed up and all work
-        $result4a = Stations::getStations('frankfurt am main flughafen');
-        $result4b = Stations::getStations('frankfurt flughafen');
-        $result4c = Stations::getStations('frankfurt main flughafen');
+        $result4a = StationsLd::getStations('frankfurt am main flughafen');
+        $result4b = StationsLd::getStations('frankfurt flughafen');
+        $result4c = StationsLd::getStations('frankfurt main flughafen');
         $this->assertEquals($result4a->{'@graph'}[0]->{'@id'}, $result4b->{'@graph'}[0]->{'@id'});
         $this->assertEquals($result4b->{'@graph'}[0]->{'@id'}, $result4c->{'@graph'}[0]->{'@id'});
 
-        $result5a = Stations::getStations("braine l'alleud");
-        $result5b = Stations::getStations('braine l alleud'); //for hafas purposes: https://github.com/iRail/hyperRail/issues/129
+        $result5a = StationsLd::getStations("braine l'alleud");
+        $result5b = StationsLd::getStations('braine l alleud'); //for hafas purposes: https://github.com/iRail/hyperRail/issues/129
         $this->assertEquals($result5a->{'@graph'}[0]->{'@id'}, $result5b->{'@graph'}[0]->{'@id'});
 
         // Check whether a space after a - doesn't break the autocomplete: https://github.com/iRail/stations/issues/72
-        $result6a = Stations::getStations('La Louviere- Centre');
-        $result6b = Stations::getStations('La Louvière-Centre');
+        $result6a = StationsLd::getStations('La Louviere- Centre');
+        $result6b = StationsLd::getStations('La Louvière-Centre');
         $this->assertEquals($result6a->{'@graph'}[0]->{'@id'}, $result6b->{'@graph'}[0]->{'@id'});
 
-        $result7a = Stations::getStations('Vivier D Oie');
-        $result7b = Stations::getStations('Vivier D Oie / Diesdelle');
-        $result7c = Stations::getStations('Diesdelle/Vivier d\'Oie');
+        $result7a = StationsLd::getStations('Vivier D Oie');
+        $result7b = StationsLd::getStations('Vivier D Oie / Diesdelle');
+        $result7c = StationsLd::getStations('Diesdelle/Vivier d\'Oie');
         $this->assertEquals($result7a->{'@graph'}[0]->{'@id'}, $result7b->{'@graph'}[0]->{'@id'});
         $this->assertEquals($result7b->{'@graph'}[0]->{'@id'}, $result7c->{'@graph'}[0]->{'@id'});
     }
@@ -191,10 +191,10 @@ class StationsTest extends TestCase
     public function testId()
     {
         //test whether the right object is returned
-        $result1 = Stations::getStationFromID('008892007');
-        $result2 = Stations::getStationFromID('BE.NMBS.008892007');
-        $result3 = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
-        $noResult = Stations::getStationFromID('000000000');
+        $result1 = StationsLd::getStationFromID('008892007');
+        $result2 = StationsLd::getStationFromID('BE.NMBS.008892007');
+        $result3 = StationsLd::getStationFromID('http://irail.be/stations/NMBS/008892007');
+        $noResult = StationsLd::getStationFromID('000000000');
 
         $this->assertEquals($result1->{'name'}, $result2->{'name'});
         $this->assertEquals($result3->{'name'}, $result2->{'name'});
@@ -204,11 +204,11 @@ class StationsTest extends TestCase
     public function testKapellen()
     {
         //test whether the right object is returned
-        $result1 = Stations::getStationFromID('008821535');
-        $result2 = Stations::getStations('Kapellen')->{'@graph'}[0];
+        $result1 = StationsLd::getStationFromID('008821535');
+        $result2 = StationsLd::getStations('Kapellen')->{'@graph'}[0];
 
-        $result3 = Stations::getStationFromID('008200518');
-        $result4 = Stations::getStations('Capellen')->{'@graph'}[0];
+        $result3 = StationsLd::getStationFromID('008200518');
+        $result4 = StationsLd::getStations('Capellen')->{'@graph'}[0];
 
         $this->assertEquals($result1->{'@id'}, $result2->{'@id'});
         $this->assertEquals($result3->{'@id'}, $result4->{'@id'});
@@ -217,16 +217,16 @@ class StationsTest extends TestCase
     public function testSort()
     {
         //test whether Ghent Sint Pieters is the first object when searching for Belgian stations in a sorted fashion
-        $results = Stations::getStations('Gent', 'be', true);
+        $results = StationsLd::getStations('Gent', 'be', true);
         $result1 = $results->{'@graph'}[0];
-        $ghentsp = Stations::getStationFromID('http://irail.be/stations/NMBS/008892007');
+        $ghentsp = StationsLd::getStationFromID('http://irail.be/stations/NMBS/008892007');
 
         $this->assertEquals($ghentsp->{'name'}, $result1->{'name'});
 
-        $results = Stations::getStations('Brussel', '', true);
+        $results = StationsLd::getStations('Brussel', '', true);
         $result2 = $results->{'@graph'}[0];
         //The busiest station in Brussels is the south one
-        $brusselssouth = Stations::getStations('Brussels South')->{'@graph'}[0];
+        $brusselssouth = StationsLd::getStations('Brussels South')->{'@graph'}[0];
 
         $this->assertEquals($result2->{'name'}, $brusselssouth->{'name'});
     }
@@ -236,16 +236,16 @@ class StationsTest extends TestCase
      */
     public function testAccentsInSearch()
     {
-        $dusseldorfFlughafen = Stations::getStationFromID('http://irail.be/stations/NMBS/008039904');
+        $dusseldorfFlughafen = StationsLd::getStationFromID('http://irail.be/stations/NMBS/008039904');
 
-        $results = Stations::getStations('Düsseldorf Flughafen Hbf', 'be', true);
+        $results = StationsLd::getStations('Düsseldorf Flughafen Hbf', 'be', true);
         $this->assertGreaterThanOrEqual(1, count($results->{'@graph'}));
         $result1 = $results->{'@graph'}[0];
 
         $this->assertEquals($dusseldorfFlughafen->{'name'}, $result1->{'name'});
         $this->assertEquals($dusseldorfFlughafen->{'@id'}, $result1->{'@id'});
 
-        $results = Stations::getStations('Dusseldorf Flughafen Hbf', 'be', true);
+        $results = StationsLd::getStations('Dusseldorf Flughafen Hbf', 'be', true);
         $this->assertGreaterThanOrEqual(1, count($results->{'@graph'}));
         $result1 = $results->{'@graph'}[0];
 
