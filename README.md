@@ -18,6 +18,7 @@ This file describes all NMBS/SNCB stations in Belgium. A station can have multip
  * `alternative-nl`: alt. name in Dutch, if available
  * `alternative-de`: alt. name in German, if available
  * `alternative-en`: alt. name in English, if available
+ * `taf-tap-code`: [TSI TAF/TAP](https://mobilit.belgium.be/en/rail/professional-railway-transport/taf-tap) number for the station Source: [Infrabel Operational point of the railway network ](https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/table/?sort=ptcarid).
  * `telegraph-code`: abbreviated name for Belgian stations, used by NMBS/SNCB internally. Source: [Infrabel Network Statement](https://infrabel.be/en/networkstatement), [attachment D](https://infrabel.be/sites/default/files/generated/files/paragraph/NV_BijlagenD_RIEI_26.zip) file _D06-RIEI-12_N_20230915.pdf_.
  * `country-code`: the code of the country the station belongs to
  * `avg_stop_times`: the average number of vehicles stopping each day in this station (_computed field_)

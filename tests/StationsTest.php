@@ -2,8 +2,9 @@
 
 //This class tests the PHP Stations class in src/irail/stations
 use irail\stations\Stations;
+use PHPUnit\Framework\TestCase;
 
-class StationsTest extends PHPUnit_Framework_TestCase
+class StationsTest extends TestCase
 {
     /**
      * Test whether returning all the stations works without problems.
