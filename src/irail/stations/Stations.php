@@ -64,39 +64,31 @@ class Stations extends StationsDataset
         $stations_array = $stations->{'@graph'};
 
         foreach ($stations_array as $station) {
-            $testStationName = str_replace(' am ', ' ', self::normalizeAccents($station->{'name'}));
-            $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
+            // Collect both the original name and the translations in an array
+            if (isset($station->alternative)) {
+                $names = array_map(fn($alternative) => $alternative->{'@value'}, $station->alternative);
+                array_unshift($names, $station->{'name'});
+            } else {
+                $names = [$station->{'name'}];
+            }
 
             $exactMatch = false;
             $partialMatch = false;
 
-            if (self::isEqualCaseInsensitive($query, $testStationName)) {
-                // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                $exactMatch = true;
-            } else {
-                if (self::isQueryPartOfName($query, $testStationName)) {
+            // If this station in the list has an alternative form, try to match alternatives
+            foreach ($names as $name) {
+                $name = str_replace(' am ', ' ', self::normalizeAccents($name));
+                $name = preg_replace("/(-| )+/", " ", $name);
+
+                if (self::isEqualCaseInsensitive($query, $name)) {
                     // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                    $partialMatch = true;
+                    $exactMatch = true;
+                    break;
                 }
 
-                // Even when we have a partial match, we should keep searching for an exact math
-                if (isset($station->alternative)) {
-                    // If this station in the list has an alternative form, try to match alternatives
-                    foreach ($station->alternative as $alternative) {
-                        $testStationName = str_replace(' am ', ' ', self::normalizeAccents($alternative->{'@value'}));
-                        $testStationName = preg_replace("/(-| )+/", " ", $testStationName);
-
-                        if (self::isEqualCaseInsensitive($query, $testStationName)) {
-                            // If this is a direct match for case insensitive search (with or without the apostrophe ' characters
-                            $exactMatch = true;
-                            break;
-                        }
-
-                        // Don't try a partial match if we found it in an earlier version already!
-                        if (self::isQueryPartOfName($query, $testStationName)) {
-                            $partialMatch = true;
-                        }
-                    }
+                // Don't try a partial match if we found it in an earlier version already!
+                if (self::isQueryPartOfName($query, $name)) {
+                    $partialMatch = true;
                 }
             }
 
