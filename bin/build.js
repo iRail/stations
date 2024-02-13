@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* Pieter Colpaert */
-var fs = require('fs');
 var N3 = require('n3');
 var N3Util = require('n3').Util;
 var csv = require('ya-csv');
