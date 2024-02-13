@@ -9,7 +9,7 @@
 
 namespace irail\stations;
 
-class StationsCsv extends StationsDataset
+class Stations extends StationsDataset
 {
     const STATION_SEARCH_RESULT_COUNT = 5;
 
@@ -38,7 +38,7 @@ class StationsCsv extends StationsDataset
         // Escape all special characters for PSR6-compliant key.
         $query_cache_key = preg_replace('/[^a-zA-Z0-9]/', '-', $query);
         // keep all function parameters in key, separate cache entry for every unique request.
-        $cache_key = 'StationsCsv|' . $query_cache_key . '|' . $country;
+        $cache_key = 'Stations|' . $query_cache_key . '|' . $country;
 
         $cached = StationsCache::getFromCache($cache_key);
         if ($cached !== false) {
@@ -118,7 +118,7 @@ class StationsCsv extends StationsDataset
     public static function getStationFromID($id): ?Station
     {
         // Escape all special characters for PSR6-compliant key.
-        $id_cache_key = 'StationsCsv|' . preg_replace('/[^a-zA-Z0-9]/', '-', $id);
+        $id_cache_key = 'Stations|' . preg_replace('/[^a-zA-Z0-9]/', '-', $id);
         $cached = StationsCache::getFromCache($id_cache_key);
         if ($cached !== false) {
             return $cached;

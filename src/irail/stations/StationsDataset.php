@@ -3,7 +3,7 @@
 namespace irail\stations;
 
 /**
- * A base class for working with iRail stations data, used by the strongly typed StationsCsv facade and the linked-data Stations facade.
+ * A base class for working with iRail stations data, used by the strongly typed Stations facade and the linked-data StationsLd facade.
  */
 abstract class StationsDataset
 {
