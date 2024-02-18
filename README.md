@@ -95,9 +95,51 @@ Corrections to names, translations and locations can be made by adjusting fields
 
 If you want to make a correction to `facilities.csv` or `stops.csv`, don't fix the files, but fix the scripts instead, and let these scripts run to update the file for you.
 
-## Build the RDF or JSON-LD
+## In case you just want to reuse the data
 
-Using scripts, we convert this to JSON-LD. In order to run the script, run this command:
+### Latest update over HTTP
+
+JSON-LD is available at https://irail.be/stations/NMBS if you add the right accept header. For example, using curl on
+the command line, you would do this:
+
+```bash
+curl -H "accept: application/json" https://irail.be/stations/NMBS
+```
+
+If you want to change this output, please change the CSV files over here first (we love pull requests)
+
+### In PHP project
+
+Using composer (mind that we also require nodejs to be installed on your system in order to use the linked-data
+interface):
+
+```bash
+composer require irail/stations
+```
+
+Then you can use the stations in your code as follows:
+
+```php
+use irail\stations\Stations;
+use irail\stations\StationsLd;
+// Using the strongly typed CSV parser:
+// getStations() returns a irail\stations\Station array
+$brusselsnorth = Stations::getStations("Brussels North")[0];
+// getStationByID($id) returns a irail\stations\Station object with the station or null
+$ghentstpieters = Stations::getStationByID("http://irail.be/stations/NMBS/008892007");
+
+// Using the linked-data interface
+// getStations() returns a json-ld document
+$brusselsnorth = StationsLd::getStations("Brussels North")->{"@graph"}[0];
+// getStationByID($id) returns a simple object with the station or null
+$ghentstpieters = StationsLd::getStationByID("http://irail.be/stations/NMBS/008892007");
+```
+
+Don't forget to do a `composer update` from time to time to update the data
+
+## Building the RDF or JSON-LD
+
+Using scripts, this data can be converted to JSON-LD. In order to run the script, run this command:
 
 First time run this in your terminal (nodejs needs to be installed on your system):
 
@@ -128,36 +170,6 @@ irail-stations --help
 ```
 
 We currently support the output formats __TRiG__, __N-Quads__ and __JSON-LD__ (default)
-
-## In case you just want to reuse the data
-
-### Latest update over HTTP
-
-JSON-LD is available at https://irail.be/stations/NMBS if you add the right accept header. For example, using curl on the command line, you would do this:
-
-```bash
-curl -H "accept: application/json" https://irail.be/stations/NMBS
-```
-
-If you want to change this output, please change the CSV files over here first (we love pull requests)
-
-### In PHP project
-
-Using composer (mind that we also require nodejs to be installed on your system):
-```bash
-composer require irail/stations
-```
-
-Then you can use the stations in your code as follows:
-```php
-use irail\stations\Stations;
-// getStations() returns a json-ld document
-$brusselsnorth = Stations::getStations("Brussels North")->{"@graph"}[0];
-// getStationByID($id) returns a simple object with the station or null
-$ghentstpieters = Stations::getStationByID("http://irail.be/stations/NMBS/008892007");
-```
-
-Don't forget to do a `composer update` from time to time to update the data
 
 ## License
 
