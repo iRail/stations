@@ -72,9 +72,9 @@ This file describes how many people embark a train at the given station per day.
 * `URI`: The URI identifying this station.
 * `name`: The name of this station.
 * `nmbs_short_name`: The short name of this station, as used in the original source data. For verification and future update purposes.
-* `average_weekday_embarkments`: The average number of travelers embarking on a weekday.
-* `average_saturday_embarkments`: The average number of travelers embarking on a saturday.
-* `average_sunday_embarkments`: The average number of travelers embarking on a sunday.
+* `average_weekday_embarkments`: The average number of travelers embarking on a weekday. Empty when a station does not have traffic on weekdays.
+* `average_saturday_embarkments`: The average number of travelers embarking on a saturday. Empty when a station does not have traffic on saturdays. 
+* `average_sunday_embarkments`: The average number of travelers embarking on a sunday. Empty when a station does not have traffic on sundays.
 
 ## How we collect data
 
