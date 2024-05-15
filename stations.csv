@@ -324,7 +324,7 @@ http://irail.be/stations/NMBS/008814415,Huizingen,,,,,BE00591,HUIZ,be,4.266487,5
 http://irail.be/stations/NMBS/008843307,Huy,,Hoei,,,BE00592,LY,be,5.234211,50.527242,92.632588,300
 http://irail.be/stations/NMBS/008895844,Iddergem,,,,,BE00600,GIR,be,4.06849,50.876886,46.476038,300
 http://irail.be/stations/NMBS/008895729,Idegem,,,,,BE00601,FID,be,3.921553,50.801871,46.476038,300
-http://irail.be/stations/NMBS/008896503,Ieper,Ypres,,,,BE00602,FI,be,2.876593,50.847402,41.523962,300
+http://irail.be/stations/NMBS/008896503,Ieper,Ypres,,Ypern,Ypres,BE00602,FI,be,2.876593,50.847402,41.523962,300
 http://irail.be/stations/NMBS/008896925,Ingelmunster,,,,,BE00604,FNM,be,3.255416,50.914326,69.15655,300
 http://irail.be/stations/NMBS/008896909,Izegem,,,,,BE00606,LZG,be,3.212088,50.921149,69.15655,300
 http://irail.be/stations/NMBS/008863115,Jambes,,,,,BE00611,NJ,be,4.876144,50.454843,105.453674,300
@@ -461,7 +461,7 @@ http://irail.be/stations/NMBS/008814431,Moensberg,,,,,BE00837,MOE,be,4.330733,50
 http://irail.be/stations/NMBS/008832409,Mol,,,,,BE00840,LML,be,5.116336,51.19105,108.741214,180
 http://irail.be/stations/NMBS/008812112,Mollem,,,,,BE00841,LHL,be,4.216965,50.933473,87.722045,300
 http://irail.be/stations/NMBS/008841459,Momalle,,,,,BE00842,MO,be,5.367602,50.66991,69.600639,300
-http://irail.be/stations/NMBS/008881000,Mons,,Bergen,,,BE00848,FMS,be,3.942542,50.453854,229.309904,300
+http://irail.be/stations/NMBS/008881000,Mons,,Bergen,Bergen,,BE00848,FMS,be,3.942542,50.453854,229.309904,300
 http://irail.be/stations/NMBS/008861549,Mont-Saint-Guibert,,,,,BE00855,MM,be,4.613884,50.637611,130.124601,300
 http://irail.be/stations/NMBS/008777300,Montpellier,,,,,,,fr,3.880534,43.604947,0,
 http://irail.be/stations/NMBS/008777301,Montpellier-Sud-de-France,,,,,,,fr,3.92428293,43.59518401,0,
@@ -505,7 +505,7 @@ http://irail.be/stations/NMBS/008871332,Obaix-Buzet,,,,,BE00919,FXB,be,4.36357,5
 http://irail.be/stations/NMBS/008881406,Obourg,,,,,BE00920,LRG,be,4.007804,50.469873,88.178914,300
 http://irail.be/stations/NMBS/008895778,Okegem,,,,,BE00923,FKO,be,4.054557,50.857712,46.476038,300
 http://irail.be/stations/NMBS/008832458,Olen,,,,,BE00924,GOL,be,4.90250000,51.1740300,60.220447,300
-http://irail.be/stations/NMBS/008891702,Oostende,Ostende,,,,BE00929,FSD,be,2.925809,51.228212,118.124601,300
+http://irail.be/stations/NMBS/008891702,Oostende,Ostende,,Ostende,Ostend,BE00929,FSD,be,2.925809,51.228212,118.124601,300
 http://irail.be/stations/NMBS/008891116,Oostkamp,,,,,BE00931,FPO,be,3.257466,51.154114,185.364217,300
 http://irail.be/stations/NMBS/008812146,Opwijk,,,,,BE00933,FKW,be,4.187319,50.974779,99.632588,300
 http://irail.be/stations/NMBS/008811601,Ottignies,,,,,BE00936,LT,be,4.56936,50.673667,369.654952,300
