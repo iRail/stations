@@ -63,8 +63,8 @@ http://irail.be/stations/NMBS/008843430,Bas-Oha,,,,,BE00118,NBE,be,5.190937,50.5
 http://irail.be/stations/NMBS/008200718,Bascharage-Sanem,,,,,,,lu,5.92374200,49.5583600,74.389776,300
 http://irail.be/stations/NMBS/008500010,Basel,,Bazel,,,,,ch,7.590716,47.547408,0,
 http://irail.be/stations/NMBS/008811734,Basse-Wavre,,,,,BE00120,BGWV,be,4.621651,50.72442,91.252396,300
-http://irail.be/stations/NMBS/008865128,Bastogne-Nord,,Bastenaken-Noord,,,,,be,5.720744,50.006919,0,
-http://irail.be/stations/NMBS/008865110,Bastogne-Sud,,Bastenaken-Zuid,,,BE00422,LS,be,5.709858,49.999737,0,
+http://irail.be/stations/NMBS/008865128,Bastogne-Nord,,Bastenaken-Noord,Bastenach-Nord,,,,be,5.720744,50.006919,0,
+http://irail.be/stations/NMBS/008865110,Bastogne-Sud,,Bastenaken-Zuid,Bastenach-Süd,,BE00422,LS,be,5.709858,49.999737,0,
 http://irail.be/stations/NMBS/008863867,Beauraing,,,,,BE00126,MBG,be,4.95684,50.11443,27.15016,300
 http://irail.be/stations/NMBS/008891124,Beernem,,,,,BE00127,LBM,be,3.329892,51.128009,185.364217,300
 http://irail.be/stations/NMBS/008814423,Beersel,,,,,BE00128,GBB,be,4.302605,50.766616,49.789137,300
@@ -75,7 +75,7 @@ http://irail.be/stations/NMBS/008891157,Bellem,,,,,BE00136,FEB,be,3.487374,51.08
 http://irail.be/stations/NMBS/008894433,Belsele,,,,,BE00138,LLB,be,4.088608,51.150994,152.977636,300
 http://irail.be/stations/NMBS/008832235,Beringen,,,,,BE01348,LBN,be,5.235892,51.050603,30.645367,300
 http://irail.be/stations/NMBS/008821816,Berlaar,,,,,BE00142,GBL,be,4.638811,51.113662,93.872204,300
-http://irail.be/stations/NMBS/008065969,Berlin HBF,,,,,,,de,13.369548,52.525589,1.153355,300
+http://irail.be/stations/NMBS/008065969,Berlin Hbf,,,,,,,de,13.369548,52.525589,1.153355,300
 http://irail.be/stations/NMBS/008032318,Berlin Lichtenberg,,,,,,,de,13.4965,52.5097,0,
 http://irail.be/stations/NMBS/008200510,Bertrange Strassen,,,,,,,lu,6.060601,49.613002,47.466454,300
 http://irail.be/stations/NMBS/008865300,Bertrix,,,,,BE00146,MBX,be,5.267193,49.852835,83.204473,300
@@ -114,16 +114,16 @@ http://irail.be/stations/NMBS/008883006,Braine-le-Comte,,'s Gravenbrakel,,,BE002
 http://irail.be/stations/NMBS/008400131,Breda,,,,,,,nl,4.7764000000,51.5944590000,47.897764,300
 http://irail.be/stations/NMBS/008843901,Bressoux,,,,,BE00208,FBX,be,5.611057,50.643967,53.961661,300
 http://irail.be/stations/NMBS/008886066,Brugelette,,,,,BE00209,FBG,be,3.852551,50.594229,37.089457,300
-http://irail.be/stations/NMBS/008891009,Brugge,Bruges,,,,BE00210,FR,be,3.216726,51.197226,283.907348,180
+http://irail.be/stations/NMBS/008891009,Brugge,Bruges,,Brügge,Bruges,BE00210,FR,be,3.216726,51.197226,283.907348,180
 http://irail.be/stations/NMBS/008891033,Brugge-Sint-Pieters,Bruges-Saint-Pierre,,,,BE00212,FRSP,be,3.201795,51.223115,107.878594,300
-http://irail.be/stations/NMBS/008813003,Brussel-Centraal/Bruxelles-Central,Bruxelles-Central,Brussel-Centraal,,Brussels-Central,BE00215,FBCL,be,4.356801,50.845658,960.731629,300
-http://irail.be/stations/NMBS/008813045,Brussel-Congres/Bruxelles-Congrès,Bruxelles-Congrès,Brussel-Congres,,Brussels-Congres,BE00216,FBCO,be,4.362051,50.852067,960.731629,300
-http://irail.be/stations/NMBS/008813037,Brussel-Kapellekerk/Bruxelles-Chapelle,Bruxelles-Chapelle,Brussel-Kapellekerk,,Brussels-Chapelle/Brussels-Kapellekerk,BE00217,FBCK,be,4.347866,50.841127,960.731629,300
-http://irail.be/stations/NMBS/008811304,Brussel-Luxemburg/Bruxelles-Luxembourg,Bruxelles-Luxembourg,Brussel-Luxemburg,,Brussels-Luxemburg/Brussels-Luxembourg,BE00218,LX,be,4.373674,50.838943,320.523962,300
-http://irail.be/stations/NMBS/008812005,Brussel-Noord/Bruxelles-Nord,Bruxelles-Nord,Brussel-Noord,,Brussels-North,BE00221,FBN,be,4.360846,50.859663,971.891374,300
-http://irail.be/stations/NMBS/008811916,Brussel-Schuman/Bruxelles-Schuman,Bruxelles-Schuman,Brussel-Schuman,,Brussels-Schuman,BE00227,FBSM,be,4.380722,50.843276,270.498403,300
-http://irail.be/stations/NMBS/008815040,Brussel-West/Bruxelles-Ouest,Bruxelles-Ouest,Brussel-West,,Brussels-West,BE00223,FBOW,be,4.321042,50.848552,30.603834,300
-http://irail.be/stations/NMBS/008814001,Brussel-Zuid/Bruxelles-Midi,Bruxelles-Midi,Brussel-Zuid,,Brussels-South/Brussels-Midi,BE00220,FBMZ,be,4.336531,50.835707,1041.686901,300
+http://irail.be/stations/NMBS/008813003,Brussel-Centraal/Bruxelles-Central,Bruxelles-Central,Brussel-Centraal,Brüssel-Central,Brussels-Central,BE00215,FBCL,be,4.356801,50.845658,960.731629,300
+http://irail.be/stations/NMBS/008813045,Brussel-Congres/Bruxelles-Congrès,Bruxelles-Congrès,Brussel-Congres,Brüssel-Congres,Brussels-Congres,BE00216,FBCO,be,4.362051,50.852067,960.731629,300
+http://irail.be/stations/NMBS/008813037,Brussel-Kapellekerk/Bruxelles-Chapelle,Bruxelles-Chapelle,Brussel-Kapellekerk,Brüssel-Kapellenkirche,Brussels-Chapelle/Brussels-Kapellekerk,BE00217,FBCK,be,4.347866,50.841127,960.731629,300
+http://irail.be/stations/NMBS/008811304,Brussel-Luxemburg/Bruxelles-Luxembourg,Bruxelles-Luxembourg,Brussel-Luxemburg,Brüssel-Luxemburg,Brussels-Luxemburg/Brussels-Luxembourg,BE00218,LX,be,4.373674,50.838943,320.523962,300
+http://irail.be/stations/NMBS/008812005,Brussel-Noord/Bruxelles-Nord,Bruxelles-Nord,Brussel-Noord,Brüssel-Nord,Brussels-North,BE00221,FBN,be,4.360846,50.859663,971.891374,300
+http://irail.be/stations/NMBS/008811916,Brussel-Schuman/Bruxelles-Schuman,Bruxelles-Schuman,Brussel-Schuman,Brüssel-Schuman,Brussels-Schuman,BE00227,FBSM,be,4.380722,50.843276,270.498403,300
+http://irail.be/stations/NMBS/008815040,Brussel-West/Bruxelles-Ouest,Bruxelles-Ouest,Brussel-West,Brüssel-Westen,Brussels-West,BE00223,FBOW,be,4.321042,50.848552,30.603834,300
+http://irail.be/stations/NMBS/008814001,Brussel-Zuid/Bruxelles-Midi,Bruxelles-Midi,Brussel-Zuid,Brüssel-Süd (Midi),Brussels-South/Brussels-Midi,BE00220,FBMZ,be,4.336531,50.835707,1041.686901,300
 http://irail.be/stations/NMBS/008819406,Brussels Airport - Zaventem,,,,,BE00219,FBNL,be,4.482076,50.896456,316.549521,3540
 http://irail.be/stations/NMBS/008811148,Buda,,,,,BE00229,BUDA,be,4.417074,50.907495,201.28754,300
 http://irail.be/stations/NMBS/008822145,Buggenhout,,,,,BE00231,FGN,be,4.201666,51.016291,65.303514,300
@@ -151,7 +151,7 @@ http://irail.be/stations/NMBS/008864501,Ciney,,,,,BE00272,LC,be,5.091409,50.2910
 http://irail.be/stations/NMBS/008200134,Clervaux,,,,,,,lu,6.031393,50.054724,27.584665,300
 http://irail.be/stations/NMBS/008718201,Colmar,,,,,,,fr,7.366668,48.083335,0,
 http://irail.be/stations/NMBS/008842838,Comblain-la-Tour,,,,,BE00277,MCT,be,5.566956,50.456865,30.693291,300
-http://irail.be/stations/NMBS/008896412,Comines,,Komen,Comines / Komen,Komen / Comines,BE00278,FOI,be,2.999286,50.772072,41.533546,300
+http://irail.be/stations/NMBS/008896412,Comines,,Komen,Comines/Komen,Komen/Comines,BE00278,FOI,be,2.999286,50.772072,41.533546,300
 http://irail.be/stations/NMBS/008845229,Coo,,,,,BE00992,COO,be,5.880473,50.391127,31.527157,300
 http://irail.be/stations/NMBS/008874054,Couillet,,,,,BE00281,LCL,be,4.46851,50.392718,117.383387,300
 http://irail.be/stations/NMBS/008873379,Cour-sur-Heure,,,,,BE00288,LUH,be,4.391491,50.300138,32.335463,300
@@ -198,7 +198,7 @@ http://irail.be/stations/NMBS/008400219,Eijsden,,,,,,,nl,5.709786,50.772135,55.5
 http://irail.be/stations/NMBS/008892627,Eine,,,,,BE00348,FEI,be,3.623776,50.870432,51.677316,300
 http://irail.be/stations/NMBS/008892650,Eke-Nazareth,,,,,BE00351,FKE,be,3.627839,50.960774,51.677316,300
 http://irail.be/stations/NMBS/008821071,Ekeren,,,,,BE00352,LKR,be,4.434154,51.281626,73.578275,300
-http://irail.be/stations/NMBS/008883311,Enghien,,Edingen,Enghien / Edingen,Edingen / Enghien,BE00360,FNG,be,4.047357,50.697273,148.134185,300
+http://irail.be/stations/NMBS/008883311,Enghien,,Edingen,Enghien/Edingen,Edingen/Enghien,BE00360,FNG,be,4.047357,50.697273,148.134185,300
 http://irail.be/stations/NMBS/008843240,Engis,,,,,BE00361,NG,be,5.401986,50.582957,90.955272,300
 http://irail.be/stations/NMBS/008822269,Eppegem,,,,,BE00363,FPH,be,4.45749,50.9584,273.865815,300
 http://irail.be/stations/NMBS/008881158,Erbisœul,Erbisoeul,Erbisoeul,Erbisoeul,Erbisoeul,BE00364,FIU,be,3.887987,50.507025,96.233227,300
@@ -324,7 +324,7 @@ http://irail.be/stations/NMBS/008814415,Huizingen,,,,,BE00591,HUIZ,be,4.266487,5
 http://irail.be/stations/NMBS/008843307,Huy,,Hoei,,,BE00592,LY,be,5.234211,50.527242,92.632588,300
 http://irail.be/stations/NMBS/008895844,Iddergem,,,,,BE00600,GIR,be,4.06849,50.876886,46.476038,300
 http://irail.be/stations/NMBS/008895729,Idegem,,,,,BE00601,FID,be,3.921553,50.801871,46.476038,300
-http://irail.be/stations/NMBS/008896503,Ieper,Ypres,,,,BE00602,FI,be,2.876593,50.847402,41.523962,300
+http://irail.be/stations/NMBS/008896503,Ieper,Ypres,,Ypern,Ypres,BE00602,FI,be,2.876593,50.847402,41.523962,300
 http://irail.be/stations/NMBS/008896925,Ingelmunster,,,,,BE00604,FNM,be,3.255416,50.914326,69.15655,300
 http://irail.be/stations/NMBS/008896909,Izegem,,,,,BE00606,LZG,be,3.212088,50.921149,69.15655,300
 http://irail.be/stations/NMBS/008863115,Jambes,,,,,BE00611,NJ,be,4.876144,50.454843,105.453674,300
@@ -393,9 +393,9 @@ http://irail.be/stations/NMBS/008811635,Limal,,,,,BE00739,GLM,be,4.575302,50.692
 http://irail.be/stations/NMBS/008032572,Limburg Süd,,,,,,,de,8.06326100,50.3842000,0,
 http://irail.be/stations/NMBS/008814142,Linkebeek,,,,,BE00742,LKN,be,4.339434,50.773681,168.226837,300
 http://irail.be/stations/NMBS/008891629,Lissewege,,,,,BE00743,FLW,be,3.194505,51.294714,29.482428,300
-http://irail.be/stations/NMBS/008841558,Liège-Carré,,Luik-Carre,,,BE00728,FLJ,be,5.561131,50.640299,208.769968,300
-http://irail.be/stations/NMBS/008841004,Liège-Guillemins,,Luik-Guillemins,,,BE00726,FL,be,5.566695,50.62455,470.722045,300
-http://irail.be/stations/NMBS/008841525,Liège-Saint-Lambert,,Luik-Sint-Lambertus,,,BE00730,FLGP,be,5.570453,50.646349,208.769968,300
+http://irail.be/stations/NMBS/008841558,Liège-Carré,,Luik-Carre,Lüttich-Carré,,BE00728,FLJ,be,5.561131,50.640299,208.769968,300
+http://irail.be/stations/NMBS/008841004,Liège-Guillemins,,Luik-Guillemins,Lüttich-Guillemins,,BE00726,FL,be,5.566695,50.62455,470.722045,300
+http://irail.be/stations/NMBS/008841525,Liège-Saint-Lambert,,Luik-Sint-Lambertus,Lüttich-St.-Lambert,,BE00730,FLGP,be,5.570453,50.646349,208.769968,300
 http://irail.be/stations/NMBS/008871712,Lobbes,,,,,BE00744,NLS,be,4.260958,50.346469,31.13738,300
 http://irail.be/stations/NMBS/008872306,Lodelinsart,,,,,BE00747,LDS,be,4.462946,50.432451,72.188498,300
 http://irail.be/stations/NMBS/008894201,Lokeren,,,,,BE00748,FLK,be,3.987794,51.108062,205.587859,240
@@ -438,7 +438,7 @@ http://irail.be/stations/NMBS/008739370,Massy TGV,,,,,,,fr,2.261254,48.725758,0,
 http://irail.be/stations/NMBS/008729500,Maubeuge,,,,,,,fr,3.96656600,50.2728900,17.009585,300
 http://irail.be/stations/NMBS/008885530,Maubray,,,,,BE00807,MAU,be,3.495527,50.547557,64.71246,300
 http://irail.be/stations/NMBS/008861333,Mazy,,,,,BE00809,FZY,be,4.675829,50.513497,8.466454,300
-http://irail.be/stations/NMBS/008822004,Mechelen,Malines,,,,BE00810,FM,be,4.482785,51.017648,503.846645,300
+http://irail.be/stations/NMBS/008822004,Mechelen,Malines,,Mecheln,,BE00810,FM,be,4.482785,51.017648,503.846645,300
 http://irail.be/stations/NMBS/008822343,Mechelen-Nekkerspoel,Malines-Nekkerspoel,,,,BE00811,LNK,be,4.489914,51.029883,283.789137,300
 http://irail.be/stations/NMBS/008829025,Meer-Grens,,,,,BE01837,MEEGR,be,4.734469757625622,51.48573529673874,0,
 http://irail.be/stations/NMBS/008811171,Meiser,,,,,BE00812,MEI,be,4.394421,50.854072,160.255591,300
@@ -461,7 +461,7 @@ http://irail.be/stations/NMBS/008814431,Moensberg,,,,,BE00837,MOE,be,4.330733,50
 http://irail.be/stations/NMBS/008832409,Mol,,,,,BE00840,LML,be,5.116336,51.19105,108.741214,180
 http://irail.be/stations/NMBS/008812112,Mollem,,,,,BE00841,LHL,be,4.216965,50.933473,87.722045,300
 http://irail.be/stations/NMBS/008841459,Momalle,,,,,BE00842,MO,be,5.367602,50.66991,69.600639,300
-http://irail.be/stations/NMBS/008881000,Mons,,Bergen,,,BE00848,FMS,be,3.942542,50.453854,229.309904,300
+http://irail.be/stations/NMBS/008881000,Mons,,Bergen,Bergen,,BE00848,FMS,be,3.942542,50.453854,229.309904,300
 http://irail.be/stations/NMBS/008861549,Mont-Saint-Guibert,,,,,BE00855,MM,be,4.613884,50.637611,130.124601,300
 http://irail.be/stations/NMBS/008777300,Montpellier,,,,,,,fr,3.880534,43.604947,0,
 http://irail.be/stations/NMBS/008777301,Montpellier-Sud-de-France,,,,,,,fr,3.92428293,43.59518401,0,
@@ -471,7 +471,7 @@ http://irail.be/stations/NMBS/008821147,Mortsel,,,,,BE00863,GMO,be,4.448437,51.1
 http://irail.be/stations/NMBS/008821154,Mortsel-Deurnesteenweg,,,,,BE00864,GMOD,be,4.446514,51.183023,198.261981,300
 http://irail.be/stations/NMBS/008821246,Mortsel-Liersesteenweg,,,,,BE00877,GMOL,be,4.468843,51.169027,58.785942,300
 http://irail.be/stations/NMBS/008821238,Mortsel-Oude God,,,,,BE00866,GMOG,be,4.455737,51.171256,198.261981,300
-http://irail.be/stations/NMBS/008885704,Mouscron,,Moeskroen,Mouscron / Moeskroen,Moeskroen / Mouscron,BE00868,FMC,be,3.228448,50.741005,103.932907,300
+http://irail.be/stations/NMBS/008885704,Mouscron,,Moeskroen,Mouscron/Moeskroen,Moeskroen/Mouscron,BE00868,FMC,be,3.228448,50.741005,103.932907,300
 http://irail.be/stations/NMBS/008889011,Mouscron-Frontiere,,Moeskroen-Grens,,,,,be,3.19608600,50.7217160,44.670927,120
 http://irail.be/stations/NMBS/008861150,Moustier,,,,,BE00870,FMT,be,4.693807,50.452748,111.335463,300
 http://irail.be/stations/NMBS/008811403,Mouterij/Germoir,Germoir,Mouterij,Germoir,Mouterij,BE01973,GMJ,be,4.37866,50.829929,138.821086,300
@@ -505,7 +505,7 @@ http://irail.be/stations/NMBS/008871332,Obaix-Buzet,,,,,BE00919,FXB,be,4.36357,5
 http://irail.be/stations/NMBS/008881406,Obourg,,,,,BE00920,LRG,be,4.007804,50.469873,88.178914,300
 http://irail.be/stations/NMBS/008895778,Okegem,,,,,BE00923,FKO,be,4.054557,50.857712,46.476038,300
 http://irail.be/stations/NMBS/008832458,Olen,,,,,BE00924,GOL,be,4.90250000,51.1740300,60.220447,300
-http://irail.be/stations/NMBS/008891702,Oostende,Ostende,,,,BE00929,FSD,be,2.925809,51.228212,118.124601,300
+http://irail.be/stations/NMBS/008891702,Oostende,Ostende,,Ostende,Ostend,BE00929,FSD,be,2.925809,51.228212,118.124601,300
 http://irail.be/stations/NMBS/008891116,Oostkamp,,,,,BE00931,FPO,be,3.257466,51.154114,185.364217,300
 http://irail.be/stations/NMBS/008812146,Opwijk,,,,,BE00933,FKW,be,4.187319,50.974779,99.632588,300
 http://irail.be/stations/NMBS/008811601,Ottignies,,,,,BE00936,LT,be,4.56936,50.673667,369.654952,300
@@ -550,7 +550,7 @@ http://irail.be/stations/NMBS/008864006,Rochefort-Jemelle,,,,,BE00617,LJ,be,5.26
 http://irail.be/stations/NMBS/008200940,Rodange,,,,,,,lu,5.845028,49.551283,111.923323,180
 http://irail.be/stations/NMBS/008896800,Roeselare,Roulers,,,,BE01005,FRL,be,3.130412,50.949025,69.15655,300
 http://irail.be/stations/NMBS/008861119,Ronet,,,,,BE01009,FEO,be,4.82842,50.457737,111.335463,300
-http://irail.be/stations/NMBS/008892908,Ronse,Renaix,,Renaix / Ronse,Ronse / Renaix,BE01013,FRN,be,3.602552,50.742506,38.472843,300
+http://irail.be/stations/NMBS/008892908,Ronse,Renaix,,Renaix/Ronse,Ronse/Renaix,BE01013,FRN,be,3.602552,50.742506,38.472843,300
 http://irail.be/stations/NMBS/008400526,Roosendaal,,,,,,,nl,4.45869200,51.5408340,34.744409,300
 http://irail.be/stations/NMBS/008400530,Rotterdam CS,,,,,,,nl,4.50000000,51.9166670,41.348243,300
 http://irail.be/stations/NMBS/008728673,Roubaix,,,,,,,fr,3.166666,50.699997,29.463259,300
@@ -583,9 +583,9 @@ http://irail.be/stations/NMBS/008812013,Simonis,,,,,BE00194,FKRG,be,4.32898,50.8
 http://irail.be/stations/NMBS/008894425,Sinaai,,,,,BE01073,LSW,be,4.06894,51.143398,152.977636,300
 http://irail.be/stations/NMBS/008812211,Sint-Agatha-Berchem/Berchem-Sainte-Agathe,Berchem-Sainte-Agathe,Sint-Agatha-Berchem,,,BE00243,FBSG,be,4.289895,50.872625,57.127796,300
 http://irail.be/stations/NMBS/008892692,Sint-Denijs-Boekel,,,,,BE01076,FNZ,be,3.698395,50.874297,85.594249,300
-http://irail.be/stations/NMBS/008814167,Sint-Genesius-Rode,Rhode-Saint-Genèse,,Rhode-St.-Genese/st.-Genesius-Rode,St.-Genesius-Rode/rhode-St.-Genese,BE01079,FGO,be,4.361997,50.74781,168.226837,300
-http://irail.be/stations/NMBS/008893443,Sint-Gillis-Dendermonde,Saint-Gilles-lez-Termonde,Sint-Gillis,Sint-Gillis,Sint-Gillis,BE00521,GIL,be,4.117832,51.021693,88.476038,300
-http://irail.be/stations/NMBS/008814449,Sint-Job,Saint-Job,,Saint-Job / Sint-Job,Sint-Job / Saint-Job,BE01081,GSO,be,4.362761,50.79441,95.757188,300
+http://irail.be/stations/NMBS/008814167,Sint-Genesius-Rode,Rhode-Saint-Genèse,,Rhode-St.-Genese/St.-Genesius-Rode,St.-Genesius-Rode/Rhode-St.-Genese,BE01079,FGO,be,4.361997,50.74781,168.226837,300
+http://irail.be/stations/NMBS/008893443,Sint-Gillis-Dendermonde,Saint-Gilles-lez-Termonde,,,,BE00521,GIL,be,4.117832,51.021693,88.476038,300
+http://irail.be/stations/NMBS/008814449,Sint-Job,Saint-Job,,Saint-Job/Sint-Job,Sint-Job/Saint-Job,BE01081,GSO,be,4.362761,50.79441,95.757188,300
 http://irail.be/stations/NMBS/008833159,Sint-Joris-Weert,,,,,BE01082,GSW,be,4.651728,50.800631,117.447284,300
 http://irail.be/stations/NMBS/008822228,Sint-Katelijne-Waver,Wavre-Sainte-Catherine,,,,BE01083,FWA,be,4.496116,51.069975,283.789137,300
 http://irail.be/stations/NMBS/008821543,Sint-Mariaburg,,,,,BE00968,MRB,be,4.4349,51.291658,73.578275,300
