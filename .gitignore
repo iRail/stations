@@ -6,3 +6,4 @@ stations.jsonld
 phpcs.phar
 composer.lock
 composer.lock
+bin/.cache/
