@@ -127,7 +127,7 @@ abstract class StationsDataset
      * @param string $str
      *
      * @return string
-     *                Languages supported are: German, French and Dutch
+     *                Languages supported are: German, French, Dutch and Czech
      *                We have to take into account that some words may have accents
      *                Taken from https://stackoverflow.com/questions/3371697/replacing-accented-characters-php
      */
@@ -135,6 +135,10 @@ abstract class StationsDataset
     {
         $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
+            'Č' => 'C', 'č' => 'c', 'Ď' => 'D', 'ď' => 'd',
+            'Ě' => 'E', 'ě' => 'e', 'Ň' => 'N', 'ň' => 'n',
+            'Ř' => 'R', 'ř' => 'r', 'Ť' => 'T', 'ť' => 't',
+            'Ů' => 'U', 'ů' => 'u',
             'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A',
             'Ä' => 'A', 'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C',
             'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E',
