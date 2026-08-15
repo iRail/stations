@@ -272,7 +272,7 @@ writeStopsCsv($csvOutputStations, $gtfsStations);
 
 echo 'Saved stops.csv to ' . STOPS_CSV . '! Manual changes to this file won\'t be preserved!' . PHP_EOL;
 
-echo 'Don\'t forget to run web_facilities_extractor.php in order to update facility data!' . PHP_EOL;
+echo 'Don\'t forget to run `node bin/facilities_extractor.js` in order to update facility data!' . PHP_EOL;
 
 /**
  * Download and extract the latest GTFS data set
