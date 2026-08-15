@@ -80,10 +80,10 @@ http://irail.be/stations/NMBS/008891157,Bellem,,,,,BE00136,FEB,be,3.487374,51.08
 http://irail.be/stations/NMBS/008894433,Belsele,,,,,BE00138,LLB,be,4.088608,51.150994,174.047091,300
 http://irail.be/stations/NMBS/008832235,Beringen,,,,,BE01348,LBN,be,5.235892,51.050603,53.124654,300
 http://irail.be/stations/NMBS/008821816,Berlaar,,,,,BE00142,GBL,be,4.638811,51.113662,96.548476,300
-http://irail.be/stations/NMBS/008007799,Berlin Gesundbrunnen,,,,,,,de,13.391000,52.548800,0,
-http://irail.be/stations/NMBS/008065969,Berlin Hbf,,,,,,,de,13.369548,52.525589,0.855956,300
-http://irail.be/stations/NMBS/008032318,Berlin Lichtenberg,,,,,,,de,13.4965,52.5097,0,
-http://irail.be/stations/NMBS/008007817,Berlin Ostbahnhof,,,,,,,de,13.4500000,52.5166700,0.426593,300
+http://irail.be/stations/NMBS/008007799,Berlin Gesundbrunnen,,Berlijn Gesundbrunnen,,,,,de,13.391000,52.548800,0,
+http://irail.be/stations/NMBS/008065969,Berlin Hbf,,Berlijn Hbf,,,,,de,13.369548,52.525589,0.855956,300
+http://irail.be/stations/NMBS/008032318,Berlin Lichtenberg,,Berlijn Lichtenberg,,,,,de,13.4965,52.5097,0,
+http://irail.be/stations/NMBS/008007817,Berlin Ostbahnhof,,Berlijn Ostbahnhof,,,,,de,13.4500000,52.5166700,0.426593,300
 http://irail.be/stations/NMBS/008200510,Bertrange Strassen,,,,,,,lu,6.060601,49.613002,49.083102,300
 http://irail.be/stations/NMBS/008865300,Bertrix,,,,,BE00146,MBX,be,5.267193,49.852835,60.157895,300
 http://irail.be/stations/NMBS/008873320,Berzée,,,,,BE00147,LBZ,be,4.405909,50.285603,32.33795,300
