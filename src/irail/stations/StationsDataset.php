@@ -135,8 +135,6 @@ abstract class StationsDataset
     {
         $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
-            // Czech carons, for the stations on the Prague night train's route. Without these a name keeps a
-            // letter the query it is compared against has already lost, and Decin never finds Děčín.
             'Č' => 'C', 'č' => 'c', 'Ď' => 'D', 'ď' => 'd',
             'Ě' => 'E', 'ě' => 'e', 'Ň' => 'N', 'ň' => 'n',
             'Ř' => 'R', 'ř' => 'r', 'Ť' => 'T', 'ť' => 't',
