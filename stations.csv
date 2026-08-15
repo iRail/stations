@@ -18,7 +18,7 @@ http://irail.be/stations/NMBS/008400081,Almere Buiten,,,,,,,nl,5.277962,52.39417
 http://irail.be/stations/NMBS/008400080,Almere Centrum,,,,,,,nl,5.217778,52.375,0,
 http://irail.be/stations/NMBS/008843331,Amay,,,,,BE00022,NM,be,5.32049,50.546011,90.739612,300
 http://irail.be/stations/NMBS/008843323,Ampsin,,,,,BE00024,NA,be,5.289729,50.539215,90.739612,300
-http://irail.be/stations/NMBS/008400058,Amsterdam CS,,,,,,,nl,4.90063200,52.3790800,0,
+http://irail.be/stations/NMBS/008400058,Amsterdam CS,,Amsterdam Centraal,,,,,nl,4.90063200,52.3790800,0,
 http://irail.be/stations/NMBS/008400061,Amsterdam Zuid,,,,Amsterdam South,,,nl,4.871946,52.338865,0,
 http://irail.be/stations/NMBS/008863404,Andenne,,,,,BE00025,NDN,be,5.094699,50.496759,88.761773,300
 http://irail.be/stations/NMBS/008811940,Anderlecht,,,,,BE02089,ANDL,be,4.29180000,50.8179000,206.728532,300
@@ -291,7 +291,7 @@ http://irail.be/stations/NMBS/008814308,Halle,Hal,,,,BE00504,FH,be,4.240634,50.7
 http://irail.be/stations/NMBS/008873387,Ham-sur-Heure,,,,,BE00514,LHH,be,4.404696,50.319555,32.33795,300
 http://irail.be/stations/NMBS/008861168,Ham-sur-Sambre,,,,,BE00515,MHM,be,4.669392,50.45255,121.562327,300
 http://irail.be/stations/NMBS/008822533,Hambos,,,,,BE00507,HBS,be,4.66301,50.944251,66.060942,300
-http://irail.be/stations/NMBS/008001135,Hamburg-Harburg,,,,,,,de,9.991800,53.456300,0,
+http://irail.be/stations/NMBS/008001134,Hamburg-Harburg,,,,,,,de,9.991800,53.456300,0,
 http://irail.be/stations/NMBS/008842846,Hamoir,,,,,BE00510,LHM,be,5.533561,50.428181,31.315789,300
 http://irail.be/stations/NMBS/008832664,Hamont,,,,,BE01368,GHA,be,5.543279,51.246424,33.102493,300
 http://irail.be/stations/NMBS/008891165,Hansbeke,,,,,BE00518,FHK,be,3.536212,51.073202,190.130194,300
@@ -579,7 +579,7 @@ http://irail.be/stations/NMBS/008861119,Ronet,,,,,BE01009,FEO,be,4.82842,50.4577
 http://irail.be/stations/NMBS/008892908,Ronse,Renaix,,Renaix/Ronse,Ronse/Renaix,BE01013,FRN,be,3.602552,50.742506,38.202216,300
 http://irail.be/stations/NMBS/008400526,Roosendaal,,,,,,,nl,4.45869200,51.5408340,34.368421,300
 http://irail.be/stations/NMBS/008020174,Rosenheim,,,,,,,de,12.120817,47.849080,0,
-http://irail.be/stations/NMBS/008400530,Rotterdam CS,,,,,,,nl,4.46931300,51.9248500,0,
+http://irail.be/stations/NMBS/008400530,Rotterdam CS,,Rotterdam Centraal,,,,,nl,4.46931300,51.9248500,0,
 http://irail.be/stations/NMBS/008728673,Roubaix,,,,,,,fr,3.166666,50.699997,49.290859,300
 http://irail.be/stations/NMBS/008871217,Roux,,,,,BE01018,FRX,be,4.393199,50.443112,93.603878,300
 http://irail.be/stations/NMBS/008814365,Ruisbroek,,,,,BE01021,FRB,be,4.295333,50.79183,216.836565,300
@@ -728,3 +728,9 @@ http://irail.be/stations/NMBS/008894821,Zwijndrecht,,,,,BE01278,LZD,be,4.32978,5
 http://irail.be/stations/NMBS/000000252,Zwijndrecht-Dorp,,,,,,,be,4.32567070,51.2191653,0,
 http://irail.be/stations/NMBS/008800252,Zwijndrecht-Dorp,,,,,BE00342,FCS,be,4.32567070,51.2191653,0.836565,120
 http://irail.be/stations/NMBS/008883212,Écaussinnes,,,,,BE00342,FCS,be,4.156639,50.56239,59.847645,300
+http://irail.be/stations/NMBS/005453179,Ústí nad Labem hl.n.,,,,,,,cz,14.044400,50.659700,0,
+http://irail.be/stations/NMBS/005455659,Děčín hl.n.,,,,,,,cz,14.201000,50.773500,0,
+http://irail.be/stations/NMBS/008006006,Bad Schandau,,,,,,,de,14.139070,50.918780,0,
+http://irail.be/stations/NMBS/008006050,Dresden Hbf,,,,,,,de,13.731667,51.040278,0,
+http://irail.be/stations/NMBS/008400055,Amersfoort Centraal,,,,,,,nl,5.374167,52.153889,0,
+http://irail.be/stations/NMBS/008400173,Deventer,,,,,,,nl,6.161080,52.256970,0,
