@@ -41,10 +41,9 @@ abstract class StationsDataset
         //make sure something between brackets is ignored
         $query = preg_replace("/\s?\(.*?\)/i", '', $query);
 
-        // st. is the same as Saint
+        // st. is the same as Saint, see queryToPattern()
         $query = str_ireplace('st-', 'st ', $query);
         $query = str_ireplace('st.-', 'st ', $query);
-        $query = preg_replace("/st(\s|$|\.)/i", '(saint|st|sint) ', $query);
         //make sure that we're only taking the first part before a /
         $query = explode('/', $query);
         $query = trim($query[0]);
@@ -65,27 +64,44 @@ abstract class StationsDataset
     }
 
     /**
+     * Turn a standardized query into the pattern station names are matched against.
+     *
+     * The query is what a client typed, so it is matched literally: compiled as it was, "Brussel)" failed to compile
+     * against every name in the list, and ".*" matched every one of them, answering with whichever station came
+     * first. The only pattern in it is the one put there on purpose: st. is the same as Saint.
+     *
+     * @param string $query the query, standardized and normalized
+     * @return string a pattern without delimiters, to be used case-insensitively
+     */
+    protected static function queryToPattern(string $query): string
+    {
+        $parts = array_map(fn($part) => preg_quote($part, '/'), preg_split('/st(\s|$|\.)/i', $query));
+        $pattern = implode('(saint|st|sint) ', $parts);
+        return trim(preg_replace('/ +/', ' ', $pattern));
+    }
+
+    /**
      * Check if a query is part of a station name. Case-insensitive.
-     * @param $query String the query we're looking for
+     * @param $pattern String the pattern for the query we're looking for, see queryToPattern()
      * @param $testStationName String The station name which might contain query
      * @return bool True if $query is in $testStationName
      */
-    protected static function isQueryPartOfName(string $query, string $testStationName): bool
+    protected static function isQueryPartOfName(string $pattern, string $testStationName): bool
     {
-        return preg_match('/' . $query . '/i', $testStationName)
-            || preg_match('/(' . $query . ')/i', str_replace('\'', ' ', $testStationName), $match);
+        return preg_match('/' . $pattern . '/i', $testStationName)
+            || preg_match('/' . $pattern . '/i', str_replace('\'', ' ', $testStationName));
     }
 
     /**
      * Check if a query equals a string, case and apostrophe insensitive
-     * @param $query String the query we're looking for
+     * @param $pattern String the pattern for the query we're looking for, see queryToPattern()
      * @param $testStationName String The station name which might be equal to query
      * @return bool True if $query is equal to $testStationName, except possible casing or apostrophes
      */
-    protected static function isEqualCaseInsensitive(string $query, string $testStationName): bool
+    protected static function isEqualCaseInsensitive(string $pattern, string $testStationName): bool
     {
-        return preg_match('/^' . $query . '$/i', $testStationName)
-            || preg_match('/^(' . $query . ')$/i', str_replace('\'', ' ', $testStationName), $match);
+        return preg_match('/^' . $pattern . '$/i', $testStationName)
+            || preg_match('/^' . $pattern . '$/i', str_replace('\'', ' ', $testStationName));
     }
 
     /**
@@ -127,7 +143,7 @@ abstract class StationsDataset
      * @param string $str
      *
      * @return string
-     *                Languages supported are: German, French and Dutch
+     *                Languages supported are: German, French, Dutch and Czech
      *                We have to take into account that some words may have accents
      *                Taken from https://stackoverflow.com/questions/3371697/replacing-accented-characters-php
      */
@@ -135,6 +151,10 @@ abstract class StationsDataset
     {
         $unwanted_array = [
             'Š' => 'S', 'š' => 's', 'Ž' => 'Z', 'ž' => 'z',
+            'Č' => 'C', 'č' => 'c', 'Ď' => 'D', 'ď' => 'd',
+            'Ě' => 'E', 'ě' => 'e', 'Ň' => 'N', 'ň' => 'n',
+            'Ř' => 'R', 'ř' => 'r', 'Ť' => 'T', 'ť' => 't',
+            'Ů' => 'U', 'ů' => 'u',
             'À' => 'A', 'Á' => 'A', 'Â' => 'A', 'Ã' => 'A',
             'Ä' => 'A', 'Å' => 'A', 'Æ' => 'A', 'Ç' => 'C',
             'È' => 'E', 'É' => 'E', 'Ê' => 'E', 'Ë' => 'E',

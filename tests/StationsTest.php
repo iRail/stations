@@ -223,4 +223,28 @@ class StationsTest extends TestCase
 
     }
 
+    /**
+     * A query is what a client typed, not a regular expression: punctuation must not match every station, nor fail
+     * to compile against every one of them.
+     */
+    public function testQueriesAreMatchedLiterally()
+    {
+        $this->assertCount(0, Stations::getStations('.*'));
+        $this->assertCount(0, Stations::getStations('a|b'));
+        $this->assertCount(0, Stations::getStations('Brussel)'));
+        $this->assertCount(0, Stations::getStations('[Brussel'));
+    }
+
+    /**
+     * The one pattern put in a query on purpose: st. is the same as Saint, and as Sint.
+     */
+    public function testSaintIsStillSpelledAnyWay()
+    {
+        $sintTruiden = Stations::getStations('Sint-Truiden')[0];
+        $this->assertEquals($sintTruiden->getUri(), Stations::getStations('St. Truiden')[0]->getUri());
+        $this->assertEquals($sintTruiden->getUri(), Stations::getStations('st-truiden')[0]->getUri());
+
+        $saintGhislain = Stations::getStations('Saint-Ghislain')[0];
+        $this->assertEquals($saintGhislain->getUri(), Stations::getStations('St Ghislain')[0]->getUri());
+    }
 }

@@ -55,6 +55,7 @@ class Stations extends StationsDataset
         $query = self::normalizeAccents($query);
         // Dashes are the same as spaces
         $query = preg_replace("/([- ])+/", " ", $query);
+        $pattern = self::queryToPattern($query);
 
         $count = 0;
 
@@ -76,14 +77,14 @@ class Stations extends StationsDataset
                 $testStationName = str_replace(' am ', ' ', self::normalizeAccents($name));
                 $testStationName = preg_replace("/([- ])+/", " ", $testStationName);
 
-                if (self::isEqualCaseInsensitive($query, $testStationName)) {
+                if (self::isEqualCaseInsensitive($pattern, $testStationName)) {
                     // If this is a direct match for case-insensitive search (with or without the apostrophe ' characters
                     $exactMatch = true;
                     break;
                 }
 
                 // Don't try a partial match if we found it in an earlier version already!
-                if (self::isQueryPartOfName($query, $testStationName)) {
+                if (self::isQueryPartOfName($pattern, $testStationName)) {
                     $partialMatch = true;
                 }
             }
