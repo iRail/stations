@@ -19,7 +19,7 @@ This file describes all NMBS/SNCB stations in Belgium. A station can have multip
  * `alternative-de`: alt. name in German, if available
  * `alternative-en`: alt. name in English, if available
  * `taf-tap-code`: [TSI TAF/TAP](https://mobilit.belgium.be/en/rail/professional-railway-transport/taf-tap) number for the station Source: [Infrabel Operational point of the railway network ](https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/table/?sort=ptcarid).
- * `telegraph-code`: abbreviated name for Belgian stations, used by NMBS/SNCB internally. Source: [Infrabel Network Statement](https://infrabel.be/en/networkstatement), [attachment D](https://infrabel.be/sites/default/files/generated/files/paragraph/NV_BijlagenD_RIEI_26.zip) file _D06-RIEI-12_N_20230915.pdf_.
+ * `telegraph-code`: abbreviated name for Belgian stations. Since the split of the former NMBS these abbreviations are no longer assigned consistently, and Infrabel and NMBS may use different ones for the same station: Noorderkempen is `NDK` in Infrabel publications but `NDKMP` within NMBS. **This column follows Infrabel's form** (so, `NDK`), matching the source below. Source: [Infrabel Network Statement](https://infrabel.be/en/networkstatement), [attachment D](https://infrabel.be/sites/default/files/generated/files/paragraph/NV_BijlagenD_RIEI_26.zip) file _D06-RIEI-12_N_20230915.pdf_, list 12, cross-checked against the `symbolicname` field of [Infrabel's operational points dataset](https://opendata.infrabel.be/explore/dataset/operationele-punten-van-het-netwerk/).
  * `country-code`: the code of the country the station belongs to
  * `avg_stop_times`: the average number of vehicles stopping each day in this station (_computed field_)
  * `official_transfer_time`: the time needed for an average person to make a transfer in this station, according to official sources (NMBS/SNCB) (_computed field_)
@@ -38,7 +38,7 @@ This file describes all NMBS/SNCB stops in Belgium. Each platform is a separate 
  * `platform`: the platform code (can also consist of letters, so do not treat this as a number!)
 
 ### facilities.csv
-This file describes facilities available in NMBS/SNCB stations. All fields are computed using `web_facilities_extractor.php`.
+This file describes facilities available in NMBS/SNCB stations. All fields are computed using `facilities_extractor.js`. Not every field can still be sourced, and not every one is equally reliable: see [Where facility data comes from](#where-facility-data-comes-from).
 
  * `URI`: The URI identifying this station.
  * `name`: The name of this station.
@@ -57,7 +57,7 @@ This file describes facilities available in NMBS/SNCB stations. All fields are c
  * `wheelchair_available`: Whether or not the station has wheelchairs available.
  * `ramp`: Whether or not the station has a ramp for wheelchair users to board a train.
  * `disabled_parking_spots`: The number of reserved parking spots for travellers with a disability.
- * `elevated_platform`: Whether or not the station has elevated platforms.
+ * `platform_height_cm`: The nominal platform height(s) in centimetres above the rail, from Infrabel. One of `28` (the historic model, being phased out), `55` or `76`. Stations whose platforms are not all the same height list each value, ascending and `;` separated, for example `28;76`. Empty when Infrabel publishes nothing for the station. These are nominal figures: an individual platform may be built slightly differently. Replaces the old `elevated_platform` flag.
  * `escalator_up`: Whether or not the station has an ascending escalator from or to the platform(s).
  * `escalator_down`: Whether or not the station has a descending escalator from or to the platform(s).
  * `elevator_platform`: Whether or not the station has an elevator to the platform(s).
@@ -78,7 +78,11 @@ This file describes how many people embark a train at the given station per day.
 
 ## How we collect data
 
-This repository contains two PHP scripts which can load all data from the NMBS GTFS public data and the NMBS website. These scripts can be used to generate all CSV files from scratch, and to update existing files.
+This repository contains scripts which can load all data from the NMBS GTFS public data and from several open data sources. These scripts can be used to generate all CSV files from scratch, and to update existing files.
+
+* `bin/gtfs_data_extractor.php` builds `stations.csv` and `stops.csv` from the NMBS GTFS feed.
+* `bin/facilities_extractor.js` builds `facilities.csv` (see [Where facility data comes from](#where-facility-data-comes-from)).
+* `bin/verify_facilities.js` checks that `facilities.csv` is still well formed. Run it after the extractor.
 
 Manual changes and corrections can be made to `stations.csv`. It is recommended to use the `stations.csv` file in this repository as a starting point instead of using the scripts to generate this file, as the repository versions includes manual fixes to station names and translations.
 
@@ -94,6 +98,62 @@ Corrections to names, translations and locations can be made by adjusting fields
 * The GTFS data extractor script will warn on wrong locations, but won't correct them.
 
 If you want to make a correction to `facilities.csv` or `stops.csv`, don't fix the files, but fix the scripts instead, and let these scripts run to update the file for you.
+
+For facility data, the fix usually belongs in OpenStreetMap rather than here. If a
+station is missing its lift or its bicycle parking, map it there and the next run
+will pick it up, which helps everyone using that data and not just this project.
+
+## Where facility data comes from
+
+`facilities.csv` used to be scraped from the NMBS website, one page per station.
+That site was retired, and its replacement is behind Cloudflare, which serves a
+captcha to anything that isn't a browser. The data went stale in June 2023 as a
+result. There is no single replacement source, so the file is now assembled from
+several open ones:
+
+| Source | Provides |
+| --- | --- |
+| [OpenStreetMap](https://www.openstreetmap.org) via the [Overpass API](https://overpass-api.de) | Most facilities, matched to our stations on `uic_ref` |
+| [Infrabel Open Data](https://opendata.infrabel.be) | `platform_height_cm`, from the nominal platform heights (CC0) |
+| [Blue-bike API](https://api.blue-bike.be/pub/location) | `blue-bike` |
+
+To refresh it:
+
+```bash
+node bin/facilities_extractor.js
+node bin/verify_facilities.js
+```
+
+A GitHub Action runs both on the first of each month and opens a pull request
+with the result, so the data cannot quietly rot again.
+
+### What this does not cover
+
+Some columns were only ever published by that NMBS website and have no open
+source today: `street`, `zip`, `city`, `wheelchair_available`, `ramp` and
+`audio_induction_loop`. The extractor leaves their previous values alone rather
+than blanking them, so **they still date from June 2023**.
+
+The `sales_open_*` and `sales_close_*` columns are only refreshed for the handful
+of stations whose NMBS ticket office publishes its hours in OpenStreetMap. NMBS
+has also closed most staffed counters since 2023, so treat this column with care.
+
+Where OpenStreetMap maps a feature only patchily, a missing feature is not taken
+to mean the station lacks it: the previous value is kept instead of writing a
+confident `0`. `facilities_coverage.md` is regenerated on every run and records,
+per column, where the data came from and how much of it is still carried over.
+
+### A note on licensing
+
+Infrabel publishes its open data under CC0, so `platform_height_cm` carries no
+restriction. The other two do.
+
+This repository is CC0, but two of the sources above are not: OpenStreetMap is
+[ODbL](https://opendatacommons.org/licenses/odbl/) (share-alike) and the Blue-bike
+feed is registered as non-commercial on
+[transportdata.be](https://transportdata.be). Re-publishing their data as CC0 is
+therefore not clearly permitted. This is unresolved and needs a maintainer
+decision; it is flagged here rather than left implicit.
 
 ## In case you just want to reuse the data
 
