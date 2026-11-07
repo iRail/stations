@@ -115,7 +115,7 @@ reader.addListener('end', function () {
       if (format !== "json") {
         console.log(output);
       } else {
-        const doc = await jsonld.fromRDF(output, {format: 'application/nquads'});
+        const doc = await jsonld.fromRDF(output, {format: 'application/n-quads'});
         const compacted = await jsonld.compact(doc, context);
         var jsonresult = JSON.stringify(compacted);
         //ugly fix for https://github.com/iRail/stations/issues/8
