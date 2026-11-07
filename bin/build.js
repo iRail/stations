@@ -1,24 +1,22 @@
 #!/usr/bin/env node
 /* Pieter Colpaert */
 var N3 = require('n3');
-var N3Util = require('n3').Util;
+var { namedNode, literal } = N3.DataFactory;
 var csv = require('ya-csv');
 var jsonld = require('jsonld');
-var program = require('commander');
+var { Command, Option } = require('commander');
+var program = new Command();
 
 console.error("irail-stations by Pieter Colpaert <pieter@iRail.be> - http://hello.irail.be - use --help to discover more functions");
 program
   .version('0.1.5')
-  .option('-f --format [json,trig,nquads]', 'Format', /^(json|trig|nquads)$/i)
+  .addOption(new Option('-f, --format <format>', 'Output format')
+    .argParser(value => value.toLowerCase())
+    .choices(['json', 'trig', 'nquads'])
+    .default('json'))
   .parse(process.argv);
 
-var format;
-
-if (!process.argv.slice(2).length) {
-  format = "json";
-} else {
-  format = program.format;
-}
+var format = program.opts().format;
 
 //Prefixes used within this code
 var prefixes = {
@@ -78,32 +76,26 @@ var reader = csv.createCsvFileReader(filename, {columnsFromHeader:true, 'separat
 
 var writer;
 if (format !== "trig") {
-  writer = N3.Writer({ format: 'N-Triples', prefixes: prefixes });
+  writer = new N3.Writer({ format: 'N-Quads' });
 } else {
-  writer = N3.Writer({ prefixes: prefixes });
+  writer = new N3.Writer({ format: 'TriG', prefixes: prefixes });
 }
 
 //CSV reader: processes a row and add the triples to the n-quads or trig writer
 reader.addListener('data', function (data) {
-  //writer.addTriple(data["URI"], "rdfs:type","gtfs:Station", "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("foaf:name", prefixes),'"' + data["name"] + '"', "http://irail.be/stations/NMBS");
-  if (data["alternative-en"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-en"] + '"@en', "http://irail.be/stations/NMBS");
+  var station = namedNode(data["URI"]);
+  var graph = namedNode("http://irail.be/stations/NMBS");
+  var float = namedNode("http://www.w3.org/2001/XMLSchema#float");
+  writer.addQuad(station, namedNode(prefixes.foaf + "name"), literal(data["name"]), graph);
+  for (var language of ['en', 'fr', 'nl', 'de']) {
+    if (data["alternative-" + language]) {
+      writer.addQuad(station, namedNode(prefixes.dcterms + "alternative"), literal(data["alternative-" + language], language), graph);
+    }
   }
-
-  if (data["alternative-fr"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-fr"] + '"@fr', "http://irail.be/stations/NMBS");
-  }
-  if (data["alternative-nl"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-nl"] + '"@nl', "http://irail.be/stations/NMBS");
-  }
-  if (data["alternative-de"] !== "") {
-    writer.addTriple(data["URI"], N3Util.expandPrefixedName("dcterms:alternative", prefixes),'"' + data["alternative-de"] + '"@de', "http://irail.be/stations/NMBS");
-  }
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("gn:parentCountry", prefixes), countryURIs[data["country-code"]], "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:long", prefixes),'"' + data["longitude"] + '"^^http://www.w3.org/2001/XMLSchema#float', "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("geo:lat", prefixes),'"' + data["latitude"] + '"^^http://www.w3.org/2001/XMLSchema#float', "http://irail.be/stations/NMBS");
-  writer.addTriple(data["URI"], N3Util.expandPrefixedName("st:avgStopTimes",prefixes),'"' + data["avg_stop_times"] + '"', "http://irail.be/stations/NMBS");
+  writer.addQuad(station, namedNode(prefixes.gn + "parentCountry"), namedNode(countryURIs[data["country-code"]]), graph);
+  writer.addQuad(station, namedNode(prefixes.geo + "long"), literal(data["longitude"], float), graph);
+  writer.addQuad(station, namedNode(prefixes.geo + "lat"), literal(data["latitude"], float), graph);
+  writer.addQuad(station, namedNode(prefixes.st + "avgStopTimes"), literal(data["avg_stop_times"]), graph);
 });
 
 //When the CSV processing is done: print the requested serialisation
@@ -111,16 +103,22 @@ reader.addListener('end', function () {
   writer.end(async function (error, output) {
     if (error) {
       console.error("Problem: " + error);
+      process.exitCode = 1;
     } else {
       if (format !== "json") {
         console.log(output);
       } else {
+        try {
         const doc = await jsonld.fromRDF(output, {format: 'application/n-quads'});
         const compacted = await jsonld.compact(doc, context);
         var jsonresult = JSON.stringify(compacted);
         //ugly fix for https://github.com/iRail/stations/issues/8
         jsonresult = jsonresult.replace(/"alternative":({.*?})/gi, "\"alternative\":[$1]");
         console.log(jsonresult);
+        } catch (error) {
+          console.error("Problem: " + error);
+          process.exitCode = 1;
+        }
       }
     }
   });

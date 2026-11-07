@@ -6,7 +6,12 @@
   "bin": {
     "irail-stations": "bin/build.js"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "node --test tests/build.test.js && node bin/test_facilities_extractor.js"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/iRail/stations.git"
@@ -26,9 +31,9 @@
     "url": "https://github.com/iRail/stations/issues"
   },
   "dependencies": {
-    "commander": "^2.20",
-    "jsonld": "^9.0.*",
-    "n3": "^0.11.3",
-    "ya-csv": "^0.10.*"
+    "commander": "^15.1.0",
+    "jsonld": "^9.0.0",
+    "n3": "^2.13.12",
+    "ya-csv": "^1.0.0"
   }
 }
